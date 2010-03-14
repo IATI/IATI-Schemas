@@ -1,5 +1,29 @@
 <?xml version="1.0"?>
 
+<!--
+  IATI-to-IDML conversion script for UN-OCHA to Haiti AMP reporting.
+
+  David Megginson, 2010-03-14
+
+  This is the first draft of a conversion script based on an early
+  draft schema (2010-03-14) from the International Aid Transparency
+  Initiative (IATI).
+
+  This script will convert an XML document in IATI's draft format to
+  version 2.0 of the International Development Markup Language (IDML)
+  as currently used by Haiti's AMP (from the Development Gateway).
+  Note that the output has *not* been tested, and may contain
+  incorrect assumptions about how the AMP uses IDML.
+  
+  Please feel free to modify this script as required.  If you run into
+  strange bugs after making modifications, try removing the
+  xml:space="preserve" attribute from the root element: it results
+  in nicely-formatted output for humans to read, but makes the
+  XSLT very sensitive to whitespace changes.
+
+  This script is meant only as a stopgap, until the Development
+  Gateway AMP can import IATI data directly.
+-->
 <xsl:stylesheet version="1.0" 
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xml:space="preserve">
