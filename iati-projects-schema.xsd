@@ -509,7 +509,7 @@
     <xsd:attributeGroup ref="refAtts"/>
   </xsd:complexType>
 
-  <xsd:complexType name="orgType">
+  <xsd:complexType name="orgType" mixed="true">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element describing an organization.
