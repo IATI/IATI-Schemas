@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<iati-projects version="1.0" generated-datetime="2010-03-13T18:54:00+01:00">
+
+  <project>
+    <reporting-org ref="orgs/acme" role="roles/implementing-agency">ACME Aid Agency</reporting-org>
+    <participating-org ref="orgs/iaf" role="roles/donor">International Aid Fund</participating-org>
+    <recipient-country ref="countries/HT">Haiti</recipient-country>
+    <aid-type ref="aid-types/pooled"/>
+    <primary-id>http://aidtransparency.net/projects/12345</primary-id>
+    <other-id owner-ref="orgs/acme" owner-name="ACME Aid Agency">HT-555.77.25</other-id>
+    <title xml:lang="en">Haiti Clean Water Infrastructure Rebuilding</title>
+    <description xml:lang="en" type="main">
+      Provide direct financial and engineering contributions to
+      rebuild damaged clean water infrastructure in Haitian towns or
+      cities.
+    </description>
+    <title xml:lang="fr">Reconstructions des infrastructures d'eau potable en Haïti</title>
+    <description xml:lang="fr" type="main">
+      Fournir des contributions financières directes et de
+      l'ingénierie pour reconstruire les infrastructures endommagées
+      d'eau potable dans les villes haïtiennes.
+    </description>
+    <sector ref="120-health">Health</sector>
+    <start-date-planned>2010-10-01</start-date-planned>
+    <completion-date-planned>2010-12-01</completion-date-planned>
+    <target-location latitude-deg="19.758949" longitude-deg="-72.199745">Cap-Haïtien, Haiti</target-location>
+    <target-location latitude-deg="19.939384" longitude-deg="-72.830429">Port-de-Paix, Haiti</target-location>
+    <total-cost currency="CAD" usd-equivalent="73500" usd-conversion-date="2010-03-14">750000</total-cost>
+    <incoming-contribution>
+      <value currency="CAD">3000</value>
+      <donor>Kiwanis Club</donor>
+    </incoming-contribution>
+  </project>
+
+</iati-projects>

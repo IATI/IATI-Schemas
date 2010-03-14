@@ -1,7 +1,7 @@
 projects
 	@generated-datetime?
 	project+
-		@late-updated-datetime?
+		@last-updated-datetime?
 		reporting-org
 			@xml:lang?
 			@ref?
