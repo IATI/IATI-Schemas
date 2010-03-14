@@ -195,27 +195,23 @@
         @owner-name attributes should be included if available.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:string">
-          <xsd:attribute name="owner-ref" type="xsd:anyURI" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                An identifier for the owner of this identifier, in URI
-                format.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <xsd:attribute name="owner-name" type="xsd:anyURI" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Free text providing a human-readable name for the owner
-                of this identifier.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-        </xsd:extension>
-      </xsd:simpleContent>
+    <xsd:complexType mixed="true">
+      <xsd:attribute name="owner-ref" type="xsd:anyURI" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An identifier for the owner of this identifier, in URI
+            format.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="owner-name" type="xsd:anyURI" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Free text providing a human-readable name for the owner
+            of this identifier.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
 
@@ -241,20 +237,17 @@
         distinguish.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="textType">
-          <xsd:attribute name="type" type="xsd:string" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                A simple text string describing the type of
-                description, e.g. "Outputs", "main".  The type is free
-                text rather than a formal code.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-        </xsd:extension>
-      </xsd:simpleContent>
+    <xsd:complexType mixed="true">
+      <xsd:attributeGroup ref="langAtts"/>
+      <xsd:attribute name="type" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A simple text string describing the type of description,
+            e.g. "output", "summary".  The type is free text rather than
+            a formal code.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
 
@@ -314,32 +307,30 @@
         latitude/longitude.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="refType">
-          <xsd:attribute name="latitude-deg" type="xsd:decimal" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The latitude of a specific location served by the
-                project, in decimal degrees (where negative is south),
-                if known.  For example, 45 degrees 15 minutes 10
-                seconds south would be represented as "-45.419444".
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <xsd:attribute name="longitude-deg" type="xsd:decimal" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The longitude of a specific location served by the
-                project, in decimal degrees (where negative is west),
-                if known.  For example, 120 degrees 15 minutes 10
-                seconds west would be represented as "-120.419444".
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <!-- TODO lat/lon box -->
-        </xsd:extension>
-      </xsd:simpleContent>
+    <xsd:complexType mixed="true">
+      <xsd:attributeGroup ref="langAtts"/>
+      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attribute name="latitude-deg" type="xsd:decimal" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The latitude of a specific location served by the project,
+            in decimal degrees (where negative is south), if known.
+            For example, 45 degrees 15 minutes 10 seconds south would
+            be represented as "-45.419444".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="longitude-deg" type="xsd:decimal" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The longitude of a specific location served by the
+            project, in decimal degrees (where negative is west), if
+            known.  For example, 120 degrees 15 minutes 10 seconds
+            west would be represented as "-120.419444".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <!-- TODO lat/lon box -->
     </xsd:complexType>
   </xsd:element>
 
@@ -401,18 +392,16 @@
                 optional @ref attribute.
               </xsd:documentation>
             </xsd:annotation>
-            <xsd:complexType>
-              <xsd:simpleContent>
-                <xsd:extension base="refType">
-                  <xsd:attribute name="donor-project-id" type="xsd:string" use="optional">
-                    <xsd:annotation>
-                      <xsd:documentation xml:lang="en">
-                        The identifier used by the donor for this project.
-                      </xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:attribute>
-                </xsd:extension>
-              </xsd:simpleContent>
+            <xsd:complexType mixed="true">
+              <xsd:attributeGroup ref="langAtts"/>
+              <xsd:attributeGroup ref="refAtts"/>
+              <xsd:attribute name="donor-project-id" type="xsd:string" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The identifier used by the donor for this project.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="source-project" type="refType" minOccurs="0">
@@ -432,7 +421,7 @@
             </xsd:annotation>
           </xsd:element>
         </xsd:sequence>
-        <xsd:attribute ref="ref" use="optional"/>
+        <xsd:attributeGroup ref="refAtts"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -448,27 +437,25 @@
         initiative.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="refType">
-          <xsd:attribute name="type" type="xsd:string" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Free text describing the type of related initiative.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-        </xsd:extension>
-      </xsd:simpleContent>
+    <xsd:complexType mixed="true">
+      <xsd:attributeGroup ref="langAtts"/>
+      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attribute name="type" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Free text describing the type of related initiative.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
-
 
   <!--
       Common attributes and data types.
   -->
 
-  <xsd:attribute name="ref" type="xsd:anyURI">
+  <xsd:attributeGroup name="refAtts">
+  <xsd:attribute name="ref" type="xsd:anyURI" use="optional">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Machine-readable identification string for the entity being
@@ -477,59 +464,73 @@
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
+  </xsd:attributeGroup>
 
-  <xsd:complexType name="textType">
+  <xsd:attributeGroup name="langAtts">
+    <xsd:attribute ref="xml:lang" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          ISO 639 code for the natural (human) language of the text
+          content.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+
+  <xsd:complexType name="textType" mixed="true">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Base type for an element that may contain human-readable text.
+        Data type for an element that may contain human-readable text
+        in different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="xsd:string">
-        <xsd:attribute ref="xml:lang" use="optional">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              ISO 639 code for the natural (human) language of the
-              text content.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:simpleContent>
+    <xsd:attributeGroup ref="langAtts"/>
   </xsd:complexType>
 
-  <xsd:complexType name="refType">
-    <xsd:simpleContent>
-      <xsd:extension base="textType">
-        <xsd:attribute ref="ref" use="optional"/>
-      </xsd:extension>
-    </xsd:simpleContent>
+  <xsd:complexType name="refType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element that refers to an object that can
+        have a code or unique identifier, as well as human-readable
+        text in different languages.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attributeGroup ref="langAtts"/>
+    <xsd:attributeGroup ref="refAtts"/>
   </xsd:complexType>
 
   <xsd:complexType name="orgType">
-    <xsd:simpleContent>
-      <xsd:extension base="refType">
-        <xsd:attribute name="acronym" type="xsd:string" use="optional">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Commonly-accepted acronym or abbreviation for the
-              organization (e.g. DFID, UNICEF, MSF).
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="role" type="xsd:anyURI" use="optional">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              A code describing the organization's role in the project
-              (donor, agency, etc.).
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-      </xsd:extension>
-    </xsd:simpleContent>
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element describing an organization.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attributeGroup ref="langAtts"/>
+    <xsd:attributeGroup ref="refAtts"/>
+    <xsd:attribute name="acronym" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Commonly-accepted acronym or abbreviation for the
+          organization (e.g. DFID, UNICEF, MSF).
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="role" type="xsd:anyURI" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code describing the organization's role in the project
+          (donor, agency, etc.).
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
   </xsd:complexType>
 
   <xsd:complexType name="currencyType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element containing a currency value.
+      </xsd:documentation>
+    </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="xsd:decimal">
         <xsd:attribute name="currency" type="xsd:string" use="required">
