@@ -1,0 +1,572 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+  <xsd:annotation>
+    <xsd:documentation xml:lang="en">
+      International Aid Transparency Initiative: Project-Information Schema
+
+      Unofficial draft 2010-03-13, by David Megginson
+
+      This W3C XML Schema defines a preliminary XML document type for
+      information about one or more aid-related projects.  For more
+      information about the International Aid Transparency Initiative
+      (IATI), please visit http://www.aidtransparency.net/
+
+      This document type uses URIs for codes and identifiers.  Most
+      typically, these will be URLs such as
+      "http://aidtransparency.net/orgs/acme".  If an XML file uses a
+      relative URI, then the base URI is assumed to be
+      "http://aidtransparency.net/", so that "orgs/acme" resolves to
+      "http://aidtransparency.net/orgs/acme".
+    </xsd:documentation>
+  </xsd:annotation>
+
+  <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
+              schemaLocation="xml.xsd"/>
+
+  <xsd:element name="iati-projects">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Top-level list of one or more IATI project records.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="project" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="version" type="xsd:decimal" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A number indicating the IATI specification version in use.
+            Defaults to "1.0" if not specified.  It is required to
+            specify this attribute if the document is using features
+            specific to an IATI specification other than the initial
+            1.0 version.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="generated-datetime" type="xsd:dateTime" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A date/time stamp for when this file was generated.  This
+            is not necessarily the last-updated date for the
+            individual project records in it.  Uses ISO 8601 date
+            format, e.g. "2010-03-12T18:45:00+01:00".  Use of this
+            attribute is highly recommended, to allow recipients to
+            know when a file has been updated.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="project">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Top-level element for a single IATI project report.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element ref="reporting-org"/>
+        <xsd:element ref="participating-org"/>
+        <xsd:element ref="recipient-country"/>
+        <!-- partnership-type 3.06 -->
+        <!-- flow-type 3.07 -->
+        <xsd:element ref="aid-type"/>
+        <!-- finance-type 3.08 -->
+        <xsd:element ref="primary-id"/>
+        <xsd:element ref="other-id"/>
+        <xsd:element ref="title"/>
+        <xsd:element ref="description"/>
+        <!-- recipient-budget-identifier 3.11 -->
+        <xsd:element ref="sector"/>
+        <xsd:element ref="start-date-planned"/>
+        <!-- start-date-actual 3.13 -->
+        <xsd:element ref="completion-date-planned"/>
+        <!-- completion-date-actual 3.13 -->
+        <!-- project-stage 3.14 -->
+        <!-- contact-person 3.15 -->
+        <xsd:element ref="target-location"/>
+        <!-- tied-aid-status 3.17 -->
+        <!-- policy-markers 3.18 -->
+        <xsd:element ref="total-cost"/>
+        <xsd:element ref="incoming-contribution"/>
+        <!-- 4.03 Total Amount(s) committed by individual donor -->
+        <!-- 4.07 Loan repayments -->
+        <!-- 4.08 Interest repayments -->
+        <xsd:element ref="related-initiative"/>
+      </xsd:choice>
+      <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            6.03 Last Update Date
+
+            The last date/time that the data for this specific project
+            was updated.  This date must change whenever the value of
+            any field changes.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="reporting-org" type="orgType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.01 Reporting Organization 
+
+        (formerly 03.01 Funding Country/Institution)
+
+        The organization issuing the project report (typically the
+        project owner).  May be a donor, fund, agency, etc.
+        Specifying the @identifier and @role attributes is strongly
+        recommended.  May contain the organization name as content.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="participating-org" type="orgType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.02 Other Participating Organization
+
+        (formerly 03.02 Funding Extending Agency/Organization, 03.03
+        Additional Channels of Delivery, and 03.04 Beneficiary
+        Agency/Organization)
+
+        An organization other than the reporting organization involved
+        with the project.  May be a donor, fund, agency, etc.
+        Specifying the @identifier and @role attributes is strongly
+        recommended.  May contain the organization name as content.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="recipient-country" type="refType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.05 Recipient Country
+
+        A partner country that will benefit from this project.  This
+        element is primarily for administrative and political
+        purposes.  The target-location element can specify the
+        project's physical location in more detail.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <!-- 3.06 Bilateral or Multilateral Type -->
+
+  <!-- 3.07 Flow Type -->
+
+  <xsd:element name="aid-type" type="refType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.07.1 Type of Aid
+
+        The type of aid being supplied (budget support, pooled funds,
+        etc.).
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <!-- 3.08 Finance Type -->
+
+  <xsd:element name="primary-id" type="xsd:anyURI">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.09 Aid Activity ID
+
+        The canonical identifier for this project.  Must be a relative
+        or absolute URI.  This element should be an official IATI
+        identifier for portability.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="other-id">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        An alternative identifier for the project.  The identifier is
+        not required to be in URI format.  The @owner-ref and
+        @owner-name attributes should be included if available.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="owner-ref" type="xsd:anyURI" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                An identifier for the owner of this identifier, in URI
+                format.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute name="owner-name" type="xsd:anyURI" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Free text providing a human-readable name for the owner
+                of this identifier.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="title" type="textType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        3.10 Project Title &amp; Purpose/Description
+
+        Human-readable title for the project.  May be repeated in
+        different languages, using the xml:lang attribute to
+        distinguish.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="description">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        3.10 Project Title &amp; Purpose/Description
+
+        Human-readable title for the project.  May be repeated in
+        different languages, using the xml:lang attribute to
+        distinguish.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="textType">
+          <xsd:attribute name="type" type="xsd:string" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                A simple text string describing the type of
+                description, e.g. "Outputs", "main".  The type is free
+                text rather than a formal code.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="sector" type="refType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.12 General/Detailed Sector
+
+        Sector code and name.  Non-DAC sectors will be in a different
+        namespace.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="start-date-planned" type="xsd:date">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        3.13 Project Dates (planned starting date)
+
+        Planned starting date for the project in ISO 8601 date format,
+        e.g. "2010-10-01".
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <!-- start-date-actual 3.13 -->
+
+  <xsd:element name="completion-date-planned" type="xsd:date">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        3.13 Project Dates (planned completion date)
+
+        Planned completion date for the project in ISO 8601 date format,
+        e.g. "2010-12-01".
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <!-- completion-date-actual 3.13 -->
+
+  <!-- project-stage 3.14 -->
+
+  <!-- contact-person 3.15 -->
+
+  <xsd:element name="target-location">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        3.16 Detailed geographic info
+
+        This element allows the reporting organization to specify the
+        project's target location in more detail than simply the
+        recipient country.  Repeat this element for each separate
+        location description.  The content is a human-readable
+        description of the location (e.g. "Villages in Darfur"), while
+        the various attributes allow providing a machine readable
+        version of the same location using codes or
+        latitude/longitude.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="refType">
+          <xsd:attribute name="latitude-deg" type="xsd:decimal" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The latitude of a specific location served by the
+                project, in decimal degrees (where negative is south),
+                if known.  For example, 45 degrees 15 minutes 10
+                seconds south would be represented as "-45.419444".
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute name="longitude-deg" type="xsd:decimal" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The longitude of a specific location served by the
+                project, in decimal degrees (where negative is west),
+                if known.  For example, 120 degrees 15 minutes 10
+                seconds west would be represented as "-120.419444".
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <!-- TODO lat/lon box -->
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="total-cost" type="currencyType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        04.01 Total Project Cost
+
+        The total budgeted cost of the project.  Note that this may be
+        greater than the total of the commitments, especially if the
+        project is part of an ongoing fundraising appeal.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="incoming-contribution">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A committed or paid contribution to the project.  The value of
+        the element is the amount of the contribution in the original
+        currency.  The contribution may have its own identifier to
+        assist with tracking.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+	<xsd:sequence>
+          <xsd:element name="value" type="currencyType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The amount of the contribution (or its value, if in
+                kind).
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="status" type="refType" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The status of the contribution (e.g. committed, paid).
+                Assume committed if omitted.  The content is free
+                text, and the code goes in the optional @ref
+                attribute.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="contribution-type" type="refType" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The type of contribution (e.g. paid, in-kind).  The
+                content is free text, and the code goes in the
+                optional @ref attribute.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="donor" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The type of contribution (e.g. paid, in-kind).  The
+                content is free text, and the code goes in the
+                optional @ref attribute.
+              </xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:simpleContent>
+                <xsd:extension base="refType">
+                  <xsd:attribute name="donor-project-id" type="xsd:string" use="optional">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        The identifier used by the donor for this project.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                </xsd:extension>
+              </xsd:simpleContent>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="source-project" type="refType" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The source project for this contribution, if any.
+                This element is present to allow aid funds to be
+                traced from project to project.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="description" type="textType" minOccurs="0">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                A free-text description of the contribution.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+        </xsd:sequence>
+        <xsd:attribute ref="ref" use="optional"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <!-- 4.03 Total Amount(s) committed by individual donor -->
+  <!-- 4.07 Loan repayments -->
+  <!-- 4.08 Interest repayments -->
+
+  <xsd:element name="related-initiative">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        An initiative related to this project.  The initiative will
+        not be a project per-se, but an appeal or similar aid-related
+        initiative.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="refType">
+          <xsd:attribute name="type" type="xsd:string" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Free text describing the type of related initiative.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <!--
+      Common attributes and data types.
+  -->
+
+  <xsd:attribute name="ref" type="xsd:anyURI">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Machine-readable identification string for the entity being
+        described.  The identifier must appear as a URI (relative or
+        absolute).
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
+  <xsd:complexType name="textType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Base type for an element that may contain human-readable text.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute ref="xml:lang" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              ISO 639 code for the natural (human) language of the
+              text content.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="refType">
+    <xsd:simpleContent>
+      <xsd:extension base="textType">
+        <xsd:attribute ref="ref" use="optional"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="orgType">
+    <xsd:simpleContent>
+      <xsd:extension base="refType">
+        <xsd:attribute name="acronym" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Commonly-accepted acronym or abbreviation for the
+              organization (e.g. DFID, UNICEF, MSF).
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="role" type="xsd:anyURI" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A code describing the organization's role in the project
+              (donor, agency, etc.).
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="currencyType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <xsd:attribute name="currency" type="xsd:string" use="required">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              An ISO 639 code for the original currency of the amount.
+              This is required for all currency amounts.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="usd-equivalent" type="xsd:decimal" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The US dollar equivalent of the amount (if not already
+              in USD).  If this is included, usd-conversion-date
+              should also be included.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="usd-conversion-date" type="xsd:date" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The date of conversion to US dollars for usd-equivalent,
+              in ISO 8601 format (e.g. "2010-03-01").
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="usd-exchange-rate" type="xsd:decimal" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The exchange rate used to convert the original currency
+              to US dollars, where a US dollar is 1.0.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+</xsd:schema>
