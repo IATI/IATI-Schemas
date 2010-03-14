@@ -4,29 +4,32 @@
                xmlns:ocha="http://ocha.unog.org/iati-ns/">
   
   <project last-updated-datetime="2010-03-14T09:00:00+01:00">
-    <primary-id></primary-id>
-    <title></title>
-    <sector></sector>
-    <description type="summary"></description>
+    <primary-id>[[project id]]</primary-id>
+    <title>[[title]]</title>
+    <sector type="DAC" ref="1">[[sector]]</sector>
+    <description type="summary">[[summary]]</description>
     <description type="activities"></description>
     <description type="outputs"></description>
-    <description type="objectives"></description>
+    <description type="objectives">[[objectives]]</description>
     <start-date-planned>2010-07-01</start-date-planned>
     <completion-date-planned>2010-12-31</completion-date-planned>
-    <related-initiative type="appeal"></related-initiative>
+    <related-initiative type="appeal" code="[[appeal code]]"></related-initiative>
     <participating-org role="implementing-partner"></participating-org>
-    <recipient-country ref="HT">Haiti</recipient-country>
+    <recipient-country ref="HTI">Haiti</recipient-country>
     <aid-type>pooled</aid-type>
-    <target-location ref="HT">Haiti</target-location>
-    <sector><!-- cluster --></sector>
+    <target-location type="province" ref="123">[[OCHA province]]</target-location>
+    <sector type="cluster" code="[cluster code]"><!-- cluster --></sector>
     <other-id></other-id>
-    <reporting-org></reporting-org>
+    <reporting-org ref="http://ocha.unog.org/orgs/unaids" acronym="UNAIDS">United Nations Joint Programme on HIV/AIDS</reporting-org>
     <total-cost currency="CHF">750000</total-cost>
-    <incoming-contribution ref="">
-      <value currency="CHF">100000</value>
-      <status></status>
-      <donor></donor>
-      <description></description>
+    <incoming-contribution ref="[contribution-id]">
+      <value currency="CHF" usd-conversion-date="2010-03-12">100000</value>
+      <status>disbursed</status>
+      <contribution-type>in-kind</contribution-type>
+      <donor ref="[donor code]">[donor]</donor>
+      <description>[contribution description]</description>
+      <milestone-date type="commitment">2010-01-01</milestone-date>
+      <milestone-date type="disbursement">2010-03-01</milestone-date>
     </incoming-contribution>
   </project>
 

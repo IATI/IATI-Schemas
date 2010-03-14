@@ -175,7 +175,7 @@
 
   <!-- 3.08 Finance Type -->
 
-  <xsd:element name="primary-id" type="xsd:anyURI">
+  <xsd:element name="primary-id" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.09 Aid Activity ID
@@ -196,7 +196,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:attribute name="owner-ref" type="xsd:anyURI" use="optional">
+      <xsd:attribute name="owner-ref" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An identifier for the owner of this identifier, in URI
@@ -204,7 +204,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="owner-name" type="xsd:anyURI" use="optional">
+      <xsd:attribute name="owner-name" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Free text providing a human-readable name for the owner
@@ -356,7 +356,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-	<xsd:sequence>
+	<xsd:choice maxOccurs="unbounded">
           <xsd:element name="value" type="currencyType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
@@ -365,7 +365,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="status" type="refType" minOccurs="0">
+          <xsd:element name="status" type="refType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The status of the contribution (e.g. committed, paid).
@@ -375,7 +375,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="contribution-type" type="refType" minOccurs="0">
+          <xsd:element name="contribution-type" type="refType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The type of contribution (e.g. paid, in-kind).  The
@@ -384,7 +384,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="donor" minOccurs="0">
+          <xsd:element name="donor">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The type of contribution (e.g. paid, in-kind).  The
@@ -404,7 +404,7 @@
               </xsd:attribute>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="source-project" type="refType" minOccurs="0">
+          <xsd:element name="source-project" type="refType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The source project for this contribution, if any.
@@ -420,7 +420,29 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-        </xsd:sequence>
+          <xsd:element name="milestone-date">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                A milestone date for this contribution (such as the
+                decision date, disbursement date, etc.).
+              </xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType>
+              <xsd:simpleContent>
+                <xsd:extension base="xsd:date">
+                  <xsd:attribute name="type" type="xsd:string" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        The type of milestone (e.g. "commitment",
+                        "disbursement").
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                </xsd:extension>
+              </xsd:simpleContent>
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
         <xsd:attributeGroup ref="refAtts"/>
     </xsd:complexType>
   </xsd:element>
@@ -440,13 +462,6 @@
     <xsd:complexType mixed="true">
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
-      <xsd:attribute name="type" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Free text describing the type of related initiative.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
 
@@ -460,12 +475,19 @@
         Attribute group for things that can have identifiers or codes.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="ref" type="xsd:anyURI" use="optional">
+    <xsd:attribute name="ref" type="xsd:string" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           Machine-readable identification string for the entity being
           described.  The identifier must appear as a URI (relative or
           absolute).
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="type" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Free text describing the type of thing being referenced.
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
@@ -525,7 +547,7 @@
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
-    <xsd:attribute name="role" type="xsd:anyURI" use="optional">
+    <xsd:attribute name="role" type="xsd:string" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           A code describing the organization's role in the project
