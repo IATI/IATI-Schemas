@@ -238,7 +238,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:attributeGroup ref="langAtts"/>
+      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="type" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -308,7 +308,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:attributeGroup ref="langAtts"/>
+      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="latitude-deg" type="xsd:decimal" use="optional">
         <xsd:annotation>
@@ -393,7 +393,7 @@
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
-              <xsd:attributeGroup ref="langAtts"/>
+              <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
               <xsd:attribute name="donor-project-id" type="xsd:string" use="optional">
                 <xsd:annotation>
@@ -438,7 +438,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:attributeGroup ref="langAtts"/>
+      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="type" type="xsd:string" use="optional">
         <xsd:annotation>
@@ -451,22 +451,32 @@
   </xsd:element>
 
   <!--
-      Common attributes and data types.
+      Common attribute groups and data types used by the elements above.
   -->
 
   <xsd:attributeGroup name="refAtts">
-  <xsd:attribute name="ref" type="xsd:anyURI" use="optional">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Machine-readable identification string for the entity being
-        described.  The identifier must appear as a URI (relative or
-        absolute).
+        Attribute group for things that can have identifiers or codes.
       </xsd:documentation>
     </xsd:annotation>
-  </xsd:attribute>
+    <xsd:attribute name="ref" type="xsd:anyURI" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Machine-readable identification string for the entity being
+          described.  The identifier must appear as a URI (relative or
+          absolute).
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
   </xsd:attributeGroup>
 
-  <xsd:attributeGroup name="langAtts">
+  <xsd:attributeGroup name="textAtts">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Attribute group for elements containing free text content.
+      </xsd:documentation>
+    </xsd:annotation>
     <xsd:attribute ref="xml:lang" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
@@ -484,7 +494,7 @@
         in different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attributeGroup ref="langAtts"/>
+    <xsd:attributeGroup ref="textAtts"/>
   </xsd:complexType>
 
   <xsd:complexType name="refType" mixed="true">
@@ -495,7 +505,7 @@
         text in different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attributeGroup ref="langAtts"/>
+    <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="refAtts"/>
   </xsd:complexType>
 
@@ -505,7 +515,7 @@
         Data type for an element describing an organization.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attributeGroup ref="langAtts"/>
+    <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="refAtts"/>
     <xsd:attribute name="acronym" type="xsd:string" use="optional">
       <xsd:annotation>
