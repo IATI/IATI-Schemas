@@ -9,6 +9,9 @@
 
       Unofficial draft 2010-03-13, by David Megginson
 
+      NOTE: the xml.xsd schema must be in the same directory as this
+      one.
+
       This W3C XML Schema defines a preliminary XML document type for
       information about one or more aid-related projects.  For more
       information about the International Aid Transparency Initiative
