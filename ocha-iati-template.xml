@@ -3,10 +3,10 @@
 <!--
   UN-OCHA to Haiti AMP reporting template.
 
-  David Megginson, 2010-03-14
+  David Megginson, 2010-03-16
 
   This is a template for an XML document based on an early draft
-  schema (2010-03-14) from the International Aid Transparency
+  schema (2010-03-16) from the International Aid Transparency
   Initiative (IATI).
 
   All text surrounded by braces ({}) must be filled in.  Most of the
@@ -106,8 +106,15 @@
 
       <contribution-type ref="{FTS.Contribution_Type_ID}">{"money" or "in-kind" per ID}</contribution-type>
 
-      <donor 
-          ref="{FTS.Donor_ID}">{optional: donor name, if available}</donor>
+      <donor-org 
+          ref="{FTS.Donor_ID}"
+          donor-project-id="{FTS.Donor_project_code}">{optional: donor name, if available}</donor-org>
+
+      <!-- leave this out if the reporting-org is the recipient -->
+      <!-- OCHA can probably always leave this out -->
+      <recipient-org
+          ref="{OCHA identifier for the recipient org}"
+          recipient-project-id="{recipient org's id for the project}">{optional: recipient name, if available}</recipient-org>
 
       <description>{FTS.Contribution_Description}</description>
 

@@ -3,10 +3,10 @@
 <!--
   IATI-to-IDML conversion script for UN-OCHA to Haiti AMP reporting.
 
-  David Megginson, 2010-03-14
+  David Megginson, 2010-03-16
 
-  This is the first draft of a conversion script based on an early
-  draft schema (2010-03-14) from the International Aid Transparency
+  This is the second draft of a conversion script based on an early
+  draft schema (2010-03-16) from the International Aid Transparency
   Initiative (IATI).
 
   This script will convert an XML document in IATI's draft format to
@@ -63,7 +63,7 @@
 
 <xsl:template match="incoming-contribution">
     <funding><xsl:attribute name="code"><xsl:value-of select="@ref"/></xsl:attribute>
-      <fundingOrg><xsl:attribute name="code"><xsl:value-of select="donor/@ref"/></xsl:attribute><xsl:value-of select="donor"/></fundingOrg>
+      <fundingOrg><xsl:attribute name="code"><xsl:value-of select="donor-org/@ref"/></xsl:attribute><xsl:value-of select="donor-org"/></fundingOrg>
       <assistanceType><xsl:value-of select="contribution-type"/></assistanceType>
       <financingInstrument>donation</financingInstrument>
 <xsl:choose><xsl:when test="status='disbursed'">

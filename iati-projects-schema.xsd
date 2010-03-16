@@ -7,7 +7,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Project-Information Schema
 
-      Unofficial draft 2010-03-13, by David Megginson
+      Unofficial draft 2010-03-16, by David Megginson
 
       NOTE: the xml.xsd schema must be in the same directory as this
       one.
@@ -387,12 +387,10 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="donor">
+          <xsd:element name="donor-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The type of contribution (e.g. paid, in-kind).  The
-                content is free text, and the code goes in the
-                optional @ref attribute.
+                The organization that made the contribution.
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
@@ -402,6 +400,26 @@
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The identifier used by the donor for this project.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="recipient-org">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The organization that received the contribution (if
+                omitted, then the recipient organization is the
+                reporting organization).
+              </xsd:documentation>
+            </xsd:annotation>
+            <xsd:complexType mixed="true">
+              <xsd:attributeGroup ref="textAtts"/>
+              <xsd:attributeGroup ref="refAtts"/>
+              <xsd:attribute name="recipient-project-id" type="xsd:string" use="optional">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The identifier used by the recipient for this project.
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>

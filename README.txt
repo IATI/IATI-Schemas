@@ -1,7 +1,8 @@
 IATI schema and support for UN-OCHA to Haiti AMP
 
 David Megginson <david.megginson@megginson.com>
-2010-03-14
+2010-03-16
+
 
 This archive contains files to support exporting aid data from the
 UN-OCHA OPS and FITS databases and transmitting it to the Development
@@ -27,5 +28,24 @@ iati2idml.xslt			An XSLT script for converting this
 				early draft version of IATI to the
 				IDML 2.0 used by the Development
 				Gateway Haiti AMP.
+
+
+
+CHANGES
+
+2010-03-16:
+
+- renamed incoming-contribution/donor to
+  incoming-contribution/donor-org
+
+- added incoming-contribution/recipient-org to cover case where the
+  organization receiving a contribution isn't the reporting-org (I
+  don't think that happens with OCHA's FTS data, but it could happen
+  with other projects)
+
+
+2010-03-14:
+
+- initial version
 
 __end__

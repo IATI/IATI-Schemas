@@ -26,7 +26,7 @@
       <value currency="CHF" usd-conversion-date="2010-03-12">100000</value>
       <status>disbursed</status>
       <contribution-type>in-kind</contribution-type>
-      <donor ref="[donor code]">[donor]</donor>
+      <donor-org ref="[donor code]">[donor]</donor-org>
       <description>[contribution description]</description>
       <milestone-date type="commitment">2010-01-01</milestone-date>
       <milestone-date type="disbursement">2010-03-01</milestone-date>
