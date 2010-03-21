@@ -1,5 +1,13 @@
 <?xml version="1.0"?>
 
+<!-- 
+   TODO
+
+   - support reporting-org
+
+   - support country
+-->
+
 <!--
   IATI-to-IDML conversion script for UN-OCHA to Haiti AMP reporting.
 
