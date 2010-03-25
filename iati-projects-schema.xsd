@@ -268,7 +268,7 @@
   <xsd:element name="start-date-planned" type="xsd:date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.13 Project Dates (planned starting date)
+        03.13 Project Dates (planned starting date)
 
         Planned starting date for the project in ISO 8601 date format,
         e.g. "2010-10-01".
@@ -352,6 +352,8 @@
   <xsd:element name="incoming-contribution">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
+        XX.XX Incoming Contribution
+
         A committed or paid contribution to the project.  The value of
         the element is the amount of the contribution in the original
         currency.  The contribution may have its own identifier to
@@ -472,18 +474,16 @@
   <!-- 4.07 Loan repayments -->
   <!-- 4.08 Interest repayments -->
 
-  <xsd:element name="related-initiative">
+  <xsd:element name="related-initiative" type="refType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
+        XX.XX Related Initiative
+
         An initiative related to this project.  The initiative will
         not be a project per-se, but an appeal or similar aid-related
         initiative.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="refAtts"/>
-    </xsd:complexType>
   </xsd:element>
 
   <!--
