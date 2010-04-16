@@ -5,7 +5,7 @@
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
-      International Aid Transparency Initiative: Project-Information Schema
+      International Aid Transparency Initiative: Activity-Information Schema
 
       Unofficial draft 2010-03-16, by David Megginson
 
@@ -13,7 +13,7 @@
       one.
 
       This W3C XML Schema defines a preliminary XML document type for
-      information about one or more aid-related projects.  For more
+      information about one or more aid-related activities.  For more
       information about the International Aid Transparency Initiative
       (IATI), please visit http://www.aidtransparency.net/
 
@@ -29,15 +29,15 @@
   <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
               schemaLocation="xml.xsd"/>
 
-  <xsd:element name="iati-projects">
+  <xsd:element name="iati-activities">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Top-level list of one or more IATI project records.
+        Top-level list of one or more IATI activity records.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="project" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="iati-activity" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="version" type="xsd:decimal" use="optional">
         <xsd:annotation>
@@ -55,7 +55,7 @@
           <xsd:documentation xml:lang="en">
             A date/time stamp for when this file was generated.  This
             is not necessarily the last-updated date for the
-            individual project records in it.  Uses ISO 8601 date
+            individual activity records in it.  Uses ISO 8601 date
             format, e.g. "2010-03-12T18:45:00+01:00".  Use of this
             attribute is highly recommended, to allow recipients to
             know when a file has been updated.
@@ -65,14 +65,15 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="project">
+  <xsd:element name="iati-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Top-level element for a single IATI project report.
+        Top-level element for a single IATI activity report.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <!-- 2.12 Activity Website -->
         <xsd:element ref="reporting-org"/>
         <xsd:element ref="participating-org"/>
         <xsd:element ref="recipient-country"/>
@@ -90,7 +91,7 @@
         <!-- start-date-actual 3.13 -->
         <xsd:element ref="completion-date-planned"/>
         <!-- completion-date-actual 3.13 -->
-        <!-- project-stage 3.14 -->
+        <!-- activity-stage 3.14 -->
         <!-- contact-person 3.15 -->
         <xsd:element ref="target-location"/>
         <!-- tied-aid-status 3.17 -->
@@ -107,7 +108,7 @@
           <xsd:documentation xml:lang="en">
             6.03 Last Update Date
 
-            The last date/time that the data for this specific project
+            The last date/time that the data for this specific activity
             was updated.  This date must change whenever the value of
             any field changes.
           </xsd:documentation>
@@ -116,6 +117,8 @@
     </xsd:complexType>
   </xsd:element>
 
+  <!-- 2.12 Activity Website -->
+
   <xsd:element name="reporting-org" type="orgType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -123,8 +126,8 @@
 
         (formerly 03.01 Funding Country/Institution)
 
-        The organization issuing the project report (typically the
-        project owner).  May be a donor, fund, agency, etc.
+        The organization issuing the activity report (typically the
+        activity lead).  May be a donor, fund, agency, etc.
         Specifying the @identifier and @role attributes is strongly
         recommended.  May contain the organization name as content.
       </xsd:documentation>
@@ -141,7 +144,7 @@
         Agency/Organization)
 
         An organization other than the reporting organization involved
-        with the project.  May be a donor, fund, agency, etc.
+        with the activity.  May be a donor, fund, agency, etc.
         Specifying the @identifier and @role attributes is strongly
         recommended.  May contain the organization name as content.
       </xsd:documentation>
@@ -153,10 +156,10 @@
       <xsd:documentation xml:lang="en">
         03.05 Recipient Country
 
-        A partner country that will benefit from this project.  This
+        A partner country that will benefit from this activity.  This
         element is primarily for administrative and political
         purposes.  The target-location element can specify the
-        project's physical location in more detail.
+        activity's physical location in more detail.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -183,7 +186,7 @@
       <xsd:documentation xml:lang="en">
         03.09 Aid Activity ID
 
-        The canonical identifier for this project.  Must be a relative
+        The canonical identifier for this activity.  Must be a relative
         or absolute URI.  This element should be an official IATI
         identifier for portability.
       </xsd:documentation>
@@ -193,7 +196,7 @@
   <xsd:element name="other-id">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An alternative identifier for the project.  The identifier is
+        An alternative identifier for the activity.  The identifier is
         not required to be in URI format.  The @owner-ref and
         @owner-name attributes should be included if available.
       </xsd:documentation>
@@ -221,9 +224,9 @@
   <xsd:element name="title" type="textType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.10 Project Title &amp; Purpose/Description
+        3.10 Activity Title &amp; Purpose/Description
 
-        Human-readable title for the project.  May be repeated in
+        Human-readable title for the activity.  May be repeated in
         different languages, using the xml:lang attribute to
         distinguish.
       </xsd:documentation>
@@ -233,9 +236,9 @@
   <xsd:element name="description">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.10 Project Title &amp; Purpose/Description
+        3.10 Activity Title &amp; Purpose/Description
 
-        Human-readable title for the project.  May be repeated in
+        Human-readable title for the activity.  May be repeated in
         different languages, using the xml:lang attribute to
         distinguish.
       </xsd:documentation>
@@ -268,9 +271,9 @@
   <xsd:element name="start-date-planned" type="xsd:date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.13 Project Dates (planned starting date)
+        03.13 Activity Dates (planned starting date)
 
-        Planned starting date for the project in ISO 8601 date format,
+        Planned starting date for the activity in ISO 8601 date format,
         e.g. "2010-10-01".
       </xsd:documentation>
     </xsd:annotation>
@@ -281,9 +284,9 @@
   <xsd:element name="completion-date-planned" type="xsd:date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.13 Project Dates (planned completion date)
+        3.13 Activity Dates (planned completion date)
 
-        Planned completion date for the project in ISO 8601 date format,
+        Planned completion date for the activity in ISO 8601 date format,
         e.g. "2010-12-01".
       </xsd:documentation>
     </xsd:annotation>
@@ -291,7 +294,7 @@
 
   <!-- completion-date-actual 3.13 -->
 
-  <!-- project-stage 3.14 -->
+  <!-- activity-stage 3.14 -->
 
   <!-- contact-person 3.15 -->
 
@@ -301,7 +304,7 @@
         3.16 Detailed geographic info
 
         This element allows the reporting organization to specify the
-        project's target location in more detail than simply the
+        activity's target location in more detail than simply the
         recipient country.  Repeat this element for each separate
         location description.  The content is a human-readable
         description of the location (e.g. "Villages in Darfur"), while
@@ -316,7 +319,7 @@
       <xsd:attribute name="latitude-deg" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The latitude of a specific location served by the project,
+            The latitude of a specific location served by the activity,
             in decimal degrees (where negative is south), if known.
             For example, 45 degrees 15 minutes 10 seconds south would
             be represented as "-45.419444".
@@ -327,7 +330,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The longitude of a specific location served by the
-            project, in decimal degrees (where negative is west), if
+            activity, in decimal degrees (where negative is west), if
             known.  For example, 120 degrees 15 minutes 10 seconds
             west would be represented as "-120.419444".
           </xsd:documentation>
@@ -340,21 +343,23 @@
   <xsd:element name="total-cost" type="currencyType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        04.01 Total Project Cost
+        04.01 Total Activity Cost
 
-        The total budgeted cost of the project.  Note that this may be
+        The total budgeted cost of the activity.  Note that this may be
         greater than the total of the commitments, especially if the
-        project is part of an ongoing fundraising appeal.
+        activity is part of an ongoing fundraising appeal.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
 
+  <!-- 4.02 Annual activity budgets -->
+
   <xsd:element name="incoming-contribution">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        XX.XX Incoming Contribution
+        04.03 Total amount committed by individual donor
 
-        A committed or paid contribution to the project.  The value of
+        A committed or paid contribution to the activity.  The value of
         the element is the amount of the contribution in the original
         currency.  The contribution may have its own identifier to
         assist with tracking.
@@ -398,10 +403,10 @@
             <xsd:complexType mixed="true">
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
-              <xsd:attribute name="donor-project-id" type="xsd:string" use="optional">
+              <xsd:attribute name="donor-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The identifier used by the donor for this project.
+                    The identifier used by the donor for this activity.
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
@@ -418,21 +423,21 @@
             <xsd:complexType mixed="true">
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
-              <xsd:attribute name="recipient-project-id" type="xsd:string" use="optional">
+              <xsd:attribute name="recipient-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The identifier used by the recipient for this project.
+                    The identifier used by the recipient for this activity.
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="source-project" type="refType">
+          <xsd:element name="source-activity" type="refType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The source project for this contribution, if any.
+                The source activity for this contribution, if any.
                 This element is present to allow aid funds to be
-                traced from project to project.
+                traced from activity to activity.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
@@ -471,6 +476,7 @@
   </xsd:element>
 
   <!-- 4.03 Total Amount(s) committed by individual donor -->
+  <!-- 4.06 Actual disbursements or payments -->
   <!-- 4.07 Loan repayments -->
   <!-- 4.08 Interest repayments -->
 
@@ -479,9 +485,9 @@
       <xsd:documentation xml:lang="en">
         XX.XX Related Initiative
 
-        An initiative related to this project.  The initiative will
-        not be a project per-se, but an appeal or similar aid-related
-        initiative.
+        An initiative related to this activity.  The initiative will
+        not necessarily be an activity per-se, but could be an appeal
+        or similar aid-related initiative as well.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -571,7 +577,7 @@
     <xsd:attribute name="role" type="xsd:string" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
-          A code describing the organization's role in the project
+          A code describing the organization's role in the activity
           (donor, agency, etc.).
         </xsd:documentation>
       </xsd:annotation>
