@@ -20,10 +20,6 @@ iati-projects-schema.xsd 	An early draft IATI XML schema for
 xml.xsd				A supplementary schema that must be in
 				the same directory as the above.
 
-ocha-iati-template.xml		A template XML file showing where to
-				place UN-OCHA OPS and FTS database
-				fields.
-
 iati2idml.xslt			An XSLT script for converting this
 				early draft version of IATI to the
 				IDML 2.0 used by the Development
