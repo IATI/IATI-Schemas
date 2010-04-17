@@ -14,6 +14,8 @@ The archive contains the following files:
 
 README.txt			This file.
 
+CHANGES.txt                     Change log.
+
 iati-projects-schema.xsd 	An early draft IATI XML schema for
 				exporting UN-OCHA data.
 
@@ -24,8 +26,3 @@ iati2idml.xslt			An XSLT script for converting this
 				early draft version of IATI to the
 				IDML 2.0 used by the Development
 				Gateway Haiti AMP.
-
-
-
-CHANGES
-
