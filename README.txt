@@ -33,19 +33,3 @@ iati2idml.xslt			An XSLT script for converting this
 
 CHANGES
 
-2010-03-16:
-
-- renamed incoming-contribution/donor to
-  incoming-contribution/donor-org
-
-- added incoming-contribution/recipient-org to cover case where the
-  organization receiving a contribution isn't the reporting-org (I
-  don't think that happens with OCHA's FTS data, but it could happen
-  with other projects)
-
-
-2010-03-14:
-
-- initial version
-
-__end__
