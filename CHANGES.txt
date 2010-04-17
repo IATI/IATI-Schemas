@@ -1,5 +1,9 @@
 IATI Schema Changes -*-Outline-*-
 
+* 2010-04-17 Changes
+
+** updated iati2idml.xsl
+
 * 2010-04-16 Changes based on 2010-04-15 teleconference
 
 ** add 2.12 Project Website
