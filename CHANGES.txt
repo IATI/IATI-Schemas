@@ -1,0 +1,129 @@
+IATI Schema Changes -*-Outline-*-
+
+* 2010-04-16 Changes based on 2010-04-15 teleconference
+
+** add 2.12 Project Website
+
+- add element activity-website
+
+** simplify 3.01 Reporting Organization and 3.02 Participating Organization
+
+- remove attribute reporting-org/@role - must now also list the
+  organization under participating-org if it's actually involved in
+  the project
+
+- remove attribute reporting-org/@acronym and
+  participating-org/@acronym - just include it in the text if desired
+
+- update documentation
+
+** update 3.05 Recipient Country
+
+- add recipient-country/@percentage to show what percentage of the
+  project is allocated to each country (if known)
+
+** support 3.06 Collaboration Type for phase 1
+
+- add optional element collaboration-type
+
+** support 3.07 Flow Type for phase 1
+
+- add optional element flow-type
+
+** support 3.08 Finance Type for phase 1
+
+- add optional element finance-type
+
+** for 3.9 Aid Activity ID, use a single element
+
+- delete element primary-id
+
+- rename element other-id to identifier, and use for both primary
+  and alternative identifiers
+
+- update documentation
+
+** Update 3.12 General/Detailed Sector with additional facets
+
+- add optional attribute sector/@vocabulary to specify when a non-DAC
+  sector scheme/vocabulary/taxonomy/code list is in use
+
+- add optional attribute sector/@percentage to specify the percentage
+  of the project targetted at a specific sector within each vocabulary
+
+** Use one generic element for 3.13 Project Dates
+
+- remove elements start-date-planned and end-date-planned
+
+- add element activity-date
+
+- add @type attribute for segmentation
+
+- add @iso-date attribute for the ISO date (allowing free-form text
+  date descriptions in the content)
+
+- add optional @xml:lang attribute to describe language of freeform
+  text
+
+** Support 3.14 Activity Status / Stage
+
+- add optional element activity-status
+
+** Support 3.15 Activity Contacts
+
+- add optional element contact-info
+
+** Updated 3.16 Detailed geographic info
+
+- add optional attribute target-location/@vocabulary
+
+- merge optional attributes target-location/@latitude-deg and
+  target-location/@longitude-deg into @gis
+
+** Support 3.17 Tied Aid Status
+
+- add optional element tied-status
+
+** remove USD-specific information from all currency amounts, and add a general value date instead
+
+- remove total-cost/@usd-equivalent and
+  total-cost/@usd-conversion-date
+
+- add total-cost/@value-date
+
+** replace "project" with "activity" throughout
+
+- change documentation throughout
+
+- rename schema file from "iati-projects-schema.xsd" to
+  "iati-activities-schema.xsd"
+
+- rename element iati-projects to iati-activities
+
+- rename element project to iati-activity
+
+- rename attribute incoming-contribution/@donor-project-id to
+  @donor-activity-id
+
+- rename attribute incoming-contribution/@recipient-project-id to
+  @recipient-activity-id
+
+- rename element incoming-contribution/source-project to
+  source-activity
+
+** support a default language for an activity (3.XX Default Language)
+
+- add optional attribute iati-activity/@xml:lang
+
+** support a default currency for an activity (4.XX Default Currency)
+
+- add optional attribute iati-activity/@default-currency
+
+** generalize Related Initiative
+
+- change documentation to specify that element related-initiative can
+  refer to another activity as well as an appeal, etc.
+
+
+* 2010-03-16
+- initial release
