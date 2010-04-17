@@ -31,21 +31,21 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <!-- iterate through the IATI projects, ignoring anything else -->
-  <xsl:template match="iati-projects">
+  <xsl:template match="iati-activities">
     <activities>
-      <xsl:apply-templates select="project"/>
+      <xsl:apply-templates select="iati-activity"/>
     </activities>
   </xsl:template>
 
   <!-- transform IATI project IDML activity -->
-  <xsl:template match="project">
+  <xsl:template match="iati-activity">
     <activity>
       <xsl:attribute name="dbKey">
-        <xsl:value-of select="primary-id"/>
+        <xsl:value-of select="identifier"/>
       </xsl:attribute>
       <id>
         <xsl:attribute name="uniqID">
-          <xsl:value-of select="primary-id"/>
+          <xsl:value-of select="identifier"/>
         </xsl:attribute>
         <assigningOrg>UN-OCHA</assigningOrg>
       </id>
@@ -85,12 +85,12 @@
       </location>
       <proposedStartDate>
         <xsl:attribute name="date">
-          <xsl:value-of select="start-date-planned"/>
+          <xsl:value-of select="activity-date[@type='start']/@iso-date"/>
         </xsl:attribute>
       </proposedStartDate>
       <closingDate>
         <xsl:attribute name="date">
-          <xsl:value-of select="completion-date-planned"/>
+          <xsl:value-of select="activity-date[@type='completion']/@iso-date"/>
         </xsl:attribute>
       </closingDate>
       <status code="proposed"/>
@@ -151,11 +151,9 @@
         </xsl:attribute>
         <xsl:value-of select="donor-org"/>
       </fundingOrg>
-      <xsl:if test="contribution-type">
-        <assistanceType>
-          <xsl:value-of select="contribution-type"/>
-        </assistanceType>
-      </xsl:if>
+      <assistanceType>
+        <xsl:value-of select="../aid-type"/>
+      </assistanceType>
       <financingInstrument>donation</financingInstrument>
       <xsl:choose>
         <xsl:when test="status='Paid contribution'">
@@ -169,7 +167,7 @@
                   <xsl:value-of select="milestone-date"/>
                 </xsl:when>
                 <xsl:otherwise>
-                  <xsl:value-of select="value/@usd-conversion-date"/>
+                  <xsl:value-of select="value/@value-date"/>
                 </xsl:otherwise>
               </xsl:choose>
             </xsl:attribute>
@@ -192,7 +190,7 @@
                   <xsl:value-of select="milestone-date"/>
                 </xsl:when>
                 <xsl:otherwise>
-                  <xsl:value-of select="value/@usd-conversion-date"/>
+                  <xsl:value-of select="value/@value-date"/>
                 </xsl:otherwise>
               </xsl:choose>
             </xsl:attribute>
