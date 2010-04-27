@@ -225,7 +225,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="recipient-country">
+  <xsd:element name="recipient-region">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.05.1 Recipient Region
