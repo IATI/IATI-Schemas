@@ -657,6 +657,16 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
+          <xsd:element name="transaction-type" type="refType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The type of the transaction (e.g. commitment,
+                disbursement, expenditure, etc.).  The @ref attribute
+                contains a code defined by IATI, and the content is an
+                optional free-text description of the type.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
           <xsd:element name="status" type="refType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
@@ -667,57 +677,81 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="donor-org">
+          <xsd:element name="provider-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The organization that made the contribution.
+                The organization providing the money for the
+                transaction (if omitted, the provider organization is
+                the reporting organization).
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
-              <xsd:attribute name="donor-activity-id" type="xsd:string" use="optional">
+              <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The identifier used by the donor for this activity.
+                    The internal identifier used by the provider for
+                    its activity that provides the funds for this
+                    transaction (*not* the IATI activity identifier).
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="recipient-org">
+          <xsd:element name="reciever-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The organization that received the contribution (if
-                omitted, then the recipient organization is the
-                reporting organization).
+                The organization receiving the money from the
+                transaction (if omitted, then the receiver
+                organization is the reporting organization).
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
-              <xsd:attribute name="recipient-activity-id" type="xsd:string" use="optional">
+              <xsd:attribute name="reciever-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The identifier used by the recipient for this activity.
+                    The internal identifier used by the reciever
+                    organization for its activity that receives the
+                    funds from this transaction (not to be confused
+                    with the IATI identifier for the target activity).
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="source-activity" type="refType">
+          <xsd:element name="provider-activity" type="refType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The source activity for this contribution, if any.
-                This element is present to allow aid funds to be
-                traced from activity to activity.
+                The IATI activity providing funds for this
+                transaction.  The element may be specified only if the
+                @flow attribute for the parent transaction is
+                "incoming" (otherwise, use receiver-activity).  The
+                element allows aid funds to be traced from activity to
+                activity.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="receiver-activity" type="refType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The IATI activity receiving funds from this
+                transaction.  The element may be specified only if the
+                @flow attribute for the parent transaction is
+                "outgoing" (otherwise, use provider-activity).  The
+                element allows aid funds to be traced from activity to
+                activity.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
           <xsd:element name="description" type="textType" minOccurs="0">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                A free-text description of the contribution.
+                A free-text description of the transaction.  May be
+                repeated in multiple languages, with different values
+                for the @xml:lang attribute.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
@@ -742,6 +776,24 @@
                 </xsd:extension>
               </xsd:simpleContent>
             </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="aid-type" type="refType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Optional element to override the top-level
+                default-aid-type element (pooled, etc.) on a
+                transaction-by-transaction basis if needed.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="tied-status" type="refType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Optional element to override the top-level
+                default-tied-status element (pooled, etc.) on a
+                transaction-by-transaction basis if needed.
+              </xsd:documentation>
+            </xsd:annotation>
           </xsd:element>
         </xsd:choice>
         <xsd:attributeGroup ref="refAtts"/>
