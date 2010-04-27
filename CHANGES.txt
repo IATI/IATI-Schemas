@@ -1,5 +1,99 @@
 IATI Schema Changes -*-Outline-*-
 
+* 2010-04-27 Changes
+
+** Update iati-activity
+
+- rename optional attribute 'default-current' to 'default-currency'
+
+** Update 03.05 Recipient Country
+
+- remove attributes ref and type
+
+- add required attribute 'code', holding the ISO 3166-1-alpha-2 code
+  for the country
+
+** Add 03.05.1 Recipient Region
+
+- add optional and repeatable element 'recipient-region', with same
+  model as recipient-country
+
+** Rename 03.07.1 Type of Aid
+
+- rename element activity/aid-type to activity/default-aid-type
+
+** Rename 03.09 Identifier
+
+- rename element identifier to other-identifier
+
+** Add 03.09.1 IATI Identifier
+
+- add (required, non-repeatable) element iati-identifier
+
+** Update 03.10 Title
+
+- documentation updates only -- title should be a single line
+
+** Update 03.16 Detailed Geographic Info
+
+- documentation updates only -- make it clear that this element is for
+  only subnational geographical info, and distinguish from
+  geopolitical info
+
+** Add 03.17 Tied aid status
+
+- add optional element default-tied-status (was in 2010-04-17 release, but not
+  enabled in activity element)
+
+** Add 03.18 Other Policy Markers
+
+- add optional and repeatable element 'policy-marker'
+
+** Add 04.02 Annual activity budgets
+
+- add optional and repeatable element budget-planned
+
+** Rename and extend 04.03 Total amount committed by individual donor
+
+- rename optional and repeatable element incoming-contribution to
+  transaction
+
+- change documentation to specify that this element also now covers
+  04.05, 04.06, 04.07, and 04.08
+
+- remove transaction/contribution-type and make into an optional @type
+  attribute for transaction/value (e.g. "funds", "in-kind")
+
+- add transaction/transaction-type (commitment, disbursement, etc.)
+
+- rename element transaction/donor-org to transaction/provider-org
+
+- rename attribute transaction/donor-org/donor-activity-id to
+  transaction/provider-org/provider-activity-id and clarify purpose in
+  documentation
+
+- rename optional element transaction/recipient-org to
+  transaction/receiver-org
+
+- rename optional attribute
+  transaction/recipient-org/recipient-activity-id to
+  transaction/receiver-org/receiver-activity-id and clarify purpose in
+  documentation
+
+- rename optional element source-activity to provider-activity, and
+  specify in docs that it should be present only when
+  transaction/@flow is "incoming"
+
+- add optional element receiver-activity, and specify in docs that it
+  should be present only when transaction/@flow is "outgoing"
+
+- add optional element aid-type, to override top-level element
+  iati-activity/default-aid-type
+
+- add optional element tied-status, to override top-level element
+  iati-activity/default-tied-status
+
+
 * 2010-04-17 Changes
 
 ** updated iati2idml.xsl

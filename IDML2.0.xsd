@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by kalo (EMBRACE) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="activities">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="activity" type="activityType" maxOccurs="unbounded"/>
+				<xs:element name="spider" minOccurs="0">
+					<xs:complexType>
+						<xs:attribute name="next_block" type="xs:anyURI" use="optional"/>
+						<xs:attribute name="maxBlockSize" type="xs:positiveInteger" use="optional"/>
+						<xs:attribute name="startWith" type="xs:string" use="optional"/>
+						<xs:attribute name="startAfter" type="xs:string" use="optional"/>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="activityType">
+		<xs:sequence>
+			<xs:element name="id" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="assigningOrg" type="codeValueType"/>
+					</xs:sequence>
+					<xs:attribute name="uniqID" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="title" type="freeTextType" maxOccurs="unbounded"/>
+			<xs:element name="objective" type="freeTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="description" type="freeTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="implementationLevels" type="codeValueType" minOccurs="0"/>
+			<xs:element name="location" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="locationName" type="codeValueType"/>
+						<xs:element name="locationFunding" type="locationFundingType" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="lang" type="xs:language" use="optional"/>
+					<xs:attribute name="locationType" use="required">
+						<xs:simpleType>
+							<xs:restriction base="xs:string">
+								<xs:enumeration value="Country"/>
+								<xs:enumeration value="Region"/>
+								<xs:enumeration value="Zone"/>
+								<xs:enumeration value="District"/>
+								<xs:enumeration value="Woreda"/>
+								<xs:enumeration value="Department"/>
+							</xs:restriction>
+						</xs:simpleType>
+					</xs:attribute>
+					<xs:attribute name="gis" type="xs:string" use="optional"/>
+					<xs:attribute name="iso3" type="xs:string" use="required"/>
+					<xs:attribute name="countryName" type="xs:string" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="proposedApprovalDate" type="dateType" minOccurs="0"/>
+			<xs:element name="actualApprovalDate" type="dateType" minOccurs="0"/>
+			<xs:element name="proposedStartDate" type="dateType" minOccurs="0"/>
+			<xs:element name="actualStartDate" type="dateType" minOccurs="0"/>
+			<xs:element name="modifiedClosingDate" type="dateType" minOccurs="0"/>
+			<xs:element name="closingDate" type="dateType" minOccurs="0"/>
+			<xs:element name="status" type="codeValueType"/>
+			<xs:element name="statusReason" type="freeTextType" minOccurs="0"/>
+			<xs:element name="sectors" type="percentageCodeValueType" maxOccurs="unbounded"/>
+			<xs:element name="programs" type="percentageCodeValueType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="notes" type="freeTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="funding" type="fundingType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="keywords" type="freeTextType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="component" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="componentName" type="xs:string"/>
+						<xs:element name="componentType" type="codeValueType"/>
+						<xs:element name="componentFunding" type="componentFundingType" maxOccurs="unbounded"/>
+						<xs:element name="physicalProgress" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="title" type="freeTextType"/>
+									<xs:element name="description" type="freeTextType"/>
+									<xs:element name="reportingDate" type="dateType"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="issues" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="title" type="freeTextType" minOccurs="0"/>
+						<xs:element name="measure" minOccurs="0" maxOccurs="unbounded">
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="title" type="freeTextType" minOccurs="0"/>
+									<xs:element name="actor" type="freeTextType" minOccurs="0" maxOccurs="unbounded"/>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="documents" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="title" type="xs:string"/>
+						<xs:element name="description" type="xs:string" minOccurs="0"/>
+					</xs:sequence>
+					<xs:attribute name="code" type="xs:string" use="required"/>
+					<xs:attribute name="lang" type="xs:language" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="relatedLinks" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="label" type="xs:string"/>
+						<xs:element name="description" type="xs:string" minOccurs="0"/>
+						<xs:element name="url" type="xs:anyURI"/>
+					</xs:sequence>
+					<xs:attribute name="lang" type="xs:language" use="required"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="relatedOrgs" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="code" type="xs:string" use="required"/>
+							<xs:attribute name="lang" type="xs:language" use="optional"/>
+							<xs:attribute name="type" use="required">
+								<xs:simpleType>
+									<xs:restriction base="xs:string">
+										<xs:enumeration value="Reporting Agency"/>
+										<xs:enumeration value="Funding Agency"/>
+										<xs:enumeration value="Implementing Agency"/>
+										<xs:enumeration value="Beneficiary Agency"/>
+										<xs:enumeration value="Contracting Agency"/>
+										<xs:enumeration value="Regional Group"/>
+										<xs:enumeration value="Sector Group"/>
+										<xs:enumeration value="Executing Agency"/>
+										<xs:enumeration value="Responsible Organization"/>
+										<xs:enumeration value="Contractor"/>
+										<xs:enumeration value="Related Institutions"/>
+									</xs:restriction>
+								</xs:simpleType>
+							</xs:attribute>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="donorContacts" type="contactType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="govContacts" type="contactType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="additional" type="additionalFieldType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="dbKey" type="xs:string" use="required"/>
+		<xs:attribute name="rights" type="xs:int" use="optional"/>
+		<xs:attribute name="date" type="xs:date" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="freeTextType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="xs:language"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="codeValueType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>If code not present or is null, text value is required.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="percentageCodeValueType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="code" type="xs:string" use="optional">
+					<xs:annotation>
+						<xs:documentation>If code not present or is null, text value is required.</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="percentage" type="xs:float" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="dateType">
+		<xs:attribute name="date" type="xs:date" use="optional">
+			<xs:annotation>
+				<xs:documentation>If date not present or is null, text value is required.</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:complexType>
+	<xs:complexType name="fundingDetailType">
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="date" type="xs:date" use="required"/>
+		<xs:attribute name="amount" type="xs:decimal" use="required"/>
+		<xs:attribute name="currency" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="fundingType">
+		<xs:sequence>
+			<xs:element name="fundingOrg" type="codeValueType" minOccurs="0"/>
+			<xs:element name="assistanceType" type="codeValueType"/>
+			<xs:element name="financingInstrument" type="codeValueType"/>
+			<xs:element name="conditions" type="freeTextType" minOccurs="0"/>
+			<xs:element name="signatureDate" type="dateType" minOccurs="0"/>
+			<xs:element name="projections" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:attribute name="type" type="xs:string" use="required"/>
+					<xs:attribute name="amount" type="xs:decimal" use="required"/>
+					<xs:attribute name="currency" type="xs:string" use="required"/>
+					<xs:attribute name="startYear" type="xs:int" use="required"/>
+					<xs:attribute name="endYear" type="xs:int" use="optional"/>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="commitments" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="disbursements" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="expenditures" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="code" type="xs:string" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="locationFundingType">
+		<xs:sequence>
+			<xs:element name="commitments" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="disbursements" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="expenditures" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="componentFundingType">
+		<xs:sequence>
+			<xs:element name="commitments" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="disbursements" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="expenditures" type="fundingDetailType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="contactType">
+		<xs:sequence>
+			<xs:element name="firstName" type="xs:string"/>
+			<xs:element name="lastName" type="xs:string"/>
+			<xs:element name="email" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="additionalFieldType">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="lang" type="xs:language" use="optional"/>
+				<xs:attribute name="field" type="xs:string" use="required"/>
+				<xs:attribute name="type" use="required">
+					<xs:simpleType>
+						<xs:restriction base="xs:string">
+							<xs:enumeration value="String"/>
+							<xs:enumeration value="Number"/>
+							<xs:enumeration value="Date"/>
+							<xs:enumeration value="Boolean"/>
+						</xs:restriction>
+					</xs:simpleType>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>
