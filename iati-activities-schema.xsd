@@ -82,6 +82,7 @@
         <xsd:element ref="flow-type"/>
         <xsd:element ref="default-aid-type"/>
         <xsd:element ref="finance-type"/>
+        <xsd:element ref="iati-identifier"/>
         <xsd:element ref="other-identifier"/>
         <xsd:element ref="title"/>
         <xsd:element ref="description"/>
@@ -97,6 +98,7 @@
         <xsd:element ref="budget-planned"/>
         <xsd:element ref="transaction"/>
         <xsd:element ref="related-initiative"/>
+        <xsd:element ref="related-activity"/>
       </xsd:choice>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
@@ -110,7 +112,7 @@
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute ref="xml:lang"/>
-      <xsd:attribute name="default-currency" type="xsd:string">
+      <xsd:attribute name="default-currency" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Default ISO 4217 currency code for all financial values in
@@ -752,7 +754,7 @@
               </xsd:attribute>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="reciever-org">
+          <xsd:element name="receiver-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The organization receiving the money from the
@@ -763,10 +765,10 @@
             <xsd:complexType mixed="true">
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
-              <xsd:attribute name="reciever-activity-id" type="xsd:string" use="optional">
+              <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The internal identifier used by the reciever
+                    The internal identifier used by the receiver
                     organization for its activity that receives the
                     funds from this transaction (not to be confused
                     with the IATI identifier for the target activity).
@@ -881,6 +883,20 @@
     </xsd:annotation>
   </xsd:element>
 
+  <xsd:element name="related-activity" type="refType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        XX.XX Related Activity
+
+        Another IATI activity related to this one.  The 'type'
+        attribute describes the type of relationship (e.g. parent,
+        sibling).  This does not need to be used to express funding
+        relationships, since those are covered in individual
+        transactions.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
   <!--
       Common attribute groups and data types used by the elements above.
   -->
@@ -955,11 +971,12 @@
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="xsd:decimal">
-        <xsd:attribute name="currency" type="xsd:string" use="required">
+        <xsd:attribute name="currency" type="xsd:string" use="optional">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               An ISO 639 code for the original currency of the amount.
-              This is required for all currency amounts.
+              This is required for all currency amounts unless the
+              iati-activity/@default-currency attribute is specified.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>

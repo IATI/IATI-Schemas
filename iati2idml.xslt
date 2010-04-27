@@ -3,15 +3,12 @@
    TODO
 
    - support reporting-org
+   - support iati-identifier
 -->
 <!--
   IATI-to-IDML conversion script for UN-OCHA to Haiti AMP reporting.
 
-  David Megginson, 2010-03-24
-
-  This is the third draft of a conversion script based on an early
-  draft schema (2010-03-24) from the International Aid Transparency
-  Initiative (IATI).
+  David Megginson, 2010-04-27
 
   This script will convert an XML document in IATI's draft format to
   version 2.0 of the International Development Markup Language (IDML)
@@ -31,21 +28,27 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <!-- iterate through the IATI projects, ignoring anything else -->
-  <xsl:template match="iati-activities">
+  <xsl:template match="/iati-activities">
     <activities>
-      <xsl:apply-templates select="iati-activity"/>
+      <xsl:apply-templates select="iati-activity" mode="internal"/>
+    </activities>
+  </xsl:template>
+
+  <xsl:template match="/iati-activity">
+    <activities>
+      <xsl:apply-templates select="/iati-activity" mode="internal"/>
     </activities>
   </xsl:template>
 
   <!-- transform IATI project IDML activity -->
-  <xsl:template match="iati-activity">
+  <xsl:template match="iati-activity" mode="internal">
     <activity>
       <xsl:attribute name="dbKey">
-        <xsl:value-of select="identifier"/>
+        <xsl:value-of select="other-identifier"/>
       </xsl:attribute>
       <id>
         <xsl:attribute name="uniqID">
-          <xsl:value-of select="identifier"/>
+          <xsl:value-of select="other-identifier"/>
         </xsl:attribute>
         <assigningOrg>UN-OCHA</assigningOrg>
       </id>

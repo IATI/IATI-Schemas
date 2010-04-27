@@ -64,6 +64,9 @@ IATI Schema Changes -*-Outline-*-
 - remove transaction/contribution-type and make into an optional @type
   attribute for transaction/value (e.g. "funds", "in-kind")
 
+- make transaction/value/@currency optional (since it can be provided with
+  iati-activity/@default-currency as well)
+
 - add transaction/transaction-type (commitment, disbursement, etc.)
 
 - rename element transaction/donor-org to transaction/provider-org
@@ -92,6 +95,11 @@ IATI Schema Changes -*-Outline-*-
 
 - add optional element tied-status, to override top-level element
   iati-activity/default-tied-status
+
+** X.XX Related Activity
+
+- add optional and repeatable element related-activity, similar to
+  related-initiative (but for other IATI activities)
 
 
 * 2010-04-17 Changes

@@ -1,23 +1,30 @@
 #!/bin/sh
 
-TEST_FILES=ocha-test-data.xml
+IATI_SCHEMA=iati-activities-schema.xsd
+IDML_SCHEMA=test-data/IDML2.0.xsd
+TEST_FILES="test-data/ocha-test-data.xml \
+  test-data/worked-example.xml"
 TEMP=/tmp/iati-test-output$$
 
 for file in $TEST_FILES; do
 
-  echo "Testing file $file ..."
+  echo "****************************************************************"
+  echo "  Testing file $file"
+  echo "****************************************************************\n"
 
   echo "Validating IATI file against schema ..."
-  xmllint --noout --schema iati-activities-schema.xsd ocha-test-data.xml
+  xmllint --noout --schema $IATI_SCHEMA $file
   echo "done"
 
   echo "\nTransforming from IATI to IDML ..."
-  xalan -in ocha-test-data.xml -out $TEMP -xsl iati2idml.xslt
+  xalan -in $file -out $TEMP -xsl iati2idml.xslt
   echo "done"
 
   echo "\nValidating IDML output against schema ..."
-  xmllint --noout --schema IDML2.0.xsd $TEMP
+  xmllint --noout --schema $IDML_SCHEMA $TEMP
   echo "done\n"
+
+  # xmllint --format $TEMP | less
 
   rm -f $TEMP
 
