@@ -77,11 +77,12 @@
         <xsd:element ref="reporting-org"/>
         <xsd:element ref="participating-org"/>
         <xsd:element ref="recipient-country"/>
+        <xsd:element ref="recipient-region"/>
         <xsd:element ref="collaboration-type"/>
         <xsd:element ref="flow-type"/>
-        <xsd:element ref="aid-type"/>
+        <xsd:element ref="default-aid-type"/>
         <xsd:element ref="finance-type"/>
-        <xsd:element ref="identifier"/>
+        <xsd:element ref="other-identifier"/>
         <xsd:element ref="title"/>
         <xsd:element ref="description"/>
         <!-- recipient-budget-identifier 3.11 -->
@@ -90,13 +91,11 @@
         <xsd:element ref="activity-status"/>
         <xsd:element ref="contact-info"/>
         <xsd:element ref="target-location"/>
-        <!-- tied-aid-status 3.17 -->
-        <!-- policy-markers 3.18 -->
+        <xsd:element name="default-tied-status"/>
+        <xsd:element name="policy-marker"/>
         <xsd:element ref="total-cost"/>
         <!-- 4.02 Annual activity budgets -->
-        <xsd:element ref="incoming-contribution"/>
-        <!-- 4.03 Total Amount(s) committed by individual donor -->
-        <!-- 4.05 Planned disbursements or payments -->
+        <xsd:element ref="transaction"/>
         <xsd:element ref="related-initiative"/>
       </xsd:choice>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
@@ -111,7 +110,7 @@
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute ref="xml:lang"/>
-      <xsd:attribute name="default-current" type="xsd:string">
+      <xsd:attribute name="default-currency" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Default ISO 4217 currency code for all financial values in
@@ -198,20 +197,62 @@
         03.05 Recipient Country
 
         A partner country that will benefit from this activity.  This
-        element is primarily for administrative and political
-        purposes.  The target-location element can specify the
-        activity's physical location in more detail.
+        element is primarily for administrative and geopolitical
+        purposes.  If a specific country is not known, the activity
+        report can use the recipient-region element instead. For
+        geographical location, use the target-location element.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attribute name="code" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            ISO 3166-1-alpha-2 code for one of the recipient countries
+            for this activity (e.g. "HT" for Haiti).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this country,
             if known.  Content must be a positive integer between 1
             and 100, with no percentage sign.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="recipient-country">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        03.05.1 Recipient Region
+
+        A geopolitical region (above the country level) that will
+        benefit from this activity.  This element is primarily for
+        administrative and geopolitical purposes.  If the specific
+        country/-ies are known, the activity report can use the
+        recipient-country element instead. For geographical location,
+        use the target-location element.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:attributeGroup ref="textAtts"/>
+      <xsd:attribute name="code" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The IATI code for the geopolitical region.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The percentage of the project allocated to this
+            geopolitical region, if known.  Content must be a positive
+            integer between 1 and 100, with no percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -243,13 +284,16 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="aid-type" type="refType">
+  <xsd:element name="default-aid-type" type="refType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.07.1 Type of Aid
+        03.07.1 Default Type of Aid
 
         The type of aid being supplied (budget support, pooled funds,
-        etc.).  The types will be defined by IATI.
+        etc.).  The types will be defined by IATI.  This element
+        specifies a default for all the activity's financial
+        transactions; it can be overridden at the individual
+        transaction level.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -265,14 +309,12 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="identifier">
+  <xsd:element name="other-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An identifier for the activity.  If the @owner-ref and
-        @owner-name attributes are omitted, then this is assumed to be
-        an official IATI identifier, unique across all IATI
-        activities; otherwise, it is an identifier controlled by the
-        specified owner, with no guarantees of format or uniqueness.
+        An alternative, non-IATI identifier for the activity.  This
+        identifier is not guaranteed to be unique or persistent (it
+        depends on the owner organization's policies, not IATI's).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -295,6 +337,15 @@
     </xsd:complexType>
   </xsd:element>
 
+  <xsd:element name="iati-identifier" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        The single, unique and persistent IATI identifier for this
+        activity.  This must always be present in an IATI report.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
   <xsd:element name="title" type="textType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -304,7 +355,8 @@
 
         Human-readable title for the activity.  May be repeated in
         different languages, using the xml:lang attribute to
-        distinguish.
+        distinguish.  The title should be a single line of text (more
+        detailed information can appear in the description element.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -351,10 +403,10 @@
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The sector vocabulary in use.  If using the IATI/DAC
-            sectors, this does not need to be specified.  Otherwise,
-            the value should typically be a URL identifying the sector
-            vocabulary in use (though it can be any text content).
+            An identifier for the vocabulary in use, to segment
+            sectors into different vocabularies (e.g. DAC, OCHA) to
+            aid with comparison and classification.  If omitted,
+            assume DAC.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -479,13 +531,15 @@
         3.16 Detailed geographic info
 
         This element allows the reporting organization to specify the
-        activity's target location in more detail than simply the
-        recipient country.  Repeat this element for each separate
-        location description.  The content is a human-readable
-        description of the location (e.g. "Villages in Darfur"), while
-        the various attributes allow providing a machine readable
-        version of the same location using codes or
-        latitude/longitude.
+        activity's geographical target location at the sub-national
+        level.  Repeat this element for each separate location
+        description.  The content is a human-readable description of
+        the location (e.g. "Villages in Darfur"), while the various
+        attributes allow providing a machine readable version of the
+        same location using codes or latitude/longitude.
+
+        For geopolitical information, use recipient-country or
+        recipient-region.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -512,7 +566,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="tied-status" type="refType">
+  <xsd:element name="default-tied-status" type="refType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.17 Tied aid status
@@ -522,6 +576,44 @@
         that can optionally provide more detail.
       </xsd:documentation>
     </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="policy-marker">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        3.18 Other policy markers
+
+        A policy or theme addressed by the activity.  A text
+        description of the theme appears in the content, and a formal
+        identifier appears in the @ref attribute.  The @vocabulary
+        attribute can also help to segment the markers into separate
+        vocabularies.  This element can be repeated for each policy
+        marker.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:attributeGroup ref="textAtts"/>
+      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An identifier for the vocabulary in use, to segment codes
+            into different vocabularies (e.g. Rio, Environment) to aid
+            with comparison and classification.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="significance" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The significance of the policy marker for this activity
+            (e.g. principal or significant), from a list defined by
+            IATI.  If a marker is not significant, the policy-marker
+            element will not be present.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="total-cost" type="currencyType">
@@ -538,15 +630,21 @@
 
   <!-- 4.02 Annual activity budgets -->
 
-  <xsd:element name="incoming-contribution">
+  <xsd:element name="transaction">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         04.03 Total amount committed by individual donor
+        04.05 Planned disbursements or payments
+        04.06 Actual disbursements or payments
+        04.07 Loan repayments
+        04.08 Interest repayments
 
-        A committed or paid contribution to the activity.  The value of
-        the element is the amount of the contribution in the original
-        currency.  The contribution may have its own identifier to
-        assist with tracking.
+        Committed or actual money flowing in or out of an aid
+        activity.  The @flow attribute specifies the direction of flow
+        ("incoming" for 4.03) or ("outgoing" for 4.05, 4.06, 4.07, and
+        4.08).  The @ref attribute allows uniquely identifying a
+        transaction, to match it up with the corresponding in- or
+        outflow in a different activity.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -566,15 +664,6 @@
                 Assume committed if omitted.  The content is free
                 text, and the code goes in the optional @ref
                 attribute.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="contribution-type" type="refType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The type of contribution (e.g. paid, in-kind).  The
-                content is free text, and the code goes in the
-                optional @ref attribute.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
@@ -656,6 +745,17 @@
           </xsd:element>
         </xsd:choice>
         <xsd:attributeGroup ref="refAtts"/>
+        <xsd:attribute name="flow" use="required">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The direction of funding flow for the activity (incoming
+              or outgoing).  For example, if DFID commits £1M to one
+              of its own activities, that funding is incoming to the
+              activity (even though it's outgoing from DFID as an
+              organization).
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
 
@@ -764,6 +864,13 @@
               The date that this value was set (to allow historical
               currency conversion).  The date must be in ISO 8601
               format (YYYY-MM-DD).
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:attribute>
+        <xsd:attribute name="type" type="xsd:string" use="optional">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Specify the type of funding (e.g. "paid", "in-kind").
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
