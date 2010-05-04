@@ -103,7 +103,7 @@
         </xsl:attribute>
         <xsl:value-of select="sector[@type='IASC']"/>
       </sectors>
-      <xsl:apply-templates select="incoming-contribution[status='Commitment' or status='Paid contribution']"/>
+      <xsl:apply-templates select="transaction[@flow='incoming']"/>
       <relatedOrgs type="Responsible Organization">
         <xsl:attribute name="code">
           <xsl:value-of select="reporting-org/@ref"/>
@@ -143,16 +143,16 @@
   </xsl:template>
 
   <!-- transform IATI incoming-contribution to IDML funding -->
-  <xsl:template match="incoming-contribution">
+  <xsl:template match="transaction[@flow='incoming']">
     <funding>
       <xsl:attribute name="code">
         <xsl:value-of select="@ref"/>
       </xsl:attribute>
       <fundingOrg>
         <xsl:attribute name="code">
-          <xsl:value-of select="donor-org/@ref"/>
+          <xsl:value-of select="provider-org/@ref"/>
         </xsl:attribute>
-        <xsl:value-of select="donor-org"/>
+        <xsl:value-of select="provider-org"/>
       </fundingOrg>
       <assistanceType>
         <xsl:value-of select="../aid-type"/>
@@ -178,7 +178,14 @@
               <xsl:value-of select="value"/>
             </xsl:attribute>
             <xsl:attribute name="currency">
-              <xsl:value-of select="value/@currency"/>
+              <xsl:choose>
+                <xsl:when test="value/@currency">
+                  <xsl:value-of select="value/@currency"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="../@default-currency"/>
+                </xsl:otherwise>
+              </xsl:choose>
             </xsl:attribute>
           </disbursements>
         </xsl:when>
@@ -201,7 +208,14 @@
               <xsl:value-of select="value"/>
             </xsl:attribute>
             <xsl:attribute name="currency">
-              <xsl:value-of select="value/@currency"/>
+              <xsl:choose>
+                <xsl:when test="value/@currency">
+                  <xsl:value-of select="value/@currency"/>
+                </xsl:when>
+                <xsl:otherwise>
+                  <xsl:value-of select="../@default-currency"/>
+                </xsl:otherwise>
+              </xsl:choose>
             </xsl:attribute>
           </commitments>
         </xsl:otherwise>

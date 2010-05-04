@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iati-activities version="1.0">
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P084404</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P084404</other-identifier>
+        <title>Southern African Power Market Program:  Mozambique-Malawi Transmission Interconnection Project</title>
+        <description></description>
+        <recipient-country code="">Africa</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">MULTIPLE GOVERNMENTS</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MULTIPLE AGENCIES</participating-org>
+        <sector vocabulary="WB" ref="LD" percentage="100">Power</sector>
+        <sector vocabulary="WB" ref="LX">Energy and mining</sector>
+        <sector vocabulary="WB" ref="45" percentage="40">Export development and competitiveness</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="8">Develop global partnership for development</sector>
+        <sector vocabulary="WB" ref="47" percentage="20">Regional integration</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="45" percentage="40">Export development and competitiveness</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="39" percentage="40">Infrastructure services for private sector development</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="45" percentage="40">Export development and competitiveness</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="16">Trade &amp; integration</sector>
+        <finance-type ref="loan" xml:lang="en">Adaptable Program Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Mills, Robert</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2007-07-17" type="">48000000</value>
+            <provider-org provider-activity-id="IDA43530" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2013-06-30" type="">0</value>
+            <provider-org provider-activity-id="IDA43530" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2007-07-17" type="">45000000</value>
+            <provider-org provider-activity-id="IDA43540" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2013-06-30" type="">1942087.5</value>
+            <provider-org provider-activity-id="IDA43540" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P107545</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P107545</other-identifier>
+        <title>MAP Additional Financing</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang=""/>
+        <participating-org role="implementing" ref="" type="" xml:lang=""/>
+        <sector vocabulary="WB" ref="JA" percentage="100">Health</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="88" percentage="100">HIV/AIDS</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="6">Combat HIV/AIDS, malaria &amp; other diseases</sector>
+        <sector vocabulary="WB" ref="88" percentage="100">HIV/AIDS</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="88" percentage="100">HIV/AIDS</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="14">Communicable diseases</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Dutta, Sheila</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P106671</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P106671</other-identifier>
+        <title>Agriculture Development Program SLM</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">MALAWI GOVERNMENT</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF AGRICULTURE AND FOOD SECURITY</participating-org>
+        <sector vocabulary="WB" ref="AH" percentage="51">Crops</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BC" percentage="20">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="AB" percentage="15">Agricultural extension and research</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="AZ" percentage="10">General agriculture, fishing and forestry sector</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BH" percentage="4">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="83" percentage="40">Land administration and management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="7">Ensure environmental sustainability</sector>
+        <sector vocabulary="WB" ref="83" percentage="40">Land administration and management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="15">Environmental commons</sector>
+        <sector vocabulary="WB" ref="77" percentage="40">Rural policies and institutions</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <sector vocabulary="WB" ref="79" percentage="20">Other rural development</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Rohrbach, David</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P110157</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P110157</other-identifier>
+        <title>Second National Water Development Project - Additional Financing (ACGF)</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF IRRIGATION AND WATER DEVELOPMENT</participating-org>
+        <sector vocabulary="WB" ref="WC" percentage="37">Water supply</sector>
+        <sector vocabulary="WB" ref="WX">Water, sanitation and flood protection</sector>
+        <sector vocabulary="WB" ref="BC" percentage="37">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="WA" percentage="26">Sanitation</sector>
+        <sector vocabulary="WB" ref="WX">Water, sanitation and flood protection</sector>
+        <sector vocabulary="WB" ref="71" percentage="33">Access to urban services and housing</sector>
+        <sector vocabulary="WB" ref="9">Urban development</sector>
+        <sector vocabulary="WB" ref="70" percentage="17">Other human development</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="85" percentage="17">Water resource management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="15">Environmental commons</sector>
+        <sector vocabulary="WB" ref="85" percentage="17">Water resource management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="7">Ensure environmental sustainability</sector>
+        <sector vocabulary="WB" ref="78" percentage="33">Rural services and infrastructure</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Makino, Midori</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P073821</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P073821</other-identifier>
+        <title>Multi-Sectoral AIDS Project (MAP)</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">NATIONAL AIDS COMMISSION</participating-org>
+        <sector vocabulary="WB" ref="BC" percentage="47">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="JB" percentage="38">Other social services</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="JA" percentage="10">Health</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="BH" percentage="5">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="69" percentage="14">Population and reproductive health</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="5">Improve maternal health</sector>
+        <sector vocabulary="WB" ref="88" percentage="29">HIV/AIDS</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="6">Combat HIV/AIDS, malaria &amp; other diseases</sector>
+        <sector vocabulary="WB" ref="53" percentage="14">Poverty strategy, analysis and monitoring</sector>
+        <sector vocabulary="WB" ref="6">Social protection and risk management</sector>
+        <sector vocabulary="WB" ref="88" percentage="29">HIV/AIDS</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="69" percentage="14">Population and reproductive health</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Dutta, Sheila</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2003-07-29" type="">35000000</value>
+            <provider-org provider-activity-id="IDAH0620" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2008-12-31" type="">37459999.99</value>
+            <provider-org provider-activity-id="IDAH0620" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P075247</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P075247</other-identifier>
+        <title>Community-Based Rural Land Development Project</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF LANDS, PHYSICAL PLANNING, AND SURVEYS</participating-org>
+        <sector vocabulary="WB" ref="AZ" percentage="89">General agriculture, fishing and forestry sector</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BH" percentage="6">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="BC" percentage="5">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="83" percentage="33">Land administration and management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="7">Ensure environmental sustainability</sector>
+        <sector vocabulary="WB" ref="83" percentage="33">Land administration and management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="15">Environmental commons</sector>
+        <sector vocabulary="WB" ref="26" percentage="17">Decentralization</sector>
+        <sector vocabulary="WB" ref="2">Public sector governance</sector>
+        <sector vocabulary="WB" ref="11">Public sector governance</sector>
+        <sector vocabulary="WB" ref="75" percentage="33">Rural markets</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <sector vocabulary="WB" ref="57" percentage="17">Participation and civic engagement</sector>
+        <sector vocabulary="WB" ref="7">Social dev/gender/inclusion</sector>
+        <sector vocabulary="WB" ref="9">Empowerment, security &amp; social inclusion</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Tchale, Hardwick</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2004-04-13" type="">27000000</value>
+            <provider-org provider-activity-id="IDAH0810" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2009-06-30" type="">22885788.29</value>
+            <provider-org provider-activity-id="IDAH0810" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P070235</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P070235</other-identifier>
+        <title>Regional Trade Facilitation Project - Malawi</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">MINISTRY OF FINANCE</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">AFRICAN TRADE INSURANCE AGENCY</participating-org>
+        <sector vocabulary="WB" ref="FD" percentage="100">Non-compulsory pensions, insurance and contractual savings</sector>
+        <sector vocabulary="WB" ref="FX">Finance</sector>
+        <sector vocabulary="WB" ref="49" percentage="33">Trade facilitation and market access</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="8">Develop global partnership for development</sector>
+        <sector vocabulary="WB" ref="46" percentage="17">International financial architecture</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="8">Develop global partnership for development</sector>
+        <sector vocabulary="WB" ref="46" percentage="17">International financial architecture</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="18">International financial architecture</sector>
+        <sector vocabulary="WB" ref="47" percentage="33">Regional integration</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="45" percentage="17">Export development and competitiveness</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Archondo, Sherri Ellen</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2001-04-03" type="">10973490.09</value>
+            <provider-org provider-activity-id="IDA34920" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2011-06-30" type="">5573490.1</value>
+            <provider-org provider-activity-id="IDA34920" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2001-04-03" type="">4026509.91</value>
+            <provider-org provider-activity-id="IDA3492A" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2011-06-30" type="">4601530.96</value>
+            <provider-org provider-activity-id="IDA3492A" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P115226</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P115226</other-identifier>
+        <title>Community Based Rural Land Development Project</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF LANDS AND NATUARAL RESOURCES</participating-org>
+        <sector vocabulary="WB" ref="BL" percentage="89">Public administration- Agriculture, fishing and forestry</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="AZ" percentage="11">General agriculture, fishing and forestry sector</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="83" percentage="51">Land administration and management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="7">Ensure environmental sustainability</sector>
+        <sector vocabulary="WB" ref="36" percentage="12">Personal and property rights</sector>
+        <sector vocabulary="WB" ref="3">Rule of law</sector>
+        <sector vocabulary="WB" ref="10">Investment climate</sector>
+        <sector vocabulary="WB" ref="61" percentage="18">Social analysis and monitoring</sector>
+        <sector vocabulary="WB" ref="7">Social dev/gender/inclusion</sector>
+        <sector vocabulary="WB" ref="9">Empowerment, security &amp; social inclusion</sector>
+        <sector vocabulary="WB" ref="83" percentage="51">Land administration and management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="15">Environmental commons</sector>
+        <sector vocabulary="WB" ref="75" percentage="7">Rural markets</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Tchale, Hardwick</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P103773</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P103773</other-identifier>
+        <title>Business Environment Strengthening Technical Assistance (BESTAP)</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF INDUSTRY TRADE AND PRIVATE SECTOR DEVELOPMENT</participating-org>
+        <sector vocabulary="WB" ref="BC" percentage="58">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="YZ" percentage="25">General industry and trade sector</sector>
+        <sector vocabulary="WB" ref="YX">Industry and trade</sector>
+        <sector vocabulary="WB" ref="BG" percentage="8">Law and justice</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="FA" percentage="5">Banking</sector>
+        <sector vocabulary="WB" ref="FX">Finance</sector>
+        <sector vocabulary="WB" ref="FE" percentage="4">Micro- and SME finance</sector>
+        <sector vocabulary="WB" ref="FX">Finance</sector>
+        <sector vocabulary="WB" ref="44" percentage="24">Other financial and private sector development</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="45" percentage="13">Export development and competitiveness</sector>
+        <sector vocabulary="WB" ref="5">Trade and integration</sector>
+        <sector vocabulary="WB" ref="34" percentage="13">Legal institutions for a market economy</sector>
+        <sector vocabulary="WB" ref="3">Rule of law</sector>
+        <sector vocabulary="WB" ref="10">Investment climate</sector>
+        <sector vocabulary="WB" ref="40" percentage="25">Regulation and competition policy</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="10">Investment climate</sector>
+        <sector vocabulary="WB" ref="34" percentage="13">Legal institutions for a market economy</sector>
+        <sector vocabulary="WB" ref="3">Rule of law</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Maimbo, Samuel Munzele</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2007-05-24" type="">15000000</value>
+            <provider-org provider-activity-id="IDAH2930" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2012-12-31" type="">2123468.87</value>
+            <provider-org provider-activity-id="IDAH2930" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P070823</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P070823</other-identifier>
+        <title>Education Sector Support Project 1</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF EDUCATION</participating-org>
+        <sector vocabulary="WB" ref="BZ" percentage="45">General public administration sector</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="ET" percentage="38">Tertiary education</sector>
+        <sector vocabulary="WB" ref="EX">Education</sector>
+        <sector vocabulary="WB" ref="ES" percentage="13">Secondary education</sector>
+        <sector vocabulary="WB" ref="EX">Education</sector>
+        <sector vocabulary="WB" ref="EP" percentage="2">Primary education</sector>
+        <sector vocabulary="WB" ref="EX">Education</sector>
+        <sector vocabulary="WB" ref="JA" percentage="2">Health</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="65" percentage="40">Education for all</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="2">Achieve universal primary education</sector>
+        <sector vocabulary="WB" ref="65" percentage="40">Education for all</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="12">Education</sector>
+        <sector vocabulary="WB" ref="26" percentage="20">Decentralization</sector>
+        <sector vocabulary="WB" ref="2">Public sector governance</sector>
+        <sector vocabulary="WB" ref="11">Public sector governance</sector>
+        <sector vocabulary="WB" ref="63" percentage="20">Child health</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="68" percentage="20">Nutrition and food security</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Rojas, Carlos A.</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2005-05-03" type="">32200000</value>
+            <provider-org provider-activity-id="IDAH1590" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2010-09-15" type="">17828267.23</value>
+            <provider-org provider-activity-id="IDAH1590" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P105256</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P105256</other-identifier>
+        <title>Agricultural Sector Development</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF AGRICULTURE; MINISTRY OF IRRIG. AND WTR. DEV.</participating-org>
+        <sector vocabulary="WB" ref="AH" percentage="48">Crops</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BC" percentage="28">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="AZ" percentage="10">General agriculture, fishing and forestry sector</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="AB" percentage="10">Agricultural extension and research</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BH" percentage="4">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="68" percentage="33">Nutrition and food security</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="77" percentage="33">Rural policies and institutions</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <sector vocabulary="WB" ref="78" percentage="17">Rural services and infrastructure</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <sector vocabulary="WB" ref="79" percentage="17">Other rural development</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Rohrbach, David</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2008-06-24" type="">32000000</value>
+            <provider-org provider-activity-id="IDA44760" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2013-09-15" type="">0</value>
+            <provider-org provider-activity-id="IDA44760" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P096336</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P096336</other-identifier>
+        <title>Second National Water Development Project</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF WATER AND IRRIGATION DEVELOPMENT</participating-org>
+        <sector vocabulary="WB" ref="WC" percentage="37">Water supply</sector>
+        <sector vocabulary="WB" ref="WX">Water, sanitation and flood protection</sector>
+        <sector vocabulary="WB" ref="BC" percentage="37">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="WA" percentage="24">Sanitation</sector>
+        <sector vocabulary="WB" ref="WX">Water, sanitation and flood protection</sector>
+        <sector vocabulary="WB" ref="JB" percentage="1">Other social services</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="BH" percentage="1">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="71" percentage="28">Access to urban services and housing</sector>
+        <sector vocabulary="WB" ref="9">Urban development</sector>
+        <sector vocabulary="WB" ref="70" percentage="14">Other human development</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="85" percentage="29">Water resource management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="15">Environmental commons</sector>
+        <sector vocabulary="WB" ref="85" percentage="29">Water resource management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="7">Ensure environmental sustainability</sector>
+        <sector vocabulary="WB" ref="78" percentage="29">Rural services and infrastructure</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Makino, Midori</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2007-05-24" type="">22500000</value>
+            <provider-org provider-activity-id="IDAH2940" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2012-10-31" type="">6353263.49</value>
+            <provider-org provider-activity-id="IDAH2940" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2007-05-24" type="">27500000</value>
+            <provider-org provider-activity-id="IDA43070" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2012-10-31" type="">0</value>
+            <provider-org provider-activity-id="IDA43070" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P084148</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P084148</other-identifier>
+        <title>Irrigation, Rural Livelihoods and Agricultural Development Project</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang=""/>
+        <participating-org role="implementing" ref="" type="" xml:lang=""/>
+        <sector vocabulary="WB" ref="AZ" percentage="35">General agriculture, fishing and forestry sector</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="AI" percentage="30">Irrigation and drainage</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="AB" percentage="20">Agricultural extension and research</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BH" percentage="10">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="BC" percentage="5">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="85" percentage="17">Water resource management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="15">Environmental commons</sector>
+        <sector vocabulary="WB" ref="85" percentage="17">Water resource management</sector>
+        <sector vocabulary="WB" ref="11">Environment and natural resources management</sector>
+        <sector vocabulary="WB" ref="7">Ensure environmental sustainability</sector>
+        <sector vocabulary="WB" ref="77" percentage="33">Rural policies and institutions</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <sector vocabulary="WB" ref="78" percentage="33">Rural services and infrastructure</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <sector vocabulary="WB" ref="79" percentage="17">Other rural development</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Specific Investment Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Tchale, Hardwick</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2005-11-29" type="">40000000</value>
+            <provider-org provider-activity-id="IDAH1900" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2012-06-30" type="">13860672.41</value>
+            <provider-org provider-activity-id="IDAH1900" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P110446</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P110446</other-identifier>
+        <title>Malawi Third Social Action Fund (MASAF 3) APL II (LDF Mechanism)</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOVERNMENT OF THE REPUBLIC OF MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF FINANCE (MASAF UNIT)</participating-org>
+        <sector vocabulary="WB" ref="JB" percentage="46">Other social services</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="EZ" percentage="30">General education sector</sector>
+        <sector vocabulary="WB" ref="EX">Education</sector>
+        <sector vocabulary="WB" ref="BC" percentage="11">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="AZ" percentage="10">General agriculture, fishing and forestry sector</sector>
+        <sector vocabulary="WB" ref="AX">Agriculture, fishing, and forestry</sector>
+        <sector vocabulary="WB" ref="BH" percentage="3">Sub-national government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="30" percentage="17">Other public sector governance</sector>
+        <sector vocabulary="WB" ref="2">Public sector governance</sector>
+        <sector vocabulary="WB" ref="11">Public sector governance</sector>
+        <sector vocabulary="WB" ref="57" percentage="33">Participation and civic engagement</sector>
+        <sector vocabulary="WB" ref="7">Social dev/gender/inclusion</sector>
+        <sector vocabulary="WB" ref="9">Empowerment, security &amp; social inclusion</sector>
+        <sector vocabulary="WB" ref="26" percentage="17">Decentralization</sector>
+        <sector vocabulary="WB" ref="2">Public sector governance</sector>
+        <sector vocabulary="WB" ref="11">Public sector governance</sector>
+        <sector vocabulary="WB" ref="54" percentage="33">Social safety nets</sector>
+        <sector vocabulary="WB" ref="6">Social protection and risk management</sector>
+        <sector vocabulary="WB" ref="9">Empowerment, security &amp; social inclusion</sector>
+        <finance-type ref="loan" xml:lang="en">Adaptable Program Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Cornelius, Sabine</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2008-06-20" type="">50000000</value>
+            <provider-org provider-activity-id="IDA44830" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2013-09-30" type="">0</value>
+            <provider-org provider-activity-id="IDA44830" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P057761</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P057761</other-identifier>
+        <title>INFRASTRUCTURE SERVICES</title>
+        <description></description>
+        <recipient-country code="">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">GOM</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">MINISTRY OF ECONOMIC DEVELOPMENT AND PLANNING</participating-org>
+        <sector vocabulary="WB" ref="TA" percentage="45">Roads and highways</sector>
+        <sector vocabulary="WB" ref="TX">Transportation</sector>
+        <sector vocabulary="WB" ref="WZ" percentage="28">General water, sanitation and flood protection sector</sector>
+        <sector vocabulary="WB" ref="WX">Water, sanitation and flood protection</sector>
+        <sector vocabulary="WB" ref="LD" percentage="13">Power</sector>
+        <sector vocabulary="WB" ref="LX">Energy and mining</sector>
+        <sector vocabulary="WB" ref="BZ" percentage="9">General public administration sector</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="CT" percentage="5">Telecommunications</sector>
+        <sector vocabulary="WB" ref="CX">Information and communications</sector>
+        <sector vocabulary="WB" ref="44" percentage="14">Other financial and private sector development</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="39" percentage="29">Infrastructure services for private sector development</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="74" percentage="14">Other urban development</sector>
+        <sector vocabulary="WB" ref="9">Urban development</sector>
+        <sector vocabulary="WB" ref="26" percentage="14">Decentralization</sector>
+        <sector vocabulary="WB" ref="2">Public sector governance</sector>
+        <sector vocabulary="WB" ref="11">Public sector governance</sector>
+        <sector vocabulary="WB" ref="78" percentage="29">Rural services and infrastructure</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Sector Investment and Maintenance Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Woldu, Mathewos</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2006-06-27" type="">40000000</value>
+            <provider-org provider-activity-id="IDAH2420" ref="" type=""/>
+        </transaction>
+        <transaction flow="" ref="" type="disbursment">
+            <value currency="" value-date="2011-11-30" type="">5840695.55</value>
+            <provider-org provider-activity-id="IDAH2420" ref="" type=""/>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://web.worldbank.org/external/projects/main?pagePK=64283627&amp;piPK=73230&amp;theSitePK=40941&amp;menuPK=228424&amp;Projectid=P111432</activity-website>
+        <reporting-org>World Bank</reporting-org>
+        <other-identifier owner-ref="" owner-name="World Bank">P111432</other-identifier>
+        <title>RCIP3 - Regional Communications Infrastructure Program - Phase 3</title>
+        <description></description>
+        <recipient-country code="">Africa</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">World Bank</participating-org>
+        <participating-org role="beneficiary" ref="" type="" xml:lang="">MOZAMBIQUE, TANZANIA, MALAWI</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">RELEVANT MINISTRY IN CHARGE OF TELECOMMUNICATIONS PORTFOLIO</participating-org>
+        <sector vocabulary="WB" ref="CT" percentage="60">Telecommunications</sector>
+        <sector vocabulary="WB" ref="CX">Information and communications</sector>
+        <sector vocabulary="WB" ref="CA" percentage="20">Information technology</sector>
+        <sector vocabulary="WB" ref="CX">Information and communications</sector>
+        <sector vocabulary="WB" ref="BM" percentage="17">Public administration- Information and communications</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="JA" percentage="2">Health</sector>
+        <sector vocabulary="WB" ref="JX">Health and other social services</sector>
+        <sector vocabulary="WB" ref="BC" percentage="1">Central government administration</sector>
+        <sector vocabulary="WB" ref="BX">Public Administration, Law, and Justice</sector>
+        <sector vocabulary="WB" ref="40" percentage="1">Regulation and competition policy</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="10">Investment climate</sector>
+        <sector vocabulary="WB" ref="39" percentage="37">Infrastructure services for private sector development</sector>
+        <sector vocabulary="WB" ref="4">Financial and private sector development</sector>
+        <sector vocabulary="WB" ref="25" percentage="37">Administrative and civil service reform</sector>
+        <sector vocabulary="WB" ref="2">Public sector governance</sector>
+        <sector vocabulary="WB" ref="11">Public sector governance</sector>
+        <sector vocabulary="WB" ref="67" percentage="2">Health system performance</sector>
+        <sector vocabulary="WB" ref="8">Human development</sector>
+        <sector vocabulary="WB" ref="13">Health</sector>
+        <sector vocabulary="WB" ref="78" percentage="23">Rural services and infrastructure</sector>
+        <sector vocabulary="WB" ref="10">Rural development</sector>
+        <finance-type ref="loan" xml:lang="en">Adaptable Program Loan</finance-type>
+        <contact-info>
+            <organization>World Bank</organization>
+            <person-name>Gallegos, Doyle</person-name>
+        </contact-info>
+        <total-cost></total-cost>
+    </iati-activity>
+</iati-activities>

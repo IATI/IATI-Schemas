@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iati-activities version="1.0">
+  <iati-activity default-currency="GBP" xml:lang="en">
+    <activity-website>http://projects.dfid.gov.uk/ProjectDetails.asp?projcode=113414-103</activity-website>
+    <reporting-org>DFID</reporting-org>
+    <participating-org role="donor" type="bilateral" ref="uk1234">Department for International Development</participating-org>
+    <iati-identifier/>
+    <other-identifier owner-ref="uk1234" owner-name="DFID">113414-103</other-identifier>
+    <related-activity ref="113414">SAFETY SECURITY AND ACCESS TO JUSTICE FOR THE POOR (FA)</related-activity>
+    <title>FA TO MINISTRY OF JUSTICE</title>
+    <description>Improve the awareness, quality and availability of justice sevices for the poor, particularly women, children and the vulnerable in Malawi</description>
+    <recipient-country code="MW"/>
+    <activity-date type="" iso-date="2009-09-15"/>
+    <activity-date type="" iso-date="2010-09-01"/>
+    <activity-status ref="Operational"/>
+    <sector vocabulary="DAC" ref="15130" percentage="70"/>
+    <sector vocabulary="DAC" ref="15120" percentage="30"/>
+    <finance-type>Other financial aid to government</finance-type>
+    <related-initiative ref="113414" type="113414-101"/>
+    <related-initiative ref="113414" type="113414-102"/>
+    <budget-planned type="original-budget" period="annual">
+      <period-start>2009-04-01</period-start>
+      <period-end>2010-03-31</period-end>
+      <value value-date="2009-04-01">422558</value>
+    </budget-planned>
+    <budget-planned type="original-budget" period="annual">
+      <period-start>2010-04-01</period-start>
+      <period-end>2011-03-31</period-end>
+      <value value-date="2010-04-01">304184</value>
+    </budget-planned>
+    <transaction flow="" type="disbursement">
+      <value value-date="2010-03-31">390246</value>
+    </transaction>
+  </iati-activity>
+  <iati-activity default-currency="GBP" xml:lang="en">
+    <activity-website>http://projects.dfid.gov.uk/ProjectDetails.asp?projcode=113414-103</activity-website>
+    <reporting-org>DFID</reporting-org>
+    <participating-org role="donor" type="bilateral" ref="uk1234">Department for International Development</participating-org>
+    <iati-identifier/>
+    <other-identifier owner-ref="uk1234" owner-name="DFID">113414-104</other-identifier>
+    <related-activity ref="113415">RANDOM PROJECT NAMES</related-activity>
+    <title>FA TO MINISTRY OF JUSTICE</title>
+    <description>Improve the awareness, quality and availability of justice sevices for the poor, particularly women, children and the vulnerable in Malawi</description>
+    <recipient-country code="MW"/>
+    <activity-date type="" iso-date="2009-09-15"/>
+    <activity-date type="" iso-date="2010-09-01"/>
+    <activity-status ref="Operational"/>
+    <sector vocabulary="DAC" ref="15130" percentage="70"/>
+    <sector vocabulary="DAC" ref="15120" percentage="30"/>
+    <finance-type>Other financial aid to government</finance-type>
+    <related-initiative ref="113415" type="113414-101"/>
+    <related-initiative ref="113415" type="113414-102"/>
+    <budget-planned type="original-budget" period="annual">
+      <period-start>2009-04-01</period-start>
+      <period-end>2010-03-31</period-end>
+      <value value-date="2009-04-01">422558</value>
+    </budget-planned>
+    <budget-planned type="original-budget" period="annual">
+      <period-start>2010-04-01</period-start>
+      <period-end>2011-03-31</period-end>
+      <value value-date="2010-04-01">304184</value>
+    </budget-planned>
+    <transaction flow="" type="disbursement">
+      <value value-date="2010-03-31">390246</value>
+    </transaction>
+  </iati-activity>
+</iati-activities>

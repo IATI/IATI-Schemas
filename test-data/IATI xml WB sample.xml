@@ -1,0 +1,43 @@
+<?xml version="1.0" ?>
+<iati-activities version="" generated-datetime=""> 
+<iati-activity default-currency="USD" xml:lang="en">
+  <activity-website>http://web.worldbank.org/external/projects/main?Projectid=P098792</activity-website>
+  <reporting-org>World Bank</reporting-org>
+  <participating-org role="donor" type="multilateral" ref="">World Bank</participating-org>
+  <participating-org role="beneficiary" type="government" ref="">GOVERMENT OF MALAWI</participating-org>
+  <participating-org role="implementing" type="government" ref="">MINISTRY OF HEALTH</participating-org>
+  <iati-identifier /> 
+  <other-identifier owner-ref="" owner-name="World Bank">P098792</other-identifier>
+  <related-activity />
+  <title>Health Sector Support Project - Additional Financing</title> 
+  <description />
+  <recipient-country code="MW">Malawi</recipient-country>
+  <target-location />
+  <activity-date /> 
+  <activity-status ref="closed" />
+  <sector vocabulary="WB" ref="BC" percentage="60">Central government administration</sector>
+  <sector vocabulary="WB" ref="BH" percentage="40">Sub-national government administration</sector>
+  <collaboration-type ref="2">Multilateral</collaboration-type>
+  <flow-type />
+  <default-aid-type />
+  <finance-type ref="411">Loan</finance-type>
+  <tied-status />
+  <policy-marker />
+  <contact-info>
+    <organization>World Bank</organization>
+    <person-name>Dutta, Sheila</person-name>
+    <telephone  />
+    <email />
+    <mailing-address />
+  </contact-info>
+  <related-initiative />
+  <total-cost>6000000</total-cost> 
+  <budget-planned />
+  <transaction type="commitment">
+    <value value-date="2006-07-27">5000000</value> 
+  </transaction>
+  <transaction type="disbursement">
+    <value>5000000</value> 
+  </transaction>
+</iati-activity>
+</iati-activities>

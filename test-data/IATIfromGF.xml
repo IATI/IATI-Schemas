@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<iati-activities version="1.0">
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-102-G01-H-00?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-102-G01-H-00</other-identifier>
+        <title>National Response to HIV/AIDS in Malawi</title>
+        <description>Malawi is among the countries in Southern Africa at the epicenters of the HIV and AIDS pandemic, with HIV infection predominantly transmitted through heterosexual intercourse. The program supported by this grant aims to bring a balanced approach between prevention, care, support and treatment of HIV and AIDS in Malawi and to reduce the burden of HIV and AIDS-related illnesses and deaths so that they no longer pose a threat to economic growth and political stability. The program consists of assistance to expand voluntary counseling and testing centers, to provide services to HIV-infected mothers to prevention transmission of the disease to their infants; and commencement of antiretroviral therapy to eligible patients. The program is also strengthening home-based care and treatment of opportunistic infections.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Registered Trustees of the National AIDS Commission Trust of the Republic of Malawi</participating-org>
+        <activity-date type="start" iso_date="2003-10-01"/>
+        <activity-date type="end" iso_date="2012-03-31"/>
+        <activity-status ref="ongoing"/>
+        <sector vocabulary="DAC" ref="13040"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>342557595</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2003-01-01" type="">41751500</value>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2006-01-01" type="">136862764</value>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2009-01-01" type="">163943331</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2003-01-01" type="">314000</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2004-01-01" type="">25939844</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2005-01-01" type="">15191079</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2006-01-01" type="">20867530.9</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2007-01-01" type="">61942317.88</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2008-01-01" type="">52134803.08</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2009-01-01" type="">49249129.92</value>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-202-G02-M-00?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-202-G02-M-00</other-identifier>
+        <title>Scaling up Prevention and Treatment of Malaria within the Context of Essential Health Package and Sector-Wide Approach in Malawi</title>
+        <description>Malaria is a serious public health problem in Malawi, with the entire population being at risk for the disease. This grant is being used to finance a comprehensive set of activities within the context of the country’s health services. The funds will be used to subsidize the purchase and distribution of insecticide-treated bed nets for vulnerable groups, such as pregnant women and children under the age of five as well as the poorest of the poor. Distribution is being managed through antenatal and under-five clinics which are visited by more than 90 percent of pregnant women. In addition, community-based distribution will be strengthened through wide involvement of community committees, nongovernmental organizations and civil society. Grant funds will also be used to improve other important services such as case management through scaling up of integrated management of childhood illness; integrated disease surveillance; intermittent presumptive treatment; read moreinformation, education and communication; operational research; and human resource development through training of health workers in areas relevant to malaria control.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Ministry of Health of the Republic of Malawi</participating-org>
+        <activity-date type="start" iso_date="2006-02-01"/>
+        <activity-date type="end" iso_date="2008-01-31"/>
+        <activity-status ref="closed"/>
+        <sector vocabulary="DAC" ref="12262"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>17957714</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2005-01-01" type="">18815810</value>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2008-01-01" type="">-858096</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2006-01-01" type="">6363507</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2007-01-01" type="">11594207</value>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-506-G03-H?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-506-G03-H</other-identifier>
+        <title>Orphan Care and Support (HIV/AIDS)</title>
+        <description>Although the HIV and AIDS prevalence rate seems to have stabilized in Malawi, the number of orphans and vulnerable children will increase. The program supported by this grant aims to reach aims to strengthen and develop an enabling policy and legal framework to protect the rights of orphans and other children who have been made vulnerable by HIV and AIDS and poverty; strengthen institutions and technical capacity at all levels to ensure a rapid scale up of the national response to the orphan crisis, giving particular attention o district and community capacity and systems; and increase access of orphans and vulnerable children to primary and secondary education and other services with support from the safety nets providing school bursaries and cash transfers to households caring for orphans and vulnerable children.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Registered Trustees of the National AIDS Commission Trust of the Republic of Malawi</participating-org>
+        <activity-date type="start" iso_date="2006-10-01"/>
+        <activity-date type="end" iso_date="2011-09-30"/>
+        <activity-status ref="ongoing"/>
+        <sector vocabulary="DAC" ref="13040"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>17589438</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2006-01-01" type="">7708331</value>
+        </transaction>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2009-01-01" type="">9881107</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2006-01-01" type="">1984730</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2007-01-01" type="">2912278</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2008-01-01" type="">2811323</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2009-01-01" type="">5306582</value>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-506-G04-S?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-506-G04-S</other-identifier>
+        <title>Health Systems Strengthening in Malawi</title>
+        <description>Malawi is one of the poorest countries in the world, where 65 percent of the population lives below the poverty line and more than half are food-insecure. This has a clear knock-on effect on Malawi’s health indicators, which are among the worst in Africa, and it also magnifies the impact of HIV and AIDS, TB and malaria. The program supported by this grant aims to strengthen the country’s capacity to fight AIDS, TB malaria primarily through improving its human resource infrastructure. Grant funds will be used to expand community-based HIV and AIDS, TB and malaria services by increasing the supply if highly skilled and motivated Health Surveillance Assistants; to increase other health sector human resource supply, such as community nurses and clinical officers, to carry out antiretroviral therapy and HIV and AIDS services as well as to meet other critical staffing gaps needed to provide full access to all health services; and to build the capacity of laboratory … read morestaff to meet the increasing demand for antiretroviral therapy.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Government of the Republic of Malawi through the Ministry of Health</participating-org>
+        <activity-date type="start" iso_date="2007-07-01"/>
+        <activity-date type="end" iso_date="2009-09-30"/>
+        <activity-status ref="ongoing"/>
+        <sector vocabulary="DAC" ref="12220"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>22643238</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2006-01-01" type="">22643238</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2007-01-01" type="">2927118</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2008-01-01" type="">14280241.77</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2009-01-01" type="">4138307.46</value>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-506-G04-S?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-708-G05-M</other-identifier>
+        <title>Accelerating the Implementation of new anti-malarial treatment policy artemesinin based combination therapy (ACTs) and scaling up access to LLINs within the context of the Sector Wide Approach</title>
+        <description>Malaria is a serious public health problem in Malawi, with the entire population being at risk for the disease. The program supported by this grant aims to accelerate the implementation of the country’s new antimalarial treatment policy. Program objectives include rapidly scaling up access to prompt and effective treatment of malaria cases with artemisinin-based combination therapy within 24 hours of onset of fever at a health facility and increasing coverage of children under age five and pregnant women with long-lasting insecticide-treated bed nets.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Government of the Republic of Malawi through the Ministry of Health</participating-org>
+        <activity-date type="start" iso_date="2009-01-01"/>
+        <activity-date type="end" iso_date="2010-12-31"/>
+        <activity-status ref="ongoing"/>
+        <sector vocabulary="DAC" ref="12262"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>36545312</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2008-01-01" type="">36545312</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2008-01-01" type="">14961663.5</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2009-01-01" type="">3721540</value>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-708-G07-H?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-708-G06-T</other-identifier>
+        <title>Towards Sustainable and Equitable Tuberculosis Control</title>
+        <description>The program supported by this grant aims to reduce the burden of ill health due to TB in Malawi by pursuing high-quality DOTS expansion and enhancement; addressing infection control, MDR-TB and TB/HIV co-infection; engaging all care providers; and enabling and promoting operational research. Grant funds will be used to mobilize communities to seek treatment; establish sputum collection centers in communities; provide high-burden laboratories in district hospitals with fluorescent microscopes; conduct a TB prevalence survey and an MDR-TB survey; and establish an electronic TB register in existing TB registration sites. The program targets the general population, civil society, people living with HIV and AIDS; and TB patients and former TB patients.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Ministry of Health of the Republic of Malawi</participating-org>
+        <activity-date type="start" iso_date="2009-01-01"/>
+        <activity-date type="end" iso_date="2010-12-31"/>
+        <activity-status ref="ongoing"/>
+        <sector vocabulary="DAC" ref="12263"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>7802037</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2008-01-01" type="">7802037</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2008-01-01" type="">2825106</value>
+        </transaction>
+    </iati-activity>
+    <iati-activity default-currency="USD" xml:lang="en">
+        <activity-website>http://portfolio.theglobalfund.org/Grant/Index/MLW-506-G04-S?lang=en</activity-website>
+        <reporting-org>Global Fund</reporting-org>
+        <other-identifier owner-ref="" owner-name="Global Fund">MLW-708-G07-H</other-identifier>
+        <title>Intensifying HIV/AIDS Behavioral Change Communication (BCC) for all and Scaling up of HIV Prevention Services for Young People in Malawi</title>
+        <description>Malawi is among the countries in Southern Africa at the epicenters of the HIV and AIDS pandemic, with HIV infection predominantly transmitted through heterosexual intercourse. The overall goal of the program supported by this grant is to reduce the transmission of HIV among young people aged 10 to 24 and all adults in Malawi. To achieve its goal, the program will expand effective HIV and AIDS behavior change communications for the general population; promote safer sex practices among young people in high risk groups and settings; scale up interventions designed to fight HIV transmission among young people; reduce the vulnerability of young people to HIV infection, especially among girls and young women; and expand advocacy and social mobilization for HIV prevention at the district and community levels.</description>
+        <recipient-country code="MW">Malawi</recipient-country>
+        <participating-org role="donor" ref="" type="multilateral" xml:lang="">Global Fund</participating-org>
+        <participating-org role="implementing" ref="" type="" xml:lang="">The Registered Trustees of the National AIDS Commission Trust of the Republic of Malawi</participating-org>
+        <activity-date type="start" iso_date="2008-10-01"/>
+        <activity-date type="end" iso_date="2010-09-30"/>
+        <activity-status ref="ongoing"/>
+        <sector vocabulary="DAC" ref="13040"></sector>
+        <collaboration-type ref="2">Multilateral</collaboration-type>
+        <flow-type ref="10">ODA</flow-type>
+        <default-aid-type ref="C01">Project intervention</default-aid-type>
+        <finance-type ref="100">Grant</finance-type>
+        <tied-status ref="05">Untied</tied-status>
+        <contact-info>
+            <organization>Global Fund</organization>
+            <person-name>Tatjana Peterson</person-name>
+            <telephone></telephone>
+            <email>Tatjana.Peterson@theglobalfund.org</email>
+            <mailing-address></mailing-address>
+        </contact-info>
+        <total-cost>15078417</total-cost>
+        <transaction flow="" ref="" type="commitment">
+            <value currency="" value-date="2008-01-01" type="">15078417</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2008-01-01" type="">5076095</value>
+        </transaction>
+        <transaction flow="" ref="" type="disbursement">
+            <value currency="" value-date="2009-01-01" type="">4453822</value>
+        </transaction>
+    </iati-activity>
+</iati-activities>

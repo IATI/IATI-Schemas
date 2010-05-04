@@ -1,0 +1,47 @@
+<?xml version="1.0" ?>
+<iati-activities version="" generated-datetime="">
+<iati-activity default-currency="GBP" xml:lang="en">
+  <activity-website>>http://projects.dfid.gov.uk/ProjectDetails.asp?projcode=113414-103</activity-website>
+  <reporting-org>DFID</reporting-org>
+  <participating-org role="donor" type="bilateral" ref="uk1234">Department for International Development</participating-org>
+  <iati-identifier/> 
+  <other-identifier owner-ref="uk1234" owner-name="DFID">113414-103</other-identifier>
+  <related-activity ref="113414" type="parent">SAFETY SECURITY AND ACCESS TO JUSTICE FOR THE POOR (FA)</related-activity>
+  <related-activity ref="113414-101" type="sibling" />
+  <related-activity ref="113414-101" type="sibling" />
+  <title>FA TO MINISTRY OF JUSTICE</title> 
+  <description type="purpose">Improve the awareness, quality and availability of justice sevices for the poor, particularly women, children and the vulnerable in Malawi</description>
+  <recipient-country code="MW">Malawi</recipient-country>
+  <recipient-region />
+  <target-location />
+  <activity-date type="start" iso-date="2009-09-15" /> 
+  <activity-date type="completion" iso-date="2010-09-01" />
+  <activity-status ref="ongoing" />
+  <sector vocabulary="DAC" ref="15130" percentage="70" />
+  <sector vocabulary="DAC" ref="15120" percentage="30" />
+  <collaboration-type ref="1">Bilateral</collaboration-type>
+  <flow-type ref="10">ODA</flow-type>
+  <default-aid-type />
+  <finance-type ref="100">Grant</finance-type>
+  <tied-status ref="05">Untied</tied-status>
+  <policy-marker />
+  <contact-info />
+  <related-initiative />
+  <total-cost /> 
+  <budget-planned type="original-budget" period="annual">
+    <period-start>2009-04-01</period-start> 
+    <period-end>2010-03-31</period-end> 
+    <value value-date="2009-04-01">422558</value> 
+  </budget-planned>
+  <budget-planned type="original-budget" period="annual">
+    <period-start>2010-04-01</period-start> 
+    <period-end>2011-03-31</period-end> 
+    <value value-date="2010-04-01">304184</value> 
+  </budget-planned>
+  <transaction type="disbursement">
+    <value value-date="2010-03-31">390246</value> 
+  </transaction>
+</iati-activity>
+</iati-activities>
+
+

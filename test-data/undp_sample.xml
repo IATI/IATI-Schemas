@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<iati-activities version="" generated-datetime=""> 
+    <iati-activity default-currency="USD" xml:lang="en">
+        <reporting-org>UNDP</reporting-org>
+        <recipient-country code="MWI"></recipient-country>
+        <!-- AA to AF -->
+        <participating-org role="Funding" ref="'00012">UNITED NATIONS DEVELOPMENT PRO</participating-org>
+        <participating-org role="Implementing" ref="'001415">MLW-National Execution</participating-org>
+        <participating-org role="Funding" ref="'10003">Funding	Global Environment Fund Truste</participating-org>
+        <flow-type>ODA</flow-type>
+        <finance-type>Grant</finance-type>
+        <other-identifier owner-name="UNDP">'00013616</other-identifier>
+        <title>PIMS 245 BD FSP: SABSP</title>
+        <description></description> <!-- available in future -->
+        <sector></sector> <!-- available later -->
+        <activity-date type="start">2001-01-01</activity-date>
+        <activity-date type="end">2009-08-31</activity-date>
+        <activity-status ref="Operationally Closed"></activity-status> <!-- is this correct ? -->
+        <contact-info>
+            <person-name></person-name> <!-- absent in this row -->
+        </contact-info>
+        <budget-planned type="annual"> <!-- just year is present -->
+            <period-start>2009-01-01</period-start>
+            <period-end>2009-12-31</period-end>
+            <value>502262.11</value>
+        </budget-planned>
+        <transaction flow="" type="expenditure"> <!-- @todo what is the flow type? it is a mandatory field -->
+            <value>6709.11</value>
+        </transaction>        
+        <transaction flow=""></transaction>
+        
+        <!-- Exists in the excel file but corresponding field not found in iati Schema
+            5.1 Outputs and outcomes indicators
+        -->
+    </iati-activity>
+</iati-activities>
