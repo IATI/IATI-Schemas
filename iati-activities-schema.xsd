@@ -7,7 +7,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Activity-Information Schema
 
-      Unofficial draft 2010-04-16, by David Megginson
+      Unofficial draft 2010-05-04, by David Megginson
 
       NOTE: the xml.xsd schema must be in the same directory as this
       one.
@@ -17,12 +17,8 @@
       information about the International Aid Transparency Initiative
       (IATI), please visit http://www.aidtransparency.net/
 
-      This document type uses URIs for codes and identifiers.  Most
-      typically, these will be URLs such as
-      "http://aidtransparency.net/orgs/acme".  If an XML file uses a
-      relative URI, then the base URI is assumed to be
-      "http://aidtransparency.net/", so that "orgs/acme" resolves to
-      "http://aidtransparency.net/orgs/acme".
+      This document type may be extended with additional elements and
+      attributes, but they must belong to an explicit XML namespace.
     </xsd:documentation>
   </xsd:annotation>
 
@@ -36,9 +32,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="iati-activity" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="iati-activity"/>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
       <xsd:attribute name="version" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -62,6 +59,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -99,6 +97,7 @@
         <xsd:element ref="transaction"/>
         <xsd:element ref="related-initiative"/>
         <xsd:element ref="related-activity"/>
+        <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
@@ -120,6 +119,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -141,6 +141,7 @@
       <xsd:simpleContent>
         <xsd:extension base="xsd:anyURI">
           <xsd:attribute ref="xml:lang" use="optional"/>
+          <xsd:anyAttribute processContents="lax" namespace="##other"/>
         </xsd:extension>
       </xsd:simpleContent>
     </xsd:complexType>
@@ -190,6 +191,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -224,6 +226,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -258,6 +261,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -336,16 +340,20 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="iati-identifier" type="xsd:string">
+  <xsd:element name="iati-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The single, unique and persistent IATI identifier for this
         activity.  This must always be present in an IATI report.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="title" type="textType">
@@ -387,6 +395,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -422,6 +431,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -454,6 +464,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:attribute>
+          <xsd:anyAttribute processContents="lax" namespace="##other"/>
         </xsd:extension>
       </xsd:simpleContent>
     </xsd:complexType>
@@ -500,30 +511,41 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="telephone" type="xsd:string">
+        <xsd:element name="telephone">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact telephone number, if available.  May be
               repeated for multiple numbers.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="email" type="xsd:string">
+        <xsd:element name="email">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact email address, if available.  May be
               repeated for multiple addresses.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="mailing-address" type="xsd:string">
+        <xsd:element name="mailing-address">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact mailing address, if available.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -565,6 +587,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -615,6 +638,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -642,7 +666,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element name="period-start" type="xsd:date">
+        <xsd:element name="period-start" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The starting date of the accounting period, in ISO 8601
@@ -650,7 +674,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="period-end" type="xsd:date">
+        <xsd:element name="period-end" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ending date of the accounting period, in ISO 8601
@@ -665,6 +689,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute name="type" type="xsd:string" use="optional">
         <xsd:annotation>
@@ -682,6 +707,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -752,6 +778,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
+              <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="receiver-org">
@@ -775,6 +802,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
+              <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="provider-activity" type="refType">
@@ -828,6 +856,7 @@
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:extension>
               </xsd:simpleContent>
             </xsd:complexType>
@@ -850,6 +879,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
+          <xsd:any namespace="##other" processContents="lax"/>
         </xsd:choice>
         <xsd:attributeGroup ref="refAtts"/>
         <xsd:attribute name="flow" use="required">
@@ -863,6 +893,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -949,6 +980,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:attributeGroup ref="textAtts"/>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
   <xsd:complexType name="refType" mixed="true">
@@ -961,6 +993,7 @@
     </xsd:annotation>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="refAtts"/>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
   <xsd:complexType name="currencyType">
@@ -996,6 +1029,15 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
+        <xsd:anyAttribute processContents="lax" namespace="##other"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:complexType name="dateType">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:date">
+        <xsd:anyAttribute processContents="lax" namespace="##other"/>
       </xsd:extension>
     </xsd:simpleContent>
   </xsd:complexType>

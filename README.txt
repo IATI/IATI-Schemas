@@ -16,19 +16,25 @@ README.txt                      This file.
 
 CHANGES.txt                     Change log.
 
-iati-projects-schema.xsd        An early draft IATI XML schema for
-                                exporting UN-OCHA data.
+iati-activities-schema.xsd      An early draft IATI XML schema for
+                                exporting UN-OCHA activity data.
+
+iati-organizations-schema.xsd   An early draft IATI XML schema for
+                                exporting UN-OCHA activity data.
 
 xml.xsd                         A supplementary schema that must be in
                                 the same directory as the above.
 
 iati2idml.xslt                  An XSLT script for converting this
-                                early draft version of IATI to the
-                                IDML 2.0 used by the Development
+                                early draft version of IATI activities
+                                to the IDML 2.0 used by the Development
                                 Gateway Haiti AMP.
 
-run-schema-tests.xml            Shell script to run schema tests on
-                                sample data.
+run-activity-tests.xml          Shell script to run schema tests on
+                                sample activity data.
+
+run-organization-tests.xml      Shell script to run schema tests on
+                                sample activity data.
 
 test-data/                      Files for test harness (including
                                 example files).

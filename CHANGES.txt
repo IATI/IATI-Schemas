@@ -1,5 +1,26 @@
 IATI Schema Changes -*-Outline-*-
 
+* 2010-05-04 Changes
+
+** Organizations
+
+- added iati-organizations-schema.xsd for organization reports
+
+** Extensibility
+
+- changed schema to allow extensibility using attributes and elements
+  from explicit namespaces
+
+** Pilots
+
+- added test files from other pilots (not in the test script, yet, due
+  to issues)
+
+** Tests
+
+- reorganized tests by type
+
+
 * 2010-04-27 Changes
 
 ** Update iati-activity
