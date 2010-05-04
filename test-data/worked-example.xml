@@ -1,6 +1,9 @@
 <?xml version="1.0"?>
 
-<iati-activity last-updated-datetime="2010-04-01T10:00:00-04:00" default-currency="GBP" xml:lang="en">
+<iati-activity last-updated-datetime="2010-04-01T10:00:00-04:00" default-currency="GBP" xml:lang="en"
+               xmlns:ext="http://www.example.org/ext#">
+
+  <ext:something>Sample extended element from a different namespace.</ext:something>
 
   <!-- the IATI identifier for the activity -->
   <iati-identifier>http://www.example.org/activities/12345.xml</iati-identifier>
@@ -9,7 +12,7 @@
   <other-identifier owner-ref="http://www.example.org/" owner-name="Example Agency">pj777-102</other-identifier>
 
   <!-- geopolitical entities benefitting from the project -->
-  <recipient-country code="HT">Haiti</recipient-country>
+  <recipient-country code="HT" ext:att="Sample extended attribute from a different namespace.">Haiti</recipient-country>
 
   <!-- the project dates -->
   <activity-date type="start" iso-date="2010-04-01"/>
@@ -50,6 +53,7 @@
 
   <!-- money coming into the project -->
   <transaction flow="incoming" type="contribution">
+    <ext:transaction-extension>Extended element from different namespace in transaction.</ext:transaction-extension>
     <value value-date="2010-04-01">1000000</value>
     <provider-org ref="http://www.dfid.gov.uk/">DFID</provider-org>
     <provider-activity ref="http://www.dfid.gov.uk/activities/012345.xml">Source activity</provider-activity>
