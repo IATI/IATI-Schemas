@@ -7,7 +7,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Activity-Information Schema
 
-      Unofficial draft 2010-05-04, by David Megginson
+      Draft 2010-06-28, by David Megginson
 
       NOTE: the xml.xsd schema must be in the same directory as this
       one.
@@ -181,6 +181,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="role" type="xsd:string" use="optional">
@@ -208,6 +209,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="code" use="required">
         <xsd:annotation>
@@ -244,6 +246,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="code" use="required">
         <xsd:annotation>
@@ -385,6 +388,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="type" type="xsd:string" use="optional">
         <xsd:annotation>
@@ -409,6 +413,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
@@ -529,7 +534,7 @@
               repeated for multiple addresses.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+            <xsd:any namespace="##other" processContents="lax"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -567,6 +572,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
@@ -617,6 +623,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:any namespace="##other" processContents="lax"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
@@ -767,6 +774,7 @@
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
+              <xsd:any namespace="##other" processContents="lax"/>
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
               <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
@@ -790,6 +798,7 @@
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
+              <xsd:any namespace="##other" processContents="lax"/>
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
               <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
@@ -979,6 +988,7 @@
         in different languages.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:any namespace="##other" processContents="lax"/>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
@@ -991,6 +1001,7 @@
         text in different languages.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:any namespace="##other" processContents="lax"/>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="refAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
