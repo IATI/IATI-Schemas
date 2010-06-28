@@ -181,7 +181,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="role" type="xsd:string" use="optional">
@@ -209,7 +211,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="code" use="required">
         <xsd:annotation>
@@ -246,7 +250,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="code" use="required">
         <xsd:annotation>
@@ -388,7 +394,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="type" type="xsd:string" use="optional">
         <xsd:annotation>
@@ -413,7 +421,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
@@ -527,16 +537,13 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="email">
+        <xsd:element name="email" type="plainType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact email address, if available.  May be
               repeated for multiple addresses.
             </xsd:documentation>
           </xsd:annotation>
-            <xsd:any namespace="##other" processContents="lax"/>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
         </xsd:element>
         <xsd:element name="mailing-address">
           <xsd:annotation>
@@ -572,7 +579,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
@@ -623,7 +632,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
@@ -774,7 +785,9 @@
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
-              <xsd:any namespace="##other" processContents="lax"/>
+              <xsd:sequence>
+                <xsd:any namespace="##other" processContents="lax"/>
+              </xsd:sequence>
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
               <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
@@ -798,7 +811,9 @@
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
-              <xsd:any namespace="##other" processContents="lax"/>
+              <xsd:sequence>
+                <xsd:any namespace="##other" processContents="lax"/>
+              </xsd:sequence>
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
               <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
@@ -981,6 +996,16 @@
     </xsd:attribute>
   </xsd:attributeGroup>
 
+  <xsd:complexType name="plainType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Plain text content with no special attributes (e.g. xml:lang),
+        though extended attributes are still allowed.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
+
   <xsd:complexType name="textType" mixed="true">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -988,7 +1013,9 @@
         in different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:any namespace="##other" processContents="lax"/>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
@@ -1001,7 +1028,9 @@
         text in different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:any namespace="##other" processContents="lax"/>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="refAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
