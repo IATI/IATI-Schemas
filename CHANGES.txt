@@ -1,5 +1,17 @@
 IATI Schema Changes -*-Outline-*-
 
+* 2010-06-28 Changes
+
+** Activities
+
+- allow extension elements (e.g. HTML markup) in textType, refType,
+  participating-org, recipient-country, recipient-region, description,
+  sector, target-location, policy-marker, transaction/provider-org,
+  and transaction/receiver-org -- that means that extension markup is
+  forbidden only in very specific types of fields, such as telephone
+  numbers, currency values, identifiers, etc.
+
+
 * 2010-05-04 Changes
 
 ** Organizations
