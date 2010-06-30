@@ -77,9 +77,9 @@
         <xsd:element ref="recipient-country"/>
         <xsd:element ref="recipient-region"/>
         <xsd:element ref="collaboration-type"/>
-        <xsd:element ref="flow-type"/>
+        <xsd:element ref="default-flow-type"/>
         <xsd:element ref="default-aid-type"/>
-        <xsd:element ref="finance-type"/>
+        <xsd:element ref="default-finance-type"/>
         <xsd:element ref="iati-identifier"/>
         <xsd:element ref="other-identifier"/>
         <xsd:element ref="title"/>
@@ -97,6 +97,7 @@
         <xsd:element ref="transaction"/>
         <xsd:element ref="related-initiative"/>
         <xsd:element ref="related-activity"/>
+        <xsd:element ref="legacy-data"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
@@ -214,15 +215,8 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:sequence>
+      <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="code" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ISO 3166-1-alpha-2 code for one of the recipient countries
-            for this activity (e.g. "HT" for Haiti).
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -253,14 +247,8 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:sequence>
+      <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="code" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The IATI code for the geopolitical region.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -274,7 +262,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="collaboration-type" type="refType">
+  <xsd:element name="collaboration-type" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.06 Collaboration Type
@@ -288,7 +276,7 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="flow-type" type="refType">
+  <xsd:element name="default-flow-type" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.07 Flow Type
@@ -299,7 +287,7 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="default-aid-type" type="refType">
+  <xsd:element name="default-aid-type" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.07.1 Default Type of Aid
@@ -313,13 +301,15 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="finance-type" type="refType">
+  <xsd:element name="default-finance-type" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.08 Finance Type
+        03.08 Default Finance Type
 
         The type of finance (e.g. debt relief). The types will be
-        defined by IATI.
+        defined by IATI.  This the default value for all transactions
+        in the activity report; it can be overridded by individual
+        transactions.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -425,7 +415,7 @@
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -485,7 +475,7 @@
     </xsd:complexType>
   </xsd:element>
   
-  <xsd:element name="activity-status" type="refType">
+  <xsd:element name="activity-status" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.14 Activity Status / Stage
@@ -583,7 +573,7 @@
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -606,7 +596,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-tied-status" type="refType">
+  <xsd:element name="default-tied-status" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.17 Tied aid status
@@ -636,7 +626,7 @@
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -684,6 +674,42 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element name="receiver-org">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The organization receiving the money from the
+              budget (if omitted, then the receiver
+              organization is the reporting organization).
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:sequence>
+            <xsd:attributeGroup ref="textAtts"/>
+            <xsd:attributeGroup ref="refAtts"/>
+            <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The internal identifier used by the receiver
+                  organization for its activity that receives the
+                  funds from this transaction (not to be confused
+                  with the IATI identifier for the target activity).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="description" type="textType" minOccurs="0">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A free-text description of the budget.  May be repeated
+              in multiple languages, with different values for the
+              @xml:lang attribute.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:element name="period-start" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -756,7 +782,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="transaction-type" type="refType">
+          <xsd:element name="transaction-type" type="codeType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The type of the transaction (e.g. commitment,
@@ -766,7 +792,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="status" type="refType">
+          <xsd:element name="status" type="codeType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The status of the contribution (e.g. committed, paid).
@@ -862,30 +888,44 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="milestone-date">
+          <xsd:element name="transaction-date">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                A milestone date for this contribution (such as the
+                A milestone date for this transaction (such as the
                 decision date, disbursement date, etc.).
               </xsd:documentation>
             </xsd:annotation>
-            <xsd:complexType>
-              <xsd:simpleContent>
-                <xsd:extension base="xsd:date">
-                  <xsd:attribute name="type" type="xsd:string" use="required">
-                    <xsd:annotation>
-                      <xsd:documentation xml:lang="en">
-                        The type of milestone (e.g. "commitment",
-                        "disbursement").
-                      </xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:attribute>
-                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
-                </xsd:extension>
-              </xsd:simpleContent>
+            <xsd:complexType mixed="true">
+              <xsd:sequence>
+                <xsd:any namespace="##other" processContents="lax"/>
+              </xsd:sequence>
+              <xsd:attribute name="iso-date" type="xsd:date" use="required">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The ISO 8601 version of the transaction date.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+              <xsd:attribute name="type" type="xsd:string" use="required">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The type of milestone (e.g. "commitment",
+                    "disbursement").
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:attribute>
+              <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="aid-type" type="refType">
+          <xsd:element name="flow-type" type="codeType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Optional element to override the top-level
+                default-flow-type element.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="aid-type" type="codeType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Optional element to override the top-level
@@ -894,7 +934,16 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="tied-status" type="refType">
+          <xsd:element name="finance-type" type="codeType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Optional element to override the top-level
+                default-finance-type element on a
+                transaction-by-transaction basis, if needed.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
+          <xsd:element name="tied-status" type="codeType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Optional element to override the top-level
@@ -952,22 +1001,81 @@
     </xsd:annotation>
   </xsd:element>
 
+  <xsd:element name="legacy-data">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Hold a single name=value pair of legacy data.  This element is
+        *not* for adding new data types; instead, it holds the
+        original (non-IATI) value or code for an existing data type.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The original field name.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="value" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The original field value.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="iati-equivalent" type="xsd:NMTOKEN" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The name of the equivalent IATI element (if available).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+    </xsd:complexType>
+  </xsd:element>
+
   <!--
       Common attribute groups and data types used by the elements above.
   -->
 
-  <xsd:attributeGroup name="refAtts">
+  <xsd:attributeGroup name="codeAtts">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Attribute group for things that can have identifiers or codes.
+        Attribute group for things that can have codes
+        (e.g. countries).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:attribute name="ref" type="xsd:string" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
-          Machine-readable identification string for the entity being
-          described.  The identifier must appear as a URI (relative or
-          absolute).
+          Machine-readable code for the entity being described.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="type" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Free text describing the type of thing being referenced.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="refAtts">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Attribute group for business objects that can have
+        identifiers.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="ref" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Machine-readable identification string for the business
+          object being described.
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
@@ -1020,12 +1128,28 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
-  <xsd:complexType name="refType" mixed="true">
+  <xsd:complexType name="codeType" mixed="true">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element that refers to an object that can
-        have a code or unique identifier, as well as human-readable
-        text in different languages.
+        have a code as well as human-readable text in different
+        languages (e.g. a country or status).
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="textAtts"/>
+    <xsd:attributeGroup ref="codeAtts"/>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="refType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element that refers to a business object that
+        can have unique identifier as well as human-readable text in
+        different languages (e.g. an organization).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
@@ -1043,7 +1167,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:simpleContent>
-      <xsd:extension base="xsd:decimal">
+      <xsd:extension base="xsd:integer">
         <xsd:attribute name="currency" type="xsd:string" use="optional">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1053,7 +1177,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="value-date" type="xsd:date" use="optional">
+        <xsd:attribute name="value-date" type="xsd:date" use="required">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The date that this value was set (to allow historical
