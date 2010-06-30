@@ -38,6 +38,8 @@
         <xsd:element ref="name"/>
         <xsd:element ref="total-budget"/>
         <xsd:element ref="recipient-org-budget"/>
+        <xsd:element ref="recipient-country-budget"/>
+        <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
@@ -109,6 +111,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
+      <xsd:attributeGroup ref="textAtts"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -152,7 +155,9 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -203,6 +208,56 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="recipient-country-budget">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        This element represents the budget for disbursements to
+        a specific country across all projects.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="recipient-country" type="refType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The country that will receive the funds during the
+              budget period.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="period-start" type="dateType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The starting date for the budget period, in ISO 8601
+              format (e.g. 2010-04-01 for 1 April 2010).  This element
+              must be present.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="period-end" type="dateType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The ending date for the budget period, in ISO 8601
+              format (e.g. 2011-03-31 for 31 March 2011).  This
+              element must be present.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="value" type="currencyType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The total value of the money budgeted to be disbused to
+              the specified country during this time period.  This
+              element is required.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
     </xsd:complexType>
   </xsd:element>
@@ -282,7 +337,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:simpleContent>
-      <xsd:extension base="xsd:decimal">
+      <xsd:extension base="xsd:integer">
         <xsd:attribute name="currency" type="xsd:string" use="optional">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -292,7 +347,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="value-date" type="xsd:date" use="optional">
+        <xsd:attribute name="value-date" type="xsd:date" use="required">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The date that this value was set (to allow historical
@@ -318,7 +373,7 @@
       <xsd:extension base="xsd:date">
         <xsd:anyAttribute processContents="lax" namespace="##other"/>
       </xsd:extension>
-    </xsd:simpleContent>
-  </xsd:complexType>
+    </xsd:simpleContent> 
+ </xsd:complexType>
 
 </xsd:schema>

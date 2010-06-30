@@ -1,5 +1,54 @@
 IATI Schema Changes -*-Outline-*-
 
+* 2010-07-07 Changes
+
+** Activities
+
+- add xsd:any to most text content, to allow mixed-content
+  extensibility (e.g. in text, description, etc.)
+
+- change @ref to @code anywhere the attribute represents an enumerated
+  list rather than the identifier of a business object:
+  collaboration-type, (default-)flow-type, default-aid-type,
+  transaction/aid-type, (default-)finance-type, sector,
+  default-tied-status, tied-status, policy-marker,
+  transaction/transaction-type, activity-status, target-location,
+  transaction/status
+
+- modify the currencyType complex type so that financial values must
+  be integers: affects total-cost, budget-planned/value,
+  transaction/value
+
+- make total-cost/value/@value-date, budget-planned/value/@value-date,
+  and transaction/value/@value-date required 
+
+- rename finance-type to default-finance-type and add
+  transaction/finance-type
+
+- rename flow-type to default-flow-type and add transaction/flow-type
+
+- add transaction/transaction-date/@iso-date (required), and use the
+  content to hold an optional text description
+
+- add legacy-data element to hold original (non-IATI) values
+
+- add budget-planned/receiver-org and budget-planned/description
+
+
+** Organizations
+
+- add xsd:any and xsd:anyAttribute various places to improve
+  extensibility
+
+- modify the currencyType complex type so that financial values must
+  be integers: affects total-budget and recipient-org-budget
+
+- make total-budget/value/@value-date and
+  recipient-org-budget/value/@value-date required
+
+- add recipient-country-budget
+
+
 * 2010-06-28 Changes
 
 ** Activities
