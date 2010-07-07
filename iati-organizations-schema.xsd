@@ -368,12 +368,23 @@
     </xsd:simpleContent>
   </xsd:complexType>
 
-  <xsd:complexType name="dateType">
-    <xsd:simpleContent>
-      <xsd:extension base="xsd:date">
-        <xsd:anyAttribute processContents="lax" namespace="##other"/>
-      </xsd:extension>
-    </xsd:simpleContent> 
- </xsd:complexType>
+  <xsd:complexType name="dateType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A date.  The ISO 8601 date goes into the @iso-date attribute.
+        The content may be free-form text.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="iso-date" type="xsd:date" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          The ISO 8601 date.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:complexType>
 
 </xsd:schema>
