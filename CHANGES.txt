@@ -59,6 +59,11 @@ IATI Schema Changes -*-Outline-*-
 - add recipient-country-budget
 
 
+** Tests
+
+- add a completely new set of unit tests for each schema
+
+
 * 2010-05-04 Changes
 
 ** Organizations
