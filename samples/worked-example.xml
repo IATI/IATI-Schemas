@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+
+<iati-activity default-currency="GBP" xml:lang="en">
+
+  <!-- the IATI identifier for the activity -->
+  <iati-identifier>http://www.example.org/activities/12345.xml</iati-identifier>
+
+  <!-- non-IATI identifiers for the project -->
+  <other-identifier owner-ref="http://www.example.org/" owner-name="Example Agency">pj777-102</other-identifier>
+
+  <!-- geopolitical entities benefitting from the project -->
+  <recipient-country code="HT">Haiti</recipient-country>
+
+  <!-- the project dates -->
+  <activity-date type="start" iso-date="2010-04-01"/>
+  <activity-date type="completion" iso-date="2011-03-31"/>
+
+  <!-- English human-readable information about the project -->
+  <title xml:lang="en">Worked example of an activity report</title>
+  <description xml:lang="en">
+    This is a worked example that will eventually test as many IATI
+    schema features as possible.
+  </description>
+
+  <!-- French human-readable information about the project -->
+  <title xml:lang="fr">Exemple artificiel d'un rapport d'activité</title>
+  <description xml:lang="fr">
+    Il s'agit d'un exemple artificiel qui finira tester autant de
+    caractéristiques du schéma IATI que possible.
+  </description>
+
+  <!-- point to a related activity -->
+  <related-activity ref="http://example.org/activities/54321.xml" type="sibling">A sibling project</related-activity>
+
+  <!-- total planned activity cost -->
+  <total-cost value-date="2010-07-07" currency="GBP" type="funds">1000000</total-cost>
+
+  <!-- future budgets for FY2012 and FY2013 -->
+  <budget-planned period="annual">
+    <period-start>2011-04-01</period-start>
+    <period-end>2012-03-31</period-end>
+    <value value-date="2010-07-07">250000</value>
+  </budget-planned>
+
+  <budget-planned period="annual">
+    <period-start>2012-04-01</period-start>
+    <period-end>2013-03-31</period-end>
+    <value value-date="2010-07-07">750000</value>
+  </budget-planned>
+
+  <!-- money coming into the project -->
+  <transaction flow="incoming" type="contribution">
+    <value value-date="2010-07-07">1000000</value>
+    <provider-org ref="http://www.dfid.gov.uk/">DFID</provider-org>
+    <provider-activity ref="http://www.dfid.gov.uk/activities/012345.xml">Source activity</provider-activity>
+  </transaction>
+
+  <!-- money going out of the project -->
+  <transaction flow="outgoing" type="disbursement">
+    <value value-date="2010-01-01" currency="GBP">500000</value>
+    <receiver-org ref="http://www.unicef.org/">UNICEF</receiver-org>
+    <receiver-activity ref="http://www.unicef.org/projects/AA99B.xml">Haiti schools programme</receiver-activity>
+  </transaction>
+</iati-activity>
