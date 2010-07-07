@@ -4,7 +4,7 @@
 ########################################################################
 
 SOURCE=/home/david/Documents/Work/IATI/Schemas
-TARGET=iati-schemas-dist-`date +%Y-%m-%d`
+TARGET=iati-schemas-dist-`date +%Y%m%d`
 
 cd $SOURCE
 
