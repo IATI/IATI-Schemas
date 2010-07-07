@@ -7,6 +7,8 @@ IATI Schema Changes -*-Outline-*-
 - add xsd:any to most text content, to allow mixed-content
   extensibility (e.g. in text, description, etc.)
 
+- add xsd:anyAttribute wherever possible
+
 - change @ref to @code anywhere the attribute represents an enumerated
   list rather than the identifier of a business object:
   collaboration-type, (default-)flow-type, default-aid-type,
@@ -50,19 +52,11 @@ IATI Schema Changes -*-Outline-*-
 - make total-budget/value/@value-date and
   recipient-org-budget/value/@value-date required
 
+- change structure of */period-start and */period-end to use @iso-date
+  attribute (required) and optional free-form content, as in the
+  activities schema
+
 - add recipient-country-budget
-
-
-* 2010-06-28 Changes
-
-** Activities
-
-- allow extension elements (e.g. HTML markup) in textType, refType,
-  participating-org, recipient-country, recipient-region, description,
-  sector, target-location, policy-marker, transaction/provider-org,
-  and transaction/receiver-org -- that means that extension markup is
-  forbidden only in very specific types of fields, such as telephone
-  numbers, currency values, identifiers, etc.
 
 
 * 2010-05-04 Changes
