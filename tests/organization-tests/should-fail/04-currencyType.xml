@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<!-- Test that the schema rejects currency values with a decimal part -->
+<iati-organization>
+  <iati-identifier>12345</iati-identifier>
+  <total-budget>
+    <!-- currency must be an integer -->
+    <value value-date="2010-07-07">100.00</value>
+  </total-budget>
+</iati-organization>

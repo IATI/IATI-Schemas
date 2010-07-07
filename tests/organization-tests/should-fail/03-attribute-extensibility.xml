@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<!-- Test that the schema rejects extended attributes not in 
+  an XML namespace -->
+<iati-organization>
+  <!-- @foo not allowed, since it's not in a namespace -->
+  <name foo="yyy">xxx</name>
+</iati-organization>
