@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that flow-type allowed inside a transaction.
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- used to be flow-type -->
+    <default-flow-type code="XX">xxx</default-flow-type>
+    <transaction flow="incoming">
+      <value value-date="2010-07-07">123</value>
+      <!-- should be allowed here now -->
+      <flow-type code="YY">yyy</flow-type>
+    </transaction>
+  </iati-activity>
+</iati-activities>

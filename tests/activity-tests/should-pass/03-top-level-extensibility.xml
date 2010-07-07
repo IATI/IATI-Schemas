@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- add a new top-level element from a namespace -->
+    <x:foo xmlns:x="http://www.example.org/">yyy</x:foo>
+  </iati-activity>
+</iati-activities>

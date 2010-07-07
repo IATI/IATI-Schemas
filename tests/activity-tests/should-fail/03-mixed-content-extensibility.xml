@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that the schema rejects adding a new element that's not in a 
+  namespace into mixed content.
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- shouldn' allow foo element -->
+    <description>xxx <foo>yyy</foo> zzz</description>
+  </iati-activity>
+</iati-activities>

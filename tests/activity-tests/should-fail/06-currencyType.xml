@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that currency values reject decimals.
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- decimal part not allowed -->
+    <total-cost value-date="2010-07-07">123.45</total-cost>
+  </iati-activity>
+</iati-activities>

@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<!--
+  Test new subelements in budget-planned
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <budget-planned>
+      <!-- new elements: receiver-org and description -->
+      <receiver-org ref="http://www.example.org/">XXX</receiver-org>
+      <description xml:lang="en">xxx</description>
+    </budget-planned>
+  </iati-activity>
+</iati-activities>

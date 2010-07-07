@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that @value-date is now required.
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- @value-date attribute must be specified -->
+    <total-cost>123</total-cost>
+  </iati-activity>
+</iati-activities>

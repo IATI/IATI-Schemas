@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that the schema rejects the old ref attribute where changed to code.
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- should be @code now -->
+    <sector ref="123">xxx</sector>
+  </iati-activity>
+</iati-activities>

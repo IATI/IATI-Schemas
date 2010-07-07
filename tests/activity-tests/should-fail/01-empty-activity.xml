@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that the schema rejects an activity with no child elements.
+-->
+<iati-activities>
+  <iati-activity>
+    <!-- at least one element is required -->
+  </iati-activity>
+</iati-activities>

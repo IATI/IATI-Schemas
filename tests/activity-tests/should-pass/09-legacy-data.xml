@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<!--
+  Test new legacy-data element
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <legacy-data name="foo" value="xxx">yyy</legacy-data>
+  </iati-activity>
+</iati-activities>

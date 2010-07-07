@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that transaction-date/@iso-date is now required
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <transaction flow="incoming">
+      <!-- should fail without @iso-date -->
+      <transaction-date>2010-07-07</transaction-date>
+    </transaction>
+  </iati-activity>
+</iati-activities>

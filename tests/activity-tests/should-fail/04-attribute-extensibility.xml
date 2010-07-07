@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!--
+  Test that the schema rejects adding a new attribute that's not
+  in a namespace.
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <!-- foo attribute should be in a namespace -->
+    <description foo="yyy">xxx</description>
+  </iati-activity>
+</iati-activities>
