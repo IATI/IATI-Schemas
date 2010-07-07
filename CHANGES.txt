@@ -30,9 +30,13 @@ IATI Schema Changes -*-Outline-*-
 - add transaction/transaction-date/@iso-date (required), and use the
   content to hold an optional text description
 
+- make transaction-date/@type optional
+
 - add legacy-data element to hold original (non-IATI) values
 
 - add budget-planned/receiver-org and budget-planned/description
+
+- add iati-activity/@hierarchy
 
 
 ** Organizations

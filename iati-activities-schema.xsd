@@ -7,7 +7,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Activity-Information Schema
 
-      Draft 2010-06-28, by David Megginson
+      Draft 2010-07-07, by David Megginson
 
       NOTE: the xml.xsd schema must be in the same directory as this
       one.
@@ -120,6 +120,15 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:attribute name="hierarchy" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Shortcut to show whether this is a parent or child
+            activity, without having to evaluate related-activity
+            elements. Allowed values TBD.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -183,7 +192,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="refAtts"/>
@@ -213,7 +222,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attributeGroup ref="textAtts"/>
@@ -245,7 +254,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="codeAtts"/>
       <xsd:attributeGroup ref="textAtts"/>
@@ -343,16 +352,13 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="iati-identifier">
+  <xsd:element name="iati-identifier" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The single, unique and persistent IATI identifier for this
         activity.  This must always be present in an IATI report.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="title" type="textType">
@@ -385,7 +391,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="type" type="xsd:string" use="optional">
@@ -412,7 +418,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="codeAtts"/>
@@ -570,7 +576,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="codeAtts"/>
@@ -623,7 +629,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attributeGroup ref="codeAtts"/>
@@ -684,7 +690,7 @@
           </xsd:annotation>
           <xsd:complexType mixed="true">
             <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax"/>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attributeGroup ref="textAtts"/>
             <xsd:attributeGroup ref="refAtts"/>
@@ -812,7 +818,7 @@
             </xsd:annotation>
             <xsd:complexType mixed="true">
               <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax"/>
+                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
@@ -838,7 +844,7 @@
             </xsd:annotation>
             <xsd:complexType mixed="true">
               <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax"/>
+                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
               <xsd:attributeGroup ref="textAtts"/>
               <xsd:attributeGroup ref="refAtts"/>
@@ -897,7 +903,7 @@
             </xsd:annotation>
             <xsd:complexType mixed="true">
               <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax"/>
+                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
               <xsd:attribute name="iso-date" type="xsd:date" use="required">
                 <xsd:annotation>
@@ -906,7 +912,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
-              <xsd:attribute name="type" type="xsd:string" use="required">
+              <xsd:attribute name="type" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The type of milestone (e.g. "commitment",
@@ -1011,7 +1017,7 @@
     </xsd:annotation>
     <xsd:complexType mixed="true">
       <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="name" type="xsd:string" use="required">
         <xsd:annotation>
@@ -1048,7 +1054,7 @@
         (e.g. countries).
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="ref" type="xsd:string" use="optional">
+    <xsd:attribute name="code" type="xsd:string" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           Machine-readable code for the entity being described.
@@ -1122,7 +1128,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
@@ -1137,7 +1143,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="codeAtts"/>
@@ -1153,7 +1159,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax"/>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="refAtts"/>
