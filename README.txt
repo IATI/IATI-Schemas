@@ -1,40 +1,42 @@
-IATI schema and support for UN-OCHA to Haiti AMP
+International Aid Transparency Initiative
+XML Activity and Organization Schemas
 
 David Megginson <david.megginson@megginson.com>
-2010-04-27
+DRAFT 2010-07-07
 
+This directory contains a draft of the IATI activities and
+organization schemas effective 2010-07-07.  These schemas are not yet
+finalized, but are in use in several field trials.
 
-This archive contains files to support exporting aid data from the
-UN-OCHA OPS and FITS databases and transmitting it to the Development
-Gateway Haiti AMP.  Note that all files are based on an early draft of
-the International Aid Transparency Initiative (IATI) XML schemas,
-which are subject to change.
-
-The archive contains the following files:
+The directory contains the following files:
 
 README.txt                      This file.
 
 CHANGES.txt                     Change log.
 
-iati-activities-schema.xsd      An early draft IATI XML schema for
-                                exporting UN-OCHA activity data.
+iati-activities-schema.xsd      XML Schema for describing aid activities
+                                (e.g. projects).
 
-iati-organizations-schema.xsd   An early draft IATI XML schema for
-                                exporting UN-OCHA activity data.
+iati-organization-schema.xsd    XML schema for describing aid
+                                organizations and their budgets.
 
 xml.xsd                         A supplementary schema that must be in
                                 the same directory as the above.
 
-iati2idml.xslt                  An XSLT script for converting this
-                                early draft version of IATI activities
-                                to the IDML 2.0 used by the Development
-                                Gateway Haiti AMP.
+tests/                          Unit tests for the schemas.
 
-run-activity-tests.xml          Shell script to run schema tests on
-                                sample activity data.
+The tests include a series of short XML documents that should pass or
+file when parsed against the schemas in this distribution.  The shell
+scripts for running the tests rely on a Unix environment with the bash
+shell and the xmllint utility, but the test documents will work with
+any schema-aware XML parser. We will add unit tests as schema
+development continues.
 
-run-organization-tests.xml      Shell script to run schema tests on
-                                sample activity data.
+The XSLT script for converting IATI to IDML markup is no longer
+bundled with the distribution.  It was originally provided as a
+starting point for a specific organization working with the trials,
+but the organization has since made its own changes to the script and
+taken over responsibility for it.
 
-test-data/                      Files for test harness (including
-                                example files).
+
+__end__
