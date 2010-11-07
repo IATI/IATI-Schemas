@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<iati-organisation>
+  <iati-identifier>12345</iati-identifier>
+  <document-link url="http://www.example.org/" format="text/html" language="en">
+    <category code="XXX">XXX category</category>
+    <category code="YYY">YYY category</category>
+    <title>Document link</title>
+  </document-link>
+</iati-organisation>

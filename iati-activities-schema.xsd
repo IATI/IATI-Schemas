@@ -97,6 +97,7 @@
         <xsd:element ref="transaction"/>
         <xsd:element ref="related-initiative"/>
         <xsd:element ref="related-activity"/>
+        <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
@@ -1018,6 +1019,57 @@
     </xsd:annotation>
   </xsd:element>
 
+  <xsd:element name="document-link">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A categorized link to an external document.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element name="title" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The title of the document.  May be repeated for multiple languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="category" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A category into which this document falls, using the
+              IATI document category code list.  Must be specified at
+              least once, and may be repeated for multiple categories.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="url" type="xsd:anyURI" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The target URL of the external document, e.g. "http://www.example.org/doc.html".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="format" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The MIME type of the external document, e.g. "application/pdf".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="language" type="xsd:language" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The ISO 639 language code for the target document, e.g. "en".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="legacy-data">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -1066,6 +1118,28 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:attribute name="code" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Machine-readable code for the entity being described.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="type" type="xsd:string" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          Free text describing the type of thing being referenced.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+  </xsd:attributeGroup>
+
+  <xsd:attributeGroup name="codeReqAtts">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Attribute group for things that must have codes.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="code" type="xsd:string" use="required">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           Machine-readable code for the entity being described.
@@ -1158,6 +1232,21 @@
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:attributeGroup ref="codeAtts"/>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="codeReqType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element that refers to an object that must
+        have a code.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="textAtts"/>
+    <xsd:attributeGroup ref="codeReqAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 

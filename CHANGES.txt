@@ -9,6 +9,8 @@ IATI Schema Changes -*-Outline-*-
 
 - add optional iati-activity/@version attribute
 
+- add new document-link element and subelements
+
 ** Organizations
 
 - [backwards-incompatible] rename iati-organization to
@@ -18,6 +20,8 @@ IATI Schema Changes -*-Outline-*-
   organisation-website
 
 - add optional iati-organisation/@version attribute
+
+- add new document-link element and subelements
 
 
 * 2010-07-07 Changes (version 1.0)
