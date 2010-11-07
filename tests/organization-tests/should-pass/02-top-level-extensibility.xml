@@ -4,8 +4,8 @@
   Test that schema accepts top-level extended elements with an
   explicit XML namespace
 -->
-<iati-organization>
+<iati-organisation>
   <iati-identifier>xxx</iati-identifier>
   <!-- extended foo element allowed with an XML namespace -->
   <foo xmlns="http://www.example.org/">yyy</foo>
-</iati-organization>
+</iati-organisation>

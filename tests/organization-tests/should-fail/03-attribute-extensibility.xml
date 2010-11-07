@@ -2,7 +2,7 @@
 
 <!-- Test that the schema rejects extended attributes not in 
   an XML namespace -->
-<iati-organization>
+<iati-organisation>
   <!-- @foo not allowed, since it's not in a namespace -->
   <name foo="yyy">xxx</name>
-</iati-organization>
+</iati-organisation>

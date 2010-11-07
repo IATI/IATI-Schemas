@@ -1,6 +1,24 @@
 IATI Schema Changes -*-Outline-*-
 
-* 2010-07-07 Changes
+* Next Release Changes (version 1.01)
+
+** Activities
+
+- [backwards-incompatible] renamed contact-info/organization to
+  contact-info/organisation
+
+** Organizations
+
+- [backwards-incompatible] rename iati-organization to
+  iati-organisation
+
+- [backwards-incompatible] rename organization-website to
+  organisation-website
+
+- [backwards-incompatible] 
+
+
+* 2010-07-07 Changes (version 1.0)
 
 ** Activities
 

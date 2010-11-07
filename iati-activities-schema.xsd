@@ -160,15 +160,15 @@
   <xsd:element name="reporting-org" type="refType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.01 Reporting Organization 
+        03.01 Reporting Organisation 
 
         (formerly 03.01 Funding Country/Institution)
 
-        The organization issuing the activity report (typically the
+        The organisation issuing the activity report (typically the
         activity lead).  May be a donor, fund, agency, etc.
         Specifying the @identifier and @role attributes is strongly
-        recommended.  May contain the organization name as content.
-        If the organization is participating in the project, it should
+        recommended.  May contain the organisation name as content.
+        If the organisation is participating in the project, it should
         also be listed with participating-org.
       </xsd:documentation>
     </xsd:annotation>
@@ -177,16 +177,16 @@
   <xsd:element name="participating-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.02 Participating Organization
+        03.02 Participating Organisation
 
-        (formerly 03.02 Funding Extending Agency/Organization, 03.03
+        (formerly 03.02 Funding Extending Agency/Organisation, 03.03
         Additional Channels of Delivery, and 03.04 Beneficiary
-        Agency/Organization)
+        Agency/Organisation)
 
-        An organization (including the reporting organization)
+        An organisation (including the reporting organisation)
         involved with the activity.  May be a donor, fund, agency,
         etc.  Specifying the @identifier and @role attributes is
-        strongly recommended.  May contain the organization name as
+        strongly recommended.  May contain the organisation name as
         content.
       </xsd:documentation>
     </xsd:annotation>
@@ -199,7 +199,7 @@
       <xsd:attribute name="role" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code describing the organization's role in the activity
+            A code describing the organisation's role in the activity
             (donor, agency, etc.).
           </xsd:documentation>
         </xsd:annotation>
@@ -328,7 +328,7 @@
       <xsd:documentation xml:lang="en">
         An alternative, non-IATI identifier for the activity.  This
         identifier is not guaranteed to be unique or persistent (it
-        depends on the owner organization's policies, not IATI's).
+        depends on the owner organisation's policies, not IATI's).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -507,10 +507,10 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="organization">
+        <xsd:element name="organisation">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organization to contact for more information about the
+              The organisation to contact for more information about the
               activity.
             </xsd:documentation>
           </xsd:annotation>
@@ -518,7 +518,7 @@
         <xsd:element name="person-name" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The name of the contact person at the organization.
+              The name of the contact person at the organisation.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -562,7 +562,7 @@
       <xsd:documentation xml:lang="en">
         3.16 Detailed geographic info
 
-        This element allows the reporting organization to specify the
+        This element allows the reporting organisation to specify the
         activity's geographical target location at the sub-national
         level.  Repeat this element for each separate location
         description.  The content is a human-readable description of
@@ -683,9 +683,9 @@
         <xsd:element name="receiver-org">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organization receiving the money from the
+              The organisation receiving the money from the
               budget (if omitted, then the receiver
-              organization is the reporting organization).
+              organisation is the reporting organisation).
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
@@ -698,7 +698,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The internal identifier used by the receiver
-                  organization for its activity that receives the
+                  organisation for its activity that receives the
                   funds from this transaction (not to be confused
                   with the IATI identifier for the target activity).
                 </xsd:documentation>
@@ -811,9 +811,9 @@
           <xsd:element name="provider-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The organization providing the money for the
-                transaction (if omitted, the provider organization is
-                the reporting organization).
+                The organisation providing the money for the
+                transaction (if omitted, the provider organisation is
+                the reporting organisation).
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
@@ -837,9 +837,9 @@
           <xsd:element name="receiver-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                The organization receiving the money from the
+                The organisation receiving the money from the
                 transaction (if omitted, then the receiver
-                organization is the reporting organization).
+                organisation is the reporting organisation).
               </xsd:documentation>
             </xsd:annotation>
             <xsd:complexType mixed="true">
@@ -852,7 +852,7 @@
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The internal identifier used by the receiver
-                    organization for its activity that receives the
+                    organisation for its activity that receives the
                     funds from this transaction (not to be confused
                     with the IATI identifier for the target activity).
                   </xsd:documentation>
@@ -968,7 +968,7 @@
               or outgoing).  For example, if DFID commits £1M to one
               of its own activities, that funding is incoming to the
               activity (even though it's outgoing from DFID as an
-              organization).
+              organisation).
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
@@ -1155,7 +1155,7 @@
       <xsd:documentation xml:lang="en">
         Data type for an element that refers to a business object that
         can have unique identifier as well as human-readable text in
-        different languages (e.g. an organization).
+        different languages (e.g. an organisation).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:sequence>

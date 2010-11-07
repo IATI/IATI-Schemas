@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <!-- Test that the schema allows recipient-country-budget -->
-<iati-organization>
+<iati-organisation>
   <iati-identifier>12345</iati-identifier>
   <recipient-country-budget>
     <recipient-country ref="xxx"/>
@@ -9,4 +9,4 @@
     <period-end iso-date="2010-12-31">31 December, 2010</period-end>
     <value value-date="2010-07-07">100</value>
   </recipient-country-budget>
-</iati-organization>
+</iati-organisation>

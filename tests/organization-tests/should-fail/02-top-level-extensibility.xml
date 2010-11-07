@@ -4,8 +4,8 @@
   Test that schema rejects top-level extended elements without an
   explicit XML namespace
 -->
-<iati-organization>
+<iati-organisation>
   <iati-identifier>xxx</iati-identifier>
   <!-- extended foo element not allowed without an XML namespace -->
   <foo>yyy</foo>
-</iati-organization>
+</iati-organisation>

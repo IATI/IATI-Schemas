@@ -5,7 +5,7 @@
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
-      International Aid Transparency Initiative: Organization-Information Schema
+      International Aid Transparency Initiative: Organisation-Information Schema
 
       Unofficial draft 2010-07-07, by David Megginson
 
@@ -13,8 +13,8 @@
       one.
 
       This W3C XML Schema defines a preliminary XML document type for
-      information about an aid organization. For more information
-      about the International Aid Transparency Initiative (IATI),
+      information about an aid organisation. For more information
+      about the International Aid Transyparency Initiative (IATI),
       please visit http://www.aidtransparency.net/
 
       This document type may be extended with additional elements and
@@ -25,15 +25,15 @@
   <xsd:import namespace="http://www.w3.org/XML/1998/namespace"
               schemaLocation="xml.xsd"/>
 
-  <xsd:element name="iati-organization">
+  <xsd:element name="iati-organisation">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Top-level element for a single IATI organization report.
+        Top-level element for a single IATI organisation report.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element ref="organization-website"/>
+        <xsd:element ref="organisation-website"/>
         <xsd:element ref="iati-identifier"/>
         <xsd:element ref="name"/>
         <xsd:element ref="total-budget"/>
@@ -47,7 +47,7 @@
             X.XX Last Update Date
 
             The last date/time that the data for this specific
-            organization was updated.  This date must change whenever
+            organisation was updated.  This date must change whenever
             the value of any field changes.
           </xsd:documentation>
         </xsd:annotation>
@@ -57,7 +57,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Default ISO 4217 currency code for all financial values in
-            this organization report.
+            this organisation report.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -65,12 +65,12 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="organization-website">
+  <xsd:element name="organisation-website">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        X.XX Organization web site
+        X.XX Organisation web site
 
-        This element provides a link to an organization's top-level
+        This element provides a link to an organisation's top-level
         web site.  The element may be repeated to provide links to the
         site in different languages (using @xml:lang to distinguish).
       </xsd:documentation>
@@ -88,9 +88,9 @@
   <xsd:element name="iati-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        1.0.1 Organization identifier
+        1.0.1 Organisation identifier
 
-        This element contains the official IATI identifier for the organization.
+        This element contains the official IATI identifier for the organisation.
         It must appear only once.
       </xsd:documentation>
     </xsd:annotation>
@@ -102,9 +102,9 @@
   <xsd:element name="name">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        1.0.2 Organization name
+        1.0.2 Organisation name
 
-        The human-readable name of the organization (e.g. "Doctors
+        The human-readable name of the organisation (e.g. "Doctors
         without Borders").  This element may be repeated to provide
         the name in different languages (using @xml:lang to
         distinguish).
@@ -121,7 +121,7 @@
       <xsd:documentation xml:lang="en">
         1.8 Annual forward planning budget data for agency
 
-        This element represents the organization's total planning
+        This element represents the organisation's total planning
         budget for a calendar period (typically, but not necessarily,
         a year).  This element may be repeated for each period
         described (normally, periods should be consecutive).
@@ -150,7 +150,7 @@
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the organization's aid budget for
+              The total value of the organisation's aid budget for
               this period.  This element is required.
             </xsd:documentation>
           </xsd:annotation>
@@ -167,7 +167,7 @@
         1.10 Annual forward planning budget data for funded institutions.
 
         This element represents the budget for disbursements to
-        another organization (such as an institution funded by a
+        another organisation (such as an institution funded by a
         national donor).
       </xsd:documentation>
     </xsd:annotation>
@@ -176,8 +176,8 @@
         <xsd:element name="recipient-org" type="refType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organization that will receive the funds during the
-              budget period (*not* the organization reporting).
+              The organisation that will receive the funds during the
+              budget period (*not* the organisation reporting).
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -203,7 +203,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The total value of the money budgeted to be disbused to
-              the specified recipient organization during this time
+              the specified recipient organisation during this time
               period.  This element is required.
             </xsd:documentation>
           </xsd:annotation>
