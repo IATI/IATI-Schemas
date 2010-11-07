@@ -100,6 +100,17 @@
         <xsd:element ref="legacy-data"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
+      <xsd:attribute name="version" type="xsd:decimal" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A number indicating the IATI specification version in use.
+            Defaults to "1.0" if not specified.  It is required to
+            specify this attribute if the document is using features
+            specific to an IATI specification other than the initial
+            1.0 version.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">

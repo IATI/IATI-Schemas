@@ -7,6 +7,8 @@ IATI Schema Changes -*-Outline-*-
 - [backwards-incompatible] renamed contact-info/organization to
   contact-info/organisation
 
+- add optional iati-activity/@version attribute
+
 ** Organizations
 
 - [backwards-incompatible] rename iati-organization to
@@ -15,7 +17,7 @@ IATI Schema Changes -*-Outline-*-
 - [backwards-incompatible] rename organization-website to
   organisation-website
 
-- [backwards-incompatible] 
+- add optional iati-organisation/@version attribute
 
 
 * 2010-07-07 Changes (version 1.0)
