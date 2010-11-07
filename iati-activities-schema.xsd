@@ -283,7 +283,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="collaboration-type" type="codeType">
+  <xsd:element name="collaboration-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.06 Collaboration Type
@@ -297,7 +297,7 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="default-flow-type" type="codeType">
+  <xsd:element name="default-flow-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.07 Flow Type
@@ -308,7 +308,7 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="default-aid-type" type="codeType">
+  <xsd:element name="default-aid-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.07.1 Default Type of Aid
@@ -322,7 +322,7 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="default-finance-type" type="codeType">
+  <xsd:element name="default-finance-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.08 Default Finance Type
@@ -493,7 +493,7 @@
     </xsd:complexType>
   </xsd:element>
   
-  <xsd:element name="activity-status" type="codeType">
+  <xsd:element name="activity-status" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.14 Activity Status / Stage
@@ -614,7 +614,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-tied-status" type="codeType">
+  <xsd:element name="default-tied-status" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         3.17 Tied aid status
@@ -644,7 +644,7 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="codeAtts"/>
+      <xsd:attributeGroup ref="codeReqAtts"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -935,7 +935,7 @@
               <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="flow-type" type="codeType">
+          <xsd:element name="flow-type" type="codeReqType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Optional element to override the top-level
@@ -943,7 +943,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="aid-type" type="codeType">
+          <xsd:element name="aid-type" type="codeReqType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Optional element to override the top-level
@@ -952,7 +952,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="finance-type" type="codeType">
+          <xsd:element name="finance-type" type="codeReqType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Optional element to override the top-level
@@ -961,7 +961,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="tied-status" type="codeType">
+          <xsd:element name="tied-status" type="codeReqType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 Optional element to override the top-level

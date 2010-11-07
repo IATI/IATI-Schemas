@@ -7,9 +7,16 @@ IATI Schema Changes -*-Outline-*-
 - [backwards-incompatible] renamed contact-info/organization to
   contact-info/organisation
 
+- [backwards-incompatible] make @code attribute mandatory for
+  collaboration-type, default-flow-type, transaction/flow-type,
+  default-aid-type, transaction/aid-type, default-finance-type,
+  transaction/finance-type, default-tied-status,
+  transaction/tied-status, policy-marker, and activity-status
+
 - add optional iati-activity/@version attribute
 
 - add new document-link element and subelements
+
 
 ** Organizations
 
