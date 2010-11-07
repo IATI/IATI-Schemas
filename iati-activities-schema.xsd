@@ -962,6 +962,14 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
+          <xsd:element name="disbursement-channel" type="codeReqType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                The channel through which the funds will flow for this
+                transaction, from an IATI code list.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
           <xsd:any namespace="##other" processContents="lax"/>
         </xsd:choice>
         <xsd:attributeGroup ref="refAtts"/>

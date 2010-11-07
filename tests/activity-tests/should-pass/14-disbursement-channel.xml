@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!--
+  Test revised transaction-date element
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <transaction flow="incoming">
+      <disbursement-channel code="XXX">XXX channel</disbursement-channel>
+    </transaction>
+  </iati-activity>
+</iati-activities>

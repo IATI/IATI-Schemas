@@ -17,6 +17,8 @@ IATI Schema Changes -*-Outline-*-
 
 - add optional iati-activity/@version attribute
 
+- add new transaction/disbursement-channel element
+
 - add new document-link element and subelements
 
 
