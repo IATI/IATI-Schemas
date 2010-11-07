@@ -924,14 +924,6 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:attribute>
-              <xsd:attribute name="type" type="xsd:string" use="optional">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    The type of milestone (e.g. "commitment",
-                    "disbursement").
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
               <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
           </xsd:element>

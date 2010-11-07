@@ -13,6 +13,8 @@ IATI Schema Changes -*-Outline-*-
   transaction/finance-type, default-tied-status,
   transaction/tied-status, policy-marker, and activity-status
 
+- [backwards-incompatible] remove transaction/transaction-date/@type
+
 - add optional iati-activity/@version attribute
 
 - add new document-link element and subelements

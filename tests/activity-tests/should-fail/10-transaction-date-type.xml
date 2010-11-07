@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<!--
+  Test revised transaction-date element
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <transaction flow="incoming">
+      <transaction-date iso-date="2010-07-07" type="commitment">July 7, 2010</transaction-date>
+    </transaction>
+  </iati-activity>
+</iati-activities>
