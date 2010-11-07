@@ -3,7 +3,7 @@
 # Organization schema tests.
 ########################################################################
 
-SCHEMA=../../iati-organizations-schema.xsd
+SCHEMA=../../iati-organisations-schema.xsd
 
 function fail {
     echo -n '['
