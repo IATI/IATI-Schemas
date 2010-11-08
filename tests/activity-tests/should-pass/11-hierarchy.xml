@@ -7,6 +7,6 @@
   <!-- new @hierarchy attribute -->
   <iati-activity hierarchy="child">
     <iati-identifier>12345</iati-identifier>
-    <related-activity ref="yyy"/>
+    <related-activity ref="yyy" type="zzz"/>
   </iati-activity>
 </iati-activities>

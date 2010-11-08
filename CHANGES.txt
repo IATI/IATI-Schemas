@@ -2,6 +2,10 @@ IATI Schema Changes -*-Outline-*-
 
 * Next Release Changes (version 1.01)
 
+WARNING: this release includes backwards-incompatible changes. IATI
+documents that were valid with the 2010-07-07 schema release (version
+1.0) may be invalid with this release.
+
 ** Activities
 
 - [backwards-incompatible] renamed contact-info/organization to
@@ -14,6 +18,9 @@ IATI Schema Changes -*-Outline-*-
   transaction/tied-status, policy-marker, and activity-status
 
 - [backwards-incompatible] remove transaction/transaction-date/@type
+
+- [backwards-incompatible] make @ref and @type mandatory for
+  related-activity
 
 - add optional iati-activity/@version attribute
 

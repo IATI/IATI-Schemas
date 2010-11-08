@@ -4,7 +4,7 @@
   <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <description>xxx</description>
-    <!-- collaboration-type/@code is required -->
-    <collaboration-type/>
+    <!-- @type is required -->
+    <related-activity ref="xxx"/>
   </iati-activity>
 </iati-activities>
