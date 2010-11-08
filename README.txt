@@ -2,10 +2,10 @@ International Aid Transparency Initiative
 XML Activity and Organization Schemas
 
 David Megginson <david.megginson@megginson.com>
-DRAFT 2010-07-07
+DRAFT 2010-11-08
 
 This directory contains a draft of the IATI activities and
-organization schemas effective 2010-07-07.  These schemas are not yet
+organization schemas effective 2010-11-08.  These schemas are not yet
 finalized, but are in use in several field trials.
 
 The directory contains the following files:
@@ -19,6 +19,10 @@ iati-activities-schema.xsd      XML Schema for describing aid activities
 
 iati-organization-schema.xsd    XML schema for describing aid
                                 organizations and their budgets.
+
+iati-common.xsd                 A supplementary schema with common
+                                IATI markup.  Must be in the same
+                                directory as the above.
 
 xml.xsd                         A supplementary schema that must be in
                                 the same directory as the above.
