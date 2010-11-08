@@ -35,6 +35,10 @@ documents that were valid with the 2010-07-07 schema release (version
 
 - add new document-link element and subelements
 
+- change structure of budget-planned/period-start and
+  budget-planned/period-end so that content doesn't have to be an ISO
+  date (and add optional @iso-date attribute)
+
 
 ** Organizations
 

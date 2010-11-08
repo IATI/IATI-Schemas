@@ -22,6 +22,92 @@
               schemaLocation="xml.xsd"/>
 
   <!--
+      Common elements.
+  -->
+
+  <xsd:element name="document-link">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A categorized link to an external document.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="1" maxOccurs="unbounded">
+        <xsd:element name="title" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The title of the document.  May be repeated for multiple languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="category" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A category into which this document falls, using the
+              IATI document category code list.  Must be specified at
+              least once, and may be repeated for multiple categories.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="url" type="xsd:anyURI" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The target URL of the external document, e.g. "http://www.example.org/doc.html".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="format" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The MIME type of the external document, e.g. "application/pdf".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="language" type="xsd:language" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The ISO 639 language code for the target document, e.g. "en".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+
+  <!--
+      Frequently-used attributes.
+  -->
+
+  <xsd:attribute name="code" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Machine-readable code for the entity being described.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
+  <xsd:attribute name="ref" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Machine-readable identification string for the business
+        object being described.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
+  <xsd:attribute name="type" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Free text describing the type of thing being referenced.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
+
+  <!--
       Common attribute groups and data types used by the elements above.
   -->
 
@@ -32,20 +118,8 @@
         (e.g. countries).
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="code" type="xsd:string" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          Machine-readable code for the entity being described.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="type" type="xsd:string" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          Free text describing the type of thing being referenced.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
+    <xsd:attribute name="code" use="optional"/>
+    <xsd:attribute name="type" type="xsd:string" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="codeReqAtts">
@@ -54,20 +128,8 @@
         Attribute group for things that must have codes.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="code" type="xsd:string" use="required">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          Machine-readable code for the entity being described.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="type" type="xsd:string" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          Free text describing the type of thing being referenced.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
+    <xsd:attribute name="code" use="required"/>
+    <xsd:attribute name="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="refAtts">
@@ -77,21 +139,8 @@
         identifiers.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="ref" type="xsd:string" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          Machine-readable identification string for the business
-          object being described.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="type" type="xsd:string" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          Free text describing the type of thing being referenced.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
+    <xsd:attribute name="ref" use="optional"/>
+    <xsd:attribute name="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="textAtts">
@@ -100,14 +149,7 @@
         Attribute group for elements containing free text content.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute ref="xml:lang" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          ISO 639 code for the natural (human) language of the text
-          content.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
+    <xsd:attribute ref="xml:lang" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:complexType name="plainType" mixed="true">
@@ -219,12 +261,23 @@
     </xsd:simpleContent>
   </xsd:complexType>
 
-  <xsd:complexType name="dateType">
-    <xsd:simpleContent>
-      <xsd:extension base="xsd:date">
-        <xsd:anyAttribute processContents="lax" namespace="##other"/>
-      </xsd:extension>
-    </xsd:simpleContent>
+  <xsd:complexType name="dateType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A date.  The ISO 8601 date goes into the @iso-date attribute.
+        The content may be free-form text.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="iso-date" type="xsd:date" use="optional">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          The ISO 8601 date.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
   </xsd:complexType>
 
 </xsd:schema>
