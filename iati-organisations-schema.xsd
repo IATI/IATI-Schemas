@@ -7,15 +7,14 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Organisation-Information Schema
 
-      Unofficial draft 2010-07-07, by David Megginson
+      Release 1.01, 2010-11-08
 
-      NOTE: the xml.xsd schema must be in the same directory as this
-      one.
+      NOTE: the xml.xsd and iati-common.xsd schemas must be in the
+      same directory as this one.
 
-      This W3C XML Schema defines a preliminary XML document type for
-      information about an aid organisation. For more information
-      about the International Aid Transyparency Initiative (IATI),
-      please visit http://www.aidtransparency.net/
+      This W3C XML Schema defines an XML document type for information
+      about an aid organisation, following the standard published at
+      http://iatistandard.org
 
       This document type may be extended with additional elements and
       attributes, but they must belong to an explicit XML namespace.

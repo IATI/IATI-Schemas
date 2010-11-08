@@ -6,6 +6,13 @@ WARNING: this release includes backwards-incompatible changes. IATI
 documents that were valid with the 2010-07-07 schema release (version
 1.0) may be invalid with this release.
 
+** General
+
+- separated common markup components into iati-common.xsd, to avoid
+  duplication between the Organisations and Activities schemas; like
+  xml.xsd, iati-common.xsd must be in the same directory as the
+  principal schema
+
 ** Activities
 
 - [backwards-incompatible] renamed contact-info/organization to
