@@ -3,7 +3,7 @@
 # Run complete schema test suite.
 ########################################################################
 
-DIRS="activity-tests organisation-tests"
+DIRS="activity-tests organisation-tests registry-tests"
 
 for d in $DIRS; do
     echo $d ...

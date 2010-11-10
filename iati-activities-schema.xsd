@@ -90,9 +90,9 @@
         <xsd:element ref="activity-date"/>
         <xsd:element ref="activity-status"/>
         <xsd:element ref="contact-info"/>
-        <xsd:element ref="target-location"/>
-        <xsd:element name="default-tied-status"/>
-        <xsd:element name="policy-marker"/>
+        <xsd:element ref="default-tied-status"/>
+        <xsd:element ref="policy-marker"/>
+        <xsd:element ref="location"/>
         <xsd:element ref="total-cost"/>
         <xsd:element ref="budget-planned"/>
         <xsd:element ref="transaction"/>
@@ -230,7 +230,7 @@
         element is primarily for administrative and geopolitical
         purposes.  If a specific country is not known, the activity
         report can use the recipient-region element instead. For
-        geographical location, use the target-location element.
+        geographical location, use the location element.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -262,7 +262,7 @@
         administrative and geopolitical purposes.  If the specific
         country/-ies are known, the activity report can use the
         recipient-country element instead. For geographical location,
-        use the target-location element.
+        use the location element.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -407,15 +407,7 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="type" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            A simple text string describing the type of description,
-            e.g. "output", "summary".  The type is free text rather than
-            a formal code.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="type" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -471,14 +463,7 @@
     <xsd:complexType>
       <xsd:simpleContent>
         <xsd:extension base="xsd:string">
-          <xsd:attribute name="type" type="xsd:string" use="required">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The date milestone type (e.g. "start", "end").  IATI
-                will define the list of types.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
+          <xsd:attribute ref="type" use="required"/>
           <xsd:attributeGroup ref="textAtts"/>
           <xsd:attribute name="iso-date" type="xsd:date" use="optional">
             <xsd:annotation>
@@ -566,51 +551,6 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="target-location">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        3.16 Detailed geographic info
-
-        This element allows the reporting organisation to specify the
-        activity's geographical target location at the sub-national
-        level.  Repeat this element for each separate location
-        description.  The content is a human-readable description of
-        the location (e.g. "Villages in Darfur"), while the various
-        attributes allow providing a machine readable version of the
-        same location using codes or latitude/longitude.
-
-        For geopolitical information, use recipient-country or
-        recipient-region.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="codeAtts"/>
-      <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The geocode vocabulary used, if not ISO 3166.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:attribute name="gis" type="xsd:decimal" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The latitude and longitude of a specific location served
-            by the activity, in decimal degrees (where negative is
-            south/west), if known.  For example, 45 degrees 15 minutes
-            10 seconds south and 120 degrees 15 minutes 10 seconds west
-            would be represented as "-45.419444,-120.419444".
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -754,14 +694,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="type" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The type of the budget (original, revised, or planned
-            disbursement) from a code list defined by IATI.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="type" use="optional"/>
       <xsd:attribute name="period" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -994,6 +927,153 @@
   <!-- 4.07 Loan repayments -->
   <!-- 4.08 Interest repayments -->
 
+  <xsd:element name="location">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A geographical location.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The type of location (e.g. city), from an IATI code
+              list.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="name" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The human-readable name for the location.  May be
+              repeated in different languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A more detailed description of the location.  May be
+              repeated in different languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="administrative">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Administrative geographical information (e.g. city,
+              subdivision, country).  The content is a human-readable
+              name for the location, while the attributes contain
+              various levels of machine-readable ISO 3166 geographical
+              codes.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="country" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The ISO 3166-1 alpha2 code for the country
+                  (e.g. "GB" for the United Kingdom).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="adm1" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The ISO 3166-2 alpha2 top-level administrative code
+                  for a subdivision of a country (e.g. "GB-ENG" for
+                  England, United Kingdom).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="adm2" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The ISO 3166-2 alpha2 second-level administrative
+                  code for a subdivision of a country (e.g. "GB-KEN"
+                  for Kent, England, United Kingdom).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="coordinates">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Geodetic coordinates for the location (latitude, longitude).
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="latitude" type="xsd:decimal" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The decimal latitude (north is positive), e.g. 45.5
+                  for 45.5 degrees north (45 degrees 30 minutes).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="longitude" type="xsd:decimal" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The decimal longitude (east is positive), e.g. -75.5
+                  for 75.5 degrees west (74 degrees 30 minutes).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="precision" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI-defined code defining the precision of the
+                  latitude and longitude.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="gazetteer-entry">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Identifier for this location's entry in a geographical
+              gazetteer, such as GEOnet.  The entry identifier is the
+              element content.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="gazetteer-ref" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Reference to the gazetteer containing the entry.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The percentage of the activity budget allocated to this location.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="related-initiative" type="refType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -1023,8 +1103,8 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-    <xsd:attribute name="ref" use="required"/>
-    <xsd:attribute name="type" use="required"/>
+    <xsd:attribute ref="ref" use="required"/>
+    <xsd:attribute ref="type" use="required"/>
     </xsd:complexType>
   </xsd:element>
 

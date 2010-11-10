@@ -118,8 +118,8 @@
         (e.g. countries).
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="code" use="optional"/>
-    <xsd:attribute name="type" type="xsd:string" use="optional"/>
+    <xsd:attribute ref="code" use="optional"/>
+    <xsd:attribute ref="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="codeReqAtts">
@@ -128,8 +128,8 @@
         Attribute group for things that must have codes.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="code" use="required"/>
-    <xsd:attribute name="type" use="optional"/>
+    <xsd:attribute ref="code" use="required"/>
+    <xsd:attribute ref="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="refAtts">
@@ -139,8 +139,8 @@
         identifiers.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:attribute name="ref" use="optional"/>
-    <xsd:attribute name="type" use="optional"/>
+    <xsd:attribute ref="ref" use="optional"/>
+    <xsd:attribute ref="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="textAtts">
@@ -249,13 +249,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="type" type="xsd:string" use="optional">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Specify the type of funding (e.g. "paid", "in-kind").
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
+        <xsd:attribute ref="type" use="optional"/>
         <xsd:anyAttribute processContents="lax" namespace="##other"/>
       </xsd:extension>
     </xsd:simpleContent>
