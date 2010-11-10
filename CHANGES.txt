@@ -13,6 +13,11 @@ documents that were valid with the 2010-07-07 schema release (version
   xml.xsd, iati-common.xsd must be in the same directory as the
   principal schema
 
+- new application-specific Registry Record schema (see below); this is
+  an extension rather than part of the IATI standard, and provides a
+  model of how other extensions could be written (inside or outside
+  IATI)
+
 ** Activities
 
 - [backwards-incompatible] renamed contact-info/organization to
@@ -41,7 +46,6 @@ documents that were valid with the 2010-07-07 schema release (version
   budget-planned/period-end so that content doesn't have to be an ISO
   date (and add optional @iso-date attribute)
 
-
 ** Organizations
 
 - [backwards-incompatible] rename iati-organization to
@@ -53,6 +57,11 @@ documents that were valid with the 2010-07-07 schema release (version
 - add optional iati-organisation/@version attribute
 
 - add new document-link element and subelements
+
+** Registry Record (extension)
+
+- Added new application-specific extension schema to add an import
+  label for the IATI registry (not part of the IATI standards).
 
 
 * 2010-07-07 Changes (version 1.0)

@@ -32,6 +32,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
       <xsd:attribute name="file-id" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -102,17 +105,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="donor-type" type="xsd:string" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The type code for the donor whose information is reported
-            in this file, such as "NGO".  If information for multiple
-            donors is included (as is often the case with
-            non-governmental aid projects), then this should contain
-            the type code for the largest known donor.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
