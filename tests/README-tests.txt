@@ -4,7 +4,7 @@ david.megginson@megginson.com
 
 
 This directory contains unit tests for each of the IATI XML schemas.
-Inside each directory, there are two subdirectories:
+Inside each schema-specific directory, there are two subdirectories:
 
 should-fail/
         Invalid XML documents.
