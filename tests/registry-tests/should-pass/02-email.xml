@@ -1,0 +1,10 @@
+<!-- @contact-email is optional -->
+<registry-record xmlns="http://iatiregistry.org/ns/record#"
+  file-id="xxx"
+  source-url="http://www.example.org/"
+  publisher-id="DFID"
+  publisher-role="donor"
+  contact-email="nobody@example.org"
+  donor-id="DFID"
+  donor-type="NGO"
+/>

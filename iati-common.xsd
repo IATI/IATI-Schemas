@@ -46,6 +46,9 @@
               A category into which this document falls, using the
               IATI document category code list.  Must be specified at
               least once, and may be repeated for multiple categories.
+
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/document_category
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -61,7 +64,9 @@
       <xsd:attribute name="format" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The MIME type of the external document, e.g. "application/pdf".
+            The MIME type of the external document,
+            e.g. "application/pdf".  A partial list of MIME types
+            appears at http://iatistandard.org/codelists/file_format
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -237,6 +242,9 @@
               An ISO 639 code for the original currency of the amount.
               This is required for all currency amounts unless the
               iati-activity/@default-currency attribute is specified.
+
+              Currency codes are listed at
+              http://iatistandard.org/codelists/currency
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>

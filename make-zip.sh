@@ -10,7 +10,7 @@ cd $SOURCE
 
 rm -rf $TARGET
 mkdir $TARGET
-cp README.txt CHANGES.txt xml.xsd iati-activities-schema.xsd iati-organizations-schema.xsd $TARGET
+cp README.txt CHANGES.txt *.xsd $TARGET
 
 cp -av tests $TARGET
 find $TARGET -name '*~' | xargs rm -fv

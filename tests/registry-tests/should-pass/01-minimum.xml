@@ -1,0 +1,9 @@
+<!-- required attributes only -->
+<registry-record xmlns="http://iatiregistry.org/ns/record#"
+  file-id="xxx"
+  source-url="http://www.example.org/"
+  publisher-id="DFID"
+  publisher-role="donor"
+  donor-id="DFID"
+  donor-type="NGO"
+/>

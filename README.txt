@@ -2,7 +2,7 @@ International Aid Transparency Initiative (IATI)
 XML Schemas
 
 David Megginson <david.megginson@megginson.com>
-DRAFT Version 1.01, 2010-11-10
+DRAFT Version 1.01beta, 2010-11-10
 
 This directory contains a draft of version 1.01 of the IATI XML
 schemas, effective 2010-11-10.  More information about these schemas

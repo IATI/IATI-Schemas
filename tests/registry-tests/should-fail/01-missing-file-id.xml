@@ -1,0 +1,8 @@
+<!-- @file-id missing -->
+<registry-record xmlns="http://iatiregistry.org/ns/record#"
+  source-url="http://www.example.org/"
+  publisher-id="DFID"
+  publisher-role="donor"
+  donor-id="DFID"
+  donor-type="NGO"
+/>

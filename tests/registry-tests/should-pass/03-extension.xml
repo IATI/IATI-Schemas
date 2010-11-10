@@ -1,0 +1,13 @@
+<!-- extend with new element and attribute -->
+<registry-record xmlns="http://iatiregistry.org/ns/record#"
+  xmlns:ex="http://www.example.org/"
+  file-id="xxx"
+  source-url="http://www.example.org/"
+  publisher-id="DFID"
+  publisher-role="donor"
+  donor-id="DFID"
+  donor-type="NGO"
+  ex:new-attribute="foo"
+>
+  <ex:new-element>bar</ex:new-element>
+</registry-record>
