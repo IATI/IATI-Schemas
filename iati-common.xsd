@@ -24,6 +24,23 @@
       Common elements.
   -->
 
+  <xsd:element name="iati-identifier">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        IATI identifier
+
+        This element contains the official IATI identifier for an
+        entity (activity or organisation).  It must appear only once
+        in the XML file, and is guaranteed unique across all entities
+        of the same type (there will never be two organisations or
+        activities with the same IATI identifier).
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="document-link">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">

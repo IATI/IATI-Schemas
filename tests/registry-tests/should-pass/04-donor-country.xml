@@ -1,4 +1,4 @@
-<!-- @contact-email is optional -->
+<!-- optional @donor-country attribute -->
 <registry-record xmlns="http://iatiregistry.org/ns/record#"
   file-id="xxx"
   source-url="http://www.example.org/"
@@ -7,6 +7,7 @@
   contact-email="nobody@example.org"
   donor-id="DFID"
   donor-type="NGO"
+  donor-country="GB"
   last-updated-datetime="2010-11-15T11:00:00-05:00"
   generated-datetime="2010-11-15T11:01:01-05:00"
   verification-status="1"

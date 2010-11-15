@@ -1,6 +1,50 @@
 IATI Schema Changes -*-Outline-*-
 
-* 2010-11-10 changes (version 1.01beta)
+* 2010-11-15 changes (version 1.01 beta2)
+
+WARNING: this release includes backwards-incompatible changes to the
+Registry Record extension schema -- see below for details.
+
+** General
+
+- moved iati-identifier from Organisations and Activities schemas to
+  iati-common.xsd
+
+- removed non-required declarations of xml namespace, to avoid
+  confusing some non-conformant XML processing tools
+
+** Registry Record (extension)
+
+- [backwards-incompatible] new requried registry-record/@title
+  attribute
+
+- [backwards-incompatible] new requried
+  registry-record/@last-updated-datetime attribute
+
+- [backwards-incompatible] new requried
+  registry-record/@generated-datetime attribute
+
+- [backwards-incompatible] new requried
+  registry-record/@format attribute
+
+- [backwards-incompatible] new requried registry-record/@license
+  attribute
+
+- add optional registry-record/@xml:lang attribute
+
+- make registry-record/@donor-id and registry-record/@donor-type
+  optional rather than required
+
+- add new optional registry-record/@donor-country attribute
+
+- add new optional registry-record/@activity-period attribute
+
+- include an XML namespace declaration for the target namespace, even
+  though it's not explicitly referenced, to avoid confusing some
+  non-conformant XML processing tools
+
+
+* 2010-11-10 changes (version 1.01 beta)
 
 WARNING: this release includes backwards-incompatible changes. IATI
 documents that were valid with the 2010-07-07 schema release (version

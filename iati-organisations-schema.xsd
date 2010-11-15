@@ -97,20 +97,6 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="iati-identifier">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        1.0.1 Organisation identifier
-
-        This element contains the official IATI identifier for the organisation.
-        It must appear only once.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
   <xsd:element name="name">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">

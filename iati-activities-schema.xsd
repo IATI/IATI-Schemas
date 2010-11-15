@@ -400,15 +400,6 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="iati-identifier" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The single, unique and persistent IATI identifier for this
-        activity.  This must always be present in an IATI report.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-
   <xsd:element name="title" type="textType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -995,7 +986,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The direction of funding flow for the activity (incoming
-              or outgoing).  For example, if DFID commits £1M to one
+              or outgoing).  For example, if DFID commits &#163;1M to one
               of its own activities, that funding is incoming to the
               activity (even though it's outgoing from DFID as an
               organisation).
