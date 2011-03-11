@@ -47,9 +47,9 @@ IATI Schema Changes -*-Outline-*-
 - add planned-disbursement as specified in the standard
 - add conditions as specified in the standard
 - add result as specified in the standard
-- remove total-cost
-- remove budget-planned
-- remove related-initiative
+- [done] remove total-cost
+- [done] remove budget-planned
+- [done] remove related-initiative
 
 *** Differences from the Standard
 

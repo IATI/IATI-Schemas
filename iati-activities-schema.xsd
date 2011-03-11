@@ -92,10 +92,7 @@
         <xsd:element ref="default-tied-status"/>
         <xsd:element ref="policy-marker"/>
         <xsd:element ref="location"/>
-        <xsd:element ref="total-cost"/>
-        <xsd:element ref="budget-planned"/>
         <xsd:element ref="transaction"/>
-        <xsd:element ref="related-initiative"/>
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
@@ -666,108 +663,6 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="total-cost" type="currencyType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        04.01 Total Activity Cost
-
-        Optional element containing the total budgeted cost of the
-        activity over its total lifetime.  Note that this may be
-        greater than the total of the commitments, especially if the
-        activity is part of an ongoing fundraising appeal.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-
-  <xsd:element name="budget-planned">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Total planned future project expenditures by time period.
-        This element represents a total value of expenditures that are
-        not yet committed or disbursed, and do not yet appear as
-        transaction elements.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType>
-      <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element name="receiver-org">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The organisation receiving the money from the
-              budget (if omitted, then the receiver
-              organisation is the reporting organisation).
-
-              For the value of the @ref attribute, see the list of
-              officially-registered organizations at
-              http://iatistandard.org/codelists/organisation
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType mixed="true">
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attributeGroup ref="textAtts"/>
-            <xsd:attribute ref="ref"/>
-            <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  The internal identifier used by the receiver
-                  organisation for its activity that receives the
-                  funds from this transaction (not to be confused
-                  with the IATI identifier for the target activity).
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="description" type="textType" minOccurs="0">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              A free-text description of the budget.  May be repeated
-              in multiple languages, with different values for the
-              @xml:lang attribute.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-        <xsd:element name="period-start" type="dateType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The starting date of the accounting period, in ISO 8601
-              date format (YYYY-mm-dd).
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-        <xsd:element name="period-end" type="dateType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The ending date of the accounting period, in ISO 8601
-              date format (YYYY-mm-dd).
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-        <xsd:element name="value" type="currencyType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The total amount in this budget item/time.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
-      <xsd:attribute ref="type" use="optional"/>
-      <xsd:attribute name="period" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The accounting budget period (e.g. quarterly, annual) from
-            a code list defined by IATI.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
   <xsd:element name="transaction">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -1122,18 +1017,6 @@
       </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="related-initiative" type="refType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        XX.XX Related Initiative
-
-        An initiative related to this activity.  The initiative will
-        not necessarily be an activity per-se, but could be an appeal
-        or similar aid-related initiative as well.
-      </xsd:documentation>
-    </xsd:annotation>
   </xsd:element>
 
   <xsd:element name="related-activity">
