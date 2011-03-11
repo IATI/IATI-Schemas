@@ -6,7 +6,56 @@ IATI Schema Changes -*-Outline-*-
 
 ** Activities
 
-- [*] removed most @type attributes
+- [done] make reporting-org/@ref required
+- [done] make reporting-org/@type required
+- [done] make participating-org/@role required
+- [done] make participating-org/@type required
+- [done] remove recipient-country/@type
+- make recipient-country/@code required
+- [done] remove collaboration-type/@type
+- [done] remove default-flow-type/@type
+- [done] remove default-aid-type/@type
+- [done] remove default-finance-type/@type
+- [done] remove sector/@type
+- [done] remove default-tied-status/@type
+- make policy-marker/@significance optional
+- make policy-marker/@code optional
+- [done] remove policy-marker/@type
+- [done] remove activity-status/@type
+- remove contact-info/person-name/@xml:lang
+- remove activity-website/@xml:lang
+- remove transaction/status
+- remove transaction/period-start
+- remove transaction/period-end
+- remove transaction/provider-activity
+- remove transaction/receiver-activity
+- remove transaction/@flow
+- [done] remove transaction/@type
+- make transaction/transaction-type/@code required
+- [done] remove transaction/transaction-type/@type
+- [done] remove transaction/provider-org/@type
+- remove transaction/provider-org/@xml:lang
+- [done] remove transaction/receiver-org/@type
+- remove transaction/receiver-org/@xml:lang
+- [done] remove transaction/value/@type
+- [done] remove transaction/flow-type/@type
+- [done] remove transaction/finance-type/@type
+- [done] remove transaction/aid-type/@type
+- [done] remove transaction/disbursement-channel/@type
+- remove transaction/disbursement-channel/@xml:lang
+- [done] remove transaction/tied-status/@type
+- remove transaction/tied-status/@xml:lang
+- remove document-link/category/@xml:lang
+- [done] remove document-link/category/@type
+- add budget as specified in the standard
+- add planned-disbursement as specified in the standard
+- add conditions as specified in the standard
+- [done] remove location/location-type/@type
+- remove location/location-type/@xml:lang
+- add result as specified in the standard
+- remove total-cost
+- remove budget-planned
+- remove related-initiative
 
 
 ** Organisations
