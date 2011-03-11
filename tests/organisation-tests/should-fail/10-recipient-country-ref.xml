@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<iati-organisation>
+  <iati-identifier>12345</iati-identifier>
+  <recipient-country-budget>
+    <recipient-country>X</recipient-country>
+  </recipient-country-budget>
+</iati-organisation>

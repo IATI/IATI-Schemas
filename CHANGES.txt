@@ -10,10 +10,38 @@ IATI Schema Changes -*-Outline-*-
 
 ** Organisations
 
-- [*] made @iso-date required in ./period-start and ./period-end
-  throughout the schema
+- [*] make total-budget/period-start/@iso-date required
 
-- [*] removed optional @type attribute throughout the schema
+- [*] make total-budget/period-end/@iso-date required
+
+- [*] remove total-budget/value/@type
+
+- [*] make recipient-org-budget/recipient-org/@ref required
+
+- [*] remove recipient-org-budget/recipient-org/@type
+
+- [*] make recipient-org-budget/period-start/@iso-date required
+
+- [*] make recipient-org-budget/period-end/@iso-date required
+
+- [*] remove recipient-org-budget/value/@type
+
+- [*] remove recipient-country-budget/recipient-country/@ref
+
+- [*] remove recipient-country-budget/recipient-country/@type
+
+- [*] add recipient-country-budget/recipient-country/@code as in the
+  standard
+
+- [*] make recipient-country-budget/period-start/@iso-date required
+
+- [*] make recipient-country-budget/period-end/@iso-date required
+
+- [*] remove recipient-country-budget/value/@type
+
+- [*] remove document-link/category/@type
+
+- [*] remove organisation-website
 
 
 * 2010-11-15 changes (version 1.01 beta2)

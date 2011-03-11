@@ -33,7 +33,6 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element ref="organisation-website"/>
         <xsd:element ref="iati-identifier"/>
         <xsd:element ref="name"/>
         <xsd:element ref="total-budget"/>
@@ -74,26 +73,6 @@
         </xsd:annotation>
       </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="organisation-website">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        X.XX Organisation web site
-
-        This element provides a link to an organisation's top-level
-        web site.  The element may be repeated to provide links to the
-        site in different languages (using @xml:lang to distinguish).
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:anyURI">
-          <xsd:attribute ref="xml:lang" use="optional"/>
-          <xsd:anyAttribute processContents="lax" namespace="##other"/>
-        </xsd:extension>
-      </xsd:simpleContent>
     </xsd:complexType>
   </xsd:element>
 
@@ -171,7 +150,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-org" type="refType">
+        <xsd:element name="recipient-org" type="refReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation that will receive the funds during the
@@ -220,7 +199,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-country" type="refType">
+        <xsd:element name="recipient-country" type="codeReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The country that will receive the funds during the

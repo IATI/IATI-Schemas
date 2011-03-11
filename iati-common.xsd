@@ -227,7 +227,24 @@
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
-    <xsd:attribute ref="ref"/>
+    <xsd:attribute ref="ref" use="optional"/>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
+
+  <xsd:complexType name="refReqType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element that refers to a business object that
+        can have unique identifier as well as human-readable text in
+        different languages (e.g. an organisation), where the identifier
+        reference is required.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attributeGroup ref="textAtts"/>
+    <xsd:attribute ref="ref" use="required"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
