@@ -46,7 +46,7 @@ IATI Schema Changes -*-Outline-*-
 - add budget as specified in the standard
 - add planned-disbursement as specified in the standard
 - add conditions as specified in the standard
-- add result as specified in the standard
+- [done] add result as specified in the standard
 - [done] remove total-cost
 - [done] remove budget-planned
 - [done] remove related-initiative
@@ -62,6 +62,8 @@ IATI Schema Changes -*-Outline-*-
   location/location-type to allow specifying the language of the text
   label, and for consistency with other elements using references or
   codes (including default-tied-status)
+- add @xml:lang to result/indicator/baseline, result/indicator/target,
+  and result/indicator/actual
 
 ** Organisations
 

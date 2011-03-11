@@ -10,13 +10,13 @@
 <description type="X">X</description>
 <activity-date type="X"/>
 <related-activity ref="X" type="Y"/>
+<result type="X"/>
 
 <!--
 TODO:
 
 budget
 conditions/condition
-result
 -->
 
 </iati-activity>

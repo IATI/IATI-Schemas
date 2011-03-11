@@ -24,6 +24,32 @@
       Common elements.
   -->
 
+  <xsd:element name="title" type="textType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A short, human-readable title.  May be repeated for different
+        languages.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
+  <xsd:element name="description">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A longer, human-readable description.  May be repeated for
+        different languages.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attributeGroup ref="textAtts"/>
+      <xsd:attribute ref="type" use="optional"/>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="iati-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -49,13 +75,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element name="title" type="textType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The title of the document.  May be repeated for multiple languages.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
+        <xsd:element ref="title"/>
         <xsd:element name="category" type="codeReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">

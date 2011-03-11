@@ -93,6 +93,7 @@
         <xsd:element ref="policy-marker"/>
         <xsd:element ref="location"/>
         <xsd:element ref="transaction"/>
+        <xsd:element ref="result"/>
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
@@ -402,46 +403,6 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="title" type="textType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        3.10 Activity Title
-
-        (formerly part of 3.10 Title &amp; Purpose/Description)
-
-        Human-readable title for the activity.  May be repeated in
-        different languages, using the xml:lang attribute to
-        distinguish.  The title should be a single line of text (more
-        detailed information can appear in the description element.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-
-  <xsd:element name="description">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        3.10.1 Activity Description
-
-        (formerly part of 3.10 Title &amp; Purpose/Description)
-
-        Human-readable description for the activity.  May be repeated
-        in different languages, using the xml:lang attribute to
-        distinguish.  Different types of descriptions (abstract,
-        goals, etc.) may be distinguished using the @type attribute --
-        see http://iatistandard.org/codelists/description_type for
-        allowed values.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute ref="type" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -762,15 +723,6 @@
               <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
           </xsd:element>
-          <xsd:element name="description" type="textType" minOccurs="0">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                A free-text description of the transaction.  May be
-                repeated in multiple languages, with different values
-                for the @xml:lang attribute.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
           <xsd:element name="transaction-date">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
@@ -886,14 +838,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" type="textType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              A more detailed description of the location.  May be
-              repeated in different languages.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
+        <xsd:element ref="description"/>
         <xsd:element name="administrative">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1079,5 +1024,91 @@
       </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
+
+  <xsd:element name="result">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A measurable result of aid work.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="title"/>
+        <xsd:element ref="description"/>
+        <xsd:element name="indicator">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The indicator(s) that meet the results. There can be
+              multiple indicators for each ‘result’
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="title"/>
+              <xsd:element ref="description"/>
+              <xsd:element name="baseline" type="indicatorOutcomeType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The baseline measure.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="target" type="indicatorOutcomeType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    A future target result.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="actual" type="indicatorOutcomeType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    A past measured result.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="measure" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The type of measurement for the indicator value
+                  e.g. unit, percentage
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute ref="type" use="required"/>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:complexType name="indicatorOutcomeType" mixed="true">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Content type for a baseline or actual/planned outcome for an
+        indicator.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:attribute name="year" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          The year of the baseline or outcome.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="value" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          The value of the baseline or outcome.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attributeGroup ref="textAtts"/>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
 </xsd:schema>

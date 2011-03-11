@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+
+<iati-activity>
+
+<result type="X">
+  <title xml:lang="en">X</title>
+  <description xml:lang="en">X</description>
+  <indicator measure="X">
+    <title xml:lang="en">X</title>
+    <description xml:lang="en">X</description>
+    <baseline year="2011" value="X" xml:lang="en">X</baseline>
+    <target year="2012" value="X" xml:lang="en">X</target>
+    <actual year="2012" value="X" xml:lang="en">X</actual>
+  </indicator>
+</result>
+
+</iati-activity>
+
+</iati-activities>
