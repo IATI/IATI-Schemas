@@ -132,25 +132,6 @@
       Common attribute groups and data types used by the elements above.
   -->
 
-  <xsd:attributeGroup name="codeAtts">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Attribute group for things that can have codes
-        (e.g. countries).
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:attribute ref="code" use="optional"/>
-  </xsd:attributeGroup>
-
-  <xsd:attributeGroup name="codeReqAtts">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Attribute group for things that must have codes.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:attribute ref="code" use="required"/>
-  </xsd:attributeGroup>
-
   <xsd:attributeGroup name="textAtts">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -196,7 +177,7 @@
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
-    <xsd:attributeGroup ref="codeAtts"/>
+    <xsd:attribute ref="code" use="optional"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
@@ -211,7 +192,7 @@
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
-    <xsd:attributeGroup ref="codeReqAtts"/>
+    <xsd:attribute ref="code" use="required"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 

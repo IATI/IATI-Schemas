@@ -266,7 +266,7 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attributeGroup ref="codeAtts"/>
+      <xsd:attribute ref="code" use="required"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
         <xsd:annotation>
@@ -301,7 +301,7 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attributeGroup ref="codeAtts"/>
+      <xsd:attribute ref="code" use="optional"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
         <xsd:annotation>
@@ -466,7 +466,7 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="codeAtts"/>
+      <xsd:attribute ref="code" use="optional"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -639,7 +639,7 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="codeReqAtts"/>
+      <xsd:attribute ref="code" use="optional"/>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -651,7 +651,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="significance" type="xsd:string" use="required">
+      <xsd:attribute name="significance" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The significance of the policy marker for this activity
@@ -796,7 +796,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="transaction-type" type="codeType">
+          <xsd:element name="transaction-type" type="codeReqType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 The type of the transaction (e.g. commitment,

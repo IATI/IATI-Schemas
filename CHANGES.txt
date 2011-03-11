@@ -11,15 +11,15 @@ IATI Schema Changes -*-Outline-*-
 - [done] make participating-org/@role required
 - [done] make participating-org/@type required
 - [done] remove recipient-country/@type
-- make recipient-country/@code required
+- [done] make recipient-country/@code required
 - [done] remove collaboration-type/@type
 - [done] remove default-flow-type/@type
 - [done] remove default-aid-type/@type
 - [done] remove default-finance-type/@type
 - [done] remove sector/@type
 - [done] remove default-tied-status/@type
-- make policy-marker/@significance optional
-- make policy-marker/@code optional
+- [done] make policy-marker/@significance optional
+- [done] make policy-marker/@code optional
 - [done] remove policy-marker/@type
 - [done] remove activity-status/@type
 - remove contact-info/person-name/@xml:lang
@@ -31,7 +31,7 @@ IATI Schema Changes -*-Outline-*-
 - remove transaction/receiver-activity
 - remove transaction/@flow
 - [done] remove transaction/@type
-- make transaction/transaction-type/@code required
+- [done] make transaction/transaction-type/@code required
 - [done] remove transaction/transaction-type/@type
 - [done] remove transaction/provider-org/@type
 - remove transaction/provider-org/@xml:lang
