@@ -53,6 +53,10 @@ IATI Schema Changes -*-Outline-*-
 
 *** Differences from the Standard
 
+- not enforcing occurrence of iati-activity or its top-level children
+- not enforcing order or occurrence of children of contact-info or
+  transaction
+- not enforcing when text content is required (e.g. iati-identifier)
 - kept @xml:lang in transaction/disbursement-channel,
   transaction/tied-status, document-link/category, and
   location/location-type to allow specifying the language of the text
@@ -62,37 +66,26 @@ IATI Schema Changes -*-Outline-*-
 ** Organisations
 
 - [*] make total-budget/period-start/@iso-date required
-
 - [*] make total-budget/period-end/@iso-date required
-
 - [*] remove total-budget/value/@type
-
 - [*] make recipient-org-budget/recipient-org/@ref required
-
 - [*] remove recipient-org-budget/recipient-org/@type
-
 - [*] make recipient-org-budget/period-start/@iso-date required
-
 - [*] make recipient-org-budget/period-end/@iso-date required
-
 - [*] remove recipient-org-budget/value/@type
-
 - [*] remove recipient-country-budget/recipient-country/@ref
-
 - [*] remove recipient-country-budget/recipient-country/@type
-
-- [*] add recipient-country-budget/recipient-country/@code as in the
-  standard
-
+- [*] add recipient-country-budget/recipient-country/@code (required)
 - [*] make recipient-country-budget/period-start/@iso-date required
-
 - [*] make recipient-country-budget/period-end/@iso-date required
-
 - [*] remove recipient-country-budget/value/@type
-
 - [*] remove document-link/category/@type
-
 - [*] remove organisation-website
+
+** Differences from the Standard
+
+- not enforcing order or occurrence of top-level elements
+- not enforcing when text content is required
 
 
 * 2010-11-15 changes (version 1.01 beta2)
