@@ -6,7 +6,8 @@ IATI Schema Changes -*-Outline-*-
 
 ** Activities
 
-- [*] removed optional transaction/value/@type attribute
+- [*] removed most @type attributes
+
 
 ** Organisations
 

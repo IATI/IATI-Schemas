@@ -196,8 +196,8 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="ref"/>
-      <xsd:attribute ref="type"/>
+      <xsd:attribute ref="ref" use="optional"/>
+      <xsd:attribute ref="type" use="optional"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
