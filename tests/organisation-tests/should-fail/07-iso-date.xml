@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<!-- Test that the schema requires @iso-date in total-budget/period-start -->
+<iati-organisation>
+  <iati-identifier>12345</iati-identifier>
+  <total-budget>
+    <period-start>Q1 2011</period-start>
+    <value value-date="2010-01-01">100</value>
+  </total-budget>
+</iati-organisation>

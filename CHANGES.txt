@@ -1,5 +1,21 @@
 IATI Schema Changes -*-Outline-*-
 
+* 2011-03-11 changes (version 2.0 beta)
+
+[*] designates a backwards-incompatible change
+
+** Activities
+
+- [*] removed optional transaction/value/@type attribute
+
+** Organisations
+
+- [*] made @iso-date required in ./period-start and ./period-end
+  throughout the schema
+
+- [*] removed optional ./value/@type throughout the schema
+
+
 * 2010-11-15 changes (version 1.01 beta2)
 
 WARNING: this release includes backwards-incompatible changes to the

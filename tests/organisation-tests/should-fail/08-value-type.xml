@@ -1,10 +1,9 @@
 <?xml version="1.0"?>
 
-<!-- Test that the schema requires @value-date in total-budget/value -->
+<!-- Test that the schema forbids value/@type -->
 <iati-organisation>
   <iati-identifier>12345</iati-identifier>
   <total-budget>
-    <!-- @value-date is required -->
-    <value>100</value>
+    <value type="xxx" value-date="2010-01-01">100</value>
   </total-budget>
 </iati-organisation>

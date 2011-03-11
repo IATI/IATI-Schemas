@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<!-- Test that the schema requires @value-date -->
+<!-- Test that the schema requires @value-date in recipient-org-budget/value -->
 <iati-organisation>
   <iati-identifier>12345</iati-identifier>
   <recipient-org-budget>
