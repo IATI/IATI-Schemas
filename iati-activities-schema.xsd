@@ -170,7 +170,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="reporting-org" type="refType">
+  <xsd:element name="reporting-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.01 Reporting Organisation 
@@ -192,6 +192,15 @@
         http://iatistandard.org/codelists/organisation
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute ref="ref"/>
+      <xsd:attribute ref="type"/>
+      <xsd:attributeGroup ref="textAtts"/>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="participating-org">
@@ -222,7 +231,8 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attributeGroup ref="refAtts"/>
+      <xsd:attribute ref="ref"/>
+      <xsd:attribute ref="type"/>
       <xsd:attribute name="role" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -698,7 +708,7 @@
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attributeGroup ref="textAtts"/>
-            <xsd:attributeGroup ref="refAtts"/>
+            <xsd:attribute ref="ref"/>
             <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -826,7 +836,7 @@
                 <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
               <xsd:attributeGroup ref="textAtts"/>
-              <xsd:attributeGroup ref="refAtts"/>
+              <xsd:attribute ref="ref"/>
               <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -856,7 +866,7 @@
                 <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
               <xsd:attributeGroup ref="textAtts"/>
-              <xsd:attributeGroup ref="refAtts"/>
+              <xsd:attribute ref="ref"/>
               <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -981,7 +991,7 @@
           </xsd:element>
           <xsd:any namespace="##other" processContents="lax"/>
         </xsd:choice>
-        <xsd:attributeGroup ref="refAtts"/>
+        <xsd:attribute ref="ref"/>
         <xsd:attribute name="flow" use="required">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">

@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<!-- every place @type is allowed -->
+<iati-activities>
+
+<iati-activity>
+
+<reporting-org type="X">X</reporting-org>
+<participating-org type="X">X</participating-org>
+<description type="X">X</description>
+<activity-date type="X"/>
+<related-activity ref="X" type="Y"/>
+
+<!--
+TODO:
+
+budget
+conditions/condition
+result
+-->
+
+</iati-activity>
+
+</iati-activities>

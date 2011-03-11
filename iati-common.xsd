@@ -140,7 +140,6 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:attribute ref="code" use="optional"/>
-    <xsd:attribute ref="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="codeReqAtts">
@@ -150,18 +149,6 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:attribute ref="code" use="required"/>
-    <xsd:attribute ref="type" use="optional"/>
-  </xsd:attributeGroup>
-
-  <xsd:attributeGroup name="refAtts">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Attribute group for business objects that can have
-        identifiers.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:attribute ref="ref" use="optional"/>
-    <xsd:attribute ref="type" use="optional"/>
   </xsd:attributeGroup>
 
   <xsd:attributeGroup name="textAtts">
@@ -240,7 +227,7 @@
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attributeGroup ref="textAtts"/>
-    <xsd:attributeGroup ref="refAtts"/>
+    <xsd:attribute ref="ref"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
