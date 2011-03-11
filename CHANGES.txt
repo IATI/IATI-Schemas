@@ -41,13 +41,11 @@ IATI Schema Changes -*-Outline-*-
 - [done] remove transaction/aid-type/@type
 - [done] remove transaction/disbursement-channel/@type
 - [done] remove transaction/tied-status/@type
-- remove document-link/category/@xml:lang
 - [done] remove document-link/category/@type
+- [done] remove location/location-type/@type
 - add budget as specified in the standard
 - add planned-disbursement as specified in the standard
 - add conditions as specified in the standard
-- [done] remove location/location-type/@type
-- remove location/location-type/@xml:lang
 - add result as specified in the standard
 - remove total-cost
 - remove budget-planned
@@ -55,12 +53,11 @@ IATI Schema Changes -*-Outline-*-
 
 *** Differences from the Standard
 
-- kept transaction/disbursement-channel/@xml:lang for consistency (to
-  specify the language of the text label for the channel)
-
-- kept transaction/tied-status/@xml:lang for consistency with
-  default-tied-status and other similar elements
-
+- kept @xml:lang in transaction/disbursement-channel,
+  transaction/tied-status, document-link/category, and
+  location/location-type to allow specifying the language of the text
+  label, and for consistency with other elements using references or
+  codes (including default-tied-status)
 
 ** Organisations
 
