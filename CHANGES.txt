@@ -45,7 +45,7 @@ IATI Schema Changes -*-Outline-*-
 - [done] remove location/location-type/@type
 - add budget as specified in the standard
 - add planned-disbursement as specified in the standard
-- add conditions as specified in the standard
+- [done] add conditions as specified in the standard
 - [done] add result as specified in the standard
 - [done] remove total-cost
 - [done] remove budget-planned

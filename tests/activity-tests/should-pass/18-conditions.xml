@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+
+<iati-activity>
+
+<conditions attached="true">
+  <condition type="X">X</condition>
+  <condition type="Y">Y</condition>
+</conditions>
+
+</iati-activity>
+
+</iati-activities>

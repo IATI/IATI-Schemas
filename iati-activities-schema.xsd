@@ -94,6 +94,7 @@
         <xsd:element ref="location"/>
         <xsd:element ref="transaction"/>
         <xsd:element ref="result"/>
+        <xsd:element ref="conditions"/>
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
@@ -1031,7 +1032,7 @@
         A measurable result of aid work.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element ref="title"/>
         <xsd:element ref="description"/>
@@ -1093,6 +1094,9 @@
         indicator.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
     <xsd:attribute name="year" type="xsd:string">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
@@ -1110,5 +1114,40 @@
     <xsd:attributeGroup ref="textAtts"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
+
+  <xsd:element name="conditions">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Conditions attached to the activity.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="condition">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Description of one condition attached to the activity.
+              <xsd:complexType mixed="true">
+                <xsd:sequence>
+                  <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                </xsd:sequence>
+                <xsd:attribute ref="type" use="required"/>
+              </xsd:complexType>
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="attached" type="xsd:boolean" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A yes/no (1/0) value stating whether there are conditions
+            attached to the activity.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
 
 </xsd:schema>
