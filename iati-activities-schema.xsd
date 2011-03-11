@@ -96,6 +96,7 @@
         <xsd:element ref="result"/>
         <xsd:element ref="conditions"/>
         <xsd:element ref="budget"/>
+        <xsd:element ref="planned-disbursement"/>
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
@@ -1189,6 +1190,53 @@
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute ref="type" use="required"/>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="planned-disbursement">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="period-start" type="dateReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The starting date for the disbursement period, in ISO 8601
+              format (e.g. 2010-04-01 for 1 April 2010).  This element
+              must be present.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="period-end" type="dateReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The ending date for the disbursement period, in ISO 8601
+              format (e.g. 2011-03-31 for 31 March 2011).  This
+              element must be present.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="value" type="currencyType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The amount to be disbursed in the specified currency.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute name="updated" type="xsd:date" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The date on which this line of information was last
+            updated. Previous updates for the same period should also
+            be reported.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

@@ -44,7 +44,7 @@ IATI Schema Changes -*-Outline-*-
 - [done] remove document-link/category/@type
 - [done] remove location/location-type/@type
 - [done] add budget as specified in the standard
-- add planned-disbursement as specified in the standard
+- [done] add planned-disbursement as specified in the standard
 - [done] add conditions as specified in the standard
 - [done] add result as specified in the standard
 - [done] remove total-cost
@@ -64,8 +64,9 @@ IATI Schema Changes -*-Outline-*-
   codes (including default-tied-status)
 - add @xml:lang to result/indicator/baseline, result/indicator/target,
   and result/indicator/actual
-- use @iso-date for budget/period-start and budget/period-end as in
-  the organisations schema
+- use @iso-date for period-start and period-end under budget and
+  planned-disbursement, for consistency with other uses of the same
+  elements
 
 ** Organisations
 
