@@ -95,6 +95,7 @@
         <xsd:element ref="transaction"/>
         <xsd:element ref="result"/>
         <xsd:element ref="conditions"/>
+        <xsd:element ref="budget"/>
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
@@ -1146,6 +1147,48 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="budget">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        The value of the aid activity's budget for each financial year
+        as in the original project document.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="period-start" type="dateReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The starting date for the budget period, in ISO 8601
+              format (e.g. 2010-04-01 for 1 April 2010).  This element
+              must be present.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="period-end" type="dateReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The ending date for the budget period, in ISO 8601
+              format (e.g. 2011-03-31 for 31 March 2011).  This
+              element must be present.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="value" type="currencyType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The total value of the organisation's aid budget for
+              this period.  This element is required.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute ref="type" use="required"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

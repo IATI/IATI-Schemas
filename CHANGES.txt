@@ -43,7 +43,7 @@ IATI Schema Changes -*-Outline-*-
 - [done] remove transaction/tied-status/@type
 - [done] remove document-link/category/@type
 - [done] remove location/location-type/@type
-- add budget as specified in the standard
+- [done] add budget as specified in the standard
 - add planned-disbursement as specified in the standard
 - [done] add conditions as specified in the standard
 - [done] add result as specified in the standard
@@ -64,6 +64,8 @@ IATI Schema Changes -*-Outline-*-
   codes (including default-tied-status)
 - add @xml:lang to result/indicator/baseline, result/indicator/target,
   and result/indicator/actual
+- use @iso-date for budget/period-start and budget/period-end as in
+  the organisations schema
 
 ** Organisations
 
