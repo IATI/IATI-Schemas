@@ -6,7 +6,7 @@
 <iati-activities>
   <iati-activity>
     <iati-identifier>12345</iati-identifier>
-    <transaction flow="incoming">
+    <transaction>
       <!-- new @iso-date, and content now free-form -->
       <transaction-date iso-date="2010-07-07">July 7, 2010</transaction-date>
     </transaction>

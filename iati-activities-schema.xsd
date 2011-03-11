@@ -163,7 +163,6 @@
     <xsd:complexType>
       <xsd:simpleContent>
         <xsd:extension base="xsd:anyURI">
-          <xsd:attribute ref="xml:lang" use="optional"/>
           <xsd:anyAttribute processContents="lax" namespace="##other"/>
         </xsd:extension>
       </xsd:simpleContent>
@@ -561,7 +560,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="person-name" type="textType">
+        <xsd:element name="person-name" type="plainType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the contact person at the organisation.
@@ -809,16 +808,6 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
-          <xsd:element name="status" type="codeType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The status of the contribution (e.g. committed, paid).
-                Assume committed if omitted.  The content is free
-                text, and the code goes in the optional @ref
-                attribute.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
           <xsd:element name="provider-org">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
@@ -835,8 +824,7 @@
               <xsd:sequence>
                 <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
-              <xsd:attributeGroup ref="textAtts"/>
-              <xsd:attribute ref="ref"/>
+              <xsd:attribute ref="ref" use="optional"/>
               <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -865,8 +853,7 @@
               <xsd:sequence>
                 <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
-              <xsd:attributeGroup ref="textAtts"/>
-              <xsd:attribute ref="ref"/>
+              <xsd:attribute ref="ref" use="optional"/>
               <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -879,30 +866,6 @@
               </xsd:attribute>
               <xsd:anyAttribute processContents="lax" namespace="##other"/>
             </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="provider-activity" type="refType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The IATI activity providing funds for this
-                transaction.  The element may be specified only if the
-                @flow attribute for the parent transaction is
-                "incoming" (otherwise, use receiver-activity).  The
-                element allows aid funds to be traced from activity to
-                activity.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="receiver-activity" type="refType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The IATI activity receiving funds from this
-                transaction.  The element may be specified only if the
-                @flow attribute for the parent transaction is
-                "outgoing" (otherwise, use provider-activity).  The
-                element allows aid funds to be traced from activity to
-                activity.
-              </xsd:documentation>
-            </xsd:annotation>
           </xsd:element>
           <xsd:element name="description" type="textType" minOccurs="0">
             <xsd:annotation>
@@ -991,18 +954,7 @@
           </xsd:element>
           <xsd:any namespace="##other" processContents="lax"/>
         </xsd:choice>
-        <xsd:attribute ref="ref"/>
-        <xsd:attribute name="flow" use="required">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The direction of funding flow for the activity (incoming
-              or outgoing).  For example, if DFID commits &#163;1M to one
-              of its own activities, that funding is incoming to the
-              activity (even though it's outgoing from DFID as an
-              organisation).
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
+        <xsd:attribute ref="ref" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

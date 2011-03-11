@@ -22,29 +22,25 @@ IATI Schema Changes -*-Outline-*-
 - [done] make policy-marker/@code optional
 - [done] remove policy-marker/@type
 - [done] remove activity-status/@type
-- remove contact-info/person-name/@xml:lang
-- remove activity-website/@xml:lang
-- remove transaction/status
-- remove transaction/period-start
-- remove transaction/period-end
-- remove transaction/provider-activity
-- remove transaction/receiver-activity
-- remove transaction/@flow
+- [done] remove contact-info/person-name/@xml:lang
+- [done] remove activity-website/@xml:lang
+- [done] remove transaction/status
+- [done] remove transaction/provider-activity
+- [done] remove transaction/receiver-activity
+- [done] remove transaction/@flow
 - [done] remove transaction/@type
 - [done] make transaction/transaction-type/@code required
 - [done] remove transaction/transaction-type/@type
 - [done] remove transaction/provider-org/@type
-- remove transaction/provider-org/@xml:lang
+- [done] remove transaction/provider-org/@xml:lang
 - [done] remove transaction/receiver-org/@type
-- remove transaction/receiver-org/@xml:lang
+- [done] remove transaction/receiver-org/@xml:lang
 - [done] remove transaction/value/@type
 - [done] remove transaction/flow-type/@type
 - [done] remove transaction/finance-type/@type
 - [done] remove transaction/aid-type/@type
 - [done] remove transaction/disbursement-channel/@type
-- remove transaction/disbursement-channel/@xml:lang
 - [done] remove transaction/tied-status/@type
-- remove transaction/tied-status/@xml:lang
 - remove document-link/category/@xml:lang
 - [done] remove document-link/category/@type
 - add budget as specified in the standard
@@ -56,6 +52,14 @@ IATI Schema Changes -*-Outline-*-
 - remove total-cost
 - remove budget-planned
 - remove related-initiative
+
+*** Differences from the Standard
+
+- kept transaction/disbursement-channel/@xml:lang for consistency (to
+  specify the language of the text label for the channel)
+
+- kept transaction/tied-status/@xml:lang for consistency with
+  default-tied-status and other similar elements
 
 
 ** Organisations

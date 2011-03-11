@@ -8,7 +8,7 @@
     <iati-identifier>12345</iati-identifier>
     <!-- used to be finance-type -->
     <default-finance-type code="XX">xxx</default-finance-type>
-    <transaction flow="incoming">
+    <transaction>
       <value value-date="2010-07-07">123</value>
       <!-- should be allowed here now -->
       <finance-type code="YY">yyy</finance-type>

@@ -6,7 +6,7 @@
 <iati-activities>
   <iati-activity>
     <iati-identifier>12345</iati-identifier>
-    <transaction flow="incoming">
+    <transaction>
       <!-- new element -->
       <disbursement-channel code="XXX">XXX channel</disbursement-channel>
     </transaction>
