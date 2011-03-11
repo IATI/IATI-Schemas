@@ -5,8 +5,8 @@
 
 <iati-activity>
 
-<reporting-org type="X">X</reporting-org>
-<participating-org type="X">X</participating-org>
+<reporting-org ref="X" type="X">X</reporting-org>
+<participating-org type="X" role="X">X</participating-org>
 <description type="X">X</description>
 <activity-date type="X"/>
 <related-activity ref="X" type="Y"/>

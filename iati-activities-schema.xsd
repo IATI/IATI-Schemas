@@ -196,7 +196,7 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="ref" use="optional"/>
+      <xsd:attribute ref="ref" use="required"/>
       <xsd:attribute ref="type" use="optional"/>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
@@ -231,9 +231,9 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute ref="ref"/>
-      <xsd:attribute ref="type"/>
-      <xsd:attribute name="role" type="xsd:string" use="optional">
+      <xsd:attribute ref="ref" use="optional"/>
+      <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute name="role" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A code describing the organisation's role in the activity
