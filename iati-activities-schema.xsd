@@ -40,10 +40,6 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
-            Defaults to "1.0" if not specified.  It is required to
-            specify this attribute if the document is using features
-            specific to an IATI specification other than the initial
-            1.0 version.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
