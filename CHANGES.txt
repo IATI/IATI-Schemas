@@ -1,5 +1,13 @@
 IATI Schema Changes -*-Outline-*-
 
+* Next release
+
+** Activities
+
+- [*] corrected content model for conditions/condition, which
+  previously was hidden by misplaced xsd:annotation element (Redmine
+  issue #72)
+
 
 * 2011-03-11 changes (version 2.0 beta)
 

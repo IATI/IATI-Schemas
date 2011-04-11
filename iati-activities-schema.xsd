@@ -1129,14 +1129,14 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Description of one condition attached to the activity.
-              <xsd:complexType mixed="true">
-                <xsd:sequence>
-                  <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                </xsd:sequence>
-                <xsd:attribute ref="type" use="required"/>
-              </xsd:complexType>
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="type" use="required"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
