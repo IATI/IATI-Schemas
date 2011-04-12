@@ -31,6 +31,10 @@ IATI Schema Changes -*-Outline-*-
 
 - made recipient-org-budget/recipient-org/@ref optional again
 
+- added top-level iati-organisations element, similar to
+  iati-activies, to allow multiple organisation records in a single
+  file
+
 
 * 2011-03-11 changes (version 2.0 beta)
 
