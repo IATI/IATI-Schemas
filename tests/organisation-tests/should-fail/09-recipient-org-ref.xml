@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<iati-organisation>
-  <iati-identifier>12345</iati-identifier>
-  <recipient-org-budget>
-    <recipient-org>X</recipient-org>
-  </recipient-org-budget>
-</iati-organisation>

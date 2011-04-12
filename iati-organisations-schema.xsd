@@ -150,7 +150,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-org" type="refReqType">
+        <xsd:element name="recipient-org" type="refType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation that will receive the funds during the
