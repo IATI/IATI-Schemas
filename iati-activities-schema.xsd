@@ -844,7 +844,13 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element ref="description"/>
+        <xsd:element name="description" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A human-readable description of the location.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:element name="administrative">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -919,7 +925,7 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="precision" type="xsd:string" use="required">
+            <xsd:attribute name="precision" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   An IATI-defined subset of UCPD precision codes for

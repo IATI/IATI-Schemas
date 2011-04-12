@@ -22,6 +22,10 @@ IATI Schema Changes -*-Outline-*-
 
 - make activity-status/@code optional again
 
+- [*] remove location/description/@type
+
+- make location/coordinates/@precision optional
+
 
 ** Organisations
 

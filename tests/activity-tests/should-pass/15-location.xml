@@ -2,8 +2,8 @@
 
 <iati-activities>
   <iati-activity>
-    <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+
+    <!-- full version -->
     <location percentage="100">
       <location-type code="city"/>
       <name xml:lang="en">Kandahar</name>
@@ -12,5 +12,12 @@
       <coordinates latitude="31.616944" longitude="65.716944" precision="city"/>
       <gazetteer-entry gazetteer-ref="[ref]">[identifier in gazetteer]</gazetteer-entry>
     </location>
+
+    <!-- minimal version -->
+    <location>
+      <name>Kandahar</name>
+      <coordinates latitude="31.616944" longitude="65.716944"/>
+    </location>
+
   </iati-activity>
 </iati-activities>
