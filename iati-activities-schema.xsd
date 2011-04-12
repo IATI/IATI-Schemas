@@ -228,7 +228,7 @@
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute ref="ref" use="optional"/>
-      <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute ref="type" use="optional"/>
       <xsd:attribute name="role" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">

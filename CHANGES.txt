@@ -18,6 +18,8 @@ IATI Schema Changes -*-Outline-*-
 - make planned-disbursement/period-start/@iso-date and
   planned-disbursement/period-end/@iso-date optional
 
+- make participating-org/@type optional again
+
 
 ** Organisations
 
