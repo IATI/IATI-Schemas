@@ -1164,7 +1164,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="period-start" type="dateReqType">
+        <xsd:element name="period-start" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The starting date for the budget period, in ISO 8601
@@ -1173,7 +1173,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="period-end" type="dateReqType">
+        <xsd:element name="period-end" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ending date for the budget period, in ISO 8601
@@ -1192,7 +1192,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute ref="type" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

@@ -4,14 +4,16 @@ IATI Schema Changes -*-Outline-*-
 
 ** Activities
 
-- [*] corrected content model for conditions/condition, which
-  previously was hidden by misplaced xsd:annotation element (Redmine
-  issue #72)
+- [*] correct content model for conditions/condition, which previously
+  was hidden by misplaced xsd:annotation element (Redmine issue #72)
 
 - in documentation, no longer specify default for optional
   iati-activities/@version attribute
 
 - add optional transaction/description element
+
+- make budget/@type, budget/period-start/@iso-date, and
+  budget/period-end/@iso-date optional
 
 
 ** Organisations

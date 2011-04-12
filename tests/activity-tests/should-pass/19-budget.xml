@@ -4,9 +4,17 @@
 
 <iati-activity>
 
+<!-- complete -->
 <budget type="X">
   <period-start iso-date="2011-01-01">1 January 2011</period-start>
   <period-end iso-date="2011-12-31">31 December 2011</period-end>
+  <value value-date="2011-01-01" currency="GBP">1000000</value>
+</budget>
+
+<!-- without optional attributes -->
+<budget>
+  <period-start>1 January 2011</period-start>
+  <period-end>31 December 2011</period-end>
   <value value-date="2011-01-01" currency="GBP">1000000</value>
 </budget>
 
