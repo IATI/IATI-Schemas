@@ -1204,7 +1204,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="period-start" type="dateReqType">
+        <xsd:element name="period-start" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The starting date for the disbursement period, in ISO 8601
@@ -1213,7 +1213,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="period-end" type="dateReqType">
+        <xsd:element name="period-end" type="dateType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ending date for the disbursement period, in ISO 8601

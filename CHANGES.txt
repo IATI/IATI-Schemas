@@ -15,6 +15,9 @@ IATI Schema Changes -*-Outline-*-
 - make budget/@type, budget/period-start/@iso-date, and
   budget/period-end/@iso-date optional
 
+- make planned-disbursement/period-start/@iso-date and
+  planned-disbursement/period-end/@iso-date optional
+
 
 ** Organisations
 
