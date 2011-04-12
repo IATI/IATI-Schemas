@@ -11,6 +11,9 @@ IATI Schema Changes -*-Outline-*-
 - in documentation, no longer specify default for optional
   iati-activities/@version attribute
 
+- add optional transaction/description element
+
+
 ** Organisations
 
 - made recipient-org-budget/recipient-org/@ref optional again

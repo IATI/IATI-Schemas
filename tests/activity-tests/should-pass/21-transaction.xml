@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!--
+  Test full transaction markup
+-->
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <transaction ref="X">
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description xml:lang="en">X</description>
+      <transaction-type code="X">X code</transaction-type>
+      <provider-org xml:lang="en" ref="X" provider-activity-id="X">X</provider-org>
+      <receiver-org xml:lang="en" ref="X" receiver-activity-id="X">X</receiver-org>
+      <transaction-date xml:lang="en" iso-date="2010-07-07">7 July 2010</transaction-date>
+      <flow-type xml:lang="en" code="X">X</flow-type>
+      <aid-type xml:lang="en" code="X">X</aid-type>
+      <finance-type xml:lang="en" code="X">X</finance-type>
+      <tied-status xml:lang="en" code="X">X</tied-status>
+      <disbursement-channel xml:lang="en" code="X">X</disbursement-channel>
+    </transaction>
+  </iati-activity>
+</iati-activities>

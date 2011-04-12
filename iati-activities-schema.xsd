@@ -650,6 +650,13 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:element>
+          <xsd:element name="description" type="textType">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                A human-readable description of the transaction.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:element>
           <xsd:element name="transaction-type" type="codeReqType">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
