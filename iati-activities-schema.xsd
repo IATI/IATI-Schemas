@@ -480,7 +480,7 @@
     </xsd:complexType>
   </xsd:element>
   
-  <xsd:element name="activity-status" type="codeReqType">
+  <xsd:element name="activity-status" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         03.14 Activity Status / Stage

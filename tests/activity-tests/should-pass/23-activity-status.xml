@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+
+    <!-- full version -->
+    <activity-status xml:lang="en" code="X">X</activity-status>
+
+    <!-- omitting optional attributes version -->
+    <activity-status>X</activity-status>
+
+  </iati-activity>
+</iati-activities>

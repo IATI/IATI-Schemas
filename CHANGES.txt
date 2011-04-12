@@ -20,6 +20,8 @@ IATI Schema Changes -*-Outline-*-
 
 - make participating-org/@type optional again
 
+- make activity-status/@code optional again
+
 
 ** Organisations
 
