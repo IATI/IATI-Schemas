@@ -2,6 +2,10 @@ IATI Schema Changes -*-Outline-*-
 
 * Next release
 
+[*] designates a backwards-incompatible change
+
+- removed documentation references to obsolete draft of standard
+
 ** Activities
 
 - [*] correct content model for conditions/condition, which previously
@@ -26,7 +30,7 @@ IATI Schema Changes -*-Outline-*-
 
 - make location/coordinates/@precision optional
 
-- change all instances of xsd:date and xsd:dateTime to xsd:string, to
+- changed all instances of xsd:date and xsd:dateTime to xsd:string, to
   allow other ISO 8601 values not supported by XML Schema default
   datatypes; affects iati-activities/@generated-datetime,
   iati-activity/@last-updated-datetime, activity-date/@iso-date,
@@ -45,7 +49,7 @@ IATI Schema Changes -*-Outline-*-
   iati-activies, to allow multiple organisation records in a single
   file
 
-- change all instances of xsd:date and xsd:dateTime to xsd:string, to
+- changed all instances of xsd:date and xsd:dateTime to xsd:string, to
   allow other ISO 8601 values not supported by XML Schema default
   datatypes; affects iati-organisation/@last-updated-datetime,
   total-budget/period-start/@iso-date,
@@ -54,6 +58,9 @@ IATI Schema Changes -*-Outline-*-
   recipient-org-budget/period-end/@iso-date,
   recipient-country-budget/period-start/@iso-date,
   recipient-country-budget/period-end/@iso-date
+
+- added reporting-org to iati-organisations, to allow reporting by an
+  organisation other than the one being described
 
 
 ** Registry Record

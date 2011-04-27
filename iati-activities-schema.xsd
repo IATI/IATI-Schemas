@@ -157,35 +157,6 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="reporting-org">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The organisation issuing the activity report (typically the
-        activity lead).  May be a donor, fund, agency, etc.
-        Specifying the @identifier and @role attributes is strongly
-        recommended.  May contain the organisation name as content.
-        If the organisation is participating in the project, it should
-        also be listed with participating-org.
-
-        For the value of the @type attribute, see
-        http://iatistandard.org/codelists/organisation-type
-
-        For the value of the @ref attribute, see the list of
-        officially-registered organizations at
-        http://iatistandard.org/codelists/organisation
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attribute ref="ref" use="required"/>
-      <xsd:attribute ref="type" use="optional"/>
-      <xsd:attributeGroup ref="textAtts"/>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
   <xsd:element name="participating-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">

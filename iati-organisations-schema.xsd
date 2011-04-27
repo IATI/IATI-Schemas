@@ -69,6 +69,7 @@
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
         <xsd:element ref="iati-identifier"/>
         <xsd:element ref="name"/>
+        <xsd:element ref="reporting-org"/>
         <xsd:element ref="total-budget"/>
         <xsd:element ref="recipient-org-budget"/>
         <xsd:element ref="recipient-country-budget"/>
