@@ -80,7 +80,6 @@
         <xsd:element ref="other-identifier"/>
         <xsd:element ref="title"/>
         <xsd:element ref="description"/>
-        <!-- recipient-budget-identifier 3.11 -->
         <xsd:element ref="sector"/>
         <xsd:element ref="activity-date"/>
         <xsd:element ref="activity-status"/>
@@ -112,11 +111,9 @@
       <xsd:attribute name="last-updated-datetime" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            6.03 Last Update Date
-
-            The last date/time that the data for this specific activity
-            was updated.  This date must change whenever the value of
-            any field changes.
+            The last date/time that the data for this specific
+            activity was updated.  This date must change whenever the
+            value of any field changes.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -143,15 +140,9 @@
     </xsd:complexType>
   </xsd:element>
 
-  <!-- 2.12 Activity Website -->
-
   <xsd:element name="activity-website">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        02.12 Activity Website
-
-        (formerly 02.12 Project Website)
-
         A link to a web site providing more information about the aid
         activity.  Multiple versions of the link may appear for
         different languages.
@@ -169,10 +160,6 @@
   <xsd:element name="reporting-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.01 Reporting Organisation 
-
-        (formerly 03.01 Funding Country/Institution)
-
         The organisation issuing the activity report (typically the
         activity lead).  May be a donor, fund, agency, etc.
         Specifying the @identifier and @role attributes is strongly
@@ -202,12 +189,6 @@
   <xsd:element name="participating-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.02 Participating Organisation
-
-        (formerly 03.02 Funding Extending Agency/Organisation, 03.03
-        Additional Channels of Delivery, and 03.04 Beneficiary
-        Agency/Organisation)
-
         An organisation (including the reporting organisation)
         involved with the activity.  May be a donor, fund, agency,
         etc.  Specifying the @identifier and @role attributes is
@@ -246,8 +227,6 @@
   <xsd:element name="recipient-country">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.05 Recipient Country
-
         A partner country that will benefit from this activity.  This
         element is primarily for administrative and geopolitical
         purposes.  If a specific country is not known, the activity
@@ -280,8 +259,6 @@
   <xsd:element name="recipient-region">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.05.1 Recipient Region
-
         A geopolitical region (above the country level) that will
         benefit from this activity.  This element is primarily for
         administrative and geopolitical purposes.  If the specific
@@ -315,10 +292,6 @@
   <xsd:element name="collaboration-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.06 Collaboration Type
-
-        (formerly 3.06 Bilateral or Multilateral Type)
-
         The type of collaboration involved in the project's
         disbursements, e.g. "bilateral" or "multilateral".
 
@@ -331,8 +304,6 @@
   <xsd:element name="default-flow-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.07 Flow Type
-
         The type of assistance provided, e.g. Official Development
         Assistance (ODA).  Type types will be defined by IATI.
 
@@ -345,8 +316,6 @@
   <xsd:element name="default-aid-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.07.1 Default Type of Aid
-
         The type of aid being supplied (budget support, debt relief,
         etc.).  This element specifies a default for all the
         activity's financial transactions; it can be overridden at the
@@ -361,8 +330,6 @@
   <xsd:element name="default-finance-type" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.08 Default Finance Type
-
         The type of finance (e.g. debt relief). The types will be
         defined by IATI.  This the default value for all transactions
         in the activity report; it can be overridded by individual
@@ -409,12 +376,8 @@
   <xsd:element name="sector">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.12 General/Detailed Sector
-
-        Sector code and name.
-
-        for the value of the @code attribute, see
-        http://iatistandard.org/codelists/sector
+        Sector code and name.  For the value of the @code attribute,
+        see http://iatistandard.org/codelists/sector
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -452,12 +415,9 @@
   <xsd:element name="activity-date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.13 Activity Dates (planned starting date)
-
-        Planned starting date for the activity in ISO 8601 date format,
-        e.g. "2010-10-01".
-
-        For the value of the @type attribute, see
+        Planned starting date for the activity in ISO 8601 date
+        format, e.g. "2010-10-01".  For the value of the @type
+        attribute, see
         http://iatistandard.org/codelists/activity_date_type
       </xsd:documentation>
     </xsd:annotation>
@@ -483,15 +443,9 @@
   <xsd:element name="activity-status" type="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.14 Activity Status / Stage
-
-        (formerly 03.14 Project Status / Stage)
-
         The current status of the project (e.g. "planned"), using a
-        list defined by IATI.
-
-        For the value of the @code attribute, see
-        http://iatistandard.org/codelists/activity_status
+        list defined by IATI.  For the value of the @code attribute,
+        see http://iatistandard.org/codelists/activity_status
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -499,10 +453,6 @@
   <xsd:element name="contact-info">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        03.15 Activity Contacts
-
-        (was 03.15 Project contacts)
-
         Contact information for the project.  Specify whatever is
         available.
       </xsd:documentation>
@@ -562,13 +512,10 @@
   <xsd:element name="default-tied-status" type="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.17 Tied aid status
-
         Specify whether the aid is untied, tied, or partially tied,
         using a code list created by IATI.  The content is free text
-        that can optionally provide more detail.
-
-        For the value of the @code attribute, see
+        that can optionally provide more detail.  For the value of the
+        @code attribute, see
         http://iatistandard.org/codelists/tied_status
       </xsd:documentation>
     </xsd:annotation>
@@ -577,16 +524,12 @@
   <xsd:element name="policy-marker">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        3.18 Other policy markers
-
         A policy or theme addressed by the activity.  A text
         description of the theme appears in the content, and a formal
         identifier appears in the @ref attribute.  The @vocabulary
         attribute can also help to segment the markers into separate
         vocabularies.  This element can be repeated for each policy
-        marker.
-
-        For the value of the @code attribute, see
+        marker.  For the value of the @code attribute, see
         http://iatistandard.org/codelists/policy_marker
       </xsd:documentation>
     </xsd:annotation>
@@ -626,16 +569,8 @@
   <xsd:element name="transaction">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        04.03 Total amount committed by individual donor
-        04.05 Planned disbursements or payments
-        04.06 Actual disbursements or payments
-        04.07 Loan repayments
-        04.08 Interest repayments
-
         Committed or actual money flowing in or out of an aid
-        activity.  The @flow attribute specifies the direction of flow
-        ("incoming" for 4.03) or ("outgoing" for 4.05, 4.06, 4.07, and
-        4.08).  The @ref attribute allows uniquely identifying a
+        activity.The @ref attribute allows uniquely identifying a
         transaction, to match it up with the corresponding in- or
         outflow in a different activity.
       </xsd:documentation>
@@ -811,11 +746,6 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-
-  <!-- 4.03 Total Amount(s) committed by individual donor -->
-  <!-- 4.06 Actual disbursements or payments -->
-  <!-- 4.07 Loan repayments -->
-  <!-- 4.08 Interest repayments -->
 
   <xsd:element name="location">
     <xsd:annotation>

@@ -89,8 +89,6 @@
       <xsd:attribute name="last-updated-datetime" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            X.XX Last Update Date
-
             The last date/time that the data for this specific
             organisation was updated.  This date must change whenever
             the value of any field changes.
@@ -113,8 +111,6 @@
   <xsd:element name="name">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        1.0.2 Organisation name
-
         The human-readable name of the organisation (e.g. "Doctors
         without Borders").  This element may be repeated to provide
         the name in different languages (using @xml:lang to
@@ -130,8 +126,6 @@
   <xsd:element name="total-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        1.8 Annual forward planning budget data for agency
-
         This element represents the organisation's total planning
         budget for a calendar period (typically, but not necessarily,
         a year).  This element may be repeated for each period
@@ -175,8 +169,6 @@
   <xsd:element name="recipient-org-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        1.10 Annual forward planning budget data for funded institutions.
-
         This element represents the budget for disbursements to
         another organisation (such as an institution funded by a
         national donor).
