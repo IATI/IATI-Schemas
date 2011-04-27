@@ -26,6 +26,16 @@ IATI Schema Changes -*-Outline-*-
 
 - make location/coordinates/@precision optional
 
+- change all instances of xsd:date and xsd:dateTime to xsd:string, to
+  allow other ISO 8601 values not supported by XML Schema default
+  datatypes; affects iati-activities/@generated-datetime,
+  iati-activity/@last-updated-datetime, activity-date/@iso-date,
+  transaction/transaction-date/@iso-date,
+  budget/period-start/@iso-date, budget/period-end/@iso-date,
+  planned-disbursement/period-start/@iso-date,
+  planned-disbursement/period-end/@iso-date,
+  planned-disbursement/@updated
+
 
 ** Organisations
 
@@ -34,6 +44,25 @@ IATI Schema Changes -*-Outline-*-
 - added top-level iati-organisations element, similar to
   iati-activies, to allow multiple organisation records in a single
   file
+
+- change all instances of xsd:date and xsd:dateTime to xsd:string, to
+  allow other ISO 8601 values not supported by XML Schema default
+  datatypes; affects iati-organisation/@last-updated-datetime,
+  total-budget/period-start/@iso-date,
+  total-budget/period-end/@iso-date,
+  recipient-org-budget/period-start/@iso-date,
+  recipient-org-budget/period-end/@iso-date,
+  recipient-country-budget/period-start/@iso-date,
+  recipient-country-budget/period-end/@iso-date
+
+
+** Registry Record
+
+- change all instances of xsd:date and xsd:dateTime to xsd:string, to
+  allow other ISO 8601 values not supported by XML Schema default
+  datatypes; affects registry-record/@last-updated-datetime,
+  registry-record/@generated-datetime
+
 
 
 * 2011-03-11 changes (version 2.0 beta)
