@@ -43,7 +43,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="generated-datetime" type="xsd:string" use="optional">
+      <xsd:attribute name="generated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A date/time stamp for when this file was generated.  This
@@ -108,7 +108,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="last-updated-datetime" type="xsd:string" use="optional">
+      <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The last date/time that the data for this specific

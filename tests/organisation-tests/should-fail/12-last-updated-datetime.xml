@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<iati-organisations>
+
+<!-- requires date and time, not just date -->
+<iati-organisation last-updated-datetime="2011-06-01">
+  <iati-identifier>12345</iati-identifier>
+</iati-organisation>
+
+</iati-organisations>

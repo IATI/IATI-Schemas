@@ -146,7 +146,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="last-updated-datetime" type="xsd:string" use="required">
+      <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The most recent date and time that any of the data for
@@ -157,7 +157,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="generated-datetime" type="xsd:string" use="required">
+      <xsd:attribute name="generated-datetime" type="xsd:dateTime" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The date and time that this file was generated, in ISO
