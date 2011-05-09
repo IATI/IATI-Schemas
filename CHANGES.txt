@@ -30,6 +30,15 @@ IATI Schema Changes -*-Outline-*-
 
 - make location/coordinates/@precision optional
 
+- [*] change activity-date/@iso-date, budget/period-start/@iso-date,
+  planned-disbursement/period-start/@iso-date,
+  planned-disbursement/period-end/@iso-date,
+  budget/period-end/@iso-date, transaction/transaction-date/@iso-date,
+  planned-disbursement/value/@value-date, budget/value/@value-date,
+  and transaction/value/@value-date to use xsd:date rather than
+  xsd:dateTime (e.g. "2011-06-01" instead of previous
+  "2011-06-01T12:00:00Z").
+
 
 ** Organisations
 
@@ -41,6 +50,18 @@ IATI Schema Changes -*-Outline-*-
 
 - added reporting-org to iati-organisations, to allow reporting by an
   organisation other than the one being described
+
+- [*] change total-budget/period-start/@iso-date,
+  recipient-org-budget/period-start/@iso-date,
+  recipient-country-budget/period-start/@iso-date,
+  total-budget/period-end/@iso-date,
+  recipient-country-budget/period-end/@iso-date,
+  recipient-org-budget/period-end/@iso-date,
+  total-budget/value/@value-date,
+  recipient-org-budget/value/@value-date, and
+  recipient-country-budget/value/@value-date to use xsd:date rather
+  than xsd:dateTime (e.g. "2011-06-01" instead of previous
+  "2011-06-01T12:00:00Z")
 
 
 * 2011-03-11 changes (version 2.0 beta)

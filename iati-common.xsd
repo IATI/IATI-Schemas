@@ -297,7 +297,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:attribute>
-        <xsd:attribute name="value-date" type="xsd:string" use="required">
+        <xsd:attribute name="value-date" type="xsd:date" use="required">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The date that this value was set (to allow historical
@@ -321,7 +321,7 @@
     <xsd:sequence>
       <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
-    <xsd:attribute name="iso-date" type="xsd:string" use="optional">
+    <xsd:attribute name="iso-date" type="xsd:date" use="optional">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           The ISO 8601 date.
@@ -340,7 +340,7 @@
     <xsd:sequence>
       <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
-    <xsd:attribute name="iso-date" type="xsd:string" use="required">
+    <xsd:attribute name="iso-date" type="xsd:date" use="required">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           The ISO 8601 date.

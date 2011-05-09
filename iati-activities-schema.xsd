@@ -397,7 +397,7 @@
         <xsd:extension base="xsd:string">
           <xsd:attribute ref="type" use="required"/>
           <xsd:attributeGroup ref="textAtts"/>
-          <xsd:attribute name="iso-date" type="xsd:string" use="optional">
+          <xsd:attribute name="iso-date" type="xsd:date" use="optional">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 An activity milestone date in ISO 8601 date format,
@@ -646,7 +646,7 @@
               <xsd:sequence>
                 <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
               </xsd:sequence>
-              <xsd:attribute name="iso-date" type="xsd:string" use="required">
+              <xsd:attribute name="iso-date" type="xsd:date" use="required">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The ISO 8601 version of the transaction date.
@@ -1138,7 +1138,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="updated" type="xsd:string" use="optional">
+      <xsd:attribute name="updated" type="xsd:date" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The date on which this line of information was last
