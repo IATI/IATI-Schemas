@@ -952,49 +952,144 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The indicator(s) that meet the results. There can be
-              multiple indicators for each ‘result’
+              multiple indicators for each result.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:element ref="title"/>
               <xsd:element ref="description"/>
-              <xsd:element name="baseline" type="indicatorOutcomeType">
+              <xsd:element name="baseline">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The baseline measure.
+                    The baseline value for the indicator
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element ref="comment"/>
+                    <xsd:any namespace="##other" processContents="lax"/>
+                  </xsd:choice>
+                  <xsd:attribute name="year" type="xsd:positiveInteger" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        The year the baseline value was taken
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:attribute name="value" type="xsd:string" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        The baseline value.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
-              <xsd:element name="target" type="indicatorOutcomeType">
+              <xsd:element name="period">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    A future target result.
+                    The period covered for the results
+                    reported. Multiple periods can be reported for a
+                    single indicator.
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="period-start" type="dateType">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                          The start of the reporting period
+                        </xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="period-end" type="dateType">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                          The end of the reporting period
+                        </xsd:documentation>
+                      </xsd:annotation>
+                    </xsd:element>
+                    <xsd:element name="target">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                          The target milestone for this period
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                          <xsd:element ref="comment"/>
+                          <xsd:any namespace="##other" processContents="lax"/>
+                        </xsd:choice>
+                        <xsd:attribute name="value" type="xsd:string" use="required">
+                          <xsd:annotation>
+                            <xsd:documentation xml:lang="en">
+                              The target value.
+                            </xsd:documentation>
+                          </xsd:annotation>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:element name="actual">
+                      <xsd:annotation>
+                        <xsd:documentation xml:lang="en">
+                          A record of the achieved result for this period.
+                        </xsd:documentation>
+                      </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                          <xsd:element ref="comment"/>
+                          <xsd:any namespace="##other" processContents="lax"/>
+                        </xsd:choice>
+                        <xsd:attribute name="value" type="xsd:string" use="required">
+                          <xsd:annotation>
+                            <xsd:documentation xml:lang="en">
+                              The actual measure.
+                            </xsd:documentation>
+                          </xsd:annotation>
+                        </xsd:attribute>
+                      </xsd:complexType>
+                    </xsd:element>
+                    <xsd:any namespace="##other" processContents="lax"/>
+                  </xsd:choice>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
-              <xsd:element name="actual" type="indicatorOutcomeType">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    A past measured result.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+              <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
-            <xsd:attribute name="measure" use="required">
+            <xsd:attribute name="measure" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The type of measurement for the indicator value
-                  e.g. unit, percentage
+                  e.g. unit, percentage, NDP.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
+            <xsd:attribute name="ascending" type="xsd:boolean" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  True if the indicator improves from small to large
+                  (e.g. clinics built); false if it improves from
+                  large to small (e.g. cases of a disease). Defaults
+                  to true if omitted.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Boolean flag indicating whether the data in the result set
+            are suitable for aggregation.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

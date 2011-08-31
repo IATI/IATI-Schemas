@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <description>xxx</description>
+    <result type="output" aggregation-status="false">
+      <title xml:lang="en">Supportive Environment:Health Systems Strengthening</title>
+      <description xml:lang="en">Not available</description>
+      <indicator measure="NDP" ascending="true">
+        <title xml:lang="en">Number and % of public laboratories enabled to perform sputum tests</title>
+        <description xml:lang="en">Not available</description>
+        <baseline year="2008" value="N=35;P=55" xml:lang="en">
+          <comment xml:lang="en">Source:adminstrative records</comment>
+        </baseline>
+        <period>
+          <period-start iso-date="2009-01-01">01 January 2009</period-start>
+          <period-end iso-date="2009-12-31">31 December 2009</period-end>
+          <target value="N=42;P=57">
+            <comment>Target Comment Period 2009</comment>
+          </target>
+          <actual value="N=41;P=56">
+            <comment>Actual Comment Period 2009</comment>
+          </actual>
+        </period>
+        <period>
+          <period-start iso-date="2010-01-01">01 January 2010</period-start>
+          <period-end iso-date="2010-12-31">31 December 2010</period-end>
+          <target value="N=44;P=60">
+            <comment xml:lang="en">Target Comment Period 2010</comment>
+          </target>
+          <actual value="N=43;P=58">
+            <comment>Actual Comment Period 2010</comment>
+          </actual>
+        </period>
+      </indicator>
+      <indicator measure="NDP" ascending="true">
+        <title xml:lang="en">Number and percentage of districts with at least one DOTS diagnostic and treatment centre. (Comprehensive Health Centre)</title>
+        <description xml:lang="en">Not available</description>
+        <baseline year="2008" value="N=35;P=55" xml:lang="en">
+          <comment>Source:adminstrative records</comment>
+        </baseline>
+        <period>
+          <period-start iso-date="2009-01-01">01 January 2009</period-start>
+          <period-end iso-date="2009-12-31">31 December 2009</period-end>
+          <target value="N=42;P=57">
+            <comment xml:lang="en">Target Comment Period 2009</comment>
+          </target>
+          <actual value="N=41;P=56">
+            <comment>Actual Comment Period 2009</comment>
+          </actual>
+        </period>
+        <period>
+          <period-start iso-date="2010-01-01">01 January 2010</period-start>
+          <period-end iso-date="2010-12-31">31 December 2010</period-end>
+          <target value="N=44;P=60">
+            <comment xml:lang="en">Target Comment Period 2010</comment>
+          </target>
+          <actual value="N=43;P=58">
+            <comment xml:lang="en">Actual Comment Period 2010</comment>
+          </actual>
+        </period>
+      </indicator>
+    </result>
+    <result type="output" aggregation-status="false">
+      <title xml:lang="en">Treatment: timely detection and quality treatment of cases</title>
+      <description xml:lang="en">Not available</description>
+      <indicator measure="Unit" ascending="true">
+        <title xml:lang="en">Number of new smear positive cases detected under DOTS. (Case detection rate under DOTS)</title>
+        <description xml:lang="en">Not available</description>
+        <baseline year="2008" value="13064" xml:lang="en">
+          <comment>Source:adminstrative records</comment>
+        </baseline>
+        <period>
+          <period-start iso-date="2009-01-01">01 January 2009</period-start>
+          <period-end iso-date="2009-12-31">31 December 2009</period-end>
+          <target value="18064">
+            <comment>Target Comment Period 2009</comment>
+          </target>
+          <actual value="15236">
+            <comment>Actual Comment Period 2009</comment>
+          </actual>
+        </period>
+        <period>
+          <period-start iso-date="2010-01-01">01 January 2010</period-start>
+          <period-end iso-date="2010-12-31">31 December 2010</period-end>
+          <target value="20132">
+            <comment xml:lang="en">Target Comment Period 2010</comment>
+          </target>
+          <actual value="19652">
+            <comment xml:lang="en">Actual Comment Period 2010</comment>
+          </actual>
+        </period>
+      </indicator>
+    </result>
+  </iati-activity>
+</iati-activities>

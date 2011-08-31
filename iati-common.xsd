@@ -50,6 +50,14 @@
     </xsd:complexType>
   </xsd:element>
 
+  <xsd:element name="comment" type="textType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A human-readable comment associated with a piece of aid information.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+
   <xsd:element name="iati-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">

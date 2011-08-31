@@ -8,6 +8,8 @@ IATI Schema Changes -*-Outline-*-
 
 ** Activities
 
+- [*] result model changed entirely - backwards incompatible
+
 - [*] correct content model for conditions/condition, which previously
   was hidden by misplaced xsd:annotation element (Redmine issue #72)
 
