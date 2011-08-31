@@ -430,7 +430,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="organisation">
+        <xsd:element name="organisation" type="plainType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation to contact for more information about the

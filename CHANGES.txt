@@ -11,6 +11,8 @@ IATI Schema Changes -*-Outline-*-
 - [*] correct content model for conditions/condition, which previously
   was hidden by misplaced xsd:annotation element (Redmine issue #72)
 
+- [*] added explicit content type for contact-info/organisation
+
 - in documentation, no longer specify default for optional
   iati-activities/@version attribute
 
