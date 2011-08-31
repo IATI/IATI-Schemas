@@ -10,7 +10,7 @@
       <indicator measure="NDP" ascending="true">
         <title xml:lang="en">Number and % of public laboratories enabled to perform sputum tests</title>
         <description xml:lang="en">Not available</description>
-        <baseline year="2008" value="N=35;P=55" xml:lang="en">
+        <baseline year="2008" value="N=35;P=55">
           <comment xml:lang="en">Source:adminstrative records</comment>
         </baseline>
         <period>
@@ -37,7 +37,7 @@
       <indicator measure="NDP" ascending="true">
         <title xml:lang="en">Number and percentage of districts with at least one DOTS diagnostic and treatment centre. (Comprehensive Health Centre)</title>
         <description xml:lang="en">Not available</description>
-        <baseline year="2008" value="N=35;P=55" xml:lang="en">
+        <baseline year="2008" value="N=35;P=55">
           <comment>Source:adminstrative records</comment>
         </baseline>
         <period>
@@ -68,7 +68,7 @@
       <indicator measure="Unit" ascending="true">
         <title xml:lang="en">Number of new smear positive cases detected under DOTS. (Case detection rate under DOTS)</title>
         <description xml:lang="en">Not available</description>
-        <baseline year="2008" value="13064" xml:lang="en">
+        <baseline year="2008" value="13064">
           <comment>Source:adminstrative records</comment>
         </baseline>
         <period>
