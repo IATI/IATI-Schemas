@@ -2,7 +2,8 @@
 
 <iati-organisation>
   <iati-identifier>12345</iati-identifier>
-  <document-link url="http://www.example.org/" format="text/html" language="en">
+  <document-link url="http://www.example.org/" format="text/html">
+    <language>en</language>
     <category code="XXX">XXX category</category>
     <category code="YYY">YYY category</category>
     <title>Document link</title>
