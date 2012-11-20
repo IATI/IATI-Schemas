@@ -1,5 +1,18 @@
 IATI Schema Changes -*-Outline-*-
 
+Version 1.02
+Activity standard
+Version number to 1.02
+Release date to 2012-12-17
+Hierarchy attribute changed from type=“xsd:string” to “xsd:int”
+
+Introduced the @linked-data-default attribute on iati-activities elements 
+Introduced the @linked-data-uri attribute on iati-activitie elements
+
+Common Standard
+Release 1.02, 2012-12-17
+Removed language attribute from, and introduced an new language child element to, the document-link element
+
 * Next release
 
 [*] designates a backwards-incompatible change
