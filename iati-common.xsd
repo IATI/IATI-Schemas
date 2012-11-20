@@ -6,7 +6,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Common Markup Components
 
-      Release 1.01, 2010-11-08
+      Release 1.02, 2012-12-17
 
       This schema is not meant to be used on its own: it contains
       common shared markup components for the IATI activities and
@@ -124,6 +124,13 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element name="language" type="codeType">
+          <xsd:annotation>
+           <xsd:documentation xml:lang="en">
+                The ISO 639 language code for the target document, e.g. "en".
+           </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute name="url" type="xsd:anyURI" use="required">
@@ -139,13 +146,6 @@
             The MIME type of the external document,
             e.g. "application/pdf".  A partial list of MIME types
             appears at http://iatistandard.org/codelists/file_format
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:attribute name="language" type="xsd:language" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The ISO 639 language code for the target document, e.g. "en".
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
