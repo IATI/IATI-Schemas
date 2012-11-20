@@ -55,6 +55,23 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:attribute name="linked-data-default" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            IATI publishers are not obliged to publish their own Linked Data. 
+            However, if a publisher chooses to publish linked data about their IATI activities then allowing them to declare where 
+            this data is published would support discovery of it, and any additional information they may choose to publish as
+            Linked Data alongside it. 
+ 
+            This attribute is URI path upon which an activity identifier can be appended to get a dereferenceable URI for any
+            activity contained within a file.
+           
+            Where a publisher declares using one of these properties that authoritative linked data is accessible for an activity
+            then consuming applications that are generating Linked Data from an IATI XML file should assert an owl:sameAs
+            relationship to the relevant URI.        
+         </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -133,6 +150,14 @@
             Shortcut to show whether this is a parent or child
             activity, without having to evaluate related-activity
             elements.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="linked-data-uri" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A Linked Data URI for a given activity 
+            (over-rides iati-activities/@linked-data-default if set)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
