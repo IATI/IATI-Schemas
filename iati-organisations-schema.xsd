@@ -6,7 +6,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Organisation-Information Schema
 
-      Release 1.01, 2010-11-08
+      Release 1.02, 2012-12-17
 
       NOTE: the xml.xsd and iati-common.xsd schemas must be in the
       same directory as this one.
