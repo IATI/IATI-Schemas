@@ -1,5 +1,28 @@
 IATI Schema Changes -*-Outline-*-
 
+1.03dev (2013-04-16)
+
+** Activities
+- Version numbers now included in the document root. Versions match the
+  version of the standard, not the document, although documents will 
+  only change in line with the standard.
+  
+** Organisations
+- Version numbers now included in the document root. Versions match the
+  version of the standard, not the document, although documents will 
+  only change in line with the standard.
+  
+** Common
+- Version numbers now included in the document root. Versions match the
+  version of the standard, not the document, although documents will 
+  only change in line with the standard.
+  
+** Registry Record
+- Version numbers now included in the document root. Versions match the
+  version of the standard, not the document, although documents will 
+  only change in line with the standard.
+  
+  
 * 1.02beta (2012-11-23)
 
 (See http://wiki.iatistandard.org/standard/revision/1.02/changes_specification)
