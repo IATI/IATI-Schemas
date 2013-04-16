@@ -16,6 +16,9 @@ IATI Schema Changes -*-Outline-*-
 - Version numbers now included in the document root. Versions match the
   version of the standard, not the document, although documents will 
   only change in line with the standard.
+
+- Currency values are now allowed to be declared as decimals instead of 
+  integers.
   
 ** Registry Record
 - Version numbers now included in the document root. Versions match the
