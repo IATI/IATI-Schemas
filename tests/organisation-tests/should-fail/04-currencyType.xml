@@ -4,7 +4,7 @@
 <iati-organisation>
   <iati-identifier>12345</iati-identifier>
   <total-budget>
-    <!-- currency must be an integer -->
-    <value value-date="2010-07-07">100.00</value>
+    <!-- currency must be a number -->
+    <value value-date="2010-07-07">A100.00</value>
   </total-budget>
 </iati-organisation>

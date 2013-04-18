@@ -292,7 +292,7 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:simpleContent>
-      <xsd:extension base="xsd:integer">
+      <xsd:extension base="xsd:decimal">
         <xsd:attribute name="currency" type="xsd:string" use="optional">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
