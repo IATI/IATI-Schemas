@@ -1,5 +1,25 @@
 IATI Schema Changes -*-Outline-*-
 
+* Version 1.03
+
+(see http://wiki.iatistandard.org/standard/revision/1.03/changes_specification)
+
+[*] designates a backwards-incompatible change
+
+** Activities
+
+- globally changed the @percentage attribute to allow decimals
+  (e.g. "55.5" as well as "50")
+
+- globally changed the @currency attribute to allow decimals
+  (e.g. "99.99" as well as "99")
+
+** Organisations
+
+- globally changed the @currency attribute to allow decimals
+  (e.g. "99.99" as well as "99")
+
+
 * 1.02beta (2012-11-23)
 
 (See http://wiki.iatistandard.org/standard/revision/1.02/changes_specification)
