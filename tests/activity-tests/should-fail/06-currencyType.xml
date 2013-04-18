@@ -6,7 +6,9 @@
 <iati-activities>
   <iati-activity>
     <iati-identifier>12345</iati-identifier>
-    <!-- decimal part not allowed -->
-    <total-cost value-date="2010-07-07">123.45</total-cost>
+    <!-- must be a number -->
+    <budget>
+      <value value-date="2013-01-01">A999.99</value>
+    </budget>
   </iati-activity>
 </iati-activities>

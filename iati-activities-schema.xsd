@@ -152,9 +152,13 @@
       <xsd:attribute name="hierarchy" type="xsd:int" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Shortcut to show whether this is a parent or child
-            activity, without having to evaluate related-activity
-            elements.
+            The hierarchical level within the reporting organisation's
+            subdivision of its units of aid. (eg activity = 1;
+            sub-activity = 2; sub-sub-activity = 3). If hierarchy is
+            not reported then 1 is assumed. If multiple levels are
+            reported then, to avoid double counting, financial
+            transactions should only be reported at the lowest
+            hierarchical level.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -244,12 +248,12 @@
       </xsd:sequence>
       <xsd:attribute ref="code" use="required"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this country,
-            if known.  Content must be a positive integer between 1
-            and 100, with no percentage sign.
+            if known.  Content must be a positive real number between
+            0 and 100, with no percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -277,12 +281,12 @@
       </xsd:sequence>
       <xsd:attribute ref="code" use="optional"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this
             geopolitical region, if known.  Content must be a positive
-            integer between 1 and 100, with no percentage sign.
+            real number between 0 and 100, with no percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -348,6 +352,9 @@
         An alternative, non-IATI identifier for the activity.  This
         identifier is not guaranteed to be unique or persistent (it
         depends on the owner organisation's policies, not IATI's).
+
+        If other-identifier is present then either @owner-ref or
+        @owner-name must be present
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -379,6 +386,9 @@
       <xsd:documentation xml:lang="en">
         Sector code and name.  For the value of the @code attribute,
         see http://iatistandard.org/codelists/sector
+
+        Either the @code attribute or descriptive text content must be
+        present.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -386,26 +396,40 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute ref="code" use="optional"/>
+      <xsd:attribute ref="code" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The code for the sector. If the vocabulary is "DAC" or
+            missing then the CRS Sector Code should be used.
+
+            Code is not mandatory but highly recommended. Either code
+            or description must be present.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An identifier for the vocabulary in use, to segment
-            sectors into different vocabularies (e.g. DAC, OCHA) to
-            aid with comparison and classification.  If omitted,
-            assume DAC.
+            The vocabulary (codelist) used for sector
+            classifications. If omitted, assume DAC. "DAC" codes
+            should be used wherever possible. It is also recommended
+            that if a publisher has its own classification system then
+            the vocabulary "RO" (Reporting Organisation's own
+            vocabulary" should be used in addition to "DAC". NB that
+            if multiple sector codes are used in multiple vocabularies
+            then each vocabulary's percentages should add up to 100%.
 
             See http://iatistandard.org/codelists/vocabulary
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this sector, if
-            known.  Content must be a positive integer between 1 and
-            100, with no percentage sign.  Percentages are comparable
-            only across sectors in the same vocabulary.
+            known.  Content must be a positive real number between 0
+            and 100, with no percentage sign.  Percentages are
+            comparable only across sectors in the same vocabulary.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -420,6 +444,10 @@
         format, e.g. "2010-10-01".  For the value of the @type
         attribute, see
         http://iatistandard.org/codelists/activity_date_type
+
+        The text content may contain a general date text (e.g. 2011Q1)
+        for recording less specific dates such as month, quarter, or
+        year.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -465,6 +493,8 @@
             <xsd:documentation xml:lang="en">
               The organisation to contact for more information about the
               activity.
+              
+              This is required if content-info is included.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -539,7 +569,15 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute ref="code" use="optional"/>
+      <xsd:attribute ref="code" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Policy marker code. If vocabulary is missing or "DAC" use
+            the IATI Policy Marker Code list which is based on columns
+            20-23 and 28-31 of the CRS++ reporting format.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -778,18 +816,16 @@
         <xsd:element name="description" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A human-readable description of the location.
+              A human-readable description of the location (not the activity).
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:element name="administrative">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Administrative geographical information (e.g. city,
-              subdivision, country).  The content is a human-readable
-              name for the location, while the attributes contain
-              various levels of machine-readable ISO 3166-1 and UNSALB
-              geographical codes.
+              Coded identification of national and sub-national
+              divisions according to recognised administrative
+              boundary repositories. Multiple levels may be reported.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
@@ -896,7 +932,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the activity budget allocated to this location.

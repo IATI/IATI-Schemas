@@ -61,13 +61,13 @@
   <xsd:element name="iati-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        IATI identifier
-
-        This element contains the official IATI identifier for an
-        entity (activity or organisation).  It must appear only once
-        in the XML file, and is guaranteed unique across all entities
-        of the same type (there will never be two organisations or
-        activities with the same IATI identifier).
+        A globally unique identifier for this activity. This should be
+        in the form of the IATI Organisation Identifier (for the
+        reporting organisation) concatenated to that organisation's
+        activity identifier. (NB. Two or more reporting organisations
+        may publish information on the same activity. To
+        cross-reference these reports the other-identifier element
+        should be used.)
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -115,9 +115,7 @@
         <xsd:element name="category" type="codeReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A category into which this document falls, using the
-              IATI document category code list.  Must be specified at
-              least once, and may be repeated for multiple categories.
+              IATI Document Category Code
 
               For the value of the @code attribute, see
               http://iatistandard.org/codelists/document_category

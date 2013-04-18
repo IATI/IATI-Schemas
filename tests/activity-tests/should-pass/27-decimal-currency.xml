@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <description>xxx</description>
+    <!-- use a decimal for currency -->
+    <transaction>
+      <value value-date="2013-01-01">99.99</value>
+    </transaction>
+    <budget>
+      <value value-date="2013-01-01">999.99</value>
+    </budget>
+    <planned-disbursement>
+      <value value-date="2013-01-01">9999.99</value>
+    </planned-disbursement>
+  </iati-activity>
+</iati-activities>

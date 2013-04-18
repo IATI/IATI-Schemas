@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <description>xxx</description>
+    <!-- use a decimal for percentage -->
+    <recipient-country code="XX" percentage="55.5">XX</recipient-country>
+    <recipient-region code="XX" percentage="11.1">XX</recipient-region>
+    <sector code="XX" percentage="70.9999">XX</sector>
+    <location percentage="0.8"/>
+  </iati-activity>
+</iati-activities>
