@@ -244,7 +244,7 @@
       </xsd:sequence>
       <xsd:attribute ref="code" use="required"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this country,
@@ -277,7 +277,7 @@
       </xsd:sequence>
       <xsd:attribute ref="code" use="optional"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this
@@ -399,7 +399,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the project allocated to this sector, if
@@ -896,7 +896,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="percentage" type="xsd:positiveInteger" use="optional">
+      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the activity budget allocated to this location.
