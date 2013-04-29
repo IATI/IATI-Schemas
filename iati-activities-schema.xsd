@@ -581,9 +581,8 @@
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An identifier for the vocabulary in use, to segment codes
-            into different vocabularies (e.g. Rio, Environment) to aid
-            with comparison and classification.
+            Policy vocabulary used. Default is "DAC", but "RO" may also
+            be used for publisher's own markers.
 
             See http://iatistandard.org/codelists/vocabulary
           </xsd:documentation>
