@@ -22,6 +22,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional contact-info/job-title element
 
+- added the optional capital-spend element
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the

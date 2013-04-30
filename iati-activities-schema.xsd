@@ -109,6 +109,7 @@
         <xsd:element ref="default-tied-status"/>
         <xsd:element ref="policy-marker"/>
         <xsd:element ref="location"/>
+        <xsd:element ref="capital-spend"/>
         <xsd:element ref="transaction"/>
         <xsd:element ref="result"/>
         <xsd:element ref="conditions"/>
@@ -589,6 +590,22 @@
     </xsd:complexType>
   </xsd:element>
 
+  <xsd:element name="capital-spend">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        The percentage of the total commitment that is for capital
+        spending
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute ref="percentage" use="required"/>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="transaction">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -950,6 +967,7 @@
             </xsd:choice>
             <xsd:attribute ref="code" use="required"/>
             <xsd:attribute ref="percentage" use="required"/>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -964,6 +982,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 

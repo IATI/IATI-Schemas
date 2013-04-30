@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <description>xxx</description>
+    <capital-spend percentage="88.8"/>
+  </iati-activity>
+</iati-activities>
