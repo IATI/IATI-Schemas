@@ -119,6 +119,7 @@
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
+        <xsd:element ref="crs-add"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute name="version" type="xsd:decimal" use="optional">
@@ -1351,6 +1352,42 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="crs-add">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Additional items specific to CRS++ reporting.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="aidtype-flag">
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="code" use="required"/>
+            <xsd:attribute name="significance" type="xsd:boolean" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Does this flag apply? If 'false' do not report the flag
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <!-- 
+          TODO:
+          - loan-terms
+          - loan-status
+          - fss
+        -->
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

@@ -24,6 +24,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional capital-spend element
 
+- added the optional crs-add element
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the
