@@ -20,6 +20,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional country-budget-item element
 
+- added the optional contact-info/job-title element
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the

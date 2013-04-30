@@ -459,7 +459,8 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Contact information for the project.  Specify whatever is
-        available.
+        available.  You may repeat this element for each contact
+        person.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -478,6 +479,14 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the contact person at the organisation.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="job-title" type="plainType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The job title of the contact person at the organisation.
+              You may repeat this element for different languages.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
