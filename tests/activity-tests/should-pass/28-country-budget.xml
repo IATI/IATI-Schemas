@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<iati-activities>
+  <iati-activity>
+    <iati-identifier>12345</iati-identifier>
+    <description>xxx</description>
+    <country-budget-items vocabulary="XXX">
+      <budget-item code="XXX" percentage="100">
+        <description xml:lang="en">XXX</description>
+      </budget-item>
+    </country-budget-items>
+  </iati-activity>
+</iati-activities>

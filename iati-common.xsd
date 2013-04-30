@@ -181,6 +181,15 @@
     </xsd:annotation>
   </xsd:attribute>
 
+  <xsd:attribute name="percentage" type="xsd:decimal">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        The percentage of the budget allocated to this item.  Content
+        must be a positive real number between 0 and 100, with no
+        percentage sign.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
 
   <!--
       Common attribute groups and data types used by the elements above.

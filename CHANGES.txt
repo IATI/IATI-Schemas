@@ -18,6 +18,8 @@ IATI Schema Changes -*-Outline-*-
 - globally changed the @currency attribute to allow decimals
   (e.g. "99.99" as well as "99")
 
+- added the optional country-budget-item element
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the
@@ -34,6 +36,8 @@ IATI Schema Changes -*-Outline-*-
 
 - Currency values are now allowed to be declared as decimals instead of 
   integers.
+
+- Moved the @percentage attribute to common, so that it can be reused.
   
 ** Registry Record
 - Version numbers now included in the document root. Versions match the

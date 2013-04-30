@@ -114,6 +114,7 @@
         <xsd:element ref="conditions"/>
         <xsd:element ref="budget"/>
         <xsd:element ref="planned-disbursement"/>
+        <xsd:element ref="country-budget-items" />
         <xsd:element ref="related-activity"/>
         <xsd:element ref="document-link"/>
         <xsd:element ref="legacy-data"/>
@@ -248,15 +249,7 @@
       </xsd:sequence>
       <xsd:attribute ref="code" use="required"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The percentage of the project allocated to this country,
-            if known.  Content must be a positive real number between
-            0 and 100, with no percentage sign.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -281,15 +274,7 @@
       </xsd:sequence>
       <xsd:attribute ref="code" use="optional"/>
       <xsd:attributeGroup ref="textAtts"/>
-      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The percentage of the project allocated to this
-            geopolitical region, if known.  Content must be a positive
-            real number between 0 and 100, with no percentage sign.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -423,16 +408,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The percentage of the project allocated to this sector, if
-            known.  Content must be a positive real number between 0
-            and 100, with no percentage sign.  Percentages are
-            comparable only across sectors in the same vocabulary.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -931,14 +907,54 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="percentage" type="xsd:decimal" use="optional">
+      <xsd:attribute ref="percentage" use="optional"/>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="country-budget-items">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Recipient country budget items.
+
+        This item encodes the alignment of activities with both the
+        functional and administrative classifications used in the
+        recipient country's Chart of Accounts. This applies to both
+        on- and off-budget activities.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType mixed="true">
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="budget-item">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Identifier for a single item in the recipient-country
+              budget. If more than one identifier is reported the
+              percentage share must be reported and all percentages
+              should add up to 100 percent.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="description" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute ref="code" use="required"/>
+            <xsd:attribute ref="percentage" use="required"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:choice>
+      <xsd:attribute name="vocabulary" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of the activity budget allocated to this location.
+            A code for the common functional classification or country
+            system (This allows for common codes, country-specific, or
+            any other classification agreed between countries and
+            donors).
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
