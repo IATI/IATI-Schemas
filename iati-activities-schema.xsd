@@ -1540,11 +1540,67 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <!-- 
-             TODO:
-             - loan-status
-             - fss
-        -->
+        <xsd:element name="fss">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              This section allows entry of data required for the OECD
+              DAC Forward Spending Survey at an activity level.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="forecast">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    A container to hold separate forecasts for each of
+                    the years specified
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:simpleContent>
+                    <xsd:extension base="xsd:decimal">
+                      <xsd:attribute name="year" type="xsd:decimal" use="required">
+                        <xsd:annotation>
+                          <xsd:documentation xml:lang="en">
+                            The calendar year that the forward spend covers
+                          </xsd:documentation>
+                        </xsd:annotation>
+                      </xsd:attribute>
+                      <xsd:attribute ref="currency" use="optional"/>
+                      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                    </xsd:extension>
+                  </xsd:simpleContent>
+                </xsd:complexType>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="extraction-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The exact date when the information was collected or
+                  extracted from donors' aid management systems.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="priority" type="xsd:boolean" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  True if the partner country is a priority partner country.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="phaseout-year" type="xsd:decimal" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  If there are plans to phase out operations from the
+                  partner country, this column shows the projected
+                  year of last disbursements.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
