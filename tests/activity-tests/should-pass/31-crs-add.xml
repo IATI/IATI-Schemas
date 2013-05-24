@@ -21,6 +21,10 @@
         <principal-first-year>500000</principal-first-year>
         <interest-first-year>20000</interest-first-year>
       </loan-status>
+      <fss extraction-date="2013-05-31" priority="true" phaseout-year="2016">
+        <forecast year="2014" currency="GBP">10000</forecast>
+        <forecast year="2015" currency="GBP">20000</forecast>
+      </fss>
     </crs-add>
   </iati-activity>
 </iati-activities>
