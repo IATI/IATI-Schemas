@@ -13,6 +13,14 @@
         <repayment-first-date iso-date="2014-01-01"/>
         <repayment-final-date iso-date="2020-12-31"/>
       </loan-terms>
+      <loan-status year="2014" currency="GBP" value-date="2013-05-24">
+        <interest-received>200000</interest-received>
+        <principal-outstanding>1500000</principal-outstanding>
+        <principal-arrears>0</principal-arrears>
+        <interest-arrears>0</interest-arrears>
+        <principal-first-year>500000</principal-first-year>
+        <interest-first-year>20000</interest-first-year>
+      </loan-status>
     </crs-add>
   </iati-activity>
 </iati-activities>

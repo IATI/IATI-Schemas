@@ -1459,6 +1459,87 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
+        <xsd:element name="loan-status">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The status of loan and interest repayments for the most
+              recently reported financial year
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-type" type="codeType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Type of Repayment. 1 = equal principal payments
+                    (EPP); 2 = annuity; 3 = lump sum; 5 = other,
+                    Codes are listed at
+                    http://iatistandard.org/codelists/crs-repayment-type
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="interest-received" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Interest received during the reporting year
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="principal-outstanding" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The amount of principal owed on the loan at the
+                    end of the reporting year.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="principal-arrears" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Arrears of principal at the end of the
+                    year. Included in principal-outstanding
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="interest-arrears" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Arrears of interest at the end of the year
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="principal-first-year" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Amounts of principal due on debt outstanding,
+                    including arrears, during the first year following
+                    the end of the reporting period.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="interest-first-year" type="xsd:decimal">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Amounts of interest due on debt outstanding,
+                    including arrears, during the first year following
+                    the end of the reporting period.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+            <xsd:attribute name="year" type="xsd:decimal" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  CRS Reporting Year (CRS++ Column 1)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute ref="currency" use="optional"/>
+            <xsd:attribute ref="value-date" use="required"/>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <!-- 
              TODO:
              - loan-status

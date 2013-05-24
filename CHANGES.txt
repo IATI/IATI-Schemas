@@ -24,7 +24,7 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional capital-spend element
 
-- added the optional crs-add element
+- added the optional crs-add element and its child elements
 
 ** Organisations
 

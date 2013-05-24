@@ -191,6 +191,29 @@
     </xsd:annotation>
   </xsd:attribute>
 
+  <xsd:attribute name="currency" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        An ISO 639 code for the original currency of the amount.
+        This is required for all currency amounts unless the
+        iati-activity/@default-currency attribute is specified.
+
+        Currency codes are listed at
+        http://iatistandard.org/codelists/currency
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
+  <xsd:attribute name="value-date" type="xsd:date">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        The date that this value was set (to allow historical
+        currency conversion).  The date must be in ISO 8601
+        format (YYYY-MM-DD).
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
   <!--
       Common attribute groups and data types used by the elements above.
   -->
@@ -300,27 +323,8 @@
     </xsd:annotation>
     <xsd:simpleContent>
       <xsd:extension base="xsd:decimal">
-        <xsd:attribute name="currency" type="xsd:string" use="optional">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              An ISO 639 code for the original currency of the amount.
-              This is required for all currency amounts unless the
-              iati-activity/@default-currency attribute is specified.
-
-              Currency codes are listed at
-              http://iatistandard.org/codelists/currency
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
-        <xsd:attribute name="value-date" type="xsd:date" use="required">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The date that this value was set (to allow historical
-              currency conversion).  The date must be in ISO 8601
-              format (YYYY-MM-DD).
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:attribute>
+        <xsd:attribute ref="currency" use="optional"/>
+        <xsd:attribute ref="value-date" use="required"/>
         <xsd:anyAttribute processContents="lax" namespace="##other"/>
       </xsd:extension>
     </xsd:simpleContent>
