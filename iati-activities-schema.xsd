@@ -64,17 +64,17 @@
             to declare where this data is published would support
             discovery of it, and any additional information they may
             choose to publish as Linked Data alongside it.
- 
+            
             This attribute is URI path upon which an activity
             identifier can be appended to get a dereferenceable URI
             for any activity contained within a file.
-           
+            
             Where a publisher declares using one of these properties
             that authoritative linked data is accessible for an
             activity then consuming applications that are generating
             Linked Data from an IATI XML file should assert an
             owl:sameAs relationship to the relevant URI.
-         </xsd:documentation>
+          </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
@@ -617,173 +617,173 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-	<xsd:choice maxOccurs="unbounded">
-          <xsd:element name="value" type="currencyType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The amount of the contribution (or its value, if in
-                kind).
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="description" type="textType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                A human-readable description of the transaction.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="transaction-type" type="codeReqType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The type of the transaction (e.g. commitment,
-                disbursement, expenditure, etc.).  The @ref attribute
-                contains a code defined by IATI, and the content is an
-                optional free-text description of the type.
+      <xsd:choice maxOccurs="unbounded">
+        <xsd:element name="value" type="currencyType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The amount of the contribution (or its value, if in
+              kind).
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A human-readable description of the transaction.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="transaction-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The type of the transaction (e.g. commitment,
+              disbursement, expenditure, etc.).  The @ref attribute
+              contains a code defined by IATI, and the content is an
+              optional free-text description of the type.
 
-                For the value of the @code attribute, see
-                http://iatistandard.org/codelists/transaction_type
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="provider-org">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The organisation providing the money for the
-                transaction (if omitted, the provider organisation is
-                the reporting organisation).
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/transaction_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="provider-org">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The organisation providing the money for the
+              transaction (if omitted, the provider organisation is
+              the reporting organisation).
 
-                For the value of the @ref attribute, see the list of
-                officially-registered organizations at
-                http://iatistandard.org/codelists/organisation
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType mixed="true">
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute ref="ref" use="optional"/>
-              <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    The internal identifier used by the provider for
-                    its activity that provides the funds for this
-                    transaction (*not* the IATI activity identifier).
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="receiver-org">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The organisation receiving the money from the
-                transaction (if omitted, then the receiver
-                organisation is the reporting organisation).
+              For the value of the @ref attribute, see the list of
+              officially-registered organizations at
+              http://iatistandard.org/codelists/organisation
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="ref" use="optional"/>
+            <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The internal identifier used by the provider for
+                  its activity that provides the funds for this
+                  transaction (*not* the IATI activity identifier).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="receiver-org">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The organisation receiving the money from the
+              transaction (if omitted, then the receiver
+              organisation is the reporting organisation).
 
-                For the value of the @ref attribute, see the list of
-                officially-registered organizations at
-                http://iatistandard.org/codelists/organisation
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType mixed="true">
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute ref="ref" use="optional"/>
-              <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    The internal identifier used by the receiver
-                    organisation for its activity that receives the
-                    funds from this transaction (not to be confused
-                    with the IATI identifier for the target activity).
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="transaction-date">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                A milestone date for this transaction (such as the
-                decision date, disbursement date, etc.).
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType mixed="true">
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="iso-date" type="xsd:date" use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    The ISO 8601 version of the transaction date.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="flow-type" type="codeReqType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Optional element to override the top-level
-                default-flow-type element.
-                
-                For the value of the @code attribute, see
-                http://iatistandard.org/codelists/flow_type
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="aid-type" type="codeReqType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Optional element to override the top-level
-                default-aid-type element (debt relief, etc.) on a
-                transaction-by-transaction basis if needed.
+              For the value of the @ref attribute, see the list of
+              officially-registered organizations at
+              http://iatistandard.org/codelists/organisation
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="ref" use="optional"/>
+            <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The internal identifier used by the receiver
+                  organisation for its activity that receives the
+                  funds from this transaction (not to be confused
+                  with the IATI identifier for the target activity).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="transaction-date">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A milestone date for this transaction (such as the
+              decision date, disbursement date, etc.).
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The ISO 8601 version of the transaction date.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="flow-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Optional element to override the top-level
+              default-flow-type element.
+              
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/flow_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="aid-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Optional element to override the top-level
+              default-aid-type element (debt relief, etc.) on a
+              transaction-by-transaction basis if needed.
 
-                For the value of the @code attribute, see
-                http://iatistandard.org/codelists/aid_type
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="finance-type" type="codeReqType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Optional element to override the top-level
-                default-finance-type element on a
-                transaction-by-transaction basis, if needed.
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/aid_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="finance-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Optional element to override the top-level
+              default-finance-type element on a
+              transaction-by-transaction basis, if needed.
 
-                For the value of the @code attribute, see
-                http://iatistandard.org/codelists/finance_type
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="tied-status" type="codeReqType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Optional element to override the top-level
-                default-tied-status element (pooled, etc.) on a
-                transaction-by-transaction basis if needed.
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/finance_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="tied-status" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Optional element to override the top-level
+              default-tied-status element (pooled, etc.) on a
+              transaction-by-transaction basis if needed.
 
-                For the value of the @code attribute, see
-                http://iatistandard.org/codelists/tied_status
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="disbursement-channel" type="codeReqType">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The channel through which the funds will flow for this
-                transaction, from an IATI code list.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:any namespace="##other" processContents="lax"/>
-        </xsd:choice>
-        <xsd:attribute ref="ref" use="optional"/>
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/tied_status
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="disbursement-channel" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The channel through which the funds will flow for this
+              transaction, from an IATI code list.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax"/>
+      </xsd:choice>
+      <xsd:attribute ref="ref" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -1007,8 +1007,8 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attributeGroup ref="textAtts"/>
-    <xsd:attribute ref="ref" use="required"/>
-    <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute ref="ref" use="required"/>
+      <xsd:attribute ref="type" use="required"/>
     </xsd:complexType>
   </xsd:element>
 
@@ -1380,11 +1380,81 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
+        <xsd:element name="loan-terms">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Loan repayment terms and interest rates
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-type" type="codeType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Type of Repayment. 1 = equal principal payments
+                    (EPP); 2 = annuity; 3 = lump sum; 5 = other,
+                    Codes are listed at
+                    http://iatistandard.org/codelists/crs-repayment-type
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="repayment-plan" type="codeType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Number of repayments per annum. 1 = annual; 2 =
+                    semi-annual; 4 = quarterly; 12 = monthly. Codes
+                    are listed at
+                    http://iatistandard.org/codelists/repayment-nopa.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="repayment-first-date" type="dateType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    First Repayment Date. The date must be in ISO
+                    8601 format (YYYY-MM-DD).
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element name="repayment-final-date" type="dateType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Final Repayment Date. The date must be in ISO
+                    8601 format (YYYY-MM-DD).
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+            </xsd:choice>
+            <xsd:attribute name="rate-1" type="xsd:decimal" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Interest Rate. If an ODA loan with variable
+                  interest rate, report the variable rate here and
+                  the reference fixed rate as rate-2
+
+                  Enter the rate without the percentage sign.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="rate-2" type="xsd:decimal" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Second Interest Rate.  If an ODA loan with
+                  variable interest rate, report the variable rate
+                  as rate-1 and the reference fixed rate here
+
+                  Enter the rate without the percentage sign.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <!-- 
-          TODO:
-          - loan-terms
-          - loan-status
-          - fss
+             TODO:
+             - loan-terms
+             - loan-status
+             - fss
         -->
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
