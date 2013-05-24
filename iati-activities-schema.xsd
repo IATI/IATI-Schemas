@@ -1408,6 +1408,14 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:element name="commitment-date" type="dateType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    Commitment date.The date must be in ISO 8601
+                    format (YYYY-MM-DD).
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
               <xsd:element name="repayment-first-date" type="dateType">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -1424,6 +1432,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
             <xsd:attribute name="rate-1" type="xsd:decimal" use="optional">
               <xsd:annotation>
@@ -1452,7 +1461,6 @@
         </xsd:element>
         <!-- 
              TODO:
-             - loan-terms
              - loan-status
              - fss
         -->
