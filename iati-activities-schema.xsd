@@ -482,6 +482,9 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the contact person at the organisation.
+              
+              If person-name is present then either person-name/text() 
+              or job-title/text() must be present
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -490,6 +493,9 @@
             <xsd:documentation xml:lang="en">
               The job title of the contact person at the organisation.
               You may repeat this element for different languages.
+              
+              If person-name is present then either person-name/text() 
+              or job-title/text() must be present
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -667,9 +673,10 @@
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The internal identifier used by the provider for
-                  its activity that provides the funds for this
-                  transaction (*not* the IATI activity identifier).
+                  If the funds are being provided from the budget of 
+                  another activity that is reported to IATI, this 
+                  should record the unique IATI activity identifier for 
+                  that activity.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -696,10 +703,9 @@
             <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The internal identifier used by the receiver
-                  organisation for its activity that receives the
-                  funds from this transaction (not to be confused
-                  with the IATI identifier for the target activity).
+                  If the funds are being provided to another activity 
+                  that is reported to IATI, this should record the 
+                  unique IATI activity identifier for that activity.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
