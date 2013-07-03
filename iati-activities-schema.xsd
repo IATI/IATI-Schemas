@@ -1509,24 +1509,6 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="principal-first-year" type="xsd:decimal">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    Amounts of principal due on debt outstanding,
-                    including arrears, during the first year following
-                    the end of the reporting period.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
-              <xsd:element name="interest-first-year" type="xsd:decimal">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    Amounts of interest due on debt outstanding,
-                    including arrears, during the first year following
-                    the end of the reporting period.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:element>
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
             <xsd:attribute name="year" type="xsd:decimal" use="required">
