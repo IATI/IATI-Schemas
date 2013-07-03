@@ -1556,6 +1556,7 @@
                   </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute ref="currency" use="optional"/>
+                <xsd:attribute ref="value-date" use="optional"/>
                 <xsd:anyAttribute processContents="lax" namespace="##other"/>
               </xsd:extension>
             </xsd:simpleContent>
