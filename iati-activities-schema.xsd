@@ -92,6 +92,7 @@
         <xsd:element ref="activity-website"/>
         <xsd:element ref="reporting-org"/>
         <xsd:element ref="participating-org"/>
+        <xsd:element ref="activity-scope"/>
         <xsd:element ref="recipient-country"/>
         <xsd:element ref="recipient-region"/>
         <xsd:element ref="collaboration-type"/>
@@ -231,6 +232,16 @@
       </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="activity-scope" type="codeType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        What geographical area does the activity encompass?
+        eg. Global, Regional, Multi-National, National, Multiple
+        (sub-national) aministrateive areas, etc
+      </xsd:documentation>
+    </xsd:annotation>
   </xsd:element>
 
   <xsd:element name="recipient-country">

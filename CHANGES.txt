@@ -26,6 +26,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional crs-add element and its child elements
 
+- added the activity-scope element
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the
