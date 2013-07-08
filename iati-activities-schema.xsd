@@ -419,9 +419,14 @@
   <xsd:element name="activity-date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Planned starting date for the activity in ISO 8601 date
-        format, e.g. "2010-10-01".  For the value of the @type
-        attribute, see
+        The planned and actual start and completion dates of the 
+        activity. Start dates may reflect either the commencement of 
+        funding, planning or physical activity. End dates should, 
+        wherever possible, reflect the ending of physical activity. 
+        Dates should be in ISO 8601 date YYYY-MM-DD format, e.g. 
+        2010-10-01. 
+        
+        For the value of the @type attribute, see
         http://iatistandard.org/codelists/activity_date_type
 
         The text content may contain a general date text (e.g. 2011Q1)
