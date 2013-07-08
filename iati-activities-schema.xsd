@@ -287,6 +287,14 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute ref="code" use="optional"/>
+      <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The vocabulary from which the region code is drawn. If it
+            is not present 1 - 'OECD DAC' is assumed.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute ref="percentage" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>

@@ -28,6 +28,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the activity-scope element
 
+- added optional recipient-region/@vocabulary attribute
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the
