@@ -30,6 +30,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added optional recipient-region/@vocabulary attribute
 
+- added the optional contact-info/website element
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the
