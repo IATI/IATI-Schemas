@@ -492,7 +492,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="organisation" type="plainType">
+        <xsd:element name="organisation" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation to contact for more information about the
@@ -502,7 +502,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="person-name" type="plainType">
+        <xsd:element name="person-name" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the contact person at the organisation.
@@ -512,7 +512,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="job-title" type="plainType">
+        <xsd:element name="job-title" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The job title of the contact person at the organisation.
@@ -548,11 +548,12 @@
               The contact mailing address, if available.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType mixed="true"> 
+            <xsd:attributeGroup ref="textAtts"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="website" type="plainType">
+        <xsd:element name="website" type="xsd:anyURI">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact web address, if available.  May be repeated

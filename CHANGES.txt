@@ -1,5 +1,20 @@
 IATI Schema Changes -*-Outline-*-
 
+* (pre2) Version 1.03
+
+[*] designates a backwards-incompatible change
+
+** Activities
+
+- added the optional contact-info/website element
+
+- added the optional contact-info/@type attribute
+
+- changed the following subelements of contact-info to allow
+  multiple-language versions explicitly (no change to parsing; purely
+  semantic): organisation, person-name, job-title, mailing-address
+
+
 * (pre) Version 1.03
 
 (see http://wiki.iatistandard.org/standard/revision/1.03/changes_specification)
@@ -29,10 +44,6 @@ IATI Schema Changes -*-Outline-*-
 - added the activity-scope element
 
 - added optional recipient-region/@vocabulary attribute
-
-- added the optional contact-info/website element
-
-- added the optional contact-info/@type attribute
 
 ** Organisations
 
