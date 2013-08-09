@@ -32,6 +32,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional contact-info/website element
 
+- added the optional contact-info/@type attribute
+
 ** Organisations
 
 - Version numbers now included in the document root. Versions match the

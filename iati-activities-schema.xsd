@@ -562,6 +562,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
+      <xsd:attribute ref="type" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

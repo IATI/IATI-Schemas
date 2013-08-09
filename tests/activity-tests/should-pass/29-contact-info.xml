@@ -4,7 +4,7 @@
   <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <description>xxx</description>
-    <contact-info>
+    <contact-info type="xxx">
       <organisation>XXX</organisation>
       <person-name>XXX</person-name>
       <job-title>YYY</job-title>
