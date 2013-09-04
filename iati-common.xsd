@@ -194,7 +194,8 @@
   <xsd:attribute name="currency" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An ISO 639 code for the original currency of the amount.
+        A three letter ISO 4217 code for the original currency of the 
+        amount.
         This is required for all currency amounts unless the
         iati-activity/@default-currency attribute is specified.
 
