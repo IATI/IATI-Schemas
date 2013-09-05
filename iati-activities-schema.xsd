@@ -239,7 +239,7 @@
       <xsd:documentation xml:lang="en">
         What geographical area does the activity encompass?
         eg. Global, Regional, Multi-National, National, Multiple
-        (sub-national) aministrateive areas, etc
+        (sub-national) administrative areas, etc
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
