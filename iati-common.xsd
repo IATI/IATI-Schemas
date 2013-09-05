@@ -78,18 +78,19 @@
   <xsd:element name="reporting-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The organisation issuing a report (not necessarily involved in
-        the organisation or activity being described).  May be a
-        donor, fund, agency, etc.  Specifying the @identifier and
-        @role attributes is strongly recommended.  May contain the
-        organisation name as content.
-
-        For the value of the @type attribute, see
-        http://iatistandard.org/codelists/organisation-type
-
-        For the value of the @ref attribute, see the list of
-        officially-registered organizations at
-        http://iatistandard.org/codelists/organisation
+        The organisation issuing the report. May be a primary source 
+        (reporting on its own activity as donor, implementing agency, 
+        etc) or a secondary source (reporting on the activities of 
+        another organisation). 
+        
+        Specifying the @ref and @role attributes is strongly 
+        recommended. May contain the organisation name as content. 
+        
+        For the value of the @type attribute, 
+        see http://iatistandard.org/codelists/organisation-type. 
+        
+        For guidance on constructing the value of the @ref attribute, 
+        see http://iatistandard.org/org-ref
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
