@@ -201,7 +201,7 @@
       <xsd:documentation xml:lang="en">
         An organisation (including the reporting organisation)
         involved with the activity.  May be a donor, fund, agency,
-        etc.  Specifying the @identifier and @role attributes is
+        etc.  Specifying the @ref and @role attributes is
         strongly recommended.  May contain the organisation name as
         content.
 
