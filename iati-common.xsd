@@ -186,8 +186,10 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The percentage of the budget allocated to this item.  Content
-        must be a positive real number between 0 and 100, with no
-        percentage sign.
+        must be a positive decimal number between 0 and 100, with no
+        percentage sign. In version 1.03 of the IATI Standard this
+        value became designated as a decimal value and no longer 
+        as a positive integer.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
