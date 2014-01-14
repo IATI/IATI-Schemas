@@ -368,11 +368,7 @@
       <xsd:attribute name="owner-ref" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An identifier for the owner of this identifier, in URI
-            format.
-
-            See the list of officially-registered organizations at
-            http://iatistandard.org/codelists/organisation
+            An identifier for the owner of this identifier.  For guidance on constructing the value of the @ref attribute, see http://iatistandard.org/org-ref
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
