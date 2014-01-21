@@ -1493,7 +1493,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="condition">
+        <xsd:element name="condition" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Description of one condition attached to the activity.
