@@ -832,14 +832,62 @@
   <xsd:element name="location">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A geographical location.
+        The sub-national geographical identification of the target 
+        locations of an activity. These can be described by gazetteer 
+        reference, coordinates, administrative areas or a textual 
+        description.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-reach" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Does this location provide describe where the activity 
+               takes place or where the intended beneficiaries reside?
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+          <xsd:complexType>
+        </xsd:element>
+        <xsd:element name="location-id" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A unique code describing the location according to a 
+               recognised gazetteer or administrative boundary 
+               repository. 
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="code" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A code from the gazetteer or administrative boundary 
+                   repository specified by the vocabulary
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code for a recognised gazetteer or administrative 
+                  boundary respository.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:element name="location-type" type="codeReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
+              Deprecated since 1.04
               The type of location (e.g. "PCL" for a political
               entity), from an IATI-defined subset of the UCPD/Aiddata
               code list.
@@ -859,15 +907,27 @@
         <xsd:element name="description" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A human-readable description of the location (not the activity).
+              A description that qualifies the location, not the 
+              activity.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="activity-description" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A description that qualifies the activity taking place at 
+              the location. This should not duplicate information 
+              provided in the main activity description, and should 
+              typically be used to distinguish between activities at 
+              multiple locations within a single iati-activity record.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:element name="administrative">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Coded identification of national and sub-national
-              divisions according to recognised administrative
+              Coded identification of national and sub-national 
+              divisions according to recognised administrative 
               boundary repositories. Multiple levels may be reported.
             </xsd:documentation>
           </xsd:annotation>
@@ -875,9 +935,35 @@
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
+            <xsd:attribute ref="code" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   The code for the administrative area being reported 
+                   from the vocabulary specified.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The code for a recognised administrative boundary.
+                  repository
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="level" type="xsd:positiveInteger" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   An integer indicating the hierarchical level being 
+                   reported. Level 0 is the national boundary, level 1 
+                   is the first-level administrative sub-division, etc.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:attribute name="country" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   The ISO 3166-1 alpha2 code for the country
                   (e.g. "GB" for the United Kingdom).
 
@@ -889,6 +975,7 @@
             <xsd:attribute name="adm1" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   The UNSALB level-one administrative code for a
                   subdivision of a country.
 
@@ -899,6 +986,7 @@
             <xsd:attribute name="adm2" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   The UNSALB level-two administrative code for a
                   subdivision of a country.
 
@@ -909,9 +997,110 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
+        
+        <xsd:element name="point">
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:any namespace="##other" processContents="lax"/>
+            </xsd:choice>
+            <xsd:element name="coordinates" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The latitude and longitude coordinates in the 
+                  format "lat lng"
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:element>
+            <xsd:attribute name="srsName" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The name of the spatial reference system used by the 
+                  coordinates. 
+                  Always: http://www.opengis.net/def/crs/EPSG/0/4326
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="supporting-information" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Defines whether the location represents the most 
+               distinct point reasonably possible for this type of 
+               activity or is an approximation due to lack of more 
+               detailed information. 
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="code" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A code from the Supporting-Information Code list. 
+                   1 = Exact, 2 = Approximate
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="location-class" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Whether the location refers to a structure, a populated 
+               place (e.g. city or village), an administrative 
+               division, or another topological feature 
+               (e.g. river, nature reserve).
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="code" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A code from the Location Class code list
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        
+        <xsd:element name="feature-designation" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A more refined coded classification of the type of 
+               feature referred to by this location.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType mixed="true">
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute ref="code" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A feature designation code form the authorised list
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        
+        
+        
         <xsd:element name="coordinates">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
+              Deprecated since 1.04
               Geodetic coordinates for the location (latitude, longitude).
             </xsd:documentation>
           </xsd:annotation>
@@ -922,6 +1111,7 @@
             <xsd:attribute name="latitude" type="xsd:decimal" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   The decimal latitude (north is positive), e.g. "45.5"
                   for 45.5 degrees north (45 degrees 30 minutes).
                 </xsd:documentation>
@@ -930,6 +1120,7 @@
             <xsd:attribute name="longitude" type="xsd:decimal" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   The decimal longitude (east is positive), e.g. "-75.5"
                   for 75.5 degrees west (74 degrees 30 minutes).
                 </xsd:documentation>
@@ -938,6 +1129,7 @@
             <xsd:attribute name="precision" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   An IATI-defined subset of UCPD precision codes for
                   the location (e.g. "2" for within 25 km of the
                   specified latitude/longitude).
@@ -952,6 +1144,7 @@
         <xsd:element name="gazetteer-entry">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
+              Deprecated since 1.04
               Identifier for this location's entry in a geographical
               gazetteer, such as GEOnet.  The entry identifier is the
               element content.
@@ -964,6 +1157,7 @@
             <xsd:attribute name="gazetteer-ref" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
+                  Deprecated since 1.04
                   Reference to the gazetteer containing the entry.
 
                   See http://iatistandard.org/codelists/gazetteer_agency
@@ -975,7 +1169,25 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="percentage" use="optional"/>
+      <xsd:attribute ref="ref" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Deprecated since 1.04
+            An internal reference that uniquely describes the location 
+            in the reporting organisation's own system.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Deprecated since 1.04
+            If more than one location is reported, percentage of 
+            activity commitment allocated to this location 
+            (if available).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -1406,6 +1618,15 @@
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element name="aidtype-flag">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              This covers the four CRS++ fields titled: 
+              "Free standing technical cooperation"; 
+              "Programme-based approach"; 
+              "Investment project"; 
+              "Associated financing"
+            </xsd:documentation>
+          </xsd:annotation>
           <xsd:complexType mixed="true">
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
