@@ -845,13 +845,8 @@
                takes place or where the intended beneficiaries reside?
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:any namespace="##other" processContents="lax"/>
-            </xsd:choice>
-          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="location-id" type="codeType">
+        <xsd:element name="location-id">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                A unique code describing the location according to a 
@@ -1021,7 +1016,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="supporting-information" type="codeType">
+        <xsd:element name="supporting-information">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Defines whether the location represents the most 
@@ -1046,7 +1041,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="location-class" type="codeType">
+        <xsd:element name="location-class">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Whether the location refers to a structure, a populated 
@@ -1070,7 +1065,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="feature-designation" type="codeType">
+        <xsd:element name="feature-designation">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                A more refined coded classification of the type of 
@@ -1490,7 +1485,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="condition" type="textType">
+        <xsd:element name="condition">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Description of one condition attached to the activity.
@@ -1501,6 +1496,7 @@
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute ref="type" use="required"/>
+            <xsd:attributeGroup ref="textAtts"/>
           </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
