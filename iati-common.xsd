@@ -78,19 +78,12 @@
   <xsd:element name="reporting-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The organisation issuing the report. May be a primary source 
-        (reporting on its own activity as donor, implementing agency, 
-        etc) or a secondary source (reporting on the activities of 
-        another organisation). 
+        The organisation issuing the report. May be a primary source (reporting on its own activity as donor, implementing agency, etc) or a secondary source (reporting on the activities of another organisation). 
         
-        Specifying the @ref and @role attributes is strongly 
-        recommended. May contain the organisation name as content. 
+        Specifying the @ref attribute is mandatory. May contain the organisation name as content.
         
-        For the value of the @type attribute, 
-        see http://iatistandard.org/codelists/organisation-type. 
+        All activities in an activity xml file must contain the same @ref AND this @ref must be the same as the iati-identifier recorded in the registry publisher record of the account under which this file is published.
         
-        For guidance on constructing the value of the @ref attribute, 
-        see http://iatistandard.org/org-ref
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
