@@ -851,7 +851,7 @@
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
-          <xsd:complexType>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="location-id" type="codeType">
           <xsd:annotation>
@@ -1000,17 +1000,16 @@
         
         <xsd:element name="point">
           <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:any namespace="##other" processContents="lax"/>
+            <xsd:choice minOccurs="1" maxOccurs="unbounded">
+              <xsd:element name="coordinates" type="xsd:string">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The latitude and longitude coordinates in the 
+                    format "lat lng"
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
             </xsd:choice>
-            <xsd:element name="coordinates" type="xsd:string" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  The latitude and longitude coordinates in the 
-                  format "lat lng"
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:element>
             <xsd:attribute name="srsName" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
