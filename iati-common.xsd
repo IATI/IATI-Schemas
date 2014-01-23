@@ -99,6 +99,14 @@
       </xsd:sequence>
       <xsd:attribute ref="ref" use="required"/>
       <xsd:attribute ref="type" use="optional"/>
+      <xsd:attribute name="secondary-reporter" type="xsd:boolean" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+             If an activity is being published by a secondary publisher
+             you may indicate this here. Use 1 for true, 0 for false.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attributeGroup ref="textAtts"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
