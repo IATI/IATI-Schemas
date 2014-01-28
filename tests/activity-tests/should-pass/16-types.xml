@@ -5,12 +5,17 @@
 
 <iati-activity>
 
-<reporting-org ref="X" type="X">X</reporting-org>
+<reporting-org ref="X" type="X" secondary-reporter="0">X</reporting-org>
 <participating-org type="X" role="X">X</participating-org>
 <description type="X">X</description>
 <activity-date type="X"/>
 <related-activity ref="X" type="Y"/>
 <result type="X"/>
+
+
+<reporting-org ref="X" type="X" secondary-reporter="true">X</reporting-org>
+<reporting-org ref="X" type="X" secondary-reporter="false">X</reporting-org>
+<reporting-org ref="X" type="X" secondary-reporter="1">X</reporting-org>
 
 <!--
 TODO:
