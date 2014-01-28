@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+
+<iati-activities>
+
+  <iati-activity>
+
+    <conditions attached="1">
+      <condition type="1">[some text here]</condition>
+      <condition type="1" xml:lang="fr">[some text here]</condition>
+    </conditions> 
+
+  </iati-activity>
+
+</iati-activities>
