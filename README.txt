@@ -2,10 +2,10 @@ International Aid Transparency Initiative (IATI)
 XML Schemas
 
 David Megginson <david.megginson@megginson.com>
-Version 1.03, 2013-09-13
+Version 1.04, 2014-05-05
 
-This directory contains version 1.03 of the IATI XML
-schemas, effective 2013-09-13 (subject to agreement).  More information about these schemas
+This directory contains version 1.04 of the IATI XML
+schemas, effective 2014-05-05 (subject to agreement).  More information about these schemas
 is available at http://iatistandard.org
 
 This directory contains the following files:

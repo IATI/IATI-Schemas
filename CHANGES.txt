@@ -1,5 +1,33 @@
 IATI Schema Changes -*-Outline-*-
 
+* (pre) Version 1.04
+
+(see http://support.iatistandard.org/forums/22743317-1-04-Decimal-Upgrade)
+
+[*] designates a backwards-incompatible change
+
+** Activities
+
+- added reporting-org/@secondary-reporter attribute
+
+- made a number of changes to the location element
+  * added location/@ref attribute
+  * added location/location-reach element
+  * added location/location-id element
+  * added location/activity-description element
+  * location/administrative gets new attributes:  @level, @vocabulary, @code, @xml:lang
+  * location/administrative has the following attributes deprecated: @country, @adm1, @adm2
+  * added location/point element
+  * added location/supporting-information element
+  * added location/location-class element
+  * added location/feature-designation element
+  * deprecated location/gazetteer-entry element
+  * deprecated location/coordinates element
+  * deprecated location/location-type element
+
+- some documentation has been altered slightly
+
+
 * (pre2) Version 1.03
 
 [*] designates a backwards-incompatible change
