@@ -207,7 +207,8 @@
         A three letter ISO 4217 code for the original currency of the 
         amount.
         This is required for all currency amounts unless the
-        iati-activity/@default-currency attribute is specified.
+        iati-activity/@default-currency (or iati-organisation/@default-currency
+        for an organisation file) attribute is specified.
 
         Currency codes are listed at
         http://iatistandard.org/codelists/currency
