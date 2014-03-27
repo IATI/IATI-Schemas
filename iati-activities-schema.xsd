@@ -881,6 +881,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Deprecated since 1.04
+
               The type of location (e.g. "PCL" for a political
               entity), from an IATI-defined subset of the UCPD/Aiddata
               code list.
@@ -957,6 +958,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   The ISO 3166-1 alpha2 code for the country
                   (e.g. "GB" for the United Kingdom).
 
@@ -969,6 +971,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   The UNSALB level-one administrative code for a
                   subdivision of a country.
 
@@ -980,6 +983,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   The UNSALB level-two administrative code for a
                   subdivision of a country.
 
@@ -1008,6 +1012,7 @@
                 <xsd:documentation xml:lang="en">
                   The name of the spatial reference system used by the 
                   coordinates. 
+
                   Always: http://www.opengis.net/def/crs/EPSG/0/4326
                 </xsd:documentation>
               </xsd:annotation>
@@ -1093,6 +1098,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Deprecated since 1.04
+
               Geodetic coordinates for the location (latitude, longitude).
             </xsd:documentation>
           </xsd:annotation>
@@ -1104,6 +1110,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   The decimal latitude (north is positive), e.g. "45.5"
                   for 45.5 degrees north (45 degrees 30 minutes).
                 </xsd:documentation>
@@ -1113,6 +1120,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   The decimal longitude (east is positive), e.g. "-75.5"
                   for 75.5 degrees west (74 degrees 30 minutes).
                 </xsd:documentation>
@@ -1122,6 +1130,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   An IATI-defined subset of UCPD precision codes for
                   the location (e.g. "2" for within 25 km of the
                   specified latitude/longitude).
@@ -1137,6 +1146,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Deprecated since 1.04
+
               Identifier for this location's entry in a geographical
               gazetteer, such as GEOnet.  The entry identifier is the
               element content.
@@ -1150,6 +1160,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   Deprecated since 1.04
+
                   Reference to the gazetteer containing the entry.
 
                   See http://iatistandard.org/codelists/gazetteer_agency
@@ -1165,6 +1176,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Deprecated since 1.04
+
             An internal reference that uniquely describes the location 
             in the reporting organisation's own system.
           </xsd:documentation>
@@ -1174,6 +1186,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Deprecated since 1.04
+
             If more than one location is reported, percentage of 
             activity commitment allocated to this location 
             (if available).
