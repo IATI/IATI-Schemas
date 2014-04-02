@@ -1225,7 +1225,7 @@
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:choice>
             <xsd:attribute ref="code" use="required"/>
-            <xsd:attribute ref="percentage" use="required"/>
+            <xsd:attribute ref="percentage" use="optional"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
