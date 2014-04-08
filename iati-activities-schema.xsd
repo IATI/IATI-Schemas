@@ -182,9 +182,11 @@
   <xsd:element name="activity-website">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A link to a web site providing more information about the aid
-        activity.  Multiple versions of the link may appear for
-        different languages.
+        A direct link to a web site or web page providing more information
+        about the specific aid activity.  Multiple links can be included.
+        Multiple versions of the link may appear for different languages.  
+        Should not be general websites or addresses, and should include the 
+        http or https prefix.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
