@@ -822,6 +822,9 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element ref="recipient-country"/>
+        <xsd:element ref="recipient-region"/>
+        <xsd:element ref="sector"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute ref="ref" use="optional"/>
