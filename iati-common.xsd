@@ -167,7 +167,8 @@
   <xsd:attribute name="code" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Machine-readable code for the entity being described.
+        Machine readable code for the entity being described. The value should
+        be available on a related codelist.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
@@ -184,7 +185,8 @@
   <xsd:attribute name="type" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Free text describing the type of thing being referenced.
+        A machine readable code describing the type of thing being referenced.
+        The value should be available on a related codelist.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
