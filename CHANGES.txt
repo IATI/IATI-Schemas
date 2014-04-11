@@ -697,7 +697,7 @@ documents that were valid with the 2010-07-07 schema release (version
 ** Update 3.12 General/Detailed Sector with additional facets
 
 - add optional attribute sector/@vocabulary to specify when a non-DAC
-  sector scheme/vocabulary/taxonomy/code list is in use
+  sector scheme/vocabulary/taxonomy/codelist is in use
 
 - add optional attribute sector/@percentage to specify the percentage
   of the project targetted at a specific sector within each vocabulary

@@ -572,7 +572,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Specify whether the aid is untied, tied, or partially tied,
-        using a code list created by IATI.  The content is free text
+        using a codelist created by IATI.  The content is free text
         that can optionally provide more detail.  For the value of the
         @code attribute, see
         http://iatistandard.org/codelists/tied_status
@@ -601,7 +601,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Policy marker code. If vocabulary is missing or "DAC" use
-            the IATI Policy Marker Code list which is based on columns
+            the IATI Policy Marker Codelist which is based on columns
             20-23 and 28-31 of the CRS++ reporting format.
           </xsd:documentation>
         </xsd:annotation>
@@ -818,7 +818,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The channel through which the funds will flow for this
-              transaction, from an IATI code list.
+              transaction, from an IATI codelist.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -886,7 +886,7 @@
 
               The type of location (e.g. "PCL" for a political
               entity), from an IATI-defined subset of the UCPD/Aiddata
-              code list.
+              codelist.
 
               See http://iatistandard.org/codelists/location_type
             </xsd:documentation>
@@ -1039,7 +1039,7 @@
             <xsd:attribute ref="code" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Supporting-Information Code list. 
+                   A code from the Supporting-Information Codelist. 
                    1 = Exact, 2 = Approximate
                 </xsd:documentation>
               </xsd:annotation>
@@ -1064,7 +1064,7 @@
             <xsd:attribute ref="code" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Location Class code list
+                   A code from the Location Class codelist
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
