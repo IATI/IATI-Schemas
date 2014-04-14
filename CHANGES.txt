@@ -18,7 +18,7 @@ IATI Schema Changes -*-Outline-*-
   * location/administrative gets new attributes:  @level, @vocabulary, @code, @xml:lang
   * location/administrative has the following attributes deprecated: @country, @adm1, @adm2
   * added location/point element
-  * added location/supporting-information element
+  * added location/exactness element
   * added location/location-class element
   * added location/feature-designation element
   * deprecated location/gazetteer-entry element
