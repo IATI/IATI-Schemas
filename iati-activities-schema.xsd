@@ -1023,7 +1023,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="supporting-information">
+        <xsd:element name="exactness">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Defines whether the location represents the most 
@@ -1039,7 +1039,7 @@
             <xsd:attribute ref="code" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Supporting-Information Codelist. 
+                   A code from the Extactness Codelist. 
                    1 = Exact, 2 = Approximate
                 </xsd:documentation>
               </xsd:annotation>
