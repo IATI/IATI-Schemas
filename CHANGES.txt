@@ -69,6 +69,8 @@ IATI Schema Changes -*-Outline-*-
 
 - added the optional crs-add element and its child elements
 
+- added the optional fss element and its child elements
+
 - added the activity-scope element
 
 - added optional recipient-region/@vocabulary attribute
