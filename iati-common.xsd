@@ -124,9 +124,6 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               IATI Document Category Code
-
-              For the value of the @code attribute, see
-              http://iatistandard.org/codelists/document_category
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -150,8 +147,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The MIME type of the external document,
-            e.g. "application/pdf".  A partial list of MIME types
-            appears at http://iatistandard.org/codelists/file_format
+            e.g. "application/pdf".
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
