@@ -1250,8 +1250,6 @@
   <xsd:element name="related-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        XX.XX Related Activity
-
         Another IATI activity related to this one.  The 'type'
         attribute describes the type of relationship (e.g. parent,
         sibling).  This does not need to be used to express funding
