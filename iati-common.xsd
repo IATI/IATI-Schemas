@@ -142,7 +142,7 @@
       <xsd:attribute name="url" type="xsd:anyURI" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The target URL of the external document, e.g. "http://www.example.org/doc.html".
+            The target URL of the external document, e.g. "http://www.example.org/doc.odt".
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -150,7 +150,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The MIME type of the external document,
-            e.g. "application/pdf".  A partial list of MIME types
+            e.g. "application/pdf".  A list of MIME types
             appears at http://iatistandard.org/codelists/file_format
           </xsd:documentation>
         </xsd:annotation>
