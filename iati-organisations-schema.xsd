@@ -112,9 +112,8 @@
   <xsd:element name="name">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The human-readable name of the organisation (e.g. "Doctors
-        without Borders").  This element may be repeated to provide
-        the name in different languages (using @xml:lang to
+        The human-readable name of the organisation. This element may be
+        repeated to provide the name in different languages (using @xml:lang to
         distinguish).
       </xsd:documentation>
     </xsd:annotation>
