@@ -1181,8 +1181,6 @@
       <xsd:attribute ref="ref" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Deprecated since 1.04
-
             An internal reference that uniquely describes the location 
             in the reporting organisation's own system.
           </xsd:documentation>
