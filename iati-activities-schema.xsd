@@ -489,7 +489,7 @@
   <xsd:element name="contact-info">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Contact information for the project.  Specify whatever is
+        Contact information for the activity.  Specify whatever is
         available.  You may repeat this element for each contact
         person.
       </xsd:documentation>
