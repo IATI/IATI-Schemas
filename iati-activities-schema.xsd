@@ -110,8 +110,8 @@
         <xsd:element ref="country-budget-items" />
         <xsd:element ref="policy-marker"/>
         <xsd:element ref="collaboration-type"/>
-        <xsd:element ref="default-finance-type"/>
         <xsd:element ref="default-flow-type"/>
+        <xsd:element ref="default-finance-type"/>
         <xsd:element ref="default-aid-type"/>
         <xsd:element ref="default-tied-status"/>
         <xsd:element ref="budget"/>
@@ -489,7 +489,7 @@
   <xsd:element name="contact-info">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Contact information for the activity.  Specify whatever is
+        Contact information for the act.  Specify whatever is
         available.  You may repeat this element for each contact
         person.
       </xsd:documentation>
@@ -782,18 +782,6 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="aid-type" type="codeReqType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Optional element to override the top-level
-              default-aid-type element (debt relief, etc.) on a
-              transaction-by-transaction basis if needed.
-
-              For the value of the @code attribute, see
-              http://iatistandard.org/codelists/aid_type
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
         <xsd:element name="finance-type" type="codeReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -803,6 +791,18 @@
 
               For the value of the @code attribute, see
               http://iatistandard.org/codelists/finance_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="aid-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Optional element to override the top-level
+              default-aid-type element (debt relief, etc.) on a
+              transaction-by-transaction basis if needed.
+
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/aid_type
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
