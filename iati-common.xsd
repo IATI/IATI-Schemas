@@ -72,9 +72,7 @@
         activity.  This should be in the form of the IATI Organisation
         Identifier (for the reporting organisation) concatenated to that
         organisation's activity identifier. (NB. Two or more reporting
-        organisations may publish information on the same activity. To
-        cross-reference these reports the other-identifier element should be
-        used.)
+        organisations may publish information on the same activity.)
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
