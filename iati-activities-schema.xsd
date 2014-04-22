@@ -1432,7 +1432,6 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The type of measurement for the indicator value
-                  e.g. unit, percentage, NDP.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
