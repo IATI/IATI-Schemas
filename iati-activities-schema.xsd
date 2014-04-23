@@ -1004,7 +1004,7 @@
         <xsd:element name="point">
           <xsd:complexType>
             <xsd:choice minOccurs="1" maxOccurs="unbounded">
-              <xsd:element name="coordinates" type="xsd:string">
+              <xsd:element name="pos" type="xsd:string">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The latitude and longitude coordinates in the 
