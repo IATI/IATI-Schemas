@@ -126,10 +126,10 @@
   <xsd:element name="total-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        This element represents the organisation's total planning
-        budget for a calendar period (typically, but not necessarily,
-        a year).  This element may be repeated for each period
-        described (normally, periods should be consecutive).
+        The total-budget element allows for the reporting of the organisation’s 
+        own budget. The recommendation is that, where and when possible, the 
+        organisation’s total annual planned budget for each of the next three 
+        years is reported.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
