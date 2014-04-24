@@ -888,9 +888,9 @@
             <xsd:documentation xml:lang="en">
               Deprecated since 1.04
 
-              The type of location (e.g. "PCL" for a political
-              entity), from an IATI-defined subset of the UCPD/Aiddata
-              codelist.
+              The type of location (e.g. "PCL" for a political entity) 
+              from the feature designation codes maintained by the 
+              US National Geospatial-Intelligence Agency
 
               See http://iatistandard.org/codelists/location_type
             </xsd:documentation>
