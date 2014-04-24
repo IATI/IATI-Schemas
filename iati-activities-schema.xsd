@@ -1002,6 +1002,12 @@
         </xsd:element>
         
         <xsd:element name="point">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The point element is based on a subset of the GML 3.3 Point
+              element.
+            </xsd:documentation>
+          </xsd:annotation>
           <xsd:complexType>
             <xsd:choice minOccurs="1" maxOccurs="unbounded">
               <xsd:element name="pos" type="xsd:string">
