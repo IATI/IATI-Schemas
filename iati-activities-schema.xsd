@@ -1019,7 +1019,6 @@
               </xsd:annotation>
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            <xsd:any namespace="##other" processContents="lax"/>
           </xsd:complexType>
         </xsd:element>
         
