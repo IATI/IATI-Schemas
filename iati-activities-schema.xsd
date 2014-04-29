@@ -1006,6 +1006,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
             <xsd:attribute name="srsName" type="xsd:string" use="required">
               <xsd:annotation>
