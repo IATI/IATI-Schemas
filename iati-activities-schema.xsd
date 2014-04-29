@@ -213,10 +213,6 @@
 
         For the value of the @type attribute, see
         http://iatistandard.org/codelists/organisation-type
-
-        For the value of the @ref attribute, see the list of
-        officially-registered organizations at
-        http://iatistandard.org/codelists/organisation
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -697,10 +693,6 @@
               The organisation providing the money for the
               transaction (if omitted, the provider organisation is
               the reporting organisation).
-
-              For the value of the @ref attribute, see the list of
-              officially-registered organizations at
-              http://iatistandard.org/codelists/organisation
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
@@ -727,10 +719,6 @@
               The organisation receiving the money from the
               transaction (if omitted, then the receiver
               organisation is the reporting organisation).
-
-              For the value of the @ref attribute, see the list of
-              officially-registered organizations at
-              http://iatistandard.org/codelists/organisation
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
