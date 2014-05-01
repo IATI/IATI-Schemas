@@ -27,6 +27,7 @@ IATI Schema Changes -*-Outline-*-
 
 - some documentation has been altered slightly
 
+- country-budget-items/budget-item/@percentage is now optional rather than required
 
 * (pre2) Version 1.03
 
