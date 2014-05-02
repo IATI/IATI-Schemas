@@ -832,14 +832,6 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="location-reach" type="codeType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-               Does this location provide describe where the activity 
-               takes place or where the intended beneficiaries reside?
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
         <xsd:element name="location-id">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -870,19 +862,6 @@
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="location-type" type="codeReqType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Deprecated since 1.04
-
-              The type of location (e.g. "PCL" for a political entity) 
-              from the feature designation codes maintained by the 
-              US National Geospatial-Intelligence Agency
-
-              See http://iatistandard.org/codelists/location_type
-            </xsd:documentation>
-          </xsd:annotation>
         </xsd:element>
         <xsd:element name="name" type="textType">
           <xsd:annotation>
@@ -1046,6 +1025,14 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
+        <xsd:element name="location-reach" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Does this location provide describe where the activity 
+               takes place or where the intended beneficiaries reside?
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         
         <xsd:element name="location-class">
           <xsd:annotation>
@@ -1170,6 +1157,19 @@
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="location-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Deprecated since 1.04
+
+              The type of location (e.g. "PCL" for a political entity) 
+              from the feature designation codes maintained by the 
+              US National Geospatial-Intelligence Agency
+
+              See http://iatistandard.org/codelists/location_type
+            </xsd:documentation>
+          </xsd:annotation>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
