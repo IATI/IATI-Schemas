@@ -29,6 +29,8 @@ IATI Schema Changes -*-Outline-*-
 
 - country-budget-items/budget-item/@percentage is now optional rather than required
 
+- added conditions/condition/@xml:lang attribute
+
 * (pre2) Version 1.03
 
 [*] designates a backwards-incompatible change
