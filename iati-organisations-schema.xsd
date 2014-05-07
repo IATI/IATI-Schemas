@@ -112,9 +112,8 @@
   <xsd:element name="name">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The human-readable name of the organisation (e.g. "Doctors
-        without Borders").  This element may be repeated to provide
-        the name in different languages (using @xml:lang to
+        The human-readable name of the organisation. This element may be
+        repeated to provide the name in different languages (using @xml:lang to
         distinguish).
       </xsd:documentation>
     </xsd:annotation>
@@ -127,10 +126,10 @@
   <xsd:element name="total-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        This element represents the organisation's total planning
-        budget for a calendar period (typically, but not necessarily,
-        a year).  This element may be repeated for each period
-        described (normally, periods should be consecutive).
+        The total-budget element allows for the reporting of the organisation’s 
+        own budget. The recommendation is that, where and when possible, the 
+        organisation’s total annual planned budget for each of the next three 
+        years is reported.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -220,8 +219,14 @@
   <xsd:element name="recipient-country-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        This element represents the budget for disbursements to
-        a specific country across all projects.
+        The recipient-country-budget element allows for the reporting of 
+        forward looking budgets for each country in which the organisation 
+        operates. The recommendation is that, where and when possible, the 
+        organisation’s total annual planned budget for each of the next 
+        three financial years is reported for each recipient country. 
+        It is strongly recommended that the start and end of the reported 
+        financial years match those of the recipient country’s 
+        budgetary/planning cycle.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>

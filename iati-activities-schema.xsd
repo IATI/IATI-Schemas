@@ -40,6 +40,10 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
+            "1.01" should be assumed if not specified.  It is required to
+            specify this attribute if the document is using features
+            specific to an IATI specification other than the initial
+            1.01 version.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -106,8 +110,8 @@
         <xsd:element ref="country-budget-items" />
         <xsd:element ref="policy-marker"/>
         <xsd:element ref="collaboration-type"/>
-        <xsd:element ref="default-finance-type"/>
         <xsd:element ref="default-flow-type"/>
+        <xsd:element ref="default-finance-type"/>
         <xsd:element ref="default-aid-type"/>
         <xsd:element ref="default-tied-status"/>
         <xsd:element ref="budget"/>
@@ -128,10 +132,10 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
-            Defaults to "1.0" if not specified.  It is required to
+            "1.01" should be assumed if not specified.  It is required to
             specify this attribute if the document is using features
             specific to an IATI specification other than the initial
-            1.0 version.
+            1.01 version.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -209,10 +213,6 @@
 
         For the value of the @type attribute, see
         http://iatistandard.org/codelists/organisation-type
-
-        For the value of the @ref attribute, see the list of
-        officially-registered organizations at
-        http://iatistandard.org/codelists/organisation
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -485,7 +485,7 @@
   <xsd:element name="contact-info">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Contact information for the project.  Specify whatever is
+        Contact information for the activity.  Specify whatever is
         available.  You may repeat this element for each contact
         person.
       </xsd:documentation>
@@ -572,7 +572,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Specify whether the aid is untied, tied, or partially tied,
-        using a code list created by IATI.  The content is free text
+        using a codelist created by IATI.  The content is free text
         that can optionally provide more detail.  For the value of the
         @code attribute, see
         http://iatistandard.org/codelists/tied_status
@@ -601,7 +601,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Policy marker code. If vocabulary is missing or "DAC" use
-            the IATI Policy Marker Code list which is based on columns
+            the IATI Policy Marker Codelist which is based on columns
             20-23 and 28-31 of the CRS++ reporting format.
           </xsd:documentation>
         </xsd:annotation>
@@ -693,10 +693,6 @@
               The organisation providing the money for the
               transaction (if omitted, the provider organisation is
               the reporting organisation).
-
-              For the value of the @ref attribute, see the list of
-              officially-registered organizations at
-              http://iatistandard.org/codelists/organisation
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
@@ -723,10 +719,6 @@
               The organisation receiving the money from the
               transaction (if omitted, then the receiver
               organisation is the reporting organisation).
-
-              For the value of the @ref attribute, see the list of
-              officially-registered organizations at
-              http://iatistandard.org/codelists/organisation
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
@@ -778,18 +770,6 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="aid-type" type="codeReqType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Optional element to override the top-level
-              default-aid-type element (debt relief, etc.) on a
-              transaction-by-transaction basis if needed.
-
-              For the value of the @code attribute, see
-              http://iatistandard.org/codelists/aid_type
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
         <xsd:element name="finance-type" type="codeReqType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -799,6 +779,18 @@
 
               For the value of the @code attribute, see
               http://iatistandard.org/codelists/finance_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="aid-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Optional element to override the top-level
+              default-aid-type element (debt relief, etc.) on a
+              transaction-by-transaction basis if needed.
+
+              For the value of the @code attribute, see
+              http://iatistandard.org/codelists/aid_type
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -818,7 +810,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The channel through which the funds will flow for this
-              transaction, from an IATI code list.
+              transaction, from an IATI codelist.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -843,14 +835,6 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="location-reach" type="codeType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-               Does this location provide describe where the activity 
-               takes place or where the intended beneficiaries reside?
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
         <xsd:element name="location-id">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -881,19 +865,6 @@
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="location-type" type="codeReqType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Deprecated since 1.04
-
-              The type of location (e.g. "PCL" for a political
-              entity), from an IATI-defined subset of the UCPD/Aiddata
-              code list.
-
-              See http://iatistandard.org/codelists/location_type
-            </xsd:documentation>
-          </xsd:annotation>
         </xsd:element>
         <xsd:element name="name" type="textType">
           <xsd:annotation>
@@ -1001,9 +972,15 @@
         </xsd:element>
         
         <xsd:element name="point">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The point element is based on a subset of the GML 3.3 Point
+              element.
+            </xsd:documentation>
+          </xsd:annotation>
           <xsd:complexType>
             <xsd:choice minOccurs="1" maxOccurs="unbounded">
-              <xsd:element name="coordinates" type="xsd:string">
+              <xsd:element name="pos" type="xsd:string">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The latitude and longitude coordinates in the 
@@ -1011,6 +988,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
+              <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
             <xsd:attribute name="srsName" type="xsd:string" use="required">
               <xsd:annotation>
@@ -1026,7 +1004,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="supporting-information">
+        <xsd:element name="exactness">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Defines whether the location represents the most 
@@ -1042,13 +1020,21 @@
             <xsd:attribute ref="code" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Supporting-Information Code list. 
+                   A code from the Extactness Codelist. 
                    1 = Exact, 2 = Approximate
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="location-reach" type="codeType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Does this location provide describe where the activity 
+               takes place or where the intended beneficiaries reside?
+            </xsd:documentation>
+          </xsd:annotation>
         </xsd:element>
         
         <xsd:element name="location-class">
@@ -1067,7 +1053,7 @@
             <xsd:attribute ref="code" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Location Class code list
+                   A code from the Location Class codelist
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1175,13 +1161,24 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
+        <xsd:element name="location-type" type="codeReqType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Deprecated since 1.04
+
+              The type of location (e.g. "PCL" for a political entity) 
+              from the feature designation codes maintained by the 
+              US National Geospatial-Intelligence Agency
+
+              See http://iatistandard.org/codelists/location_type
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute ref="ref" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Deprecated since 1.04
-
             An internal reference that uniquely describes the location 
             in the reporting organisation's own system.
           </xsd:documentation>
@@ -1253,8 +1250,6 @@
   <xsd:element name="related-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        XX.XX Related Activity
-
         Another IATI activity related to this one.  The 'type'
         attribute describes the type of relationship (e.g. parent,
         sibling).  This does not need to be used to express funding
@@ -1435,7 +1430,6 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The type of measurement for the indicator value
-                  e.g. unit, percentage, NDP.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>

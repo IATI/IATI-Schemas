@@ -18,7 +18,7 @@ IATI Schema Changes -*-Outline-*-
   * location/administrative gets new attributes:  @level, @vocabulary, @code, @xml:lang
   * location/administrative has the following attributes deprecated: @country, @adm1, @adm2
   * added location/point element
-  * added location/supporting-information element
+  * added location/exactness element
   * added location/location-class element
   * added location/feature-designation element
   * deprecated location/gazetteer-entry element
@@ -27,6 +27,9 @@ IATI Schema Changes -*-Outline-*-
 
 - some documentation has been altered slightly
 
+- country-budget-items/budget-item/@percentage is now optional rather than required
+
+- added conditions/condition/@xml:lang attribute
 
 * (pre2) Version 1.03
 
@@ -68,6 +71,8 @@ IATI Schema Changes -*-Outline-*-
 - added the optional capital-spend element
 
 - added the optional crs-add element and its child elements
+
+- added the optional fss element and its child elements
 
 - added the activity-scope element
 
@@ -697,7 +702,7 @@ documents that were valid with the 2010-07-07 schema release (version
 ** Update 3.12 General/Detailed Sector with additional facets
 
 - add optional attribute sector/@vocabulary to specify when a non-DAC
-  sector scheme/vocabulary/taxonomy/code list is in use
+  sector scheme/vocabulary/taxonomy/codelist is in use
 
 - add optional attribute sector/@percentage to specify the percentage
   of the project targetted at a specific sector within each vocabulary

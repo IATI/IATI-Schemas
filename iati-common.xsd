@@ -61,13 +61,18 @@
   <xsd:element name="iati-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A globally unique identifier for this activity. This should be
-        in the form of the IATI Organisation Identifier (for the
-        reporting organisation) concatenated to that organisation's
-        activity identifier. (NB. Two or more reporting organisations
-        may publish information on the same activity. To
-        cross-reference these reports the other-identifier element
-        should be used.)
+        The iati-identifier element is used in both Activity files and
+        Organisation files, and has a slightly different meaning depending on
+        where it is being used, and should not be confused.
+
+        When used in an organisation it is a globally unique identifier for
+        that organisation.
+
+        When used in an activity it is a globally unique identifier for that
+        activity.  This should be in the form of the IATI Organisation
+        Identifier (for the reporting organisation) concatenated to that
+        organisation's activity identifier. (NB. Two or more reporting
+        organisations may publish information on the same activity.)
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
@@ -142,7 +147,7 @@
       <xsd:attribute name="url" type="xsd:anyURI" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The target URL of the external document, e.g. "http://www.example.org/doc.html".
+            The target URL of the external document, e.g. "http://www.example.org/doc.odt".
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -150,7 +155,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The MIME type of the external document,
-            e.g. "application/pdf".  A partial list of MIME types
+            e.g. "application/pdf".  A list of MIME types
             appears at http://iatistandard.org/codelists/file_format
           </xsd:documentation>
         </xsd:annotation>
@@ -167,7 +172,8 @@
   <xsd:attribute name="code" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Machine-readable code for the entity being described.
+        Machine readable code for the entity being described. The value should
+        be available on a related codelist.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
@@ -184,7 +190,8 @@
   <xsd:attribute name="type" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Free text describing the type of thing being referenced.
+        A machine readable code describing the type of thing being referenced.
+        The value should be available on a related codelist.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
