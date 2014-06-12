@@ -118,7 +118,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:attributeGroup ref="textAtts"/>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative" />
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:choice>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>

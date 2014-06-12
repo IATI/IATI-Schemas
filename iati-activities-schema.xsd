@@ -216,10 +216,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:sequence>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attributeGroup ref="textAtts"/>
+      </xsd:choice>
       <xsd:attribute ref="ref" use="optional"/>
       <xsd:attribute ref="type" use="optional"/>
       <xsd:attribute name="role" type="xsd:string" use="required">
@@ -397,10 +397,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType mixed="true">
-      <xsd:sequence>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attributeGroup ref="textAtts"/>
+      </xsd:choice>
       <xsd:attribute ref="code" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -452,21 +452,20 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:string">
-          <xsd:attribute ref="type" use="required"/>
-          <xsd:attributeGroup ref="textAtts"/>
-          <xsd:attribute name="iso-date" type="xsd:date" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                An activity milestone date in ISO 8601 date format,
-                e.g. "2010-12-01".
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <xsd:anyAttribute processContents="lax" namespace="##other"/>
-        </xsd:extension>
-      </xsd:simpleContent>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative" />
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:choice>
+      <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute name="iso-date" type="xsd:date" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An activity milestone date in ISO 8601 date format,
+            e.g. "2010-12-01".
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
   
@@ -540,16 +539,12 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="mailing-address">
+        <xsd:element name="mailing-address" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact mailing address, if available.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true"> 
-            <xsd:attributeGroup ref="textAtts"/>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
         </xsd:element>
         <xsd:element name="website" type="xsd:anyURI">
           <xsd:annotation>
@@ -1457,34 +1452,6 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:complexType name="indicatorOutcomeType" mixed="true">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Content type for a baseline or actual/planned outcome for an
-        indicator.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute name="year" type="xsd:string">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          The year of the baseline or outcome.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="value" type="xsd:string">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          The value of the baseline or outcome.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attributeGroup ref="textAtts"/>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
   <xsd:element name="conditions">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -1500,11 +1467,11 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType mixed="true">
-            <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
+            </xsd:choice>
             <xsd:attribute ref="type" use="required"/>
-            <xsd:attributeGroup ref="textAtts"/>
           </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
