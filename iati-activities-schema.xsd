@@ -264,7 +264,6 @@
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute ref="code" use="required"/>
-      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute ref="percentage" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
@@ -297,7 +296,6 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute ref="percentage" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
@@ -596,7 +594,6 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute ref="code" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -1264,7 +1261,6 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attributeGroup ref="textAtts"/>
       <xsd:attribute ref="ref" use="required"/>
       <xsd:attribute ref="type" use="required"/>
     </xsd:complexType>

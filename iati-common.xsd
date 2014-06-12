@@ -281,7 +281,6 @@
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
-    <xsd:attributeGroup ref="textAtts"/>
     <xsd:attribute ref="code" use="optional"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
@@ -296,7 +295,6 @@
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
-    <xsd:attributeGroup ref="textAtts"/>
     <xsd:attribute ref="code" use="required"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
@@ -312,7 +310,6 @@
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
-    <xsd:attributeGroup ref="textAtts"/>
     <xsd:attribute ref="ref" use="optional"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
