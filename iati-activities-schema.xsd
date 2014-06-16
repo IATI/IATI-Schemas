@@ -36,7 +36,7 @@
         <xsd:element ref="iati-activity"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="version" type="xsd:decimal" use="optional">
+      <xsd:attribute name="version" type="xsd:decimal" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
@@ -128,7 +128,7 @@
         <xsd:element ref="fss"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="version" type="xsd:decimal" use="optional">
+      <xsd:attribute name="version" type="xsd:decimal" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
