@@ -879,36 +879,6 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="country" type="xsd:string" use="optional">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  The ISO 3166-1 alpha2 code for the country
-                  (e.g. "GB" for the United Kingdom).
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:attribute name="adm1" type="xsd:string" use="optional">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  The UNSALB level-one administrative code for a
-                  subdivision of a country.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:attribute name="adm2" type="xsd:string" use="optional">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  The UNSALB level-two administrative code for a
-                  subdivision of a country.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -1024,92 +994,6 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        
-        
-        
-        <xsd:element name="coordinates">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Deprecated since 1.04
-
-              Geodetic coordinates for the location (latitude, longitude).
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:any namespace="##other" processContents="lax"/>
-            </xsd:choice>
-            <xsd:attribute name="latitude" type="xsd:decimal" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  The decimal latitude (north is positive), e.g. "45.5"
-                  for 45.5 degrees north (45 degrees 30 minutes).
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:attribute name="longitude" type="xsd:decimal" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  The decimal longitude (east is positive), e.g. "-75.5"
-                  for 75.5 degrees west (74 degrees 30 minutes).
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:attribute name="precision" type="xsd:string" use="optional">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  An IATI-defined subset of UCPD precision codes for
-                  the location (e.g. "2" for within 25 km of the
-                  specified latitude/longitude).
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="gazetteer-entry">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Deprecated since 1.04
-
-              Identifier for this location's entry in a geographical
-              gazetteer, such as GEOnet.  The entry identifier is the
-              element content.
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:any namespace="##other" processContents="lax"/>
-            </xsd:choice>
-            <xsd:attribute name="gazetteer-ref" type="xsd:string" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Deprecated since 1.04
-
-                  Reference to the gazetteer containing the entry.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="location-type" type="codeReqType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              Deprecated since 1.04
-
-              The type of location (e.g. "PCL" for a political entity) 
-              from the feature designation codes maintained by the 
-              US National Geospatial-Intelligence Agency
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute ref="ref" use="optional">
@@ -1117,17 +1001,6 @@
           <xsd:documentation xml:lang="en">
             An internal reference that uniquely describes the location 
             in the reporting organisation's own system.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:attribute ref="percentage" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Deprecated since 1.04
-
-            If more than one location is reported, percentage of 
-            activity commitment allocated to this location 
-            (if available).
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
