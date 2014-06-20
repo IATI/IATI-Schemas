@@ -1028,7 +1028,7 @@
         <xsd:element name="location-reach" type="codeType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-               Does this location provide describe where the activity 
+               Does this location describe where the activity 
                takes place or where the intended beneficiaries reside?
             </xsd:documentation>
           </xsd:annotation>
