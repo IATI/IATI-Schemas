@@ -763,9 +763,138 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element ref="recipient-country"/>
-        <xsd:element ref="recipient-region"/>
-        <xsd:element ref="sector"/>
+        <xsd:element name="sector">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A recognised code, from a recognised vocabulary,
+              classifying the purpose of this transaction.If this
+              element is used then ALL transaction elements should
+              contain a transaction/sector element AND
+              iati-activity/sector should NOT be used.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The free text description of the reporting
+                    organisation's own sector definition. This can be
+                    repeated in multiple languages
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for the vocabulary (codelist) used for
+                  sector classifications. If omitted, OECD DAC 5-digit
+                  Purpose Codes are assumed.
+                  
+                  It is recommended that OECD DAC 5-digit Purpose
+                  Codes are used wherever possible. It is also
+                  recommended that if a publisher has its own
+                  classification system then the vocabulary “RO”
+                  (“Reporting Organisation’s own vocabulary”) should
+                  be used in addition DAC codes.
+                  
+                  NB that if multiple sector codes are used in
+                  multiple vocabularies then each vocabulary’s
+                  percentages should add up to 100%.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The code for the sector.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="recipient-country">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A country that will benefit from this transaction. If a
+              specific country is not known the recipient-region
+              element MUST be used. For geographical location, use the
+              location element.
+              
+              If transaction/recipient-country OR
+              transaction/recipient-region are used THEN ALL
+              transaction elements MUST contain a recipient-country or
+              recipient-region element AND
+              iati-activity/recipient-region and
+              iati-activity/recipient-region MUST NOT be used.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  ISO 3166-1 alpha-2 code for the country.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="recipient-region">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A supranational geopolitical region that will benefit
+              from this transaction. If a specific country is not
+              known the recipient-region element MUST be used. For
+              geographical location, use the location element.
+              
+              If transaction/recipient-country OR
+              transaction/recipient-region are used THEN ALL
+              transaction elements MUST contain a recipient-country or
+              recipient-region element AND
+              iati-activity/recipient-region and
+              iati-activity/recipient-region MUST NOT be used.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Either an OECD DAC or UN region code. Codelist is
+                  determined by vocabulary attribute.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for the vocabulary from which the region code
+                  is drawn. If it is not present 1 - ‘OECD DAC’ is assumed.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute ref="percentage" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The percentage of total commitments allocated to this
+                  region. Content must be a positive decimal number between
+                  0 and 100, with no percentage sign. Percentages for all
+                  reported countries and regions MUST add up to 100%
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:attribute ref="ref" use="optional"/>
