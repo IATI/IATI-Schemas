@@ -85,32 +85,6 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="iati-identifier">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The iati-identifier element is used in both Activity files and
-        Organisation files, and has a slightly different meaning depending on
-        where it is being used, and should not be confused.
-
-        When used in an organisation it is a globally unique identifier for
-        that organisation.
-
-        When used in an activity it is a globally unique identifier for that
-        activity.  This should be in the form of the IATI Organisation
-        Identifier (for the reporting organisation) concatenated to that
-        organisation's activity identifier. (NB. Two or more reporting
-        organisations may publish information on the same activity.)
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:string">
-          <xsd:anyAttribute processContents="lax" namespace="##other"/>
-        </xsd:extension>
-      </xsd:simpleContent>
-    </xsd:complexType>
-  </xsd:element>
-
   <xsd:element name="reporting-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
