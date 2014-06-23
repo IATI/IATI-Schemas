@@ -59,7 +59,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="linked-data-default" type="xsd:string" use="optional">
+      <xsd:attribute name="linked-data-default" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             IATI publishers are not obliged to publish their own
@@ -176,7 +176,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="linked-data-uri" type="xsd:string" use="optional">
+      <xsd:attribute name="linked-data-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A Linked Data URI for a given activity (overrides
