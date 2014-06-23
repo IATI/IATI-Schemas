@@ -562,9 +562,19 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:sequence>
+      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A description of the policy marker. This MUST ONLY be
+              used where vocabulary = "99 - RO" (the reporting
+              organisation's own marker vocabulary). May be repeated
+              for multiple languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
+      </xsd:choice>
       <xsd:attribute ref="code" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -657,9 +667,17 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The name of the organisation. This can be repeated
+                    in multiple languages
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
+            </xsd:choice>
             <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
@@ -683,9 +701,17 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The name of the organisation. This can be repeated
+                    in multiple languages
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
+            </xsd:choice>
             <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
@@ -707,9 +733,10 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
+            </xsd:choice>
             <xsd:attribute name="iso-date" type="xsd:date" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
