@@ -123,7 +123,7 @@
         distinguish).
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>

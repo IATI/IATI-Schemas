@@ -217,7 +217,7 @@
         content.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -256,7 +256,7 @@
         geographical location, use the location element.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
@@ -277,7 +277,7 @@
         use the location element.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
@@ -346,25 +346,29 @@
         @owner-name must be present
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:attribute name="owner-ref" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            An identifier for the owner of this identifier.
-            For guidance on constructing the value of the @ref
-            attribute, see http://iatistandard.org/org-ref
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:attribute name="owner-name" type="xsd:string" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Free text providing a human-readable name for the owner
-            of this identifier.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute name="owner-ref" type="xsd:string" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                An identifier for the owner of this identifier.
+                For guidance on constructing the value of the @ref
+                attribute, see http://iatistandard.org/org-ref
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:attribute name="owner-name" type="xsd:string" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                Free text providing a human-readable name for the owner
+                of this identifier.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:anyAttribute processContents="lax" namespace="##other"/>
+        </xsd:extension>
+      </xsd:simpleContent>
     </xsd:complexType>
   </xsd:element>
 
@@ -377,7 +381,7 @@
         present.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -502,7 +506,7 @@
               repeated for multiple numbers.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -557,7 +561,7 @@
         marker.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
@@ -652,7 +656,7 @@
               the reporting organisation).
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -678,7 +682,7 @@
               organisation is the reporting organisation).
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -702,7 +706,7 @@
               decision date, disbursement date, etc.).
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -788,7 +792,7 @@
                repository. 
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -846,7 +850,7 @@
               boundary repositories. Multiple levels may be reported.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
@@ -951,7 +955,7 @@
                detailed information. 
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -984,7 +988,7 @@
                (e.g. river, nature reserve).
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -1006,7 +1010,7 @@
                feature referred to by this location.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
@@ -1079,7 +1083,7 @@
               element content.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
@@ -1142,7 +1146,7 @@
         on- and off-budget activities.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element name="budget-item">
           <xsd:annotation>
@@ -1153,7 +1157,7 @@
               should add up to 100 percent.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:element ref="description" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -1189,7 +1193,7 @@
         transactions.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
@@ -1206,7 +1210,7 @@
         original (non-IATI) value or code for an existing data type.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
@@ -1403,7 +1407,7 @@
               Description of one condition attached to the activity.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:element ref="narrative" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -1532,7 +1536,7 @@
               "Associated financing"
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType mixed="true">
+          <xsd:complexType>
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>

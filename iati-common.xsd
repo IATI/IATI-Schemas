@@ -32,14 +32,18 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:attribute ref="xml:lang" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            ISO 639-1 code specifying the language of text in this element. If a default language is specified in the iati-activity element it does not have to be repeated here.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:attribute ref="xml:lang" use="optional">
+            <xsd:annotation>
+              <xsd:documentation xml:lang="en">
+                ISO 639-1 code specifying the language of text in this element. If a default language is specified in the iati-activity element it does not have to be repeated here.
+              </xsd:documentation>
+            </xsd:annotation>
+          </xsd:attribute>
+          <xsd:anyAttribute processContents="lax" namespace="##other"/>
+        </xsd:extension>
+      </xsd:simpleContent>
     </xsd:complexType>
   </xsd:element>
 
@@ -59,7 +63,7 @@
         different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -94,8 +98,12 @@
         organisations may publish information on the same activity.)
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:anyAttribute processContents="lax" namespace="##other"/>
+        </xsd:extension>
+      </xsd:simpleContent>
     </xsd:complexType>
   </xsd:element>
 
@@ -116,7 +124,7 @@
         which this file is published.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType mixed="true">
+    <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -252,7 +260,7 @@
       Common attribute groups and data types used by the elements above.
   -->
 
-  <xsd:complexType name="plainType" mixed="true">
+  <xsd:complexType name="plainType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Plain text content with no special attributes (e.g. xml:lang),
@@ -262,7 +270,7 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
-  <xsd:complexType name="textType" mixed="true">
+  <xsd:complexType name="textType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element that may contain human-readable text
@@ -276,7 +284,7 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
-  <xsd:complexType name="codeType" mixed="true">
+  <xsd:complexType name="codeType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element that refers to an object that can
@@ -291,7 +299,7 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
-  <xsd:complexType name="codeReqType" mixed="true">
+  <xsd:complexType name="codeReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element that refers to an object that must
@@ -305,7 +313,7 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
-  <xsd:complexType name="refType" mixed="true">
+  <xsd:complexType name="refType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element that refers to a business object that
@@ -320,7 +328,7 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
-  <xsd:complexType name="refReqType" mixed="true">
+  <xsd:complexType name="refReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Data type for an element that refers to a business object that
@@ -352,7 +360,7 @@
     </xsd:simpleContent>
   </xsd:complexType>
 
-  <xsd:complexType name="dateType" mixed="true">
+  <xsd:complexType name="dateType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         A date.  The ISO 8601 date goes into the @iso-date attribute.
@@ -371,7 +379,7 @@
     </xsd:attribute>
   </xsd:complexType>
 
-  <xsd:complexType name="dateReqType" mixed="true">
+  <xsd:complexType name="dateReqType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         A date.  The ISO 8601 date goes into the @iso-date attribute.
