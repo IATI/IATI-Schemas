@@ -147,7 +147,6 @@
         <xsd:element ref="capital-spend"/>
         <xsd:element ref="transaction"/>
         <xsd:element ref="document-link"/>
-        <xsd:element ref="activity-website"/>
         <xsd:element ref="related-activity"/>
         <xsd:element ref="conditions"/>
         <xsd:element ref="result"/>
@@ -232,25 +231,6 @@
     <xsd:complexType>
       <xsd:simpleContent>
         <xsd:extension base="xsd:string">
-          <xsd:anyAttribute processContents="lax" namespace="##other"/>
-        </xsd:extension>
-      </xsd:simpleContent>
-    </xsd:complexType>
-  </xsd:element>
-
-  <xsd:element name="activity-website">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A direct link to a web site or web page providing more information
-        about the specific aid activity.  Multiple links can be included.
-        Multiple versions of the link may appear for different languages.  
-        Should not be general websites or addresses, and should include the 
-        http or https prefix.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:anyURI">
           <xsd:anyAttribute processContents="lax" namespace="##other"/>
         </xsd:extension>
       </xsd:simpleContent>
