@@ -40,36 +40,32 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
-            "1.01" should be assumed if not specified.  It is required to
-            specify this attribute if the document is using features
-            specific to an IATI specification other than the initial
-            1.01 version.
+            This is mandatory and must be a valid version. All
+            versions in a single file MUST be the same.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="generated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A date/time stamp for when this file was generated.  This
+            A date/time stamp for when this file was generated. This
             is not necessarily the last-updated date for the
-            individual activity records in it.  Uses ISO 8601 date
-            format, e.g. "2010-03-12T18:45:00+01:00".  Use of this
-            attribute is highly recommended, to allow recipients to
-            know when a file has been updated.
+            individual activity records in it. Use of this attribute
+            is highly recommended, to allow recipients to know when a
+            file has been updated.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="linked-data-default" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            IATI publishers are not obliged to publish their own
-            Linked Data.  However, if a publisher chooses to publish
-            linked data about their IATI activities then allowing them
-            to declare where this data is published would support
-            discovery of it, and any additional information they may
-            choose to publish as Linked Data alongside it.
+            If a publisher chooses to publish linked data about their
+            IATI activities then allowing them to declare where this
+            data is published would support discovery of it, and any
+            additional information they may choose to publish as
+            Linked Data alongside it.
             
-            This attribute is URI path upon which an activity
+            This attribute is a URI path upon which an activity
             identifier can be appended to get a dereferenceable URI
             for any activity contained within a file.
             
@@ -94,14 +90,46 @@
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
         <xsd:element ref="reporting-org"/>
+        <xsd:element ref="participating-org"/>
         <xsd:element ref="iati-identifier"/>
         <xsd:element ref="other-identifier"/>
-        <xsd:element ref="title"/>
-        <xsd:element ref="description"/>
+        <xsd:element name="title" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A short, human-readable title that contains a meaningful
+              summary of the activity. May be repeated for different
+              languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A longer, human-readable description containing a
+              meaningful description of the activity. May be repeated
+              for different languages.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="type" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The type of description being provided. This is not
+                  required if only one general description of the activity
+                  is reported.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:element ref="activity-status"/>
         <xsd:element ref="activity-date"/>
         <xsd:element ref="contact-info"/>
-        <xsd:element ref="participating-org"/>
         <xsd:element ref="activity-scope"/>
         <xsd:element ref="recipient-country"/>
         <xsd:element ref="recipient-region"/>
@@ -132,10 +160,8 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
-            "1.01" should be assumed if not specified.  It is required to
-            specify this attribute if the document is using features
-            specific to an IATI specification other than the initial
-            1.01 version.
+            This must be a valid version. All versions in a single
+            file MUST be the same.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -151,15 +177,20 @@
       <xsd:attribute ref="xml:lang">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            ISO 639-1 code specifying the default language used in text elements throughout the activity. If this is not declared then the xml:lang attribute MUST be specified for each narrative element.
+            ISO 639-1 code specifying the default language used in
+            narrative elements throughout the activity. If this is not
+            declared then the xml:lang attribute MUST be specified for
+            each narrative element.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="default-currency" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Default ISO 4217 currency code for all financial values in
-            this activity report.
+            Default ISO 4217 alphabetic currency code for all
+            financial values in this activity report. If this is not
+            declared then the currency attribute MUST be specified for
+            all monetary values.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -188,6 +219,25 @@
     </xsd:complexType>
   </xsd:element>
 
+  <xsd:element name="iati-identifier">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A globally unique identifier for the activity. This MUST be
+        prefixed with the IATI organisation identifier for the
+        reporting organisation (reporting-org/@ref) and suffixed with
+        the organisation’s own activity identifier. The prefix and the
+        suffix should be separated by a hyphen "-"
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:simpleContent>
+        <xsd:extension base="xsd:string">
+          <xsd:anyAttribute processContents="lax" namespace="##other"/>
+        </xsd:extension>
+      </xsd:simpleContent>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="activity-website">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -210,11 +260,15 @@
   <xsd:element name="participating-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An organisation (including the reporting organisation)
-        involved with the activity.  May be a donor, fund, agency,
-        etc.  Specifying the @ref and @role attributes is
-        strongly recommended.  May contain the organisation name as
-        content.
+        An organisation involved with the activity. May be a donor,
+        fund, agency, etc. Specifying the @ref identifier is strongly
+        recommended. May contain the organisation name as narrative.
+
+        If the reporting organisation plays a role in the activity it
+        should be repeated here. One organisation may play more than
+        one role (eg, funding and implementing): in such a case each
+        role should be reported and the name of the organisation
+        repeated.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -222,13 +276,32 @@
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:choice>
-      <xsd:attribute ref="ref" use="optional"/>
-      <xsd:attribute ref="type" use="optional"/>
+      <xsd:attribute name="ref" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Machine-readable identification string for the
+            organisation. Must be in the format {Registration Agency}
+            - (Registration Number} where {Registration Agency} is a
+            valid code in the Registration Agency code list and
+            {Registration Number } is a valid identifier issued by the
+            {Registration Agency}. If this is not present then the
+            narrative MUST contain the name of the organisation.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="type" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The type of organisation issuing the report. See IATI
+            codelist for values.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="role" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code describing the organisation's role in the activity
-            (donor, agency, etc.).
+            An IATI code describing the organisation’s role in the
+            activity (donor, agency, etc.).
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -236,32 +309,69 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="activity-scope" type="codeType">
+  <xsd:element name="activity-scope">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        What geographical area does the activity encompass?
-        eg. Global, Regional, Multi-National, National, Multiple
-        (sub-national) administrative areas, etc
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:element>
-
-  <xsd:element name="recipient-country">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A partner country that will benefit from this activity.  This
-        element is primarily for administrative and geopolitical
-        purposes.  If a specific country is not known, the activity
-        report can use the recipient-region element instead. For
-        geographical location, use the location element.
+        The geographical scope of the activity: regional, national,
+        sub-national, etc.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="code" use="required"/>
-      <xsd:attribute ref="percentage" use="optional"/>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The geographical scope. See IATI codelist for values.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="recipient-country">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A country that will benefit from this activity. If a specific
+        country is not known the recipient-region element should be
+        used instead. For geographical location, use the location
+        element. The country can also be specified at transaction
+        rather than activity level.
+        
+        If transaction/recipient-country AND/OR
+        transaction/recipient-region are used THEN ALL transaction
+        elements MUST contain a recipient-country and/or
+        recipient-region element AND iati-activity/recipient-region
+        and iati-activuty/recipient-region MUST NOT be used.
+        
+        Multiple countries and regions can be reported, in which case
+        the percentage attribute MUST be used to specifiy the share of
+        total commitments across all reported countries and regions.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            ISO 3166-1 alpha-2 code for the country.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The percentage of total commitments allocated to this
+            country. Content must be a positive decimal number between
+            0 and 100, with no percentage sign. Percentages for all
+            reported countries and regions MUST add up to 100%
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -269,81 +379,160 @@
   <xsd:element name="recipient-region">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A geopolitical region (above the country level) that will
-        benefit from this activity.  This element is primarily for
-        administrative and geopolitical purposes.  If the specific
-        country/-ies are known, the activity report can use the
-        recipient-country element instead. For geographical location,
-        use the location element.
+        A supranational geopolitical region that will benefit from
+        this activity.  For sub-national geographical location, use
+        the location element. Region can also be reported at
+        transaction rather than activity level.
+        
+        If transaction/recipient-country AND/OR
+        transaction/recipient-region are used THEN ALL transaction
+        elements MUST contain a recipient-country and/or
+        recipient-region element AND iati-activity/recipient-region
+        and iati-activity/recipient-region MUST NOT be used.
+        
+        Multiple countries and regions can be reported, in which case
+        the percentage attribute MUST be used to specifiy the share of
+        total commitments across all reported countries and regions.
+        
+        Recipient-region must not be used merely to describe the
+        region of a country reported in recipient-region, but ONLY if
+        the region is a recipient IN ADDITION to the country.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="code" use="optional"/>
-      <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+      <xsd:attribute name="code" type="xsd:string"  use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The vocabulary from which the region code is drawn. If it
-            is not present 1 - 'OECD DAC' is assumed.
+            Either an OECD DAC or UN region code. Codelist is
+            determined by vocabulary attribute.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute ref="percentage" use="optional"/>
+      <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code for the vocabulary from which the region code
+            is drawn. If it is not present 1 - ‘OECD DAC’ is assumed.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The percentage of total commitments allocated to this
+            region. Content must be a positive decimal number between
+            0 and 100, with no percentage sign. Percentages for all
+            reported countries and regions MUST add up to 100%
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="collaboration-type" type="codeReqType">
+  <xsd:element name="collaboration-type">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The type of collaboration involved in the project's
         disbursements, e.g. "bilateral" or "multilateral".
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code from the OECD DAC CRS "Bi_Multi" codelist.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-flow-type" type="codeReqType">
+  <xsd:element name="default-flow-type">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The type of assistance provided, e.g. Official Development
-        Assistance (ODA).  Type types will be defined by IATI.
+        Whether the activity is funded by Official Development
+        Assistance (ODA), Other Official Flows (OOF), etc
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code from the OECD DAC CRS "Type of flow" codelist
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-aid-type" type="codeReqType">
+  <xsd:element name="default-aid-type">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The type of aid being supplied (budget support, debt relief,
-        etc.).  This element specifies a default for all the
-        activity's financial transactions; it can be overridden at the
-        individual transaction level.
+        The type of aid being supplied (project-type intervention,
+        budget support, debt relief, etc.). This element specifies a
+        default for all the activity’s financial transactions; it can
+        be overridden at the individual transaction level.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code from the OECD DAC CRS "Type of aid" codelist
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-finance-type" type="codeReqType">
+  <xsd:element name="default-finance-type">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The type of finance (e.g. debt relief). The types will be
-        defined by IATI.  This the default value for all transactions
-        in the activity report; it can be overridded by individual
-        transactions.
+        The type of finance (e.g. grant, loan, debt relief, etc). This
+        the default value for all transactions in the activity report;
+        it can be overridden by individual transactions.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code from the OECD DAC CRS "Type of finance" codelist
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="other-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An alternative, non-IATI identifier for the activity.  This
+        An alternative, non-IATI identifier for the activity. This
         identifier is not guaranteed to be unique or persistent (it
-        depends on the owner organisation's policies, not IATI's).
-
-        If other-identifier is present then either @owner-ref or
-        @owner-name must be present
+        depends on the owner organisation’s policies, not IATI’s). It
+        is recommended that publishers who also report to the OECD DAC
+        Creditor Reporting System place the CRS Id for the activity
+        here.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -352,9 +541,9 @@
           <xsd:attribute name="owner-ref" type="xsd:string" use="optional">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                An identifier for the owner of this identifier.
-                For guidance on constructing the value of the @ref
-                attribute, see http://iatistandard.org/org-ref
+                An identifier for the owner of this identifier. For
+                guidance on constructing the value of the @ref attribute,
+                see reporting-org/@ref
               </xsd:documentation>
             </xsd:annotation>
           </xsd:attribute>
@@ -375,43 +564,60 @@
   <xsd:element name="sector">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Sector code and name.
-
-        Either the @code attribute or descriptive text content must be
-        present.
+        A recognised code, from a recognised vocabulary, classifying
+        the purpose of the activity. Sector MUST EITHER be reported
+        here OR at transaction level for ALL transactions
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element ref="narrative" />
+        <xsd:element ref="narrative">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The description of a sector defined by the reporting
+              organisation. (Only to be used when the reporting
+              organisation's own vocabulary is being used).
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>  
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:choice>
-      <xsd:attribute ref="code" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The code for the sector. If the vocabulary is "DAC" or
-            missing then the CRS Sector Code should be used.
-
-            Code is not mandatory but highly recommended. Either code
-            or description must be present.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The vocabulary (codelist) used for sector
-            classifications. If omitted, assume DAC. "DAC" codes
-            should be used wherever possible. It is also recommended
-            that if a publisher has its own classification system then
-            the vocabulary "RO" (Reporting Organisation's own
-            vocabulary" should be used in addition to "DAC". NB that
-            if multiple sector codes are used in multiple vocabularies
-            then each vocabulary's percentages should add up to 100%.
+            An IATI code for the vocabulary (codelist) used for sector
+            classifications. If omitted, OECD DAC 5-digit Purpose
+            Codes are assumed.
+            
+            It is recommended that OECD DAC 5-digit Purpose Codes are
+            used wherever possible. It is also recommended that if a
+            publisher has its own classification system then the
+            vocabulary “RO” (“Reporting Organisation’s own
+            vocabulary”) should be used in addition to DAC codes.
+            
+            NB that if multiple sector codes are used in multiple
+            vocabularies then each vocabulary’s percentages should add
+            up to 100%.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute ref="percentage" use="optional"/>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The code for the sector.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute ref="percentage" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The percentage of the budget allocated to this item.
+            Content must be a positive decimal number between 0 and
+            100, with no percentage sign. All reported sectors from
+            the same vocabulary MUST add up to 100%
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -419,16 +625,14 @@
   <xsd:element name="activity-date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The planned and actual start and completion dates of the 
-        activity. Start dates may reflect either the commencement of 
-        funding, planning or physical activity. End dates should, 
-        wherever possible, reflect the ending of physical activity. 
-        Dates should be in ISO 8601 date YYYY-MM-DD format, e.g. 
-        2010-10-01. 
-
-        The text content may contain a general date text (e.g. 2011Q1)
-        for recording less specific dates such as month, quarter, or
-        year.
+        The planned and actual start and completion dates of the
+        activity. Start dates may reflect either the commencement of
+        funding, planning or physical activity. End dates should,
+        wherever possible, reflect the ending of physical activity.
+        
+        The narrative content may contain text (e.g. 2011Q1) for
+        accurately recording less specific dates such as month,
+        quarter, or year.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -436,12 +640,18 @@
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:choice>
-      <xsd:attribute ref="type" use="required"/>
-      <xsd:attribute name="iso-date" type="xsd:date" use="optional">
+      <xsd:attribute name="type" use="required" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An activity milestone date in ISO 8601 date format,
-            e.g. "2010-12-01".
+            An IATI code defining the type of activity date being reported.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="iso-date" type="xsd:date" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The date (yyyy-mm-dd plus [optional] time zone) as defined
+            by type.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -449,13 +659,25 @@
     </xsd:complexType>
   </xsd:element>
   
-  <xsd:element name="activity-status" type="codeType">
+  <xsd:element name="activity-status">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The current status of the project (e.g. "planned"), using a
-        list defined by IATI.
+        The current status of the activity. See codelist for values.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code defining the current status of the activity.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="contact-info">
@@ -471,20 +693,15 @@
         <xsd:element name="organisation" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation to contact for more information about the
-              activity.
-              
-              This is required if content-info is included.
+              The name of the organisation to contact for more
+              information about the activity.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:element name="person-name" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The name of the contact person at the organisation.
-              
-              If person-name is present then either person-name/text() 
-              or job-title/text() must be present
+              The name of the contact person for the activity.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -492,18 +709,14 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The job title of the contact person at the organisation.
-              You may repeat this element for different languages.
-              
-              If person-name is present then either person-name/text() 
-              or job-title/text() must be present
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:element name="telephone">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The contact telephone number, if available.  May be
-              repeated for multiple numbers.
+              The contact telephone number. May be repeated for
+              multiple numbers.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -513,52 +726,77 @@
         <xsd:element name="email" type="plainType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The contact email address, if available.  May be
-              repeated for multiple addresses.
-            </xsd:documentation>
-          </xsd:annotation>
-        </xsd:element>
-        <xsd:element name="mailing-address" type="textType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The contact mailing address, if available.
+              The contact email address. May be repeated for multiple
+              addresses.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:element name="website" type="xsd:anyURI">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The contact web address, if available.  May be repeated
-              for multiple sites.
+              The contact web address. May be repeated for multiple sites.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="mailing-address" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The contact mailing address.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="type" use="optional"/>
+      <xsd:attribute name="type" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The type of contact. See IATI codelist for values.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-tied-status" type="codeReqType">
+  <xsd:element name="default-tied-status">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Specify whether the aid is untied, tied, or partially tied,
-        using a code list created by IATI.  The content is free text
-        that can optionally provide more detail.
+        Whether the aid is untied, tied, or partially tied. This
+        element specifies a default for all the activity’s financial
+        transactions; it can be overridden at the individual
+        transaction level.
+        
+        If an activity is partially tied it is recommended that tied
+        and untied commitments are reported as separate transactions
+        and that transaction/tied-status is used to classify them.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" type="xsd:string"  use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code interpreting the usage of Columns 36-38 of the
+            CRS++ reporting format. (Amount tied, Amount partially
+            untied, Amount tied)
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="policy-marker">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A policy or theme addressed by the activity.  A text
-        description of the theme appears in the content, and a formal
-        identifier appears in the @ref attribute.  The @vocabulary
-        attribute can also help to segment the markers into separate
-        vocabularies.  This element can be repeated for each policy
-        marker.
+        A policy or theme addressed by the activity. This element was
+        designed for the reporting of OECD DAC CRS policy markers
+        (columns 20-23 and 28-31 of the CRS++ reporting format) but
+        the vocabulary attribute allows it use by other (including
+        local) systems. This element can be repeated for each policy
+        marker. 
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -575,30 +813,30 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:choice>
-      <xsd:attribute ref="code" use="optional">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Policy marker code. If vocabulary is missing or "DAC" use
-            the IATI Policy Marker Codelist which is based on columns
-            20-23 and 28-31 of the CRS++ reporting format.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Policy vocabulary used. Default is "DAC", but "RO" may also
-            be used for publisher's own markers.
+            An IATI code for the vocabulary to be used to define
+            policy markers. If omitted then the OECD DAC vocabulary is
+            assumed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="significance" type="xsd:string" use="optional">
+      <xsd:attribute name="code" type="xsd:string"  use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The significance of the policy marker for this activity
-            (e.g. principal or significant), from a list defined by
-            IATI.  If a marker is not significant, the policy-marker
-            element will not be present.
+            A policy marker code from the codelist specified in the
+            vocabulary.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="significance" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An OECD DAC CRS code indicating the significance of the
+            policy marker for this activity. This codelist should be
+            used for all vocabularies. Markers MUST NOT be reported
+            unless a value for significance is present.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -617,7 +855,16 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="percentage" use="required"/>
+      <xsd:attribute name="percentage" use="required" type="xsd:decimal">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The percentage of the total commitment allocated to or
+            planned for capital expenditure. Content must be a
+            positive decimal number between 0 and 100, with no
+            percentage sign. 
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -625,10 +872,8 @@
   <xsd:element name="transaction">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Committed or actual money flowing in or out of an aid
-        activity.The @ref attribute allows uniquely identifying a
-        transaction, to match it up with the corresponding in- or
-        outflow in a different activity.
+        Transactions recording committed or actual funds flowing in or
+        out of an aid activity.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -636,8 +881,7 @@
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The amount of the contribution (or its value, if in
-              kind).
+              The amount of the contribution.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -648,22 +892,34 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="transaction-type" type="codeReqType">
+        <xsd:element name="transaction-type">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The type of the transaction (e.g. commitment,
-              disbursement, expenditure, etc.).  The @ref attribute
-              contains a code defined by IATI, and the content is an
-              optional free-text description of the type.
+              disbursement, expenditure, etc.). 
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code defining the type of the transaction
+                  (e.g. commitment, disbursement, expenditure, etc.). 
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="provider-org">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation providing the money for the
-              transaction (if omitted, the provider organisation is
-              the reporting organisation).
+              For incoming funds this is the organisation from which
+              the transaction originated. If omitted on outgoing funds
+              the reporting-org is assumed.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -678,14 +934,28 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:choice>
-            <xsd:attribute ref="ref" use="optional"/>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Machine-readable identification string for the
+                  organisation. Must be in the format {Registration
+                  Agency} - (Registration Number} where {Registration
+                  Agency} is a valid code in the Registration Agency
+                  code list and {Registration Number } is a valid
+                  identifier issued by the {Registration Agency}. If
+                  this is not present then the narrative MUST contain
+                  the name of the organisation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  If the funds are being provided from the budget of 
-                  another activity that is reported to IATI, this 
-                  should record the unique IATI activity identifier for 
-                  that activity.
+                  If incoming funds are being provided from the budget
+                  of another activity that is reported to IATI, it if
+                  STRONGLY RECOMMENDED that this should record the
+                  provider's unique IATI activity identifier for that
+                  activity.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -696,8 +966,9 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation receiving the money from the
-              transaction (if omitted, then the receiver
-              organisation is the reporting organisation).
+              transaction (if omitted on incoming funds then the
+              receiver organisation is assumed to be the reporting
+              organisation).
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -712,13 +983,27 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:choice>
-            <xsd:attribute ref="ref" use="optional"/>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Machine-readable identification string for the
+                  organisation. Must be in the format {Registration
+                  Agency} - (Registration Number} where {Registration
+                  Agency} is a valid code in the Registration Agency
+                  code list and {Registration Number } is a valid
+                  identifier issued by the {Registration Agency}. If
+                  this is not present then the narrative MUST contain
+                  the name of the organisation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  If the funds are being provided to another activity 
-                  that is reported to IATI, this should record the 
-                  unique IATI activity identifier for that activity.
+                  If outgoing funds are being provided to another
+                  activity that is reported to IATI, this may, if
+                  possible, record the unique IATI activity identifier
+                  for that activity.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -728,8 +1013,10 @@
         <xsd:element name="transaction-date">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A milestone date for this transaction (such as the
-              decision date, disbursement date, etc.).
+              The date on which the transaction was made or (in the
+              case of commitments) agreed. The narrative content may
+              contain text (e.g. 2011Q1) for accurately recording less
+              specific dates such as month, quarter, or year.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -740,22 +1027,35 @@
             <xsd:attribute name="iso-date" type="xsd:date" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The ISO 8601 version of the transaction date.
+                  (yyyy-mm-dd plus [optional] time zone)
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="flow-type" type="codeReqType">
+        <xsd:element name="flow-type">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
               default-flow-type element.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code from the OECD DAC CRS "Type of flow" codelist
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="finance-type" type="codeReqType">
+        <xsd:element name="finance-type">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -763,8 +1063,21 @@
               transaction-by-transaction basis, if needed.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code from the OECD DAC CRS "Type of finance" codelist
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" type="codeReqType">
+        <xsd:element name="aid-type">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -772,23 +1085,64 @@
               transaction-by-transaction basis if needed.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code from the OECD DAC CRS "Type of aid" codelist
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="tied-status" type="codeReqType">
+        <xsd:element name="tied-status">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
-              default-tied-status element (pooled, etc.) on a
+              default-tied-status element on a
               transaction-by-transaction basis if needed.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code interpreting the usage of Columns 36-38
+                  of the CRS++ reporting format. (Amount tied, Amount
+                  partially untied, Amount tied)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="disbursement-channel" type="codeReqType">
+        <xsd:element name="disbursement-channel">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The channel through which the funds will flow for this
               transaction, from an IATI codelist.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code defining channels of disbursement
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="sector">
           <xsd:annotation>
@@ -924,7 +1278,14 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="ref" use="optional"/>
+      <xsd:attribute name="ref" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An internal reference linking this transaction back to the
+            publisher's financial management system.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -932,14 +1293,35 @@
   <xsd:element name="location">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The sub-national geographical identification of the target 
-        locations of an activity. These can be described by gazetteer 
-        reference, coordinates, administrative areas or a textual 
-        description.
+        The sub-national geographical identification of the target
+        locations of an activity. These can be described by gazetteer
+        reference, coordinates, administrative areas or a textual
+        description. Any number of locations may be reported.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-reach">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Does this location describe where the activity takes
+               place or where the intended beneficiaries reside?
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for the geographic scope of the activity.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:element name="location-id">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -952,7 +1334,7 @@
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute ref="code" use="optional">
+            <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                    A code from the gazetteer or administrative boundary 
@@ -960,11 +1342,11 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+            <xsd:attribute name="vocabulary" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A code for a recognised gazetteer or administrative 
-                  boundary respository.
+                  An IATI code for a recognised gazetteer or
+                  administrative boundary respository.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -974,8 +1356,7 @@
         <xsd:element name="name" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The human-readable name for the location.  May be
-              repeated in different languages.
+              The human-readable name for the location.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -1010,7 +1391,7 @@
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
-            <xsd:attribute ref="code" use="optional">
+            <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                    The code for the administrative area being reported 
@@ -1018,15 +1399,15 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+            <xsd:attribute name="vocabulary" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The code for a recognised administrative boundary.
-                  repository
+                  An IATI code for a recognised administrative
+                  boundary repository.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="level" type="xsd:positiveInteger" use="optional">
+            <xsd:attribute name="level" type="xsd:positiveInteger" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                    An integer indicating the hierarchical level being 
@@ -1085,24 +1466,16 @@
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute ref="code" use="optional">
+            <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Extactness Codelist. 
-                   1 = Exact, 2 = Approximate
+                   An IATI code from the Extactness Codelist. 1 =
+                   Exact, 2 = Approximate
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="location-reach" type="codeType">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-               Does this location describe where the activity 
-               takes place or where the intended beneficiaries reside?
-            </xsd:documentation>
-          </xsd:annotation>
         </xsd:element>
         
         <xsd:element name="location-class">
@@ -1118,10 +1491,11 @@
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute ref="code" use="optional">
+            <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Location Class codelist
+                   A code from the Location Class codelist (maintained
+                   by the US National Geospatial-Intelligence Agency)
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1140,10 +1514,12 @@
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute ref="code" use="optional">
+            <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                    A feature designation code form the authorised list
+                   (maintained by the US National
+                   Geospatial-Intelligence Agency)
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1152,7 +1528,7 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="ref" use="optional">
+      <xsd:attribute name="ref" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An internal reference that uniquely describes the location 
@@ -1167,11 +1543,9 @@
   <xsd:element name="country-budget-items">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Recipient country budget items.
-
         This item encodes the alignment of activities with both the
         functional and administrative classifications used in the
-        recipient country's Chart of Accounts. This applies to both
+        recipient country’s Chart of Accounts. This applies to both
         on- and off-budget activities.
       </xsd:documentation>
     </xsd:annotation>
@@ -1188,11 +1562,48 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:element ref="description" />
+              <xsd:element name="description">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    A longer, human-readable description of the
+                    budget-item. May be repeated for different
+                    languages.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element ref="narrative" />
+                    <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:choice>
+                  <xsd:attribute name="type" use="optional" type="xsd:string">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        An IATI code for the type of description being provided.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
+              </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:choice>
-            <xsd:attribute ref="code" use="required"/>
-            <xsd:attribute ref="percentage" use="optional"/>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code for the budget-item from the vocabulary
+                  specified.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute ref="percentage" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The percentage of the budget allocated to this item.
+                  Content must be a positive decimal number between 0
+                  and 100, with no percentage sign.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -1201,10 +1612,10 @@
       <xsd:attribute name="vocabulary" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code for the common functional classification or country
-            system (This allows for common codes, country-specific, or
-            any other classification agreed between countries and
-            donors).
+            An IATI code for the common functional classification or
+            country system (This allows for common codes,
+            country-specific, or any other classification agreed
+            between countries and donors).
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1215,28 +1626,39 @@
   <xsd:element name="related-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Another IATI activity related to this one.  The 'type'
-        attribute describes the type of relationship (e.g. parent,
-        sibling).  This does not need to be used to express funding
-        relationships, since those are covered in individual
-        transactions.
+        Another separately reported IATI activity that is related to
+        this one. The ‘type’ attribute describes the type of
+        relationship: eg. parent, child, multifunded ... 
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="ref" use="required"/>
-      <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute name="ref" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A valid activity identifier (as defined in
+            iati-activity/iati-identifier).
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="type" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code for the type of relationship
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
     </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="legacy-data">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Hold a single name=value pair of legacy data.  This element is
-        *not* for adding new data types; instead, it holds the
-        original (non-IATI) value or code for an existing data type.
+        The legacy data element allows for the reporting of values
+        held in a field in the reporting organisation's system which
+        is similar, but not identical to an IATI element.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -1246,21 +1668,23 @@
       <xsd:attribute name="name" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The original field name.
+            The original field name in the reporting organisation's
+            system
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="value" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The original field value.
+            The original field value in the reporting organisation's
+            system
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="iati-equivalent" type="xsd:NMTOKEN" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The name of the equivalent IATI element (if available).
+            The name of the equivalent IATI element.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1270,7 +1694,9 @@
   <xsd:element name="result">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A measurable result of aid work.
+        A container for reporting outputs, outcomes, impacts and other
+        results that stem directly from the activity. This may be
+        repeated for each type of result reported.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -1302,7 +1728,7 @@
                   <xsd:attribute name="year" type="xsd:positiveInteger" use="required">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        The year the baseline value was taken
+                        The year the baseline value was taken (yyyy)
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -1326,19 +1752,45 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:choice minOccurs="0" maxOccurs="unbounded">
-                    <xsd:element name="period-start" type="dateType">
+                    <xsd:element name="period-start">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
-                          The start of the reporting period
+                          The start of the reporting period.
                         </xsd:documentation>
                       </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="iso-date" type="xsd:date" use="required">
+                          <xsd:annotation>
+                            <xsd:documentation xml:lang="en">
+                              (yyyy-mm-dd plus [optional] time zone)
+                            </xsd:documentation>
+                          </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                      </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="period-end" type="dateType">
+                    <xsd:element name="period-end">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
-                          The end of the reporting period
+                          The end of the reporting period.
                         </xsd:documentation>
                       </xsd:annotation>
+                      <xsd:complexType>
+                        <xsd:sequence>
+                          <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+                        </xsd:sequence>
+                        <xsd:attribute name="iso-date" type="xsd:date" use="required">
+                          <xsd:annotation>
+                            <xsd:documentation xml:lang="en">
+                              (yyyy-mm-dd plus [optional] time zone)
+                            </xsd:documentation>
+                          </xsd:annotation>
+                        </xsd:attribute>
+                        <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                      </xsd:complexType>
                     </xsd:element>
                     <xsd:element name="target">
                       <xsd:annotation>
@@ -1390,17 +1842,18 @@
             <xsd:attribute name="measure" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The type of measurement for the indicator value
+                  An IATI code defining the unit of measure in which
+                  the value is reported.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="ascending" type="xsd:boolean" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  True if the indicator improves from small to large
-                  (e.g. clinics built); false if it improves from
-                  large to small (e.g. cases of a disease). Defaults
-                  to true if omitted.
+                  A boolean describing the behaviour of the indicator.
+                  It is "true" if the indicator improves from small to
+                  large (e.g. clinics built); false if it improves
+                  from large to small (e.g. cases of a disease). 
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1409,7 +1862,13 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="type" use="required"/>
+      <xsd:attribute name="type" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code for the type of result being reported.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -1425,7 +1884,9 @@
   <xsd:element name="conditions">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Conditions attached to the activity.
+        Specific terms and conditions attached to the activity that,
+        if not met, may influence the delivery of commitments made by
+        participationg organisations.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -1433,7 +1894,11 @@
         <xsd:element name="condition">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Description of one condition attached to the activity.
+              The text of a specific condition attached to the
+              activity. Organisation-wide terms and conditions that
+              apply to all activities should not be reported here, but
+              in either iati-organisation/document-link or
+              iati-activity-document-link
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1441,7 +1906,13 @@
               <xsd:element ref="narrative" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:choice>
-            <xsd:attribute ref="type" use="required"/>
+            <xsd:attribute name="type" use="required" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code defining the type of condition.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
           </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
@@ -1450,7 +1921,9 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A yes/no (1/0) value stating whether there are conditions
-            attached to the activity.
+            attached to the activity. It is strongly recommended that
+            this attribute is reported, even if there are no condtions
+            attached (i.e. attached="0")
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1461,41 +1934,75 @@
   <xsd:element name="budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The value of the aid activity's budget for each financial year
-        as in the original project document.
+        The value of the aid activity’s budget for each financial
+        quarter or year over the lifetime of the activity. The total
+        budget for an activity should be reported as a commitment in
+        the transaction element. The purpose of this element is to
+        provide predictability for recipient planning on an annual
+        basis.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="period-start" type="dateType">
+        <xsd:element name="period-start">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The starting date for the budget period, in ISO 8601
-              format (e.g. 2010-04-01 for 1 April 2010).  This element
-              must be present.
+              The start of the budget period.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The start date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" type="dateType">
+        <xsd:element name="period-end">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the budget period, in ISO 8601
-              format (e.g. 2011-03-31 for 31 March 2011).  This
-              element must be present.
+              The end of the period (which must not be greater than
+              one year)
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The end date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the organisation's aid budget for
-              this period.  This element is required.
+              The budget for this period.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute ref="type" use="optional"/>
+      <xsd:attribute name="type" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Whether this is the original budget (prepared when the
+            original commitment was made) or has subsequently been
+            revised
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -1503,32 +2010,61 @@
   <xsd:element name="planned-disbursement">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
+        The planned disbursement element should only be used to report
+        specific planned cash transfers. These should be reported for
+        a specific date or a meaningfully predictable period. These
+        transactions should be reported in addition to budgets - which
+        are typically annual breakdowns of the total activity
+        commitment.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="period-start" type="dateType">
+        <xsd:element name="period-start">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The starting date for the disbursement period, in ISO 8601
-              format (e.g. 2010-04-01 for 1 April 2010).  This element
-              must be present.
+              The exact date of the planned disbursement OR the
+              starting date for the disbursement period.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" type="dateType">
+        <xsd:element name="period-end">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the disbursement period, in ISO 8601
-              format (e.g. 2011-03-31 for 31 March 2011).  This
-              element must be present.
+              The ending date for the disbursement period.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The amount to be disbursed in the specified currency.
+              The amount that is planned to be disbursed in the specified currency.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -1558,7 +2094,7 @@
         <xsd:element name="aidtype-flag">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              This covers the four CRS++ fields titled: 
+              This covers the four CRS++ columns titled:
               "Free standing technical cooperation"; 
               "Programme-based approach"; 
               "Investment project"; 
@@ -1569,7 +2105,13 @@
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute ref="code" use="required"/>
+            <xsd:attribute name="code" use="required" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code describing the equivalent CRS++ columns
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:attribute name="significance" type="xsd:boolean" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -1588,43 +2130,109 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:element name="repayment-type" type="codeType">
+              <xsd:element name="repayment-type">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    Type of Repayment.
+                    The type of loan repayment
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="code" type="xsd:string"  use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        An IATI codelist tabulating CRS-specified
+                        values for the type of Repayment. 
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-plan" type="codeType">
+              <xsd:element name="repayment-plan">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    Number of repayments per annum.
+                    Number of repayments per annum. 
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="code" type="xsd:string"  use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        An IATI codelist tabulating CRS-specified
+                        values for the number of repayments per annum. 
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
-              <xsd:element name="commitment-date" type="dateType">
+              <xsd:element name="commitment-date">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    Commitment date. The date must be in ISO 8601
-                    format (YYYY-MM-DD).
+                    The CRS++ reported commitment date
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        (yyyy-mm-dd plus [optional] time zone)
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-first-date" type="dateType">
+              <xsd:element name="repayment-first-date">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     First Repayment Date. The date must be in ISO
                     8601 format (YYYY-MM-DD).
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        (yyyy-mm-dd plus [optional] time zone)
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-final-date" type="dateType">
+              <xsd:element name="repayment-final-date">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Final Repayment Date. The date must be in ISO
                     8601 format (YYYY-MM-DD).
                   </xsd:documentation>
                 </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        (yyyy-mm-dd plus [optional] time zone)
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax"/>
             </xsd:choice>
@@ -1724,8 +2332,9 @@
         <xsd:element name="forecast">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A container to hold separate forecasts for each of
-              the years specified
+              A container to hold separate forecasts for each of the
+              years specified Text() holds the forecast value for each
+              year.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1751,7 +2360,8 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The exact date when the information was collected or
-            extracted from donors' aid management systems.
+            extracted from donors’ aid management systems. (yyyy-mm-dd
+            plus [optional] timezone)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>

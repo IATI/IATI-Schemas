@@ -50,8 +50,7 @@
   <xsd:element name="title" type="textType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A short, human-readable title.  May be repeated for different
-        languages.
+        A short, human-readable title.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -59,8 +58,7 @@
   <xsd:element name="description">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A longer, human-readable description.  May be repeated for
-        different languages.
+        A longer, human-readable description.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -68,7 +66,13 @@
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:choice>
-      <xsd:attribute ref="type" use="optional"/>
+      <xsd:attribute name="type" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code for the type of description being reported
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -126,16 +130,37 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element ref="narrative" />
+        <xsd:element ref="narrative">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The name of the organisation. May be repeated for
+              different languages.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:choice>
-      <xsd:attribute ref="ref" use="required"/>
-      <xsd:attribute ref="type" use="optional"/>
+      <xsd:attribute name="ref" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the RegistrationAgency code list and {RegistrationNumber } is a valid identifier issued by the {RegistrationAgency}
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="type" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The type of organisation issuing the report. See IATI codelist for values.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="secondary-reporter" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-             If an activity is being published by a secondary publisher
-             you may indicate this here. Use 1 for true, 0 for false.
+            A flag indicating that the reporting organisation is a
+            secondary publisher: publishing data for which it is not
+            directly responsible. This flag must not be reported by
+            primary source publishers
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -146,25 +171,54 @@
   <xsd:element name="document-link">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A categorized link to an external document.
+        A  link to an online, publicly accessible web page or
+        document.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="1" maxOccurs="unbounded">
         <xsd:element ref="title"/>
-        <xsd:element name="category" type="codeReqType">
+        <xsd:element name="category">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               IATI Document Category Code
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" use="required" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code defining the category of the document.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="language" type="codeType">
+        <xsd:element name="language">
           <xsd:annotation>
-           <xsd:documentation xml:lang="en">
-                The ISO 639 language code for the target document, e.g. "en".
-           </xsd:documentation>
+            <xsd:documentation xml:lang="en">
+              The ISO 639-1 language code in which target document is
+              written, e.g. “en”. Can be repeated to describe
+              multi-lingual documents.
+            </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" use="required" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  ISO 639-1 language code
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
@@ -175,11 +229,11 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="format" type="xsd:string" use="optional">
+      <xsd:attribute name="format" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The MIME type of the external document,
-            e.g. "application/pdf".
+            An IANA code for the MIME type of the document being
+            referenced, e.g. “application/pdf”. 
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -234,14 +288,9 @@
   <xsd:attribute name="currency" type="xsd:string">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A three letter ISO 4217 code for the original currency of the 
-        amount.
-        This is required for all currency amounts unless the
-        iati-activity/@default-currency (or iati-organisation/@default-currency
-        for an organisation file) attribute is specified.
-
-        Currency codes are listed at
-        http://iatistandard.org/codelists/currency
+        The ISO 4217 alphabetic currency code of the value reported.
+        This is required unless the iati-activity/@default-currency is
+        present and applies.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
@@ -249,9 +298,8 @@
   <xsd:attribute name="value-date" type="xsd:date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The date that this value was set (to allow historical
-        currency conversion).  The date must be in ISO 8601
-        format (YYYY-MM-DD).
+        The date to be used for determining the exchange rate for
+        currency conversions.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
