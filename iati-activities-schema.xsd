@@ -1534,12 +1534,12 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="updated" type="xsd:date" use="optional">
+      <xsd:attribute name="type" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The date on which this line of information was last
-            updated. Previous updates for the same period should also
-            be reported.
+            Whether this is an original plan (prepared when the
+            original commitment was made) or has subsequently been
+            revised.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
