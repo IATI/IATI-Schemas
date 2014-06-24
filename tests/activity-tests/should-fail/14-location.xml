@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+<!--
+  Fails on description/@type attribute not alowed
+-->
+
+<iati-activities version="xx">
+  <iati-activity version="xx">
 
     <location>
-      <description type="X">X</description>
+      <description type="X">
+        <narrative>x</narrative>
+      </description>
     </location>
 
   </iati-activity>

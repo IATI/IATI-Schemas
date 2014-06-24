@@ -1,9 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <!-- hierarchy is now an integer, not a string -->
-  <iati-activity version="xx" hierarchy="string">
-    <iati-identifier>12345</iati-identifier>
+  <iati-activity>
     <description>
       <narrative>xxx</narrative>
     </description>

@@ -3,12 +3,12 @@
 <!--
   Test revised transaction-date element
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <transaction flow="incoming">
+    <transaction>
       <!-- @type removed from transaction-date -->
-      <transaction-date iso-date="2010-07-07" type="commitment">July 7, 2010</transaction-date>
+      <transaction-date iso-date="2010-07-07" type="commitment" />
     </transaction>
   </iati-activity>
 </iati-activities>

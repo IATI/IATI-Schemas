@@ -1,12 +1,14 @@
 <?xml version="1.0"?>
 
 <!-- require date and time, not just date -->
-<iati-activities>
+<iati-activities version="xx">
 
   <!-- requires date and time, not just date -->
-  <iati-activity last-updated-datetime="2011-06-01">
+  <iati-activity version="xx" last-updated-datetime="2011-06-01">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+    <description>
+      <narrative>xxx</narrative>
+    </description>
   </iati-activity>
 
 </iati-activities>

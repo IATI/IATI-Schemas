@@ -3,8 +3,8 @@
 <!--
   Test that the schema rejects an activity with no child elements.
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <!-- at least one element is required -->
   </iati-activity>
 </iati-activities>

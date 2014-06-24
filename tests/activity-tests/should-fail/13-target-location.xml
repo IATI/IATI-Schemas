@@ -1,9 +1,14 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+<!--
+  Target Location is not expected
+-->
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+    <description>
+      <narrative>xxxx</narrative>
+    </description>
     <target-location code="AF">Afghanistan</target-location>
   </iati-activity>
 </iati-activities>

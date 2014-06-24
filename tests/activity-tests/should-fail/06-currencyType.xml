@@ -3,8 +3,8 @@
 <!--
   Test that currency values reject decimals.
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
     <!-- must be a number -->
     <budget>
