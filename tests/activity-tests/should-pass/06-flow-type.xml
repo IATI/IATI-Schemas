@@ -3,15 +3,15 @@
 <!--
   Test that flow-type allowed inside a transaction.
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
     <!-- used to be flow-type -->
-    <default-flow-type code="XX">xxx</default-flow-type>
+    <default-flow-type code="XX" />
     <transaction>
       <value value-date="2010-07-07">123</value>
       <!-- should be allowed here now -->
-      <flow-type code="YY">yyy</flow-type>
+      <flow-type code="YY" />
     </transaction>
   </iati-activity>
 </iati-activities>

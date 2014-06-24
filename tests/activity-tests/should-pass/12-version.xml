@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 
-<iati-activities>
+<iati-activities version="xx">
   <!-- added @version attribute -->
-  <iati-activity version="1.01">
+  <iati-activity version="2.01">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+    <description>
+      <narrative>xxx</narrative>
+    </description>
   </iati-activity>
 </iati-activities>

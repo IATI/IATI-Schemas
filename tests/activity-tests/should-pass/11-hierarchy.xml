@@ -3,9 +3,9 @@
 <!--
   Test new parent/child @hierarchy attribute.
 -->
-<iati-activities>
+<iati-activities version="xx">
   <!-- new @hierarchy attribute -->
-  <iati-activity hierarchy="0">
+  <iati-activity version="xx" hierarchy="0">
     <iati-identifier>12345</iati-identifier>
     <related-activity ref="yyy" type="zzz"/>
   </iati-activity>

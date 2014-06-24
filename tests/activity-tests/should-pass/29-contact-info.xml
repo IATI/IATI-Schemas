@@ -1,20 +1,32 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+    <description>
+      <narrative>xxx</narrative>
+    </description>
     <contact-info type="xxx">
-      <organisation xml:lang="es">XXX</organisation>
-      <person-name xml:lang="en">XXX</person-name>
-      <person-name xml:lang="fr">YYY</person-name>
-      <job-title xml:lang="en">YYY</job-title>
+      <organisation xml:lang="es">
+        <narrative>XXX</narrative>
+      </organisation>
+      <person-name xml:lang="en">
+        <narrative>XXX</narrative>
+      </person-name>
+      <person-name xml:lang="fr">
+        <narrative>YYY</narrative>
+      </person-name>
+      <job-title xml:lang="en">
+        <narrative>YYY</narrative>
+      </job-title>
       <telephone>123-456-789</telephone>
       <email>XXX@example.org</email>
       <website>http://www.example.org</website>
       <mailing-address xml:lang="en">
+        <narrative>
         123 Street St.
         Somewhere, UK
+        </narrative>
       </mailing-address>
     </contact-info>
   </iati-activity>

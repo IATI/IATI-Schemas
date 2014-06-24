@@ -1,14 +1,17 @@
 <?xml version="1.0"?>
 
-<iati-activities>
+<iati-activities version="xx">
+  <iati-activity version="xx">
 
-<iati-activity>
+    <conditions attached="true">
+      <condition type="X">
+        <narrative>xxx</narrative>
+      </condition>
+      <condition type="Y">
+        <narrative>yyy</narrative>
+      </condition>
+    </conditions>
 
-<conditions attached="true">
-  <condition type="X">X</condition>
-  <condition type="Y">Y</condition>
-</conditions>
-
-</iati-activity>
+  </iati-activity>
 
 </iati-activities>

@@ -1,16 +1,20 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
 
     <!-- full version -->
-    <participating-org xml:lang="en" ref="X" type="X" role="X">X</participating-org>
+    <participating-org xml:lang="en" ref="X" type="X" role="X">
+      <narrative>xx</narrative>
+    </participating-org>
 
     <!-- no-text version -->
     <participating-org ref="X" type="X" role="X"/>
 
     <!-- minimal version -->
-    <participating-org role="X">X</participating-org>
+    <participating-org role="X">
+      <narrative>xx</narrative>
+    </participating-org>
 
   </iati-activity>
 </iati-activities>

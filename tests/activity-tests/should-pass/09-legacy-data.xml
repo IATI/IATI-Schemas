@@ -3,9 +3,9 @@
 <!--
   Test new legacy-data element
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <legacy-data name="foo" value="xxx">yyy</legacy-data>
+    <legacy-data name="foo" value="xxx" />
   </iati-activity>
 </iati-activities>

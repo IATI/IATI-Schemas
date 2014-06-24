@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+    <description>
+      <narrative>xxxx</narrative>
+    </description>
     <crs-add>
-      <aidtype-flag code="XX" significance="true">XXX</aidtype-flag>
+      <aidtype-flag code="XX" significance="true" />
       <loan-terms rate-1="4" rate-2="3">
-        <repayment-type code="1">Equal Principal Payments (EPP)</repayment-type>
-        <repayment-plan code="4">Quarterly</repayment-plan>
+        <repayment-type code="1" />
+        <repayment-plan code="4" />
         <commitment-date iso-date="2013-09-01"/>
         <repayment-first-date iso-date="2014-01-01"/>
         <repayment-final-date iso-date="2020-12-31"/>
