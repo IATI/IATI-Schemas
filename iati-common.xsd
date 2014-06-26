@@ -259,16 +259,6 @@
     </xsd:annotation>
   </xsd:attribute>
 
-  <xsd:attribute name="currency" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The ISO 4217 alphabetic currency code of the value reported.
-        This is required unless the iati-activity/@default-currency is
-        present and applies.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-
   <xsd:attribute name="value-date" type="xsd:date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -365,21 +355,6 @@
     </xsd:choice>
     <xsd:attribute ref="ref" use="required"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-  <xsd:complexType name="currencyType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Data type for an element containing a currency value.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="xsd:decimal">
-        <xsd:attribute ref="currency" use="optional"/>
-        <xsd:attribute ref="value-date" use="required"/>
-        <xsd:anyAttribute processContents="lax" namespace="##other"/>
-      </xsd:extension>
-    </xsd:simpleContent>
   </xsd:complexType>
 
   <xsd:complexType name="dateType">

@@ -40,18 +40,19 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
+            This is mandatory and must be a valid version. All
+            versions in a single file MUST be the same.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="generated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A date/time stamp for when this file was generated.  This
+            A date/time stamp for when this file was generated. This
             is not necessarily the last-updated date for the
-            individual organisation records in it.  Uses ISO 8601 date
-            format, e.g. "2010-03-12T18:45:00+01:00".  Use of this
-            attribute is highly recommended, to allow recipients to
-            know when a file has been updated.
+            individual activity records in it. Use of this attribute
+            is highly recommended, to allow recipients to know when a
+            file has been updated.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -101,10 +102,8 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
-            Defaults to "1.0" if not specified.  It is required to
-            specify this attribute if the document is using features
-            specific to an IATI specification other than the initial
-            1.0 version.
+            This is mandatory and must be a valid version. All
+            versions in a single file MUST be the same.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -120,7 +119,10 @@
       <xsd:attribute ref="xml:lang">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            ISO 639-1 code specifying the default language used in text elements throughout the activity. If this is not declared then the xml:lang attribute MUST be specified for each narrative element.
+            ISO 639-1 code specifying the default language used in
+            narrative elements throughout the activity. If this is not
+            declared then the xml:lang attribute MUST be specified for
+            each narrative element.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -128,7 +130,9 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Default ISO 4217 currency code for all financial values in
-            this organisation report.
+            this activity report. If this is not declared then the
+            currency attribute MUST be specified for all monetary
+            values.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -139,9 +143,7 @@
   <xsd:element name="name">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The human-readable name of the organisation. This element may be
-        repeated to provide the name in different languages (using @xml:lang to
-        distinguish).
+        The human-readable name of the organisation.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -164,29 +166,51 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="period-start" type="dateReqType">
+        <xsd:element name="period-start">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The starting date for the budget period, in ISO 8601
-              format (e.g. 2010-04-01 for 1 April 2010).  This element
-              must be present.
+              The start of the budget period.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The start date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" type="dateReqType">
+        <xsd:element name="period-end">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the budget period, in ISO 8601
-              format (e.g. 2011-03-31 for 31 March 2011).  This
-              element must be present.
+              The end of the period (which must not be greater than one year)
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The end date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The total value of the organisation's aid budget for
-              this period.  This element is required.
+              this period.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
@@ -199,38 +223,82 @@
   <xsd:element name="recipient-org-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        This element represents the budget for disbursements to
-        another organisation (such as an institution funded by a
-        national donor).
+        This element represents the budget for the core funding of another organisation.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-org" type="refType">
+        <xsd:element name="recipient-org">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation that will receive the funds during the
-              budget period (*not* the organisation reporting).
+              The organisation that will receive the funds.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="narrative">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The name of the organisation. This can be repeated in multiple languages.
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Machine-readable identification string for the
+                  organisation. Must be in the format {Registration Agency}
+                  - (Registration Number} where {Registration Agency} is a
+                  valid code in the Registration Agency code list and
+                  {Registration Number } is a valid identifier issued by the
+                  {Registration Agency}. If this is not present then the
+                  narrative MUST contain the name of the organisation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-start" type="dateReqType">
+        <xsd:element name="period-start">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The starting date for the budget period, in ISO 8601
-              format (e.g. 2010-04-01 for 1 April 2010).  This element
-              must be present.
+              The start of the budget period.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The start date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" type="dateReqType">
+        <xsd:element name="period-end">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the budget period, in ISO 8601
-              format (e.g. 2011-03-31 for 31 March 2011).  This
-              element must be present.
+              The end of the period (which must not be greater than one year)
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The end date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
@@ -261,31 +329,65 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-country" type="codeReqType">
+        <xsd:element name="recipient-country">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The country that will receive the funds during the
-              budget period.
+              The recipient country.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  ISO 3166-1 alpha-2 code for the country.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-start" type="dateReqType">
+        <xsd:element name="period-start">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The starting date for the budget period, in ISO 8601
-              format (e.g. 2010-04-01 for 1 April 2010).  This element
-              must be present.
+              The start of the budget period.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The start date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" type="dateReqType">
+        <xsd:element name="period-end">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the budget period, in ISO 8601
-              format (e.g. 2011-03-31 for 31 March 2011).  This
-              element must be present.
+              The end of the period (which must not be greater than one year)
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The end date (yyyy-mm-dd plus [optional] time zone)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
@@ -300,5 +402,32 @@
       </xsd:choice>
     </xsd:complexType>
   </xsd:element>
+
+  <xsd:complexType name="currencyType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element containing a currency value.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <xsd:attribute ref="currency" use="optional"/>
+        <xsd:attribute ref="value-date" use="required"/>
+        <xsd:anyAttribute processContents="lax" namespace="##other"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:attribute name="currency" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A three letter ISO 4217 code for the original currency of the
+        amount. This is required for all currency amounts unless
+        the iati-organisation/@default-currency attribute is
+        specified.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
 
 </xsd:schema>
