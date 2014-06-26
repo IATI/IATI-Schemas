@@ -204,6 +204,42 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element name="budget-line">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A breakdown of the total budget into sub-totals. The
+              breakdown is determined  by the reporting organisation
+              and described in the narrative. The period covered is
+              the same as that covered by the parent total-budget
+              element.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="value" type="currencyType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The budget sub-total. The definiton of the
+                    sub-division is determined by
+                    iati-organisation/total-budget/budget-line/narrative
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="narrative" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An internal reference for this budget line taken
+                  from the reporting organisation's own system.
+                  Optional.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
@@ -299,6 +335,42 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element name="budget-line">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A breakdown of the recipient organisation's budget into
+              sub-totals. The breakdown is determined  by the
+              reporting organisation and described in the narrative.
+              The period covered is the same as that covered by the
+              parent recipient-org-budget element.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="value" type="currencyType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The budget sub-total. The definiton of the
+                    sub-division is determined by
+                    iati-organisation/recipient-org-budget/budget-line/narrative
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="narrative" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An internal reference for this budget line taken
+                  from the reporting organisation's own system.
+                  Optional.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
     </xsd:complexType>
@@ -387,6 +459,42 @@
               element is required.
             </xsd:documentation>
           </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="budget-line">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A breakdown of the recipient country's budget into
+              sub-totals. The breakdown is determined  by the
+              reporting organisation and described in the narrative.
+              The period covered is the same as that covered by the
+              parent recipient-country-budget element.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="value" type="currencyType">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The budget sub-total. The definiton of the
+                    sub-division is determined by
+                    iati-organisation/recipient-country-budget/budget-line/narrative
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="narrative" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:choice>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An internal reference for this budget line taken
+                  from the reporting organisation's own system.
+                  Optional.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
