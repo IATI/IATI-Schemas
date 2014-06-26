@@ -700,23 +700,41 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:anyAttribute processContents="lax" namespace="##other"/>
+              </xsd:extension>
+            </xsd:simpleContent>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="email" type="plainType">
+        <xsd:element name="email">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact email address. May be repeated for multiple
               addresses.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:string">
+                <xsd:anyAttribute processContents="lax" namespace="##other"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
         </xsd:element>
-        <xsd:element name="website" type="xsd:anyURI">
+        <xsd:element name="website">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact web address. May be repeated for multiple sites.
             </xsd:documentation>
           </xsd:annotation>
+          <xsd:complexType>
+            <xsd:simpleContent>
+              <xsd:extension base="xsd:anyURI">
+                <xsd:anyAttribute processContents="lax" namespace="##other"/>
+              </xsd:extension>
+            </xsd:simpleContent>
+          </xsd:complexType>
         </xsd:element>
         <xsd:element name="mailing-address" type="textType">
           <xsd:annotation>
