@@ -3,12 +3,12 @@
 <!--
   Test that transaction-date/@iso-date is now required
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <transaction flow="incoming">
+    <transaction>
       <!-- should fail without @iso-date -->
-      <transaction-date>2010-07-07</transaction-date>
+      <transaction-date></transaction-date>
     </transaction>
   </iati-activity>
 </iati-activities>

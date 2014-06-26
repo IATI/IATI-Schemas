@@ -4,8 +4,8 @@
   Test that schema rejects adding a new element that's not in a
   namespace
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
     <!-- extended element with no namespace -->
     <foo>xxx</foo>

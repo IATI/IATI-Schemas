@@ -1,23 +1,15 @@
 <?xml version="1.0"?>
 
-<iati-activities>
+<iati-activities version="xx">
+  <iati-activity version="xx" default-currency="GBP">
 
-<iati-activity default-currency="GBP">
+    <!-- full example -->
+    <planned-disbursement>
+      <period-start iso-date="2011-01-01" />
+      <period-end iso-date="2011-01-01" />
+      <value value-date="2011-01-01" currency="GBP">500000</value>
+    </planned-disbursement>
 
-<!-- full example -->
-<planned-disbursement updated="2011-03-01">
-  <period-start iso-date="2011-01-01">1 January 2011</period-start>
-  <period-end iso-date="2011-01-01">31 December 2011</period-end>
-  <value value-date="2011-01-01" currency="GBP">500000</value>
-</planned-disbursement>
-
-<!-- with optional attributes omitted -->
-<planned-disbursement>
-  <period-start>1 January 2011</period-start>
-  <period-end>31 December 2011</period-end>
-  <value value-date="2011-01-01">500000</value>
-</planned-disbursement>
-
-</iati-activity>
+  </iati-activity>
 
 </iati-activities>

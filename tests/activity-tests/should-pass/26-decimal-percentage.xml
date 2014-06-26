@@ -1,13 +1,15 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
+    <description>
+      <narrative>xxx</narrative>
+    </description>
     <!-- use a decimal for percentage -->
-    <recipient-country code="XX" percentage="55.5">XX</recipient-country>
-    <recipient-region vocabulary="AA" code="XX" percentage="11.1">XX</recipient-region>
-    <sector code="XX" percentage="70.9999">XX</sector>
-    <location percentage="0.8"/>
+    <recipient-country code="XX" percentage="55.5" />
+    <recipient-region vocabulary="AA" code="XX" percentage="11.1" />
+    <sector code="XX" percentage="70.9999" />
+    <location />
   </iati-activity>
 </iati-activities>

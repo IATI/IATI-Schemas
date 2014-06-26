@@ -1,9 +1,12 @@
 <?xml version="1.0"?>
 
-<iati-activities>
-  <iati-activity>
+
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
-    <description>xxx</description>
-    <activity-scope code="XXX" xml:lang="en">Scope</activity-scope>
+    <description>
+      <narrative>xxxx</narrative>
+    </description>
+    <activity-scope code="XXX" xml:lang="en" />
   </iati-activity>
 </iati-activities>

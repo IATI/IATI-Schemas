@@ -3,10 +3,10 @@
 <!--
   Test that the schema accepts the new code attribute
 -->
-<iati-activities>
-  <iati-activity>
+<iati-activities version="xx">
+  <iati-activity version="xx">
     <iati-identifier>12345</iati-identifier>
     <!-- used to be @ref -->
-    <sector code="123">xxx</sector>
+    <sector code="123" />
   </iati-activity>
 </iati-activities>
