@@ -1884,7 +1884,7 @@
       <xsd:documentation xml:lang="en">
         Specific terms and conditions attached to the activity that,
         if not met, may influence the delivery of commitments made by
-        participationg organisations.
+        participating organisations.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
