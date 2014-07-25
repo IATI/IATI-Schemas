@@ -1405,7 +1405,7 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="level" type="xsd:positiveInteger" use="required">
+            <xsd:attribute name="level" type="xsd:nonNegativeInteger" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                    An integer indicating the hierarchical level being 

@@ -16,7 +16,7 @@
       <activity-description xml:lang="fr">
         <narrative xml:lang="fr">Bonjour</narrative>
       </activity-description>
-      <administrative code="xxxxxx" vocabulary="G2" level="1" />
+      <administrative code="xxxxxx" vocabulary="G2" level="0" />
       <point srsName="">
         <pos>31.616944 65.716944</pos>
       </point>
