@@ -416,7 +416,7 @@
   <xsd:element name="collaboration-type">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The type of collaboration involved in the project's
+        The type of collaboration involved in the activity's
         disbursements, e.g. "bilateral" or "multilateral".
       </xsd:documentation>
     </xsd:annotation>
