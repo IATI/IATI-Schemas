@@ -2089,7 +2089,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="aidtype-flag">
+        <xsd:element name="other-flags">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               This covers the four CRS++ columns titled:
