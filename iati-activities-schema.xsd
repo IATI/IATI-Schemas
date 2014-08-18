@@ -678,6 +678,14 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element name="department" type="textType">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The department within the organisation to contact for more
+              information about the activity.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:element name="person-name" type="textType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
