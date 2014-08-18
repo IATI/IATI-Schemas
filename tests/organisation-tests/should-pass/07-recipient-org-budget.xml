@@ -1,12 +1,18 @@
 <?xml version="1.0"?>
 
 <!-- Test that the schema allows recipient-org-budget with optional ref -->
-<iati-organisation>
-  <iati-identifier>12345</iati-identifier>
-  <recipient-org-budget>
-    <recipient-org>No code</recipient-org>
-    <period-start iso-date="2010-01-01"/>
-    <period-end iso-date="2010-12-31">31 December, 2010</period-end>
-    <value value-date="2010-07-07">100</value>
-  </recipient-org-budget>
-</iati-organisation>
+<iati-organisations version="xx">
+
+  <iati-organisation version="xx">
+    <organisation-identifier>12345</organisation-identifier>
+    <recipient-org-budget>
+      <recipient-org>
+        <narrative>No Code</narrative>
+      </recipient-org>
+      <period-start iso-date="2010-01-01"/>
+      <period-end iso-date="2010-12-31"/>
+      <value value-date="2010-07-07">100</value>
+    </recipient-org-budget>
+  </iati-organisation>
+
+</iati-organisations>

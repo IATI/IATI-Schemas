@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 
-<iati-organisation version="999">
-  <iati-identifier>12345</iati-identifier>
-</iati-organisation>
+<iati-organisations version="xx">
+
+  <iati-organisation version="xx">
+    <organisation-identifier>12345</organisation-identifier>
+  </iati-organisation>
+
+</iati-organisations>
