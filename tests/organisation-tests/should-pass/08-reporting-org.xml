@@ -1,8 +1,13 @@
 <?xml version="1.0"?>
 
-<iati-organisation>
-  <iati-identifier>12345</iati-identifier>
+<iati-organisations version="xx">
 
-  <!-- test the reporting-org is allowed here -->
-  <reporting-org ref="xxx">xxx</reporting-org>
-</iati-organisation>
+  <iati-organisation version="xx">
+    <organisation-identifier>12345</organisation-identifier>
+    <!-- test the reporting-org is allowed here -->
+    <reporting-org type="xx" ref="xxx">
+      <narrative>Name</narrative>
+    </reporting-org>
+  </iati-organisation>
+
+</iati-organisations>
