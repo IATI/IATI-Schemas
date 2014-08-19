@@ -215,7 +215,7 @@
         A globally unique identifier for the activity. This MUST be
         prefixed with the IATI organisation identifier for the
         reporting organisation (reporting-org/@ref) and suffixed with
-        the organisation’s own activity identifier. The prefix and the
+        the organisation's own activity identifier. The prefix and the
         suffix should be separated by a hyphen "-"
       </xsd:documentation>
     </xsd:annotation>
@@ -271,7 +271,7 @@
       <xsd:attribute name="role" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An IATI code describing the organisation’s role in the
+            An IATI code describing the organisation's role in the
             activity (donor, agency, etc.).
           </xsd:documentation>
         </xsd:annotation>
@@ -386,7 +386,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An IATI code for the vocabulary from which the region code
-            is drawn. If it is not present 1 - ‘OECD DAC’ is assumed.
+            is drawn. If it is not present 1 - 'OECD DAC' is assumed.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -453,7 +453,7 @@
       <xsd:documentation xml:lang="en">
         The type of aid being supplied (project-type intervention,
         budget support, debt relief, etc.). This element specifies a
-        default for all the activity’s financial transactions; it can
+        default for all the activity's financial transactions; it can
         be overridden at the individual transaction level.
       </xsd:documentation>
     </xsd:annotation>
@@ -500,7 +500,7 @@
       <xsd:documentation xml:lang="en">
         An alternative, non-IATI identifier for the activity. This
         identifier is not guaranteed to be unique or persistent (it
-        depends on the owner organisation’s policies, not IATI’s). It
+        depends on the owner organisation's policies, not IATI's). It
         is recommended that publishers who also report to the OECD DAC
         Creditor Reporting System place the CRS Id for the activity
         here.
@@ -563,11 +563,11 @@
             It is recommended that OECD DAC 5-digit Purpose Codes are
             used wherever possible. It is also recommended that if a
             publisher has its own classification system then the
-            vocabulary “RO” (“Reporting Organisation’s own
-            vocabulary”) should be used in addition to DAC codes.
+            vocabulary "RO" ("Reporting Organisation's own
+            vocabulary") should be used in addition to DAC codes.
             
             NB that if multiple sector codes are used in multiple
-            vocabularies then each vocabulary’s percentages should add
+            vocabularies then each vocabulary's percentages should add
             up to 100%.
           </xsd:documentation>
         </xsd:annotation>
@@ -759,7 +759,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Whether the aid is untied, tied, or partially tied. This
-        element specifies a default for all the activity’s financial
+        element specifies a default for all the activity's financial
         transactions; it can be overridden at the individual
         transaction level.
         
@@ -1064,12 +1064,12 @@
                   It is recommended that OECD DAC 5-digit Purpose
                   Codes are used wherever possible. It is also
                   recommended that if a publisher has its own
-                  classification system then the vocabulary “RO”
-                  (“Reporting Organisation’s own vocabulary”) should
+                  classification system then the vocabulary "RO"
+                  ("Reporting Organisation's own vocabulary") should
                   be used in addition to DAC codes.
                   
                   NB that if multiple sector codes are used in
-                  multiple vocabularies then each vocabulary’s
+                  multiple vocabularies then each vocabulary's
                   percentages should add up to 100%.
                 </xsd:documentation>
               </xsd:annotation>
@@ -1146,7 +1146,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   An IATI code for the vocabulary from which the region code
-                  is drawn. If it is not present 1 - ‘OECD DAC’ is assumed.
+                  is drawn. If it is not present 1 - 'OECD DAC' is assumed.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1542,7 +1542,7 @@
       <xsd:documentation xml:lang="en">
         This item encodes the alignment of activities with both the
         functional and administrative classifications used in the
-        recipient country’s Chart of Accounts. This applies to both
+        recipient country's Chart of Accounts. This applies to both
         on- and off-budget activities.
       </xsd:documentation>
     </xsd:annotation>
@@ -1624,7 +1624,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         Another separately reported IATI activity that is related to
-        this one. The ‘type’ attribute describes the type of
+        this one. The 'type' attribute describes the type of
         relationship: eg. parent, child, multifunded ... 
       </xsd:documentation>
     </xsd:annotation>
@@ -1931,7 +1931,7 @@
   <xsd:element name="budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The value of the aid activity’s budget for each financial
+        The value of the aid activity's budget for each financial
         quarter or year over the lifetime of the activity. The total
         budget for an activity should be reported as a commitment in
         the transaction element. The purpose of this element is to
@@ -2357,7 +2357,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The exact date when the information was collected or
-            extracted from donors’ aid management systems. (yyyy-mm-dd
+            extracted from donors' aid management systems. (yyyy-mm-dd
             plus [optional] timezone)
           </xsd:documentation>
         </xsd:annotation>
@@ -2416,7 +2416,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ISO 639-1 language code in which target document is
-              written, e.g. “en”. Can be repeated to describe
+              written, e.g. "en". Can be repeated to describe
               multi-lingual documents.
             </xsd:documentation>
           </xsd:annotation>
@@ -2447,7 +2447,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An IANA code for the MIME type of the document being
-            referenced, e.g. “application/pdf”. 
+            referenced, e.g. "application/pdf". 
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
