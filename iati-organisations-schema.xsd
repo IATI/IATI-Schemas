@@ -32,10 +32,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element ref="iati-organisation"/>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
+      <xsd:sequence>
+        <xsd:element ref="iati-organisation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
       <xsd:attribute name="version" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -67,8 +67,8 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element name="organisation-identifier">
+      <xsd:sequence>
+        <xsd:element name="organisation-identifier" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Machine-readable identification string for the
@@ -80,14 +80,14 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element ref="name"/>
-        <xsd:element ref="reporting-org"/>
-        <xsd:element ref="total-budget"/>
-        <xsd:element ref="recipient-org-budget"/>
-        <xsd:element ref="recipient-country-budget"/>
-        <xsd:element ref="document-link"/>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
+        <xsd:element ref="name" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="reporting-org" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="total-budget" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="recipient-org-budget" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="recipient-country-budget" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -128,10 +128,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element ref="narrative" />
+      <xsd:sequence>
+        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:choice>
+      </xsd:sequence>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -146,8 +146,8 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="period-start">
+      <xsd:sequence>
+        <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The start of the budget period.
@@ -167,7 +167,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end">
+        <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The end of the period (which must not be greater than one year)
@@ -187,7 +187,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="value" type="currencyType">
+        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The total value of the organisation's aid budget for
@@ -195,7 +195,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="budget-line">
+        <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the total budget into sub-totals. The
@@ -206,8 +206,8 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:element name="value" type="currencyType">
+            <xsd:sequence>
+              <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The budget sub-total. The definiton of the
@@ -216,9 +216,9 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element ref="narrative" />
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:choice>
+            </xsd:sequence>
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -231,8 +231,8 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -244,16 +244,16 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-org">
+      <xsd:sequence>
+        <xsd:element name="recipient-org" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation that will receive the funds.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:element ref="narrative">
+            <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The name of the organisation. This can be repeated in multiple languages.
@@ -261,7 +261,7 @@
                 </xsd:annotation>
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:choice>
+            </xsd:sequence>
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -277,7 +277,7 @@
             </xsd:attribute>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-start">
+        <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The start of the budget period.
@@ -297,7 +297,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end">
+        <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The end of the period (which must not be greater than one year)
@@ -317,7 +317,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="value" type="currencyType">
+        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The total value of the money budgeted to be disbused to
@@ -326,7 +326,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="budget-line">
+        <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the recipient organisation's budget into
@@ -337,8 +337,8 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:element name="value" type="currencyType">
+            <xsd:sequence>
+              <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The budget sub-total. The definiton of the
@@ -347,9 +347,9 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element ref="narrative" />
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:choice>
+            </xsd:sequence>
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -362,8 +362,8 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
 
@@ -381,8 +381,8 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element name="recipient-country">
+      <xsd:sequence>
+        <xsd:element name="recipient-country" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The recipient country.
@@ -402,7 +402,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-start">
+        <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The start of the budget period.
@@ -422,7 +422,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end">
+        <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The end of the period (which must not be greater than one year)
@@ -442,7 +442,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="value" type="currencyType">
+        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The total value of the money budgeted to be disbused to
@@ -451,7 +451,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="budget-line">
+        <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the recipient country's budget into
@@ -462,8 +462,8 @@
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
-            <xsd:choice minOccurs="0" maxOccurs="unbounded">
-              <xsd:element name="value" type="currencyType">
+            <xsd:sequence>
+              <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The budget sub-total. The definiton of the
@@ -472,9 +472,9 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element ref="narrative" />
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:choice>
+            </xsd:sequence>
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -487,8 +487,8 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
     </xsd:complexType>
   </xsd:element>
 
@@ -500,9 +500,9 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="1" maxOccurs="unbounded">
-        <xsd:element ref="title"/>
-        <xsd:element name="category">
+      <xsd:sequence>
+        <xsd:element ref="title" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element name="category" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               IATI Document Category Code
@@ -522,7 +522,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="language">
+        <xsd:element name="language" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ISO 639-1 language code in which target document is
@@ -544,7 +544,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="recipient-country">
+        <xsd:element name="recipient-country" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The recipient country that is the focus of the document.
@@ -565,8 +565,8 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:any namespace="##other" processContents="lax"/>
-      </xsd:choice>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
       <xsd:attribute name="url" type="xsd:anyURI" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">

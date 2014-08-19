@@ -2,14 +2,15 @@
 
 <iati-activities version="xx">
   <iati-activity>
+    <iati-identifier>12345</iati-identifier>
     
     <!-- 2.01 ammendments -->
     <location>
+      <location-reach code="xx"></location-reach>
+      <location-id vocabulary="xx" code="xx"></location-id>
       <name>
         <narrative>Kandahar</narrative>
       </name>
-      <location-reach code="xx"></location-reach>
-      <location-id vocabulary="xx" code="xx"></location-id>
       <description>
         <narrative>West end of Kandahar-Kabul highway</narrative>
       </description>

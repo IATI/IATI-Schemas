@@ -2,6 +2,7 @@
 
 <iati-activities version="xx">
   <iati-activity>
+    <iati-identifier>12345</iati-identifier>
 
     <conditions attached="true">
       <condition type="X">

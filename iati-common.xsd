@@ -62,10 +62,10 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
+      <xsd:sequence>
         <xsd:element ref="narrative" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:choice>
+      </xsd:sequence>
       <xsd:attribute name="type" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -103,8 +103,8 @@
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:choice minOccurs="0" maxOccurs="unbounded">
-        <xsd:element ref="narrative">
+      <xsd:sequence>
+        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the organisation. May be repeated for
@@ -113,7 +113,7 @@
           </xsd:annotation>
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:choice>
+      </xsd:sequence>
       <xsd:attribute name="ref" use="required" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -215,10 +215,10 @@
         in different languages.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:choice minOccurs="0" maxOccurs="unbounded">
-      <xsd:element ref="narrative" />
+    <xsd:sequence>
+      <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:choice>
+    </xsd:sequence>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
@@ -275,10 +275,10 @@
         reference is required.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:choice minOccurs="0" maxOccurs="unbounded">
-      <xsd:element ref="narrative" />
+    <xsd:sequence>
+      <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:choice>
+    </xsd:sequence>
     <xsd:attribute ref="ref" use="required"/>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>

@@ -5,12 +5,12 @@
   <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
     <document-link url="http://www.example.org/" format="text/html">
-      <language code="en"/>
-      <category code="XXX"/>
-      <category code="YYY"/>
       <title>
         <narrative>Document title</narrative>
       </title>
+      <category code="XXX"/>
+      <category code="YYY"/>
+      <language code="en"/>
     </document-link>
   </iati-organisation>
 

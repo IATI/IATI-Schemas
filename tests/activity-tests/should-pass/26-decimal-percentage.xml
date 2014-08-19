@@ -9,7 +9,7 @@
     <!-- use a decimal for percentage -->
     <recipient-country code="XX" percentage="55.5" />
     <recipient-region vocabulary="AA" code="XX" percentage="11.1" />
-    <sector code="XX" percentage="70.9999" />
     <location />
+    <sector code="XX" percentage="70.9999" />
   </iati-activity>
 </iati-activities>

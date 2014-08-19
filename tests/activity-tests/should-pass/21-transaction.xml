@@ -7,23 +7,23 @@
   <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <transaction ref="X">
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07">
+        <narrative>7 July 2010</narrative>
+      </transaction-date>
       <value currency="EUR" value-date="2010-07-07">100</value>
       <description xml:lang="en">
         <narrative>X</narrative>
       </description>
-      <transaction-type code="X" />
       <provider-org xml:lang="en" ref="X" provider-activity-id="X">
         <narrative>X</narrative>
       </provider-org>
       <receiver-org xml:lang="en" ref="X" receiver-activity-id="X">
         <narrative>X</narrative>
       </receiver-org>
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
       <flow-type xml:lang="en" code="X" />
-      <aid-type xml:lang="en" code="X" />
       <finance-type xml:lang="en" code="X" />
+      <aid-type xml:lang="en" code="X" />
       <tied-status xml:lang="en" code="X" />
       <disbursement-channel xml:lang="en" code="X" />
     </transaction>

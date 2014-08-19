@@ -3,20 +3,9 @@
 <!-- every place @type is allowed -->
 <iati-activities version="xx">
   <iati-activity>
-
     <reporting-org ref="X" type="X" secondary-reporter="0">
       <narrative>xx</narrative>
     </reporting-org>
-    <participating-org type="X" role="X">
-      <narrative>xx</narrative>
-    </participating-org>
-    <description type="X">
-      <narrative>xx</narrative>
-    </description>
-    <activity-date iso-date="2001-01-01" type="X"/>
-    <related-activity ref="X" type="Y"/>
-    <result type="X"/>
-
 
     <reporting-org ref="X" type="X" secondary-reporter="true">
       <narrative>xx</narrative>
@@ -27,6 +16,18 @@
     <reporting-org ref="X" type="X" secondary-reporter="1">
       <narrative>xx</narrative>
     </reporting-org>
+
+    <participating-org type="X" role="X">
+      <narrative>xx</narrative>
+    </participating-org>
+    <iati-identifier>12345</iati-identifier>
+    <description type="X">
+      <narrative>xx</narrative>
+    </description>
+    <activity-date iso-date="2001-01-01" type="X"/>
+    <related-activity ref="X" type="Y"/>
+    <result type="X"/>
+
 
     <!--
     TODO:

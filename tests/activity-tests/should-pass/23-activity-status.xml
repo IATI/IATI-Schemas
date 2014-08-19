@@ -2,6 +2,7 @@
 
 <iati-activities version="xx">
   <iati-activity>
+    <iati-identifier>12345</iati-identifier>
 
     <!-- full version -->
     <activity-status xml:lang="en" code="X" />
