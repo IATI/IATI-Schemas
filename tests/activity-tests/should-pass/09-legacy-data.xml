@@ -4,7 +4,7 @@
   Test new legacy-data element
 -->
 <iati-activities version="xx">
-  <iati-activity version="xx">
+  <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <legacy-data name="foo" value="xxx" />
   </iati-activity>

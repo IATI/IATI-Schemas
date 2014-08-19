@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity version="xx" default-currency="GBP">
+  <iati-activity default-currency="GBP">
 
     <!-- full example -->
     <planned-disbursement>

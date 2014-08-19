@@ -2,7 +2,7 @@
 
 <iati-organisations version="xx">
 
-  <iati-organisation version="xx">
+  <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
     <document-link url="http://www.example.org/" format="text/html">
       <language code="en"/>

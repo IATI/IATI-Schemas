@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
-
+<!-- In version 2.01 the iati-activity@version was removed -->
 <iati-activities version="xx">
-  <iati-activity>
+  <iati-activity version="xx">
     <description>
       <narrative>xxx</narrative>
     </description>

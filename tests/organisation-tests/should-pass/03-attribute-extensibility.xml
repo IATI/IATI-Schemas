@@ -3,7 +3,7 @@
 <!-- Test that the schema accepts extended attributes in an XML namespace -->
 <iati-organisations version="xx">
 
-  <iati-organisation version="xx">
+  <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
     <!-- @foo allowed, since it's in a namespace -->
     <name xmlns:x="http://www.example.org" x:foo="yyy"/>

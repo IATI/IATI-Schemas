@@ -155,15 +155,6 @@
         <xsd:element ref="fss"/>
         <xsd:any namespace="##other" processContents="lax"/>
       </xsd:choice>
-      <xsd:attribute name="version" type="xsd:string" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            A number indicating the IATI specification version in use.
-            This must be a valid version. All versions in a single
-            file MUST be the same.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">

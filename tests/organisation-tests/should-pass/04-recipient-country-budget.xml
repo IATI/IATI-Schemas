@@ -3,7 +3,7 @@
 <!-- Test that the schema allows recipient-country-budget -->
 <iati-organisations version="xx">
 
-  <iati-organisation version="xx">
+  <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
     <recipient-country-budget>
       <recipient-country code="xxx"/>

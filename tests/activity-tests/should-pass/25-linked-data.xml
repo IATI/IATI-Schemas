@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx" linked-data-default="string">
-  <iati-activity version="xx" linked-data-uri="string">
+  <iati-activity linked-data-uri="string">
     <iati-identifier>12345</iati-identifier>
     <description>
       <narrative>xxx</narrative>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity version="xx">
+  <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <!-- add a new element from a namespace -->
     <description xmlns:x="http://www.example.org/">

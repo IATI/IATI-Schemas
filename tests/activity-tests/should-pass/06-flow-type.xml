@@ -4,7 +4,7 @@
   Test that flow-type allowed inside a transaction.
 -->
 <iati-activities version="xx">
-  <iati-activity version="xx">
+  <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <!-- used to be flow-type -->
     <default-flow-type code="XX" />

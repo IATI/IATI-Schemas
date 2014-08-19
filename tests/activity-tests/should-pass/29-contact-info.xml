@@ -5,7 +5,7 @@ However this is NOT invalid against the xsd
 -->
 
 <iati-activities version="xx">
-  <iati-activity version="xx">
+  <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <description>
       <narrative>xxx</narrative>

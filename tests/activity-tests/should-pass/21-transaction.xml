@@ -4,7 +4,7 @@
   Test full transaction markup
 -->
 <iati-activities version="xx">
-  <iati-activity version="xx">
+  <iati-activity>
     <iati-identifier>12345</iati-identifier>
     <transaction ref="X">
       <value currency="EUR" value-date="2010-07-07">100</value>
