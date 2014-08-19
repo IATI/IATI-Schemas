@@ -146,45 +146,6 @@
       Frequently-used attributes.
   -->
 
-  <xsd:attribute name="code" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Machine readable code for the entity being described. The value should
-        be available on a related codelist.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-
-  <xsd:attribute name="ref" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Machine-readable identification string for the business
-        object being described.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-
-  <xsd:attribute name="type" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A machine readable code describing the type of thing being referenced.
-        The value should be available on a related codelist.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-
-  <xsd:attribute name="percentage" type="xsd:decimal">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The percentage of the budget allocated to this item.  Content
-        must be a positive decimal number between 0 and 100, with no
-        percentage sign. In version 1.03 of the IATI Standard this
-        value became designated as a decimal value and no longer 
-        as a positive integer.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-
   <xsd:attribute name="value-date" type="xsd:date">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -198,16 +159,6 @@
       Common attribute groups and data types used by the elements above.
   -->
 
-  <xsd:complexType name="plainType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Plain text content with no special attributes (e.g. xml:lang),
-        though extended attributes are still allowed.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
   <xsd:complexType name="textType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -220,105 +171,6 @@
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-  <xsd:complexType name="codeType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Data type for an element that refers to an object that can
-        have a code as well as human-readable text in different
-        languages (e.g. a country or status).
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute ref="code" use="optional"/>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-  <xsd:complexType name="codeReqType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Data type for an element that refers to an object that must
-        have a code.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute ref="code" use="required"/>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-  <xsd:complexType name="refType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Data type for an element that refers to a business object that
-        can have unique identifier as well as human-readable text in
-        different languages (e.g. an organisation).
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute ref="ref" use="optional"/>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-  <xsd:complexType name="refReqType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Data type for an element that refers to a business object that
-        can have unique identifier as well as human-readable text in
-        different languages (e.g. an organisation), where the identifier
-        reference is required.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute ref="ref" use="required"/>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-  <xsd:complexType name="dateType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A date.  The ISO 8601 date goes into the @iso-date attribute.
-        The content may be free-form text.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute name="iso-date" type="xsd:date" use="optional">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          The ISO 8601 date.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-  </xsd:complexType>
-
-  <xsd:complexType name="dateReqType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A date.  The ISO 8601 date goes into the @iso-date attribute.
-        The content may be free-form text.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:sequence>
-      <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute name="iso-date" type="xsd:date" use="required">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          The ISO 8601 date.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
   </xsd:complexType>
 
 </xsd:schema>

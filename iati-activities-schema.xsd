@@ -333,7 +333,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute ref="percentage" use="optional">
+      <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of total commitments allocated to this
@@ -390,7 +390,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute ref="percentage" use="optional">
+      <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of total commitments allocated to this
@@ -579,7 +579,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute ref="percentage" use="optional">
+      <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the budget allocated to this item.
@@ -1150,7 +1150,7 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute ref="percentage" use="optional">
+            <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The percentage of total commitments allocated to this
@@ -1592,7 +1592,7 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute ref="percentage" use="optional">
+            <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The percentage of the budget allocated to this item.
