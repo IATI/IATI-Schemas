@@ -1,4 +1,8 @@
 <?xml version="1.0"?>
+<!-- NOTE: The use of language on parent elements of narrative is not
+as the standard intends. They should be on the narrative elements.
+However this is NOT invalid against the xsd
+-->
 
 <iati-activities version="xx">
   <iati-activity> <!-- 1 and only 1-->
@@ -14,5 +18,28 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- 1 and only 1--> <!--Narative allowed-->
+
+    <contact-info type="xxx">
+      <organisation>
+        <narrative>XXX</narrative>
+      </organisation>
+      <department>
+        <narrative>XXX</narrative>
+      </department>
+      <person-name>
+        <narrative>XXX</narrative>
+      </person-name>
+      <job-title>
+        <narrative>YYY</narrative>
+      </job-title>
+      <telephone>123-456-789</telephone>
+      <email>XXX@example.org</email>
+      <website>http://www.example.org</website>
+      <mailing-address>
+
+      </mailing-address>
+    </contact-info>
+    
+    
   </iati-activity>
 </iati-activities>

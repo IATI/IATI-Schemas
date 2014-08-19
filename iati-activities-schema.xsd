@@ -33,7 +33,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="iati-activity" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="iati-activity" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="version" type="xsd:string" use="required">
@@ -89,11 +89,11 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="reporting-org" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="participating-org" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="iati-identifier" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="reporting-org" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="participating-org" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="iati-identifier" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="other-identifier" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element name="title" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="title" type="textType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A short, human-readable title that contains a meaningful
@@ -102,7 +102,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="description" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A longer, human-readable description containing a
@@ -112,7 +112,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+              <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="type" use="optional" type="xsd:string">
@@ -127,8 +127,8 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element ref="activity-status" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="activity-date" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="activity-status" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="activity-date" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:element ref="contact-info" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="activity-scope" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-country" minOccurs="0" maxOccurs="unbounded"/>
@@ -661,7 +661,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="organisation" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="organisation" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the organisation to contact for more
@@ -669,7 +669,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="department" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="department" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The department within the organisation to contact for more
@@ -677,14 +677,14 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="person-name" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="person-name" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the contact person for the activity.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="job-title" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="job-title" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The job title of the contact person at the organisation.
@@ -735,7 +735,7 @@
             </xsd:simpleContent>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="mailing-address" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="mailing-address" type="textRequiredType" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact mailing address.
@@ -1298,7 +1298,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="location-reach" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-reach" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Does this location describe where the activity takes
@@ -1350,14 +1350,14 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="name" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="name" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The human-readable name for the location.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description that qualifies the location, not the 
@@ -1365,7 +1365,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="activity-description" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="activity-description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description that qualifies the activity taking place at 
@@ -1417,7 +1417,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="point" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="point" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The point element is based on a subset of the GML 3.3 Point
@@ -1426,7 +1426,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="pos" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="pos" type="xsd:string" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The latitude and longitude coordinates in the 
@@ -1450,7 +1450,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="exactness" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="exactness" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Defines whether the location represents the most 
@@ -1475,7 +1475,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="location-class" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-class" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Whether the location refers to a structure, a populated 
@@ -1500,7 +1500,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="feature-designation" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="feature-designation" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                A more refined coded classification of the type of 

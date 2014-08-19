@@ -1,7 +1,9 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-    <iati-activity> <!-- 1 and only 1-->
+  <iati-activity> <!-- 1 and only 1-->
+  <!-- 2 reporting-orgs is wrong -->
+    <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
     <participating-org role="xx"></participating-org> <!-- At least 1-->
     <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
@@ -12,10 +14,5 @@
     <description>
       <narrative>Xxxxxxx</narrative> <!-- At least 1-->
     </description>
-    
-    <!-- add a new top-level element from a namespace MUST come after
-    all the other elements in 2.01-->
-    <x:foo xmlns:x="http://www.example.org/">yyy</x:foo>
-    
   </iati-activity>
 </iati-activities>

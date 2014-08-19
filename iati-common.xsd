@@ -172,5 +172,19 @@
     </xsd:sequence>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
+  
+  <xsd:complexType name="textRequiredType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element that must contain human-readable text.
+        The information may be repeated in different languages.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
 </xsd:schema>

@@ -14,5 +14,31 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- 1 and only 1--> <!--Narative allowed-->
+
+    <contact-info type="xxx">
+      <organisation>
+        <narrative>XXX</narrative>
+      </organisation>
+      <department>
+        <narrative>XXX</narrative>
+      </department>
+      <person-name>
+        <narrative>XXX</narrative>
+      </person-name>
+      <job-title>
+        <narrative>YYY</narrative>
+      </job-title>
+      <telephone>123-456-789</telephone>
+      <email>XXX@example.org</email>
+      <website>http://www.example.org</website>
+      <mailing-address>
+        <narrative>
+        123 Street St.
+        Somewhere, UK
+        </narrative>
+      </mailing-address>
+    </contact-info>
+    
+    
   </iati-activity>
 </iati-activities>
