@@ -93,7 +93,7 @@
         <xsd:element ref="participating-org" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:element ref="iati-identifier" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="other-identifier" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element name="title" type="textType" minOccurs="1" maxOccurs="1">
+        <xsd:element name="title" type="textRequiredType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A short, human-readable title that contains a meaningful
