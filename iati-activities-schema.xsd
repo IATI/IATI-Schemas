@@ -1527,8 +1527,8 @@
       <xsd:attribute name="ref" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An internal reference that uniquely describes the location 
-            in the reporting organisation's own system.
+            An internal reference that describes the location in the
+            reporting organisation's own system.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>

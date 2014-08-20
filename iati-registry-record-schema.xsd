@@ -3,7 +3,7 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:ir="http://iatiregistry.org/ns/record#"
             targetNamespace="http://iatiregistry.org/ns/record#"
-            version="1.03">
+            version="1.04">
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
