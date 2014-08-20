@@ -1491,8 +1491,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the Location Class codelist (maintained
-                   by the US National Geospatial-Intelligence Agency)
+                   A code from the Location Class codelist
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
