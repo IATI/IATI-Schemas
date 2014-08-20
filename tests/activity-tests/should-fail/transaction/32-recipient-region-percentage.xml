@@ -1,6 +1,8 @@
 <?xml version="1.0"?>
 
-
+<!--
+  Test full transaction markup
+-->
 <iati-activities version="xx">
   <iati-activity> <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
@@ -15,8 +17,18 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- 1 and only 1--> <!--Narative allowed-->
-    
-    <capital-spend percentage="88.8"/>
+
+    <transaction ref="X"> <!-- with sector, country and regions -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07">
+        <narrative>7 July 2010</narrative>
+      </transaction-date>
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      
+      <recipient-region code="x" percentage="33.3" /> <!-- should not have percentage? -->
+
+    </transaction>
+
     
   </iati-activity>
 </iati-activities>

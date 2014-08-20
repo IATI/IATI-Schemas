@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <iati-activities version="xx">
   <iati-activity> <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
@@ -15,8 +14,15 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- 1 and only 1--> <!--Narative allowed-->
-    
-    <capital-spend percentage="88.8"/>
+
+    <!-- complete -->
+    <planned-disbursement>
+      <period-start iso-date="2011-01-01" />
+      <period-start iso-date="2011-01-01" />
+      <period-end iso-date="2011-12-31" />
+      <value value-date="2011-01-01" currency="GBP">1000000</value>
+    </planned-disbursement>
     
   </iati-activity>
+
 </iati-activities>

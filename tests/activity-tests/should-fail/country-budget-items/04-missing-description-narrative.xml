@@ -2,7 +2,7 @@
 
 
 <iati-activities version="xx">
-  <iati-activity> <!-- 1 and only 1-->
+    <iati-activity> <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
     <participating-org role="xx"></participating-org> <!-- At least 1-->
     <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
@@ -16,7 +16,13 @@
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- 1 and only 1--> <!--Narative allowed-->
     
-    <capital-spend percentage="88.8"/>
     
+    <country-budget-items vocabulary="XXX">
+      <budget-item code="XXX" percentage="100">
+        <description>
+          
+        </description>
+      </budget-item>
+    </country-budget-items>
   </iati-activity>
 </iati-activities>

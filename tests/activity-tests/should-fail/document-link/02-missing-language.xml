@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
 
-
 <iati-activities version="xx">
   <iati-activity> <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
@@ -16,7 +15,15 @@
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- 1 and only 1--> <!--Narative allowed-->
     
-    <capital-spend percentage="88.8"/>
+    
+    <!-- new element -->
+    <document-link url="http://www.example.org/" format="text/html">
+      <title>
+        <narrative>Document link</narrative>
+      </title>
+      <category code="XXX" />
+      <!--<language code="en" />-->
+    </document-link>
     
   </iati-activity>
 </iati-activities>
