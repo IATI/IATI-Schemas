@@ -1,5 +1,6 @@
 <?xml version="1.0"?>
 
+
 <iati-activities version="xx">
   <iati-activity> <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
@@ -14,11 +15,17 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
-    
-    <!-- use a decimal for percentage -->
-    <recipient-country code="XX" percentage="55.5" />
-    <recipient-region vocabulary="AA" code="XX" percentage="11.1" />
-    <location />
-    <sector code="XX" percentage="70.9999" />
+
+    <conditions attached="1">
+      <condition type="1">
+        <narrative>[some text here]</narrative>
+      </condition>
+    </conditions> 
+    <conditions attached="1">
+      <condition type="1">
+        <narrative>[some text here]</narrative>
+      </condition>
+    </conditions> 
+
   </iati-activity>
 </iati-activities>

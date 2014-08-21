@@ -14,11 +14,12 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+
+    <fss extraction-date="2013-05-31" priority="true" phaseout-year="2016">
+      <forecast year="2014" value-date="2013-07-03" currency="GBP">10000</forecast>
+      <forecast year="2015" currency="GBP">20000</forecast>
+      <forecast year="2015">20000</forecast>
+    </fss>
     
-    <!-- use a decimal for percentage -->
-    <recipient-country code="XX" percentage="55.5" />
-    <recipient-region vocabulary="AA" code="XX" percentage="11.1" />
-    <location />
-    <sector code="XX" percentage="70.9999" />
   </iati-activity>
 </iati-activities>

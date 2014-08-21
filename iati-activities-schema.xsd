@@ -149,10 +149,10 @@
         <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="related-activity" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="legacy-data" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="conditions" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="conditions" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="result" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="crs-add" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="fss" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="fss" minOccurs="0" maxOccurs="1"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
@@ -1698,9 +1698,9 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="title" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element name="indicator" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="indicator" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The indicator(s) that meet the results. There can be
@@ -1709,9 +1709,9 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="title" minOccurs="0" maxOccurs="unbounded"/>
-              <xsd:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
-              <xsd:element name="baseline" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+              <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+              <xsd:element name="baseline" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The baseline value for the indicator
@@ -1719,7 +1719,7 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
                   <xsd:attribute name="year" type="xsd:positiveInteger" use="required">
@@ -1749,7 +1749,7 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="period-start" minOccurs="1" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The start of the reporting period.
@@ -1769,7 +1769,7 @@
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="period-end" minOccurs="1" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The end of the reporting period.
@@ -1789,7 +1789,7 @@
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="target" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="target" minOccurs="0" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The target milestone for this period
@@ -1797,7 +1797,7 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
-                          <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+                          <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="required">
@@ -1809,7 +1809,7 @@
                         </xsd:attribute>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="actual" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="actual" minOccurs="0" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           A record of the achieved result for this period.
@@ -1817,7 +1817,7 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
-                          <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+                          <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="required">
@@ -1900,7 +1900,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+              <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="type" use="required" type="xsd:string">

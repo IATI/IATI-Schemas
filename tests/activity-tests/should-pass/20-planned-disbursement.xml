@@ -19,7 +19,7 @@
     <planned-disbursement>
       <period-start iso-date="2011-01-01" />
       <period-end iso-date="2011-01-01" />
-      <value value-date="2011-01-01" currency="GBP">500000</value>
+      <value value-date="2011-01-01" currency="GBP">500000.99</value>
     </planned-disbursement>
     <planned-disbursement>
       <period-start iso-date="2011-01-01" />

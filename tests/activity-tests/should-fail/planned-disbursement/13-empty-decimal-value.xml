@@ -14,11 +14,14 @@
     </description>
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+
+    <!-- complete -->
+    <planned-disbursement>
+      <!--<period-start iso-date="2011-01-01" /> -->
+      <period-end iso-date="2011-12-31" />
+      <value value-date="2011-01-01" currency="GBP"></value>
+    </planned-disbursement>
     
-    <!-- use a decimal for percentage -->
-    <recipient-country code="XX" percentage="55.5" />
-    <recipient-region vocabulary="AA" code="XX" percentage="11.1" />
-    <location />
-    <sector code="XX" percentage="70.9999" />
   </iati-activity>
+
 </iati-activities>
