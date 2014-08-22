@@ -1,11 +1,22 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity>
-    <iati-identifier>12345</iati-identifier>
-
-    <!-- full version -->
+  <iati-activity> <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    
+        <!-- full version -->
     <activity-status xml:lang="en" code="X" />
+    
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
 
 
   </iati-activity>
