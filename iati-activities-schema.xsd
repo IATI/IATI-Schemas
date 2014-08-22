@@ -151,7 +151,7 @@
         <xsd:element ref="legacy-data" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="conditions" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="result" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="crs-add" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="crs-add" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="fss" minOccurs="0" maxOccurs="1"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
@@ -2119,7 +2119,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="loan-terms" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="loan-terms" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Loan repayment terms and interest rates
@@ -2127,7 +2127,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="repayment-type" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-type" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The type of loan repayment
@@ -2148,7 +2148,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-plan" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-plan" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Number of repayments per annum. 
@@ -2169,7 +2169,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="commitment-date" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="commitment-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The CRS++ reported commitment date
@@ -2189,7 +2189,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-first-date" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-first-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     First Repayment Date. The date must be in ISO
@@ -2210,7 +2210,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-final-date" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-final-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Final Repayment Date. The date must be in ISO
@@ -2258,7 +2258,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="loan-status" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="loan-status" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The status of loan and interest repayments for the most
@@ -2267,14 +2267,14 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="interest-received" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="interest-received" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Interest received during the reporting year
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="principal-outstanding" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="principal-outstanding" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The amount of principal owed on the loan at the
@@ -2282,7 +2282,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="principal-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="principal-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Arrears of principal at the end of the
@@ -2290,7 +2290,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="interest-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="interest-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Arrears of interest at the end of the year

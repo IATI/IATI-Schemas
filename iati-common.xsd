@@ -77,7 +77,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="comment" type="textType">
+  <xsd:element name="comment" type="textRequiredType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         A human-readable comment associated with a piece of aid information.

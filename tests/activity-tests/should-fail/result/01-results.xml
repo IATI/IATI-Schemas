@@ -27,18 +27,6 @@
       </indicator>
     </result>
     
-    <!-- minimum with alternative boolean-->
-    <result type="output" aggregation-status="0">
-      <title>
-        <narrative>Treatment: timely detection and quality treatment of cases</narrative>
-      </title>
-      <indicator measure="Unit" ascending="1">
-        <title>
-          <narrative>Number of new smear positive cases detected under DOTS. (Case detection rate under DOTS)</narrative>
-        </title>
-      </indicator>
-    </result>
-    
     <!-- everything -->   
     <result type="output" aggregation-status="false">
       <title>                                         <!-- Must have a title --> <!-- 1 and only 1-->
