@@ -1567,6 +1567,12 @@
   <xsd:element name="planned-disbursement">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
+        The planned disbursement element should only be used to report
+        specific planned cash transfers. These should be reported for
+        a specific date or a meaningfully predictable period. These
+        transactions should be reported in addition to budgets - which
+        are typically annual breakdowns of the total activity
+        commitment.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
