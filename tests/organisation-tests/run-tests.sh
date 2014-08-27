@@ -24,7 +24,7 @@ function pass {
     echo $1
 }
 
-for f in should-fail/*.xml; do
+for f in $(find should-fail -name '*.xml' | sort); do
     xmllint -noout --schema $SCHEMA $f >/dev/null 2>&1
     if [ $? -eq 0 ]; then
         fail $f
@@ -34,7 +34,7 @@ for f in should-fail/*.xml; do
     fi
 done
 
-for f in should-pass/*.xml; do
+for f in $(find should-pass -name '*.xml' | sort); do
     xmllint -noout --schema $SCHEMA $f >/dev/null 2>&1
     if [ $? -eq 0 ]; then
         pass $f

@@ -104,7 +104,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the organisation. May be repeated for

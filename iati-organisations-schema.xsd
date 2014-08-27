@@ -33,7 +33,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="iati-organisation" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="iati-organisation" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="version" type="xsd:string" use="required">
@@ -68,7 +68,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="organisation-identifier" minOccurs="1" maxOccurs="unbounded">
+        <xsd:element name="organisation-identifier" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Machine-readable identification string for the
@@ -80,8 +80,8 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element ref="name" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="reporting-org" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="name" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="reporting-org" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="total-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-org-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-country-budget" minOccurs="0" maxOccurs="unbounded"/>
@@ -129,7 +129,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+        <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
