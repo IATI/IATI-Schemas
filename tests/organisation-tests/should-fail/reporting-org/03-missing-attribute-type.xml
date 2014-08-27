@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation>
+    <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org ref="ED-thry-45" />
+  </iati-organisation>
+
+</iati-organisations>

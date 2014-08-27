@@ -6,7 +6,7 @@
 <iati-activities version="xx">
   <!-- new @hierarchy attribute -->
   <iati-activity hierarchy="0"> <!-- 1 and only 1-->
-    <reporting-org type="xx" ref="xx"></reporting-org> <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
     <participating-org role="xx"></participating-org> <!-- At least 1-->
     <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
     <!--<other-identifier></other-identifier>-->

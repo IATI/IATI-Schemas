@@ -1,10 +1,16 @@
 <?xml version="1.0"?>
 
 <!-- requires date and time, not just date -->
-<iati-organisations generated-datetime="2011-06-01">
+<iati-organisations version="xx" generated-datetime="2011-06-01">
 
-<iati-organisation>
-  <iati-identifier>12345</iati-identifier>
-</iati-organisation>
+  <iati-organisation>
+    <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+  </iati-organisation>
 
 </iati-organisations>
