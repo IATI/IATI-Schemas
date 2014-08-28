@@ -11,24 +11,21 @@
       <narrative>Organisation name</narrative>
     </reporting-org>
 
-    <recipient-country-budget>
-      <recipient-country code="xxx"/> <!-- optional-->
+    <total-budget> <!-- optional-->
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
       <value value-date="2011-01-01">10000.11</value> <!-- must have 1 and only 1 -->
-    </recipient-country-budget>
+    </total-budget>
     
     <!-- with all additional attributes -->
-    <recipient-country-budget>
-      <recipient-country code="xxx"/>
+    <total-budget>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
       <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
-    </recipient-country-budget>
+    </total-budget>
     
     <!-- with budget-line minimal-->
-    <recipient-country-budget>
-      <recipient-country code="xxx"/>
+    <total-budget>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
       <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
@@ -39,11 +36,10 @@
           Some text
         </narrative>
       </budget-line>
-    </recipient-country-budget>
+    </total-budget>
     
         <!-- with budget-line all values-->
-    <recipient-country-budget>
-      <recipient-country code="xxx"/>
+    <total-budget>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
       <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
@@ -67,7 +63,7 @@
           Some text
         </narrative>
       </budget-line>
-    </recipient-country-budget>
+    </total-budget>
     
   </iati-organisation>
 

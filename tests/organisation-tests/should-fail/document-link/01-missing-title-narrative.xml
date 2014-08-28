@@ -11,26 +11,14 @@
       <narrative>Organisation name</narrative>
     </reporting-org>
     
-    <!--minimal example-->
     <document-link url="http://www.example.org/" format="text/html">
       <title> 
         <!--<narrative>Document title</narrative>--> <!-- should be at least 1 --> <!--but currently this passes -->
       </title>
+
       <category code="XXX"/>
+
     </document-link>
-    
-    <!-- full example -->
-    <document-link url="http://www.example.org/" format="text/html">
-      <title> 
-        <narrative>Document title</narrative>
-        <narrative xml:lang="fr">Document title</narrative>
-      </title>
-      <category code="XXX"/>
-      <language code="en"/>
-      <recipient-country code="xX"></recipient-country>
-      <recipient-country code="xX"></recipient-country>
-    </document-link>
-    
   </iati-organisation>
 
 </iati-organisations>
