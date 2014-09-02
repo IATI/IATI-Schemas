@@ -70,7 +70,7 @@
         <narrative>yyyyy</narrative>
       </sector>
       <recipient-country code="xx" />	
-      <recipient-region vocabulary="xx" code="xx" percentage="33.3" />	
+      <recipient-region vocabulary="xx" code="xx" />	
       <flow-type xml:lang="en" code="X" />
       <finance-type xml:lang="en" code="X" />
       <aid-type xml:lang="en" code="X" />
