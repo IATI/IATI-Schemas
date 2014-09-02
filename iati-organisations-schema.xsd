@@ -139,9 +139,9 @@
   <xsd:element name="total-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The total-budget element allows for the reporting of the organisation’s 
+        The total-budget element allows for the reporting of the organisation's 
         own budget. The recommendation is that, where and when possible, the 
-        organisation’s total annual planned budget for each of the next three 
+        organisation's total annual planned budget for each of the next three 
         years is reported.
       </xsd:documentation>
     </xsd:annotation>
@@ -373,10 +373,10 @@
         The recipient-country-budget element allows for the reporting of 
         forward looking budgets for each country in which the organisation 
         operates. The recommendation is that, where and when possible, the 
-        organisation’s total annual planned budget for each of the next 
+        organisation's total annual planned budget for each of the next 
         three financial years is reported for each recipient country. 
         It is strongly recommended that the start and end of the reported 
-        financial years match those of the recipient country’s 
+        financial years match those of the recipient country's 
         budgetary/planning cycle.
       </xsd:documentation>
     </xsd:annotation>
@@ -526,7 +526,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ISO 639-1 language code in which target document is
-              written, e.g. “en”. Can be repeated to describe
+              written, e.g. "en". Can be repeated to describe
               multi-lingual documents.
             </xsd:documentation>
           </xsd:annotation>
@@ -578,7 +578,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An IANA code for the MIME type of the document being
-            referenced, e.g. “application/pdf”. 
+            referenced, e.g. "application/pdf". 
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
