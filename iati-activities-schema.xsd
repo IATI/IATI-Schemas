@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.04">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="1.05">
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Activity-Information Schema
 
-      Release 1.04, 2014-05-05
+      Release 1.05, 2014-10-06
 
       NOTE: the xml.xsd and iati-common.xsd schemas must be in the
       same directory as this one.
