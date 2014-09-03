@@ -240,7 +240,15 @@
   <xsd:element name="recipient-org-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        This element represents the budget for the core funding of another organisation.
+        The recipient-org-budget element allows for the reporting of
+        forward looking budgets for each institution which receives
+        core funding from the reporting organisation. The
+        recommendation is that, where and when possible, annual
+        planned budgets for each recipient institution for each of the
+        next three financial years are reported. This is primarily
+        applicable to donors but any provider of core funding is
+        expected to use it. Earmarked budgets should be reported at
+        activity-level through the Activity Standard.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
