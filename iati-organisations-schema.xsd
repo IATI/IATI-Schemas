@@ -390,6 +390,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="code" type="xsd:string"  use="required">
@@ -553,6 +554,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="code" type="xsd:string"  use="required">
