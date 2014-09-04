@@ -1,9 +1,17 @@
 <?xml version="1.0"?>
 
-<iati-organisations version="xx">
+<iati-organisations version="xx" generated-datetime="2014-03-30T23:12:34+01:00">
 
-  <iati-organisation>
+  <iati-organisation last-updated-datetime="2014-03-30T23:12:34+01:00" xml:lang="en" default-currency="GBP">
     <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+      <narrative xml:lang="fr">French Name here</narrative>
+    </name>
+    <reporting-org ref="ED-thry-45" type="10" secondary-reporter="0">
+      <narrative>Some text here</narrative>
+      <narrative xml:lang="es">Spanish text here</narrative>
+    </reporting-org>
   </iati-organisation>
 
 </iati-organisations>

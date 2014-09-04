@@ -5,8 +5,15 @@
 
   <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
+   
     <!-- @foo allowed, since it's in a namespace -->
-    <name xmlns:x="http://www.example.org" x:foo="yyy"/>
+    <name xmlns:x="http://www.example.org" x:foo="yyy">
+      <narrative>Name here</narrative>
+    </name>
+   
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
   </iati-organisation>
 
 </iati-organisations>

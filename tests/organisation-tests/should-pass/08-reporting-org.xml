@@ -4,6 +4,9 @@
 
   <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
     <!-- test the reporting-org is allowed here -->
     <reporting-org type="xx" ref="xxx">
       <narrative>Name</narrative>

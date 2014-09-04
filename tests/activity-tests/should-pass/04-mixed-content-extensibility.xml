@@ -1,12 +1,20 @@
 <?xml version="1.0"?>
-
+<!-- There is much more that could be tested here -->
 <iati-activities version="xx">
-  <iati-activity>
-    <iati-identifier>12345</iati-identifier>
-    <!-- add a new element from a namespace -->
+  <iati-activity> <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
     <description xmlns:x="http://www.example.org/">
       <narrative>xxx  zzz</narrative>
       <x:foo>yyy</x:foo>
     </description>
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+
   </iati-activity>
 </iati-activities>

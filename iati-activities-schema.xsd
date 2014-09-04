@@ -33,7 +33,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="iati-activity" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="iati-activity" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="version" type="xsd:string" use="required">
@@ -89,11 +89,11 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="reporting-org" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="participating-org" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="iati-identifier" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="reporting-org" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="participating-org" minOccurs="1" maxOccurs="unbounded"/>
+        <xsd:element ref="iati-identifier" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="other-identifier" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element name="title" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="title" type="textRequiredType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A short, human-readable title that contains a meaningful
@@ -102,7 +102,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="description" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A longer, human-readable description containing a
@@ -112,7 +112,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+              <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="type" use="optional" type="xsd:string">
@@ -127,32 +127,32 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element ref="activity-status" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="activity-date" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="activity-status" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="activity-date" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:element ref="contact-info" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="activity-scope" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-country" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-region" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="location" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="sector" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="country-budget-items"  minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="country-budget-items"  minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="policy-marker" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="collaboration-type" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="default-flow-type" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="default-finance-type" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="default-aid-type" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="default-tied-status" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="collaboration-type" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="default-flow-type" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="default-finance-type" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="default-aid-type" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="default-tied-status" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="planned-disbursement" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="capital-spend" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="capital-spend" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="transaction" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="related-activity" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="legacy-data" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="conditions" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="conditions" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="result" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="crs-add" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="fss" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="crs-add" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="fss" minOccurs="0" maxOccurs="1"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
@@ -666,7 +666,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="organisation" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="organisation" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the organisation to contact for more
@@ -674,7 +674,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="department" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="department" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The department within the organisation to contact for more
@@ -682,14 +682,14 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="person-name" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="person-name" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the contact person for the activity.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="job-title" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="job-title" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The job title of the contact person at the organisation.
@@ -740,7 +740,7 @@
             </xsd:simpleContent>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="mailing-address" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="mailing-address" type="textRequiredType" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The contact mailing address.
@@ -880,7 +880,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="transaction-type" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="transaction-type" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The type of the transaction (e.g. commitment,
@@ -902,7 +902,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="transaction-date" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="transaction-date" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The date on which the transaction was made or (in the
@@ -913,7 +913,6 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="narrative" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="iso-date" type="xsd:date" use="required">
@@ -926,21 +925,21 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The amount of the contribution.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A human-readable description of the transaction.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="provider-org" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="provider-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               For incoming funds this is the organisation from which
@@ -988,7 +987,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="receiver-org" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="receiver-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The organisation receiving the money from the
@@ -1089,7 +1088,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="recipient-country" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="recipient-country" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                 A country that will benefit from this activity. If
@@ -1128,7 +1127,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="recipient-region" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="recipient-region" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A supranational geopolitical region that will benefit
@@ -1178,7 +1177,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="flow-type" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="flow-type" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -1199,7 +1198,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="finance-type" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="finance-type" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -1221,7 +1220,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="aid-type" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -1243,7 +1242,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="tied-status" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="tied-status" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -1267,7 +1266,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="disbursement-channel" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="disbursement-channel" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The channel through which the funds will flow for this
@@ -1313,7 +1312,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="location-reach" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-reach" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Does this location describe where the activity takes
@@ -1365,14 +1364,14 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="name" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="name" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The human-readable name for the location.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description that qualifies the location, not the 
@@ -1380,7 +1379,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="activity-description" type="textType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="activity-description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description that qualifies the activity taking place at 
@@ -1432,7 +1431,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="point" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="point" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The point element is based on a subset of the GML 3.3 Point
@@ -1441,7 +1440,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="pos" type="xsd:string" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="pos" type="xsd:string" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The latitude and longitude coordinates in the 
@@ -1465,7 +1464,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="exactness" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="exactness" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Defines whether the location represents the most 
@@ -1490,7 +1489,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="location-class" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="location-class" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                Whether the location refers to a structure, a populated 
@@ -1514,7 +1513,7 @@
           </xsd:complexType>
         </xsd:element>
         
-        <xsd:element name="feature-designation" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="feature-designation" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
                A more refined coded classification of the type of 
@@ -1562,7 +1561,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="budget-item" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="budget-item" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Identifier for a single item in the recipient-country
@@ -1573,7 +1572,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="description" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="description" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     A longer, human-readable description of the
@@ -1583,7 +1582,7 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+                    <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
                   <xsd:attribute name="type" use="optional" type="xsd:string">
@@ -1712,9 +1711,9 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="title" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element name="indicator" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+        <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="indicator" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The indicator(s) that meet the results. There can be
@@ -1723,9 +1722,9 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="title" minOccurs="0" maxOccurs="unbounded"/>
-              <xsd:element ref="description" minOccurs="0" maxOccurs="unbounded"/>
-              <xsd:element name="baseline" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+              <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+              <xsd:element name="baseline" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The baseline value for the indicator
@@ -1733,7 +1732,7 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
                   <xsd:attribute name="year" type="xsd:positiveInteger" use="required">
@@ -1763,7 +1762,7 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:sequence>
-                    <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="period-start" minOccurs="1" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The start of the reporting period.
@@ -1783,7 +1782,7 @@
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="period-end" minOccurs="1" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The end of the reporting period.
@@ -1803,7 +1802,7 @@
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="target" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="target" minOccurs="0" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The target milestone for this period
@@ -1811,7 +1810,7 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
-                          <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+                          <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="required">
@@ -1823,7 +1822,7 @@
                         </xsd:attribute>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="actual" minOccurs="0" maxOccurs="unbounded">
+                    <xsd:element name="actual" minOccurs="0" maxOccurs="1">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           A record of the achieved result for this period.
@@ -1831,7 +1830,7 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
-                          <xsd:element ref="comment" minOccurs="0" maxOccurs="unbounded"/>
+                          <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="required">
@@ -1914,7 +1913,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+              <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="type" use="required" type="xsd:string">
@@ -1955,7 +1954,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="period-start" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The start of the budget period.
@@ -1975,7 +1974,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="period-end" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The end of the period (which must not be greater than
@@ -1996,7 +1995,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The budget for this period.
@@ -2031,7 +2030,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element name="period-start" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="period-start" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The exact date of the planned disbursement OR the
@@ -2052,7 +2051,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="period-end" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="period-end" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ending date for the disbursement period.
@@ -2072,7 +2071,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The amount that is planned to be disbursed in the specified currency.
@@ -2133,7 +2132,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="loan-terms" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="loan-terms" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Loan repayment terms and interest rates
@@ -2141,7 +2140,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="repayment-type" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-type" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The type of loan repayment
@@ -2162,7 +2161,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-plan" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-plan" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Number of repayments per annum. 
@@ -2183,7 +2182,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="commitment-date" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="commitment-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The CRS++ reported commitment date
@@ -2203,7 +2202,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-first-date" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-first-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     First Repayment Date. The date must be in ISO
@@ -2224,7 +2223,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="repayment-final-date" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="repayment-final-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Final Repayment Date. The date must be in ISO
@@ -2272,7 +2271,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="loan-status" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="loan-status" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The status of loan and interest repayments for the most
@@ -2281,14 +2280,14 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="interest-received" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="interest-received" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Interest received during the reporting year
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="principal-outstanding" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="principal-outstanding" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The amount of principal owed on the loan at the
@@ -2296,7 +2295,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="principal-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="principal-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Arrears of principal at the end of the
@@ -2304,7 +2303,7 @@
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
-              <xsd:element name="interest-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="unbounded">
+              <xsd:element name="interest-arrears" type="xsd:decimal" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     Arrears of interest at the end of the year
@@ -2405,8 +2404,8 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="title" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element name="category" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="title" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="category" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               IATI Document Category Code
@@ -2426,7 +2425,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="language" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="language" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ISO 639-1 language code in which target document is

@@ -2,18 +2,18 @@
 
 <iati-activities version="xx" linked-data-default="string">
   <iati-activity linked-data-uri="string">
-    <iati-identifier>12345</iati-identifier>
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
     <description>
-      <narrative>xxx</narrative>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
     </description>
-    <!-- new element -->
-    <document-link url="http://www.example.org/" format="text/html">
-      <title>
-        <narrative>Document link</narrative>
-      </title>
-      <category code="XXX" />
-      <category code="YYY" />
-      <language code="en" />
-    </document-link>
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
   </iati-activity>
 </iati-activities>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity> <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+
+    
+    <!-- indicator + period -->
+    <result type="output" >
+      <title>
+        <narrative>Treatment: timely detection and quality treatment of cases</narrative>
+      </title>
+      <indicator measure="Unit" >
+        <title>
+          <narrative>Number of new smear positive cases detected under DOTS. (Case detection rate under DOTS)</narrative>
+        </title>
+        <period>                                       <!-- optional -->
+          <period-start iso-date="2009-01-01" />       <!-- 1 and only 1-->
+          <period-start iso-date="2009-01-01" />       <!-- 1 and only 1-->
+          <period-end iso-date="2009-12-31" />         <!-- 1 and only 1-->
+          
+        </period>
+      </indicator>
+    </result>
+    
+   
+   
+  </iati-activity>
+</iati-activities>

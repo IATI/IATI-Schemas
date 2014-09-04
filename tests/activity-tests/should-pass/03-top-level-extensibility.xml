@@ -1,9 +1,23 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity>
-    <iati-identifier>12345</iati-identifier>
-    <!-- add a new top-level element from a namespace -->
+  <iati-activity> <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
+    <!-- add a new top-level element from a namespace MUST come after
+    all the other elements in 2.01-->
     <x:foo xmlns:x="http://www.example.org/">yyy</x:foo>
+    
   </iati-activity>
 </iati-activities>

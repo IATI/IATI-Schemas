@@ -5,14 +5,80 @@
 
   <iati-organisation>
     <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+    
+    
     <recipient-org-budget>
       <recipient-org>
         <narrative>No Code</narrative>
       </recipient-org>
       <period-start iso-date="2010-01-01"/>
       <period-end iso-date="2010-12-31"/>
-      <value value-date="2010-07-07">100</value>
+      <value value-date="2010-07-07">10.10</value>
     </recipient-org-budget>
-  </iati-organisation>
+    
+    <!-- with all attributes-->
+    <recipient-org-budget>
+      <recipient-org ref="xx">
+        <narrative>No Code</narrative>
+      </recipient-org>
+      <period-start iso-date="2010-01-01"/>
+      <period-end iso-date="2010-12-31"/>
+      <value value-date="2010-07-07" currency="GBP">101.10</value>
+    </recipient-org-budget>
+    
+    <!-- with budget-line minimal-->
+    <recipient-org-budget>
+      <recipient-org ref="xx">
+        <narrative>No Code</narrative>
+      </recipient-org>
+      <period-start iso-date="2010-01-01"/>
+      <period-end iso-date="2010-12-31"/>
+      <value value-date="2010-07-07" currency="GBP">101.10</value>
+      
+      <budget-line> <!--optional-->
+        <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
+        <narrative> <!-- must have at least 1 -->
+          Some text
+        </narrative>
+      </budget-line>
+    </recipient-org-budget>
+    
+    <!-- with budget-line all values-->
+    <recipient-org-budget>
+      <recipient-org>
+        <narrative>No Code</narrative>
+      </recipient-org>
+      <period-start iso-date="2010-01-01"/>
+      <period-end iso-date="2010-12-31"/>
+      <value value-date="2010-07-07">10.10</value>
+      
+       <budget-line ref="xx"> <!--optional-->
+        <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
+        <narrative> <!-- must have at least 1 -->
+          Some text
+        </narrative>
+        <narrative> <!-- must have at least 1 -->
+          Some text
+        </narrative>
+      </budget-line>
+      
+      <budget-line ref="xx"> <!--optional-->
+        <value value-date="2011-01-01">10000.11</value> <!-- must have 1 and only 1 -->
+        <narrative> <!-- must have at least 1 -->
+          Some text
+        </narrative>
+        <narrative> <!-- must have at least 1 -->
+          Some text
+        </narrative>
+      </budget-line>
+    </recipient-org-budget>
+    
 
+  </iati-organisation>
 </iati-organisations>

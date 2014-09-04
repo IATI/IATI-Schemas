@@ -4,21 +4,38 @@
   Test full transaction markup
 -->
 <iati-activities version="xx">
-  <iati-activity>
-    <iati-identifier>12345</iati-identifier>
-    <transaction ref="X">
+  <iati-activity> <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
+    <transaction ref="X"> <!-- minimum elements -->
       <transaction-type code="X" />
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value currency="EUR" value-date="2010-07-07">100</value>
-      <description xml:lang="en">
-        <narrative>X</narrative>
+    </transaction>
+    
+    <transaction ref="X"> <!-- without sector, country or regions -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description>
+        <narrative xml:lang="en"> X</narrative>
+        <narrative xml:lang="fr"> X</narrative>
       </description>
-      <provider-org xml:lang="en" ref="X" provider-activity-id="X">
+      <provider-org ref="X" provider-activity-id="X">
         <narrative>X</narrative>
       </provider-org>
-      <receiver-org xml:lang="en" ref="X" receiver-activity-id="X">
+      <receiver-org ref="X" receiver-activity-id="X">
         <narrative>X</narrative>
       </receiver-org>
       <flow-type xml:lang="en" code="X" />
@@ -27,5 +44,109 @@
       <tied-status xml:lang="en" code="X" />
       <disbursement-channel xml:lang="en" code="X" />
     </transaction>
+    
+
+    <transaction ref="X"> <!-- with sector, country and regions -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description>
+        <narrative xml:lang="en"> X</narrative>
+      </description>
+      <provider-org ref="X" provider-activity-id="X">
+        <narrative>X</narrative>
+      </provider-org>
+      <receiver-org ref="X" receiver-activity-id="X">
+        <narrative>X</narrative>
+      </receiver-org>
+      <sector vocabulary="xx" code="xx">
+        <narrative>xxxxx</narrative>
+        <narrative>yyyyy</narrative>
+      </sector>
+      <recipient-country code="xx" />	
+      <recipient-region vocabulary="xx" code="xx" />	
+      <flow-type xml:lang="en" code="X" />
+      <finance-type xml:lang="en" code="X" />
+      <aid-type xml:lang="en" code="X" />
+      <tied-status xml:lang="en" code="X" />
+      <disbursement-channel xml:lang="en" code="X" />
+    </transaction>
+    
+    <transaction ref="X"> <!-- with more than one sector -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description>
+        <narrative xml:lang="en"> X</narrative>
+      </description>
+      <provider-org ref="X" provider-activity-id="X">
+        <narrative>X</narrative>
+      </provider-org>
+      <receiver-org ref="X" receiver-activity-id="X">
+        <narrative>X</narrative>
+      </receiver-org>
+      
+      <sector vocabulary="xx" code="xx">
+        <narrative>xxxxx</narrative>
+        <narrative>yyyyy</narrative>
+      </sector>
+      <sector vocabulary="yy" code="xx">
+        <narrative>xxxxx</narrative>
+        <narrative>yyyyy</narrative>
+      </sector>
+      
+      <flow-type xml:lang="en" code="X" />
+      <finance-type xml:lang="en" code="X" />
+      <aid-type xml:lang="en" code="X" />
+      <tied-status xml:lang="en" code="X" />
+      <disbursement-channel xml:lang="en" code="X" />
+    </transaction>
+
+    
+    <transaction><!-- optional items missing -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value value-date="2010-07-07">100</value>
+      <description>
+        <narrative>X</narrative>
+      </description>
+      <provider-org>
+        <narrative>X</narrative>
+      </provider-org>
+      <receiver-org>
+        <narrative>X</narrative>
+      </receiver-org>
+      <flow-type code="X" />
+      <finance-type xml:lang="en" code="X" />
+      <aid-type code="X" />
+      <tied-status code="X" />
+      <disbursement-channel code="X" />
+    </transaction>
+    
+    <transaction ref="X"> <!-- with sector, country and regions missing options-->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description>
+        <narrative xml:lang="en"> X</narrative>
+      </description>
+      <provider-org ref="X" provider-activity-id="X">
+        <narrative>X</narrative>
+      </provider-org>
+      <receiver-org ref="X" receiver-activity-id="X">
+        <narrative>X</narrative>
+      </receiver-org>
+      <sector code="xx">
+        
+      </sector>
+      <recipient-country code="xx" />	
+      <recipient-region code="xx" />	
+      <flow-type code="X" />
+      <finance-type code="X" />
+      <aid-type code="X" />
+      <tied-status code="X" />
+      <disbursement-channel code="X" />
+    </transaction>
+    
   </iati-activity>
 </iati-activities>

@@ -47,7 +47,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="title" type="textType">
+  <xsd:element name="title" type="textRequiredType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         A short, human-readable title.
@@ -63,7 +63,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="narrative" />
+        <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="type" use="optional" type="xsd:string">
@@ -77,7 +77,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="comment" type="textType">
+  <xsd:element name="comment" type="textRequiredType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         A human-readable comment associated with a piece of aid information.
@@ -104,7 +104,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The name of the organisation. May be repeated for
@@ -168,6 +168,20 @@
     </xsd:annotation>
     <xsd:sequence>
       <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
+  
+  <xsd:complexType name="textRequiredType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element that must contain human-readable text.
+        The information may be repeated in different languages.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>

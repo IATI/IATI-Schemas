@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity>
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <!--<other-identifier></other-identifier>-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
+    <!-- 2.01 ammendments -->
+    <location>
+      <location-reach code="xx"></location-reach>
+      <location-id vocabulary="xx" code="xx"></location-id>
+      <location-id vocabulary="xx" code="xx"></location-id>
+      <name>
+        <narrative>Kandahar</narrative>
+      </name>
+      <description>
+        <narrative>West end of Kandahar-Kabul highway</narrative>
+      </description>
+      <activity-description xml:lang="fr">
+        <narrative xml:lang="fr">Bonjour</narrative>
+      </activity-description>
+      <administrative code="xxxxxx" vocabulary="G2" level="0" />
+      <administrative code="xxxxxx" vocabulary="G2" level="0" />
+      <point srsName="">
+        
+      </point>
+      <exactness code="xxxxxx"></exactness>
+      <location-class code="xxxxxx"></location-class>
+      <feature-designation code="xxxxxx"></feature-designation>
+    </location>
+
+  </iati-activity>
+</iati-activities>
