@@ -14,7 +14,7 @@
     <!--minimal example-->
     <document-link url="http://www.example.org/" format="text/html">
       <title> 
-        <!--<narrative>Document title</narrative>--> <!-- should be at least 1 --> <!--but currently this passes -->
+        <narrative>Document title</narrative> <!-- should be at least 1 --> 
       </title>
       <category code="XXX"/>
     </document-link>

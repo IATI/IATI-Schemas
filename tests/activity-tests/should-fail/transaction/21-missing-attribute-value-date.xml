@@ -21,7 +21,7 @@
     <transaction ref="X"> <!-- minimum elements -->
       <transaction-type code="X" />
       <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
+        
       </transaction-date>
       <value currency="EUR">100</value>
     </transaction>

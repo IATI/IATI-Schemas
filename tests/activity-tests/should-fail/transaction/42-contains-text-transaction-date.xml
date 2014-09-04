@@ -19,19 +19,12 @@
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
 
     <transaction ref="X"> <!-- with sector, country and regions -->
-      <transaction-type code="X" />
+      <transaction-type code="X">xxxxx</transaction-type>
       <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
+        xxxx
       </transaction-date>
       <value currency="EUR" value-date="2010-07-07">100</value>
-      <sector code="xx">
-        <narrative>xxxxx</narrative>
-        <narrative>yyyyy</narrative>
-      </sector>
-      <sector code="xx">
-        <narrative>xxxxx</narrative>
-        <narrative>yyyyy</narrative>
-      </sector>
+
     </transaction>
 
     

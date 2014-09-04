@@ -20,9 +20,7 @@
 
     <transaction ref="X"> <!-- with sector, country and regions -->
       <transaction-type code="X" />
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value currency="EUR" value-date="2010-07-07">100</value>
       <provider-org ref="X" provider-activity-id="X">
         <narrative>X</narrative>

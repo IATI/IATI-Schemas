@@ -20,17 +20,13 @@
     
     <transaction ref="X"> <!-- minimum elements -->
       <transaction-type code="X" />
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value currency="EUR" value-date="2010-07-07">100</value>
     </transaction>
     
     <transaction ref="X"> <!-- without sector, country or regions -->
       <transaction-type code="X" />
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value currency="EUR" value-date="2010-07-07">100</value>
       <description>
         <narrative xml:lang="en"> X</narrative>
@@ -52,9 +48,7 @@
 
     <transaction ref="X"> <!-- with sector, country and regions -->
       <transaction-type code="X" />
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value currency="EUR" value-date="2010-07-07">100</value>
       <description>
         <narrative xml:lang="en"> X</narrative>
@@ -77,13 +71,41 @@
       <tied-status xml:lang="en" code="X" />
       <disbursement-channel xml:lang="en" code="X" />
     </transaction>
+    
+    <transaction ref="X"> <!-- with more than one sector -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description>
+        <narrative xml:lang="en"> X</narrative>
+      </description>
+      <provider-org ref="X" provider-activity-id="X">
+        <narrative>X</narrative>
+      </provider-org>
+      <receiver-org ref="X" receiver-activity-id="X">
+        <narrative>X</narrative>
+      </receiver-org>
+      
+      <sector vocabulary="xx" code="xx">
+        <narrative>xxxxx</narrative>
+        <narrative>yyyyy</narrative>
+      </sector>
+      <sector vocabulary="yy" code="xx">
+        <narrative>xxxxx</narrative>
+        <narrative>yyyyy</narrative>
+      </sector>
+      
+      <flow-type xml:lang="en" code="X" />
+      <finance-type xml:lang="en" code="X" />
+      <aid-type xml:lang="en" code="X" />
+      <tied-status xml:lang="en" code="X" />
+      <disbursement-channel xml:lang="en" code="X" />
+    </transaction>
 
     
     <transaction><!-- optional items missing -->
       <transaction-type code="X" />
-      <transaction-date iso-date="2010-07-07">
-      
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value value-date="2010-07-07">100</value>
       <description>
         <narrative>X</narrative>
@@ -103,9 +125,7 @@
     
     <transaction ref="X"> <!-- with sector, country and regions missing options-->
       <transaction-type code="X" />
-      <transaction-date xml:lang="en" iso-date="2010-07-07">
-        <narrative>7 July 2010</narrative>
-      </transaction-date>
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
       <value currency="EUR" value-date="2010-07-07">100</value>
       <description>
         <narrative xml:lang="en"> X</narrative>
