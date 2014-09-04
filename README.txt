@@ -1,11 +1,11 @@
 International Aid Transparency Initiative (IATI)
 XML Schemas
 
-David Megginson <david.megginson@megginson.com>
-Version 1.04, 2014-05-05
+IATI Support <support@iatistandard.org>
+Version 1.05, 2014-10-06
 
-This directory contains version 1.04 of the IATI XML
-schemas, effective 2014-05-05 (subject to agreement).  More information about these schemas
+This directory contains version 1.05 of the IATI XML
+schemas, effective 2014-10-06 (subject to agreement).  More information about these schemas
 is available at http://iatistandard.org
 
 This directory contains the following files:
@@ -39,5 +39,9 @@ scripts for running the tests rely on a Unix environment with the bash
 shell and the xmllint utility, but the test documents will work with
 any schema-aware XML parser. We will add unit tests as schema
 development continues.
+
+Acknowlegements
+David Megginson <david.megginson@megginson.com> for his original work on
+the IATI Schemas and continued support and involvment.
 
 __end__

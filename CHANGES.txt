@@ -1,5 +1,15 @@
 IATI Schema Changes -*-Outline-*-
 
+* (pre) Version 1.05
+
+(see http://support.iatistandard.org/forums/22895158-1-05-Decimal-Upgrade)
+
+[*] designates a backwards-incompatible change
+
+** Activities
+- added a descripton to the planned-disbursement element
+
+
 * (pre) Version 1.04
 
 (see http://support.iatistandard.org/forums/22743317-1-04-Decimal-Upgrade)
