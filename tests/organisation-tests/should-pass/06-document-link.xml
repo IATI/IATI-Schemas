@@ -26,6 +26,7 @@
         <narrative xml:lang="fr">Document title</narrative>
       </title>
       <category code="XXX"/>
+      <category code="yyy"/>
       <language code="en"/>
       <recipient-country code="xX"></recipient-country>
       <recipient-country code="xX"></recipient-country>
