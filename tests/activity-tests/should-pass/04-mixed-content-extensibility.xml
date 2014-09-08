@@ -2,10 +2,8 @@
 <!-- There is much more that could be tested here -->
 <iati-activities version="xx">
   <iati-activity> <!-- 1 and only 1-->
-    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
-    <participating-org role="xx"></participating-org> <!-- At least 1-->
     <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
-    <!--<other-identifier></other-identifier>-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
     <title> <!-- 1 and only 1-->
       <narrative>Xxxxxxx</narrative> <!-- At least 1-->
     </title>
@@ -13,6 +11,8 @@
       <narrative>xxx  zzz</narrative>
       <x:foo>yyy</x:foo>
     </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
 
