@@ -100,7 +100,7 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
-        <xsd:element name="description" minOccurs="1" maxOccurs="1">
+        <xsd:element name="description" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A longer, human-readable description containing a
@@ -1572,7 +1572,7 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element name="description" minOccurs="0" maxOccurs="1">
+              <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     A longer, human-readable description of the
@@ -1580,20 +1580,6 @@
                     languages.
                   </xsd:documentation>
                 </xsd:annotation>
-                <xsd:complexType>
-                  <xsd:sequence>
-                    <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
-                    <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                  </xsd:sequence>
-                  <xsd:attribute name="type" use="optional" type="xsd:string">
-                    <xsd:annotation>
-                      <xsd:documentation xml:lang="en">
-                        An IATI code for the type of description being provided.
-                      </xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:attribute>
-                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
-                </xsd:complexType>
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>

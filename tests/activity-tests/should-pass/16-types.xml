@@ -18,14 +18,6 @@
     
     <contact-info type="xxx" />
     
-    <country-budget-items vocabulary="XXX">
-      <budget-item code="XXX" percentage="100">
-        <description type="xx">
-          <narrative>xxx</narrative>
-        </description>
-      </budget-item>
-    </country-budget-items>
-    
     <budget type="X">
       <period-start iso-date="2011-01-01" />
       <period-end iso-date="2011-12-31" />

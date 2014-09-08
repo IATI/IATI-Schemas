@@ -66,13 +66,6 @@
         <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute name="type" use="optional" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            An IATI code for the type of description being reported
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
