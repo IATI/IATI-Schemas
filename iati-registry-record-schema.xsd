@@ -3,13 +3,13 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:ir="http://iatiregistry.org/ns/record#"
             targetNamespace="http://iatiregistry.org/ns/record#"
-            version="1.05">
+            version="2.01">
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Registry Record Extension Schema
 
-      Release 1.05, 2014-10-06
+      Release 2.01, 2014-10-16
 
       This W3C XML schema is an extension to the IATI standards to add
       information specific to the IATI registry. Like all IATI
