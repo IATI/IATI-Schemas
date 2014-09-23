@@ -534,7 +534,9 @@
           <xsd:attribute name="type" type="xsd:string" use="optional">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                An IATI code for the type of alternative identifier being reported.
+                An IATI code for the type of alternative identifier being
+                reported. If omitted then A1 (Reporting Organisation's internal
+                activity identifier) is assumed.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:attribute>
