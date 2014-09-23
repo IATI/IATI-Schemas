@@ -8,9 +8,26 @@
   This is not actually mixed content any more but should still fail
 -->
 <iati-activities version="xx">
-  <iati-activity version="xx">
-    <iati-identifier>12345</iati-identifier>
-    <!-- shouldn' allow foo element -->
-    <description>xxx <foo>yyy</foo> zzz</description>
+  <iati-activity> <!-- 1 and only 1-->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+      
+      <!-- shouldn' allow foo element -->
+      <foo>yyy</foo>
+      
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
+      <narrative>Some stuff ere</narrative>
+    </activity-date>
+    
   </iati-activity>
 </iati-activities>
