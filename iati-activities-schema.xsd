@@ -2191,8 +2191,7 @@
               <xsd:element name="repayment-first-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    First Repayment Date. The date must be in ISO
-                    8601 format (YYYY-MM-DD).
+                    First Repayment Date.
                   </xsd:documentation>
                 </xsd:annotation>
                 <xsd:complexType>
@@ -2212,8 +2211,7 @@
               <xsd:element name="repayment-final-date" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    Final Repayment Date. The date must be in ISO
-                    8601 format (YYYY-MM-DD).
+                    Final Repayment Date.
                   </xsd:documentation>
                 </xsd:annotation>
                 <xsd:complexType>
