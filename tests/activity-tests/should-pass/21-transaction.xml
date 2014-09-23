@@ -38,11 +38,11 @@
       <receiver-org ref="X" receiver-activity-id="X">
         <narrative>X</narrative>
       </receiver-org>
+      <disbursement-channel xml:lang="en" code="X" />
       <flow-type xml:lang="en" code="X" />
       <finance-type xml:lang="en" code="X" />
       <aid-type xml:lang="en" code="X" />
       <tied-status xml:lang="en" code="X" />
-      <disbursement-channel xml:lang="en" code="X" />
     </transaction>
     
 
@@ -59,6 +59,7 @@
       <receiver-org ref="X" receiver-activity-id="X">
         <narrative>X</narrative>
       </receiver-org>
+      <disbursement-channel xml:lang="en" code="X" />
       <sector vocabulary="xx" code="xx">
         <narrative>xxxxx</narrative>
         <narrative>yyyyy</narrative>
@@ -69,7 +70,6 @@
       <finance-type xml:lang="en" code="X" />
       <aid-type xml:lang="en" code="X" />
       <tied-status xml:lang="en" code="X" />
-      <disbursement-channel xml:lang="en" code="X" />
     </transaction>
     
     <transaction ref="X"> <!-- with more than one sector -->
@@ -85,6 +85,7 @@
       <receiver-org ref="X" receiver-activity-id="X">
         <narrative>X</narrative>
       </receiver-org>
+      <disbursement-channel xml:lang="en" code="X" />
       
       <sector vocabulary="xx" code="xx">
         <narrative>xxxxx</narrative>
@@ -99,7 +100,6 @@
       <finance-type xml:lang="en" code="X" />
       <aid-type xml:lang="en" code="X" />
       <tied-status xml:lang="en" code="X" />
-      <disbursement-channel xml:lang="en" code="X" />
     </transaction>
 
     
@@ -116,11 +116,11 @@
       <receiver-org>
         <narrative>X</narrative>
       </receiver-org>
+      <disbursement-channel code="X" />
       <flow-type code="X" />
       <finance-type xml:lang="en" code="X" />
       <aid-type code="X" />
       <tied-status code="X" />
-      <disbursement-channel code="X" />
     </transaction>
     
     <transaction ref="X"> <!-- with sector, country and regions missing options-->
@@ -136,6 +136,7 @@
       <receiver-org ref="X" receiver-activity-id="X">
         <narrative>X</narrative>
       </receiver-org>
+      <disbursement-channel code="X" />
       <sector code="xx">
         
       </sector>
@@ -145,7 +146,6 @@
       <finance-type code="X" />
       <aid-type code="X" />
       <tied-status code="X" />
-      <disbursement-channel code="X" />
     </transaction>
     
   </iati-activity>

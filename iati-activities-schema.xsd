@@ -1035,6 +1035,27 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
+        <xsd:element name="disbursement-channel" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The channel through which the funds will flow for this
+              transaction, from an IATI codelist.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code defining channels of disbursement
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:element name="sector" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1260,27 +1281,6 @@
                   An IATI code interpreting the usage of Columns 36-38
                   of the CRS++ reporting format. (Amount tied, Amount
                   partially untied, Amount tied)
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="disbursement-channel" minOccurs="0" maxOccurs="1">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The channel through which the funds will flow for this
-              transaction, from an IATI codelist.
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attribute name="code" type="xsd:string"  use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  An IATI code defining channels of disbursement
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
