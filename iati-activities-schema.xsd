@@ -2111,7 +2111,7 @@
             <xsd:attribute name="significance" type="xsd:boolean" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Does this flag apply? If 'false' do not report the flag
+                  A boolean indicating whether the flag applies. If 'false' do not report the flag
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
