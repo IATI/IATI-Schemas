@@ -130,7 +130,7 @@
         <xsd:element ref="activity-status" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="activity-date" minOccurs="1" maxOccurs="unbounded"/>
         <xsd:element ref="contact-info" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="activity-scope" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="activity-scope" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="recipient-country" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-region" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="location" minOccurs="0" maxOccurs="unbounded"/>
