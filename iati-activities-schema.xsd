@@ -623,14 +623,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="iso-date" type="xsd:date" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The date (yyyy-mm-dd plus [optional] time zone) as defined
-            by type.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -915,13 +908,7 @@
             <xsd:sequence>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="iso-date" type="xsd:date" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  (yyyy-mm-dd plus [optional] time zone)
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -1758,13 +1745,7 @@
                         <xsd:sequence>
                           <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
-                        <xsd:attribute name="iso-date" type="xsd:date" use="required">
-                          <xsd:annotation>
-                            <xsd:documentation xml:lang="en">
-                              (yyyy-mm-dd plus [optional] time zone)
-                            </xsd:documentation>
-                          </xsd:annotation>
-                        </xsd:attribute>
+                        <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
@@ -1778,13 +1759,7 @@
                         <xsd:sequence>
                           <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
-                        <xsd:attribute name="iso-date" type="xsd:date" use="required">
-                          <xsd:annotation>
-                            <xsd:documentation xml:lang="en">
-                              (yyyy-mm-dd plus [optional] time zone)
-                            </xsd:documentation>
-                          </xsd:annotation>
-                        </xsd:attribute>
+                        <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
@@ -1950,13 +1925,7 @@
             <xsd:sequence>
               <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="iso-date" type="xsd:date" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  The start date (yyyy-mm-dd plus [optional] time zone)
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -1971,13 +1940,7 @@
             <xsd:sequence>
               <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="iso-date" type="xsd:date" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  The end date (yyyy-mm-dd plus [optional] time zone)
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -2027,13 +1990,7 @@
             <xsd:sequence>
               <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="iso-date" type="xsd:date" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  (yyyy-mm-dd plus [optional] time zone)
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -2047,13 +2004,7 @@
             <xsd:sequence>
               <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="iso-date" type="xsd:date" use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  (yyyy-mm-dd plus [optional] time zone)
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -2178,13 +2129,7 @@
                   <xsd:sequence>
                     <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
-                  <xsd:attribute name="iso-date" type="xsd:date" use="required">
-                    <xsd:annotation>
-                      <xsd:documentation xml:lang="en">
-                        (yyyy-mm-dd plus [optional] time zone)
-                      </xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:attribute>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
@@ -2198,13 +2143,7 @@
                   <xsd:sequence>
                     <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
-                  <xsd:attribute name="iso-date" type="xsd:date" use="required">
-                    <xsd:annotation>
-                      <xsd:documentation xml:lang="en">
-                        (yyyy-mm-dd plus [optional] time zone)
-                      </xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:attribute>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
@@ -2218,13 +2157,7 @@
                   <xsd:sequence>
                     <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
-                  <xsd:attribute name="iso-date" type="xsd:date" use="required">
-                    <xsd:annotation>
-                      <xsd:documentation xml:lang="en">
-                        (yyyy-mm-dd plus [optional] time zone)
-                      </xsd:documentation>
-                    </xsd:annotation>
-                  </xsd:attribute>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="required"/>
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
