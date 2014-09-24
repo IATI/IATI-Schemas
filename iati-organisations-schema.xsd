@@ -304,9 +304,9 @@
         <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the money budgeted to be disbused to
+              The total value of the money budgeted to be disbursed to
               the specified recipient organisation during this time
-              period.  This element is required.
+              period.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
