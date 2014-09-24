@@ -2298,8 +2298,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The exact date when the information was collected or
-            extracted from donors' aid management systems. (yyyy-mm-dd
-            plus [optional] timezone)
+            extracted from donors' aid management systems.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
