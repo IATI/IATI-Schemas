@@ -40,8 +40,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A number indicating the IATI specification version in use.
-            This is mandatory and must be a valid version. All
-            versions in a single file MUST be the same.
+            This is mandatory and must be a valid version.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
