@@ -186,11 +186,11 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the total budget into sub-totals. The
-              breakdown is determined by the reporting organisation and
-              described in the narrative. The period covered is the same
-              as that covered by the parent total-budget element. The
-              sum of budget-line values does not have to equal that of
-              in the parent element.
+              breakdown is determined by the reporting organisation
+              and described in the narrative. The period covered is
+              the same as that covered by the parent total-budget
+              element. The sum of budget-line values does not have to
+              equal that of in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -313,12 +313,13 @@
         <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A breakdown of the total budget into sub-totals. The
-              breakdown is determined by the reporting organisation and
-              described in the narrative. The period covered is the same
-              as that covered by the parent total-budget element. The
-              sum of budget-line values does not have to equal that of
-              in the parent element.
+              A breakdown of the recipient organisation's budget into
+              sub-totals. The breakdown is determined by the
+              reporting organisation and described in the narrative.
+              The period covered is the same as that covered by the
+              parent recipient-org-budget element. The sum of
+              budget-line values does not have to equal that of in
+              the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -428,12 +429,13 @@
         <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A breakdown of the total budget into sub-totals. The
-              breakdown is determined by the reporting organisation and
-              described in the narrative. The period covered is the same
-              as that covered by the parent total-budget element. The
-              sum of budget-line values does not have to equal that of
-              in the parent element.
+              A breakdown of the recipient country's budget into
+              sub-totals.  The breakdown is determined by the
+              reporting organisation and described in the narrative.
+              The period covered is the same as that covered by the
+              parent recipient-country-budget element. The sum of
+              budget-line values does not have to equal that of in
+              the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
