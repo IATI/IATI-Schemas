@@ -532,7 +532,7 @@
               </xsd:documentation>
             </xsd:annotation>
           </xsd:attribute>
-          <xsd:attribute name="type" type="xsd:string" use="optional">
+          <xsd:attribute name="type" type="xsd:string" use="required">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
                 An IATI code for the type of alternative identifier being
