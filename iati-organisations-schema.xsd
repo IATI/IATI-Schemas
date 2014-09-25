@@ -186,10 +186,11 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the total budget into sub-totals. The
-              breakdown is determined  by the reporting organisation
+              breakdown is determined by the reporting organisation
               and described in the narrative. The period covered is
               the same as that covered by the parent total-budget
-              element.
+              element. The sum of budget-line values does not have to
+              equal the value given in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -313,10 +314,12 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the recipient organisation's budget into
-              sub-totals. The breakdown is determined  by the
+              sub-totals. The breakdown is determined by the
               reporting organisation and described in the narrative.
               The period covered is the same as that covered by the
-              parent recipient-org-budget element.
+              parent recipient-org-budget element. The sum of
+              budget-line values does not have to equal the value
+              given in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -427,10 +430,12 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A breakdown of the recipient country's budget into
-              sub-totals. The breakdown is determined  by the
+              sub-totals.  The breakdown is determined by the
               reporting organisation and described in the narrative.
               The period covered is the same as that covered by the
-              parent recipient-country-budget element.
+              parent recipient-country-budget element. The sum of
+              budget-line values does not have to equal the value
+              given in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
