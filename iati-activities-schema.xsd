@@ -1341,7 +1341,11 @@
             <xsd:documentation xml:lang="en">
                A unique code describing the location according to a 
                recognised gazetteer or administrative boundary 
-               repository. 
+               repository. Administrative areas should only be reported
+               here if the location being defined is the administrative
+               area itself. For describing the administrative area/s 
+               within which a more specific location falls the 
+               location/administrative element should be used. 
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
