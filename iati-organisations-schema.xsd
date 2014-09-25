@@ -190,7 +190,7 @@
               and described in the narrative. The period covered is
               the same as that covered by the parent total-budget
               element. The sum of budget-line values does not have to
-              equal that of in the value given in the parent element.
+              equal the value given in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -317,9 +317,9 @@
               sub-totals. The breakdown is determined by the
               reporting organisation and described in the narrative.
               The period covered is the same as that covered by the
-              parent recipient-org-budget element. The sum of 
-              budget-line values does not have to equal that of in the 
-              value given in the parent element.
+              parent recipient-org-budget element. The sum of
+              budget-line values does not have to equal the value
+              given in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -433,9 +433,9 @@
               sub-totals.  The breakdown is determined by the
               reporting organisation and described in the narrative.
               The period covered is the same as that covered by the
-              parent recipient-country-budget element. The sum of 
-              budget-line values does not have to equal that of in the
-              value given in the parent element.
+              parent recipient-country-budget element. The sum of
+              budget-line values does not have to equal the value
+              given in the parent element.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
