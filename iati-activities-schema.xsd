@@ -1487,8 +1487,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   An IATI code from the Extactness Codelist. 1 =
-                   Exact, 2 = Approximate
+                   A code from the Geographic Exactness Codelist.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
