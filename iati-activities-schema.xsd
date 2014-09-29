@@ -1600,9 +1600,10 @@
             <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The percentage of the budget allocated to this item.
-                  Content must be a positive decimal number between 0
-                  and 100, with no percentage sign.
+                  When multiple budget-item elements are declared
+                  within a single country-budget-items element, then,
+                  for each vocabulary used, the percentage values
+                  should sum 100%.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
