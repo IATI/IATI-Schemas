@@ -1084,11 +1084,15 @@
         <xsd:element name="sector" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A recognised code, from a recognised vocabulary,
-              classifying the purpose of this transaction.If this
-              element is used then ALL transaction elements should
-              contain a transaction/sector element AND
-              iati-activity/sector should NOT be used.
+              A recognised code, from a recognised vocabulary, 
+              classifying the purpose of this transaction. 
+
+              If this element is used then ALL transaction elements 
+              should contain a transaction/sector element and 
+              iati-activity/sector should NOT be used. 
+
+              This element can be used multiple times, but only one 
+              sector can be reported per vocabulary.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1107,20 +1111,20 @@
             <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  An IATI code for the vocabulary (codelist) used for
-                  sector classifications. If omitted, OECD DAC 5-digit
-                  Purpose Codes are assumed.
-                  
-                  It is recommended that OECD DAC 5-digit Purpose
-                  Codes are used wherever possible. It is also
-                  recommended that if a publisher has its own
-                  classification system then the vocabulary "RO"
-                  ("Reporting Organisation's own vocabulary") should
-                  be used in addition to DAC codes.
-                  
-                  NB that if multiple sector codes are used in
-                  multiple vocabularies then each vocabulary's
-                  percentages should add up to 100%.
+                  An IATI code for the vocabulary (codelist) used for 
+                  sector classifications. If omitted, OECD DAC 5-digit 
+                  Purpose Codes are assumed. 
+
+                  It is recommended that OECD DAC 5-digit Purpose 
+                  Codes are used wherever possible. It is also 
+                  recommended that if a publisher has its own 
+                  classification system or systems, then the 
+                  vocabularies 99 or 98 (Reporting Organisation's 
+                  own vocabularies) should be used in addition to 
+                  the DAC codes. 
+
+                  Note that at transaction level, only one sector per 
+                  vocabulary can be reported.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
