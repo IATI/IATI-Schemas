@@ -13,7 +13,7 @@
     <participating-org role="xx"></participating-org> <!-- At least 1-->
     
     
-    <other-identifier owner-ref="" owner-name="">Some text here</other-identifier>
+    <other-identifier ref="" />
     
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->

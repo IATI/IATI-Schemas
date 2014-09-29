@@ -12,18 +12,37 @@
     </description>
     <participating-org role="xx"></participating-org> <!-- At least 1-->
     
-    <!--@type is now mandatory-->
-    <!--<other-identifier owner-ref="">Some text here</other-identifier>
-    <other-identifier owner-name="">Some text here</other-identifier>
-    <other-identifier owner-ref="" owner-name="">Some text here</other-identifier>-->
-    
-    <other-identifier type="">Some text here</other-identifier>
+    <!--changes included fro final 2.01-->
+
         
-    <other-identifier owner-ref="" type="">Some text here</other-identifier>
+    <other-identifier ref="" type="" />
+    <!-- With all options-->
+    <other-identifier ref="" type="">
+      <owner-org ref="">
+        <narrative> Some text here </narrative>
+        <narrative xml:lang="fr"> Some French text here </narrative>
+      </owner-org>
+    </other-identifier>
     
-    <other-identifier owner-name="" type="">Some text here</other-identifier>
+    <!--Without options -->
+    <other-identifier ref="" type="">
+      <owner-org>
+        <narrative> Some text here </narrative>
+      </owner-org>
+    </other-identifier>
     
-    <other-identifier owner-ref="" owner-name="" type="">Some text here</other-identifier>
+    <!-- Without narrative -->   
+    <other-identifier ref="" type="">
+      <owner-org ref="" />
+    </other-identifier>
+    
+    <!-- technically allowed, but useless! -->
+    <other-identifier ref="" type="">
+      <owner-org>
+
+      </owner-org>
+    </other-identifier>
+
     
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
