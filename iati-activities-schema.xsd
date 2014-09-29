@@ -510,46 +510,63 @@
   <xsd:element name="other-identifier">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An alternative, non-IATI identifier for the activity. This
-        identifier is not guaranteed to be unique or persistent (it
-        depends on the owner organisation's policies, not IATI's). It
-        is recommended that publishers who also report to the OECD DAC
-        Creditor Reporting System place the CRS Id for the activity
-        here.
+        An other identifier for the activity. This may be a publishers
+        own identifier that it wishes to record with the activity.
+        This element is also used to trace changes to activity
+        identifiers, for example when and organisation has changed
+        it's organisation identifier.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
-      <xsd:simpleContent>
-        <xsd:extension base="xsd:string">
-          <xsd:attribute name="owner-ref" type="xsd:string" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                An identifier for the owner of this identifier. For
-                guidance on constructing the value of the @ref attribute,
-                see reporting-org/@ref
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <xsd:attribute name="owner-name" type="xsd:string" use="optional">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Free text providing a human-readable name for the owner
-                of this identifier.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <xsd:attribute name="type" type="xsd:string" use="required">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                An IATI code for the type of alternative identifier being
-                reported. If omitted then A1 (Reporting Organisation's internal
-                activity identifier) is assumed.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:attribute>
-          <xsd:anyAttribute processContents="lax" namespace="##other"/>
-        </xsd:extension>
-      </xsd:simpleContent>
+      <xsd:sequence>
+        <xsd:element name="owner-org" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Where apllicable, the organisation that owns the other
+              identifier being reported. When used, then either
+              other-identifier/owner-org/@ref or
+              other-identifier/owner-org/narrative/text() MUST be
+              present.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="ref" type="xsd:string"  use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An organisation identifier. This is NOT MANDATORY
+                  but when used MUST contain a valid organisation
+                  identifier.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="ref" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The identifier you wish to report. 
+            This can be used to report a number of different types
+            of identifiers. See the OtherIdentifierType codelist
+            for details and options.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="type" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The type of identifier being reported, taken from
+            the OtherIdentifierType codelist.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
 
