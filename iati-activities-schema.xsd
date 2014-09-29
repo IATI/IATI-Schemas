@@ -1434,9 +1434,10 @@
             <xsd:attribute name="level" type="xsd:nonNegativeInteger" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   An integer indicating the hierarchical level being 
-                   reported. Level 0 is the national boundary, level 1 
-                   is the first-level administrative sub-division, etc.
+                  A number defining a subdivision within a hierarchical 
+                  system of administrative areas. The precise system 
+                  for defining the particular meaning of each @level 
+                  value is determined by the @vocabulary being used.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
