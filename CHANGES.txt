@@ -139,7 +139,6 @@ IATI Schema Changes -*-Outline-*-
   * crs-add/loan-status/principal-outstanding when used may only occur once
   * crs-add/loan-status/principal-arrears when used may only occur once
   * crs-add/loan-status/interest-arrears when used may only occur once
-  - new element optional added: document-link now defined in the Organisations schema
   * document-link element requires a single title element
   * document-link element requires at least one category element
   - new element optional added: document-link/recipient-country
@@ -173,7 +172,7 @@ IATI Schema Changes -*-Outline-*-
   * recipient-country-budget/period-end is required once and only once
   * recipient-country-budget/value is required once and only once
   - new element optional added: recipient-country-budget/budget-line
-  - new element optional added: document-link now defined in the Organisations schema
+  - new element optional added: document-link is now defined in the Organisations schema
   * document-link element requires a single title element
   * document-link element requires at least one category element
   - new element optional added: document-link/recipient-country
