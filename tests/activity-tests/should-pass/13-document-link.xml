@@ -22,6 +22,13 @@
         <narrative>Document link</narrative>
       </title>
       <category code="XXX" />
+    </document-link>
+    
+    <document-link url="http://www.example.org/" format="text/html">
+      <title>
+        <narrative>Document link</narrative>
+      </title>
+      <category code="XXX" />
       <category code="YYY" />
       <language code="en" />
     </document-link>
