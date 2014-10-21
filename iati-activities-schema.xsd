@@ -2347,7 +2347,7 @@
     </xsd:annotation>
     <xsd:complexType>
       <xsd:sequence>
-        <xsd:element ref="title" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
         <xsd:element name="category" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -2368,7 +2368,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="language" minOccurs="1" maxOccurs="unbounded">
+        <xsd:element name="language" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The ISO 639-1 language code in which target document is
