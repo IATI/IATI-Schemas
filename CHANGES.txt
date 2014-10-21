@@ -1,5 +1,208 @@
 IATI Schema Changes -*-Outline-*-
 
+* (pre) Version 2.01
+(see http://support.iatistandard.org/forums/21200855-2-01-Integer-Upgrade)
+
+[*] designates a backwards-incompatible change
+  
+  * all complexType mixed="true" have been removed from the schema
+
+** Activities
+  * order of elements is now enforced by the schema
+  * iati-activities/@version is now a string instead of a decimal
+  * iati-activities/@version is now required
+  * iati-activities/@linked-data-default is now of type xsd:anyURI instead
+    of xsd:string
+  * iati-activity/@linked-data-uri is now of type xsd:anyURI instead
+    of xsd:string
+    
+  The following are all relative to the iati-activity element:
+  * iati-identifier is required once and only once
+  * reporting-org is required once and only once
+  * title is required once and only once
+  * title element requires at least one narrative element
+  * description is required at least once
+  * description element requires at least one narrative element
+  * participating-org is required at least once
+  * participating-org element has optional narrative element
+  * participating-org element no longer has the textAtts attribute group
+  * activity-scope is no longer of type: codeType
+  * recipient-country has optional narrative element
+  * recipient-country element no longer has the textAtts attribute group
+  * recipient-country/@code is now required
+  * recipient-region has optional narrative element
+  * recipient-region element no longer has the textAtts attribute group
+  * recipient-region/@code is now required
+  * other-identifier no longer has the @owner-ref attribute
+  * other-identifier no longer has the @owner-name attribute
+  * new attribute: other-identifier/@ref
+  * new attribute: other-identifier/@type
+  * new element added: other-identifier/owner-org
+  * sector no longer has the textAtts attribute group
+  * sector has optional narrative element
+  * activity-status is required once and only once
+  * activity-date is required at least once
+  * activity-date has optional narrative element
+  * activity-scope when used may only occur once
+  * contact-info/organisation may occur no more than once
+  * new element added : contact-info/department
+  * contact-info/person-name may occur no more than once
+  * contact-info/job-title may occur no more than once
+  * policy-marker has optional narrative element
+  * policy-marker/@significance is now required
+  * policy-marker/@code is now required
+  * transaction/transaction-type is required once and only once
+  * transaction/transaction-date is required once and only once
+  * transaction/value is required once and only once
+  * transaction/description when used may only occur once
+  * transaction/provider-org when used may only occur once
+  * transaction/provider-org has optional narrative element
+  * transaction/receiver-org when used may only occur once
+  * transaction/receiver-org has optional narrative element
+  * transaction/disbursement-channel when used may only occur once
+  * new element added: transaction/sector
+  * new element added: transaction/recipient-country
+  * new element added: transaction/recipient-region
+  * transaction/flow-type when used may only occur once
+  * transaction/finance-type when used may only occur once
+  * transaction/aid-type when used may only occur once
+  * transaction/tied-status when used may only occur once
+  * location/location-reach when used may only occur once
+  * location/location-reach/@code is required
+  * location/location-id/@code is required
+  * location/location-id/@vocabulary is required
+  * location/name becomes of type: textRequiredType
+  * location/name when used may only occur once
+  * location/description becomes of type: textRequiredType
+  * location/description when used may only occur once
+  * location/activity-description becomes of type: textRequiredType
+  * location/activity-description when used may only occur once
+  * location/administrative/@code is required
+  * location/administrative/@vocabulary is required
+  * attribute removed: location/administrative/@adm1
+  * attribute removed: location/administrative/@adm2
+  * attribute removed: location/administrative/@country
+  * location/activity-description when used may only occur once
+  * location/point when used may only occur once
+  * location/point/pos is required
+  * location/exactness when used may only occur once 
+  * location/exactness/@code is required
+  * location/location-class when used may only occur once 
+  * location/location-class/@code is required
+  * location/feature-designations when used may only occur once 
+  * location/feature-designation/@code is required
+  * element removed: location/coordinates
+  * country-budget-items when used may only occur once
+  * country-budget-items/budget-item is required at least once
+  * country-budget-items/budget-item/description becomes of type: textRequiredType
+  * result/title is required once and only once
+  * result/description when used may only occur once
+  * result/indicator is required at least once
+  * result/indicator/title is required once and only once
+  * result/indicator/description when used may only occur once
+  * result/indicator/baseline when used may only occur once
+  * result/indicator/baseline/comment when used may only occur once
+  * result/indicator/baseline/period/period-start is required once and only once
+  * result/indicator/baseline/period/period-end is required once and only once
+  * result/indicator/baseline/target when used may only occur once
+  * result/indicator/baseline/target/comment when used may only occur once
+  * result/indicator/baseline/actual when used may only occur once
+  * result/indicator/baseline/actual/comment when used may only occur once
+  * collaboration-type when used may only occur once
+  * default-flow-type when used may only occur once
+  * default-finance-type when used may only occur once
+  * default-aid-type when used may only occur once
+  * default-tied-status when used may only occur once
+  * capital-spend when used may only occur once
+  * conditions when used may only occur once
+  * crs-add when used may only occur once
+  * fss when used may only occur once
+  * element removed: activity-website
+  * conditions/condition has required narrative element
+  * budget/period-start is required once and only once
+  * budget/period-end is required once and only once
+  * budget/value is required once and only once
+  * planned-disbursement/period-start is required once and only once
+  * planned-disbursement/period-end is required once and only once
+  * planned-disbursement/value is required once and only once
+  * element renamed: crs-add/aidtype-flag renamed crs-add/other-flags
+  * new element: crs-add/other-flags (see above)
+  * element removed: crs-add/aidtype-flag (see above)
+  * crs-add/loan-terms when used may only occur once
+  * crs-add/loan-terms/repayment-type when used may only occur once
+  * crs-add/loan-terms/repayment-plan when used may only occur once
+  * crs-add/loan-terms/commitment-date when used may only occur once
+  * crs-add/loan-terms/repayment-first-date when used may only occur once
+  * crs-add/loan-terms/repayment-final-date when used may only occur once
+  * crs-add/loan-status when used may only occur once
+  * crs-add/loan-status/interest-received when used may only occur once
+  * crs-add/loan-status/principal-outstanding when used may only occur once
+  * crs-add/loan-status/principal-arrears when used may only occur once
+  * crs-add/loan-status/interest-arrears when used may only occur once
+  * document-link element requires a single title element
+  * document-link element requires at least one category element
+  - new element optional added: document-link/recipient-country
+
+  * complexType: currencyType now defined here  
+  * complexType removed: indicatorOutcomeType
+  
+  * attribute: currency now defined here
+  
+  
+** Organisations
+  * order of elements is now enforced by the schema
+  - iati-organisations/@version is now a string instead of a decimal
+  * iati-organisations/@version is now required
+  * iati-identifier element has been removed
+  * new element added: organisation-identifier element 
+  * name element is required once and only once
+  * name element requires at least on narrative element
+  * reporting-org is required once and only once
+  * total-budget/period-start is required once and only once
+  * total-budget/period-end is required once and only once
+  * total-budget/value is required once and only once
+  - new optional element added: total-budget/budget-line
+  * recipient-org-budget/recipient-org is required once and only once
+  * recipient-org-budget/recipient-org requires at least on narrative element
+  * recipient-org-budget/period-start is required once and only once  
+  * recipient-org-budget/period-end is required once and only once
+  * recipient-org-budget/value is required once and only once
+  - new element added: recipient-org-budget/budget-line
+  * recipient-country-budget/period-start is required once and only once  
+  * recipient-country-budget/period-end is required once and only once
+  * recipient-country-budget/value is required once and only once
+  - new element optional added: recipient-country-budget/budget-line
+  - new element optional added: document-link is now defined in the Organisations schema
+  * document-link element requires a single title element
+  * document-link element requires at least one category element
+  - new element optional added: document-link/recipient-country
+  * complexType: currencyType now defined here
+  * attribute: currency now defined here
+
+** Common
+  * new element added: narrative element is used for text fields
+  - new type added: textRequiredType
+  * title element changes type to textRequiredType
+  * description element requires at least on narrative element
+  * description element no longer has the textAtts attribute group
+  * description element no longer has a @type attribute
+  * comment element changes type to textRequiredType
+  - iati-identifier element removed from common schema and into activity schema
+  * reporting-org element requires at least on narrative element
+  - Frequently-used attributes, @code, @ref, @type, @percentage, @currency
+    removed from the common schema and defined where used instead
+  * attribute group: textAtts removed from the common schema
+  * complexType: plainType removed from the common schema
+  * complexType: textType has optional narrative element
+  * complexType: textType no longer has the textAtts attribute group
+  * complexType: codeType removed from the common schema
+  * complexType: textRequiredType added
+  * complexType: refType removed from the common schema
+  * complexType: refReqType removed from the common schema
+  * complexType: currencyType removed from the common schema
+  * complexType: dateType removed from the common schema
+  * complexType: dateReqType removed from the common schema 
+
 * (pre) Version 1.05
 
 (see http://support.iatistandard.org/forums/22895158-1-05-Decimal-Upgrade)
