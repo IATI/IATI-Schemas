@@ -1,8 +1,8 @@
-International Aid Transparency Initiative (IATI)
-XML Schemas
+International Aid Transparency Initiative (IATI) XML Schemas
+============================================================
 
-IATI Support <support@iatistandard.org>
-Release 2.01, 2014-10-21
+| IATI Support <support@iatistandard.org>
+| Release 2.01, 2014-10-21
 
 This directory contains version 2.01 of the IATI XML
 schemas, effective 2014-10-21 (subject to agreement).  More information about these schemas
@@ -10,14 +10,17 @@ is available at http://iatistandard.org
 
 This directory contains the following files:
 
-README.txt                      This file.
+=============================== ========================================
+File                            Description
+=============================== ========================================
+README.rst                      This file.
 
 CHANGES.txt                     Change log.
 
 iati-activities-schema.xsd      XML Schema for describing aid activities
                                 (e.g. projects).
 
-iati-organisations-schema.xsd    XML schema for describing aid
+iati-organisations-schema.xsd   XML schema for describing aid
                                 organisations and their budgets.
 
 iati-common.xsd                 A supplementary schema with common
@@ -32,6 +35,7 @@ iati-registry-record-schema.xsd An application-specific extension
                                 the IATI registry.
 
 tests/                          Unit tests for the schemas.
+=============================== ========================================
 
 The tests include a series of short XML documents that should pass or
 file when parsed against the schemas in this distribution.  The shell
