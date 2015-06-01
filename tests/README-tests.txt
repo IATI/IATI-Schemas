@@ -13,7 +13,7 @@ should-pass/
         Valid XML documents.
 
 To run the tests, you should be in a Unix-like environment (or
-possibly Windows using a Unix shell) and have the xmllint application
+Windows using Cygwin) and have the xmllint application
 installed.  xmllint is available in most Linux distributions, or can
 be compiled from source as part of the Gnome XML C Parser and Toolkit
 (libxml2), available here:
