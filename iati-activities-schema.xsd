@@ -1724,6 +1724,35 @@
             <xsd:sequence>
               <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
               <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+              <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    A reference to a precise indicator code within a known
+                    indicator vocabulary. There can be multiple references 
+                    for each each indicator - for example, if the same indicator 
+                    is referenced in multiple indicator vocabularies
+                    (e.g. an implementing organization's own results framework 
+                    and a donor's standard indicator repository).
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:attribute name="vocabulary" type="xsd:string" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        An IATI code for the indicator vocabulary referenced.
+                        See the "Indicator Vocabulary" codelist for values. 
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:attribute name="code" type="xsd:string" use="required">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        The indicator code used within the specified indicator vocabulary.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                </xsd:complexType>
+              </xsd:element>
               <xsd:element name="baseline" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
