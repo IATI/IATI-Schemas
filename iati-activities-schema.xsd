@@ -1722,8 +1722,6 @@
           </xsd:annotation>
           <xsd:complexType>
             <xsd:sequence>
-              <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
-              <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
               <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -1753,6 +1751,8 @@
                   </xsd:attribute>
                 </xsd:complexType>
               </xsd:element>
+              <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+              <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
               <xsd:element name="baseline" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
