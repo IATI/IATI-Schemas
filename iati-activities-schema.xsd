@@ -2024,7 +2024,8 @@
         <xsd:element name="period-end" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the disbursement period.
+              The ending date for the period in which this specific disbursement 
+              will be made.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
