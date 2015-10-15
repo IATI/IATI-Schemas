@@ -2042,6 +2042,102 @@
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
+        <xsd:element name="provider-org" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              For incoming funds this is the organisation from which
+              the planned disbursement will originate. If omitted on outgoing funds
+              the reporting-org is assumed.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The name of the organisation. This can be repeated
+                    in multiple languages
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Machine-readable identification string for the
+                  organisation. Must be in the format {Registration
+                  Agency} - (Registration Number} where {Registration
+                  Agency} is a valid code in the Registration Agency
+                  code list and {Registration Number } is a valid
+                  identifier issued by the {Registration Agency}. If
+                  this is not present then the narrative MUST contain
+                  the name of the organisation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  If incoming funds are being provided from the budget
+                  of another activity that is reported to IATI, it is
+                  STRONGLY RECOMMENDED that this should record the
+                  provider's unique IATI activity identifier for that
+                  activity.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="receiver-org" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The organisation receiving the money from the
+              planned disbursement (if omitted on incoming funds then the
+              receiver organisation is assumed to be the reporting
+              organisation).
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The name of the organisation. This can be repeated
+                    in multiple languages
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Machine-readable identification string for the
+                  organisation. Must be in the format {Registration
+                  Agency} - (Registration Number} where {Registration
+                  Agency} is a valid code in the Registration Agency
+                  code list and {Registration Number } is a valid
+                  identifier issued by the {Registration Agency}. If
+                  this is not present then the narrative MUST contain
+                  the name of the organisation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  If outgoing funds are being provided to another
+                  activity that is reported to IATI, this may, if
+                  possible, record the unique IATI activity identifier
+                  for that activity.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="type" use="optional" type="xsd:string">
