@@ -1,14 +1,14 @@
 International Aid Transparency Initiative (IATI) XML Schemas
 ============================================================
 
-.. image:: https://travis-ci.org/IATI/IATI-Schemas.svg?branch=version-2.01
+.. image:: https://travis-ci.org/IATI/IATI-Schemas.svg?branch=version-2.02
     :target: https://travis-ci.org/IATI/IATI-Schemas
 
 | IATI Support <support@iatistandard.org>
-| Release 2.01, 2014-10-21
+| Release 2.02, due for release 2015-12-07
 
-This directory contains version 2.01 of the IATI XML
-schemas, effective 2014-10-21 (subject to agreement).  More information about these schemas
+This directory contains version 2.02 of the IATI XML
+schemas, due to be effective 2015-12-07 (subject to agreement).  More information about these schemas
 is available at http://iatistandard.org
 
 This directory contains the following files:
