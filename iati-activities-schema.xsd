@@ -2009,8 +2009,8 @@
         <xsd:element name="period-start" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The exact date of the planned disbursement OR the
-              starting date for the disbursement period.
+              The exact date of the planned disbursement OR the starting date 
+              of the period in which this specific disbursement will be made.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
