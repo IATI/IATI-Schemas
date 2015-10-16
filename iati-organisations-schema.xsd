@@ -477,6 +477,16 @@
         </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
+      <xsd:attribute name="status" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The status explains whether the budget being reported is indicative or has 
+            been formally committed. The value should appear within the BudgetStatus 
+            codelist. If the @status attribute is not present, the budget is assumed 
+            to be indicative.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
