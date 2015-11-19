@@ -415,6 +415,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            If the vocabulary is 99 (reporting organisation), the URI 
+            where this internal vocabulary is defined.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -628,6 +636,14 @@
             Sector can also be reported at the transaction level rather 
             than the activity level. Sector must only be reported at 
             EITHER transaction level OR activity level.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            If the vocabulary is 99 or 98 (reporting organisation), the URI 
+            where this internal vocabulary is defined.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -868,6 +884,14 @@
             An IATI code for the vocabulary to be used to define
             policy markers. If omitted then the OECD DAC vocabulary is
             assumed.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            If the vocabulary is 99 (reporting organisation), the URI 
+            where this internal vocabulary is defined.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1144,6 +1168,14 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
+            <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                If the vocabulary is 99 or 98 (reporting organisation), the URI 
+                where this internal vocabulary is defined.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -1217,6 +1249,14 @@
                 <xsd:documentation xml:lang="en">
                   An IATI code for the vocabulary from which the region code
                   is drawn. If it is not present 1 - 'OECD DAC' is assumed.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                If the vocabulary is 99 (reporting organisation), the URI 
+                where this internal vocabulary is defined.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
