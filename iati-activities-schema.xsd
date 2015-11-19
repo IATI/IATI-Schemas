@@ -183,6 +183,14 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A process flag to indicate that this activity relates entirely 
+            or partially to humanitarian aid.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="hierarchy" type="xsd:int" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -1303,6 +1311,14 @@
           <xsd:documentation xml:lang="en">
             An internal reference linking this transaction back to the
             publisher's financial management system.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A process flag to indicate that this transaction relates entirely 
+            or partially to humanitarian aid.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
