@@ -853,6 +853,58 @@
     </xsd:complexType>
   </xsd:element>
 
+  <xsd:element name="humanitarian-scope">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Classification of emergencies, appeals and other humanitarian 
+        events and actions.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+            The description of the code specified.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="type" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code for the type of event or action being classified.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code for a recognised vocabulary of terms classifying the 
+            event or action.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A u.r.i. for the vocabulary specified which provides access to 
+            the list of codes and descriptions.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="code" type="xsd:string" use="required">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code for the event or action from the vocabulary specified.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="policy-marker">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
