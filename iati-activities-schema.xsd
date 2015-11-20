@@ -135,7 +135,7 @@
         <xsd:element ref="location" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="sector" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="country-budget-items"  minOccurs="0" maxOccurs="1"/>
-        <xsd:element ref="humanitatian-scope" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="humanitarian-scope" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="policy-marker" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="collaboration-type" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="default-flow-type" minOccurs="0" maxOccurs="1"/>
