@@ -83,6 +83,7 @@
         <xsd:element ref="reporting-org" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="total-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-org-budget" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="recipient-region-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-country-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
@@ -344,6 +345,150 @@
                 </xsd:annotation>
               </xsd:element>
               <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An internal reference for this budget line taken
+                  from the reporting organisation's own system.
+                  Optional.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="status" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The status explains whether the budget being reported is indicative or has 
+            been formally committed. The value should appear within the BudgetStatus 
+            codelist. If the @status attribute is not present, the budget is assumed 
+            to be indicative.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="recipient-region-budget">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        The recipient-region-budget element allows for the reporting of forward looking 
+        budgets for each region in which the organisation operates. The recommendation 
+        is that, where and when possible, the organisation’s total annual planned budget 
+        for each of the next three financial years is reported for each recipient 
+        region. We strongly recommend that publishers report to existing defined regions 
+        wherever possible.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="recipient-region" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The supranational geographic region where funds have been allocated.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for the vocabulary from which the region code is 
+                  drawn. If it is not present, code 1 ('OECD DAC') is assumed.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  If the vocabulary is 99 (reporting organisation), the URI 
+                  where this internal vocabulary is defined.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="code" type="xsd:string" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Either an OECD DAC, UN region code or (if code ‘99’ Reporting 
+                  organisation is selected for recipient-region/@vocabulary) a 
+                  code from your internal vocabulary. The codelist is determined 
+                  by vocabulary attribute. The value in recipient-region/@code 
+                  should appear within the Region codelist, if the vocabulary 
+                  code 1 ('OECD DAC') is used.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="period-start" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The start of the budget period.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="optional"/>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="period-end" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The end of the period (which must not be greater than one year)
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any processContents="lax" namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" type="xsd:date" use="optional"/>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The total value of the money budgeted to be disbused to
+              the specified region during this time period.  This
+              element is required.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A breakdown of the recipient region’s budget into sub-totals. The 
+              breakdown is determined by the reporting organisation and described 
+              in the narrative. The period covered is the same as that covered by 
+              the parent recipient-region-budget element. The sum of budget-line 
+              values does not have to equal the value given in the parent element.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="value" type="currencyType" minOccurs="0" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The budget sub-total. The definiton of the
+                    sub-division is determined by
+                    iati-organisation/recipient-region-budget/budget-line/narrative
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
             <xsd:attribute name="ref" use="optional" type="xsd:string">

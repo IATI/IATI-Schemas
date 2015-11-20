@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation>
+    <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+
+    <recipient-region-budget> <!-- optional-->
+      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
+      <period-start iso-date="2014-01-31" /> <!-- must between 0 and 1 -->
+      <period-start iso-date="2014-01-31" /> <!-- must between 0 and 1 -->
+      
+      <period-end iso-date="2014-03-31" /> <!-- must between 0 and 1 -->
+      <value value-date="2011-01-01">10000.11</value> <!-- must between 0 and 1 -->
+    </recipient-region-budget>
+    
+    
+    
+  </iati-organisation>
+
+</iati-organisations>
