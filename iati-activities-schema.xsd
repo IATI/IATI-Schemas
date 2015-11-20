@@ -1853,6 +1853,47 @@
             <xsd:sequence>
               <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
               <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+              <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    A standardised means of identifying the indicator from a 
+                    code in a recognised vocabulary. Multiple vocabularies may 
+                    be specified, but each vocabulary may be specified only 
+                    once for each indicator.
+                  </xsd:documentation>
+                </xsd:annotation>
+                <xsd:complexType>
+                  <xsd:sequence>
+                    <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                  </xsd:sequence>
+                  <xsd:attribute name="vocabulary" use="optional" type="xsd:string">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        A code for a recognised vocabulary of indicators. The 
+                        value for this field should appear in the 
+                        IndicatorVocabulary codelist.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:attribute name="code" use="optional" type="xsd:string">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        A code for an indicator defined in the specified 
+                        vocabulary specified.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:attribute name="indicator-url" use="optional" type="xsd:anyURI">
+                    <xsd:annotation>
+                      <xsd:documentation xml:lang="en">
+                        If the vocabulary is 99 (reporting organisation), the 
+                        URI where this internal vocabulary is defined.
+                      </xsd:documentation>
+                    </xsd:annotation>
+                  </xsd:attribute>
+                  <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                </xsd:complexType>
+              </xsd:element>
               <xsd:element name="baseline" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
