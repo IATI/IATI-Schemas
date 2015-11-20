@@ -675,7 +675,7 @@
             </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
-        </xsd:element>
+        </xsd:element>     
         <xsd:element name="language" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -695,6 +695,20 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="document-date" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The date of publication of the document that is being linked to.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="iso-date" use="required" type="xsd:date"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
