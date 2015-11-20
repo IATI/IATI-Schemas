@@ -1968,7 +1968,57 @@
                         </xsd:documentation>
                       </xsd:annotation>
                       <xsd:complexType>
-                        <xsd:sequence>
+                        <xsd:sequence>          
+                          <xsd:element name="location" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:annotation>
+                              <xsd:documentation xml:lang="en">
+                                A location already defined and described in the 
+                                iati-activity/location element.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="ref" use="optional" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">
+                                    A cross-reference to the internal reference assigned 
+                                    to a defined location: iati-activity/location/@ref.
+                                  </xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:attribute>
+                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:annotation>
+                              <xsd:documentation xml:lang="en">
+                                A category used for disaggregating the result by gender, 
+                                age, etc.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="name" use="optional" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">
+                                    Freetext description of a category being disaggregated.
+                                  </xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:attribute>
+                              <xsd:attribute name="value" use="optional" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">
+                                    Description of the value being disaggregated.
+                                  </xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:attribute>
+                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                            </xsd:complexType>
+                          </xsd:element>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
@@ -1989,6 +2039,56 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
+                          <xsd:element name="location" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:annotation>
+                              <xsd:documentation xml:lang="en">
+                                A location already defined and described in the 
+                                iati-activity/location element.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="ref" use="optional" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">
+                                    A cross-reference to the internal reference assigned 
+                                    to a defined location: iati-activity/location/@ref.
+                                  </xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:attribute>
+                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                            </xsd:complexType>
+                          </xsd:element>
+                          <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
+                            <xsd:annotation>
+                              <xsd:documentation xml:lang="en">
+                                A category used for disaggregating the result by gender, 
+                                age, etc.
+                              </xsd:documentation>
+                            </xsd:annotation>
+                            <xsd:complexType>
+                              <xsd:sequence>
+                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                              </xsd:sequence>
+                              <xsd:attribute name="name" use="optional" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">
+                                    Freetext description of a category being disaggregated.
+                                  </xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:attribute>
+                              <xsd:attribute name="value" use="optional" type="xsd:string">
+                                <xsd:annotation>
+                                  <xsd:documentation xml:lang="en">
+                                    Description of the value being disaggregated.
+                                  </xsd:documentation>
+                                </xsd:annotation>
+                              </xsd:attribute>
+                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
+                            </xsd:complexType>
+                          </xsd:element>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
