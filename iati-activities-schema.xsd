@@ -955,13 +955,12 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="significance" type="xsd:string" use="required">
+      <xsd:attribute name="significance" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An OECD DAC CRS code indicating the significance of the
-            policy marker for this activity. This codelist should be
-            used for all vocabularies. Markers MUST NOT be reported
-            unless a value for significance is present.
+            An OECD DAC CRS code indicating the significance of the policy marker 
+            for this activity. This attribute MUST be used for all OECD DAC CRS 
+            vocabularies.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
