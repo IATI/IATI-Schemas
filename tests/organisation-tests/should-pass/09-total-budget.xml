@@ -18,7 +18,7 @@
     </total-budget>
     
     <!-- with all additional attributes -->
-    <total-budget>
+    <total-budget status="1">
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
       <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
@@ -39,7 +39,7 @@
     </total-budget>
     
         <!-- with budget-line all values-->
-    <total-budget>
+    <total-budget status="1">
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
       <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
