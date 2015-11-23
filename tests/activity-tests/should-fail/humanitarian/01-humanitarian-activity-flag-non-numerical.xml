@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+
+  <!-- Fail: humanitarian flag should only accept numerical codes-->
+  <iati-activity humanitarian="One"> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
+      <narrative>Some stuff ere</narrative>
+    </activity-date>
+  </iati-activity>
+
+</iati-activities>

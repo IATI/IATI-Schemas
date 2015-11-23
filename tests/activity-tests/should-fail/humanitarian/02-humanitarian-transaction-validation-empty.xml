@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+
+<!--
+  Test Validation of Transaction Element: non-numerical flag
+-->
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
+    <transaction ref="X"> <!-- minimum elements -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+    </transaction>
+
+    <transaction ref="X" humanitarian=""> <!-- minimum plus humanitarian flag -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+    </transaction>
+    
+  </iati-activity>
+</iati-activities>
