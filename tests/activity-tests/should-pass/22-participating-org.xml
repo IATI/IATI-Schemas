@@ -25,6 +25,11 @@
     <participating-org role="X">
       <narrative>xx</narrative>
     </participating-org>
+
+    <!-- activity-id included -->
+    <participating-org role="X" activity-id="XXX-XX-12345678">
+      <narrative>xx</narrative>
+    </participating-org>
     
     <!--<other-identifier></other-identifier>-->
     <activity-status code="xx"/> <!-- 1 and only 1-->
