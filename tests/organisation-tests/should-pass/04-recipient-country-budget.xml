@@ -19,7 +19,7 @@
     </recipient-country-budget>
     
     <!-- with all additional attributes -->
-    <recipient-country-budget>
+    <recipient-country-budget status="1">
       <recipient-country code="xxx"/>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
@@ -42,7 +42,7 @@
     </recipient-country-budget>
     
         <!-- with budget-line all values-->
-    <recipient-country-budget>
+    <recipient-country-budget status="1">
       <recipient-country code="xxx"/>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
