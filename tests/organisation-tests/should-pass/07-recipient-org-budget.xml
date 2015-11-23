@@ -23,7 +23,7 @@
     </recipient-org-budget>
     
     <!-- with all attributes-->
-    <recipient-org-budget>
+    <recipient-org-budget status="1">
       <recipient-org ref="xx">
         <narrative>No Code</narrative>
       </recipient-org>
@@ -50,7 +50,7 @@
     </recipient-org-budget>
     
     <!-- with budget-line all values-->
-    <recipient-org-budget>
+    <recipient-org-budget status="1">
       <recipient-org>
         <narrative>No Code</narrative>
       </recipient-org>
