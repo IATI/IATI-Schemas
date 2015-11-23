@@ -26,6 +26,11 @@
       <period-end iso-date="2011-12-31" />
       <value value-date="2011-01-01" currency="GBP">1000000</value>
     </budget>
+    <budget type="X" status="1">
+      <period-start iso-date="2011-01-01" />
+      <period-end iso-date="2011-12-31" />
+      <value value-date="2011-01-01" currency="GBP">1000000</value>
+    </budget>
 
   </iati-activity>
 
