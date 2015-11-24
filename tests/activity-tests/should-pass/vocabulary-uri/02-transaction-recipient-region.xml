@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+
+<!--
+  Test full transaction markup
+-->
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
+    <transaction ref="X"> <!-- minimum elements -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+    </transaction>
+    
+    <transaction ref="X"> <!-- without sector, country or regions -->
+      <transaction-type code="X" />
+      <transaction-date xml:lang="en" iso-date="2010-07-07" />
+      <value currency="EUR" value-date="2010-07-07">100</value>
+      <description>
+        <narrative xml:lang="en"> X</narrative>
+        <narrative xml:lang="fr"> X</narrative>
+      </description>
+      <provider-org ref="X" provider-activity-id="X">
+        <narrative>X</narrative>
+      </provider-org>
+      <receiver-org ref="X" receiver-activity-id="X">
+        <narrative>X</narrative>
+      </receiver-org>
+      <disbursement-channel xml:lang="en" code="X" />
+      <recipient-region code="xx" vocabulary="99" vocabulary-uri="https://www.example.com/vocabulary.xml"/>
+      <flow-type xml:lang="en" code="X" />
+      <finance-type xml:lang="en" code="X" />
+      <aid-type xml:lang="en" code="X" />
+      <tied-status xml:lang="en" code="X" />
+    </transaction>
+
+    
+  </iati-activity>
+</iati-activities>
