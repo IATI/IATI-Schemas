@@ -1884,7 +1884,7 @@
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
-                  <xsd:attribute name="indicator-url" use="optional" type="xsd:anyURI">
+                  <xsd:attribute name="indicator-uri" use="optional" type="xsd:anyURI">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         If the vocabulary is 99 (reporting organisation), the 
