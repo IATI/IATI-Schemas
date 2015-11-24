@@ -79,10 +79,10 @@
       <description>
         <narrative xml:lang="en"> X</narrative>
       </description>
-      <provider-org ref="X" provider-activity-id="X">
+      <provider-org ref="X" provider-activity-id="X" type="10">
         <narrative>X</narrative>
       </provider-org>
-      <receiver-org ref="X" receiver-activity-id="X">
+      <receiver-org ref="X" receiver-activity-id="X" type="10">
         <narrative>X</narrative>
       </receiver-org>
       <disbursement-channel xml:lang="en" code="X" />
