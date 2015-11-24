@@ -23,5 +23,6 @@
       <narrative>xxxx</narrative>
     </policy-marker>
     <policy-marker code="xx" significance="xx"/>
+    <policy-marker code="xx"/> <!-- added to reflect the loosening of significance cardinality in version 2.02-->
   </iati-activity>
 </iati-activities>
