@@ -2845,7 +2845,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The ISO 4217 alphabetic currency code of the value reported.
-        This is required unless the iati-activity/@default-currency is
+        This is required unless the iati-activity/@default-currency is
         present and applies.
       </xsd:documentation>
     </xsd:annotation>

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+  
+    <!--Fail: empty activity id -->
+    <reporting-org type="xx" ref="xx" activity-id="XX-XXX-12345678" activity-id="XX-XXX-12345678"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+  </iati-activity>
+</iati-activities>
