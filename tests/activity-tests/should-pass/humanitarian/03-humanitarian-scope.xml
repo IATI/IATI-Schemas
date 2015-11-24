@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
+      <narrative>Some stuff ere</narrative>
+    </activity-date>
+    
+    <!-- PASS: This test checks that multiple valid uses of the humanitarian-scope element are are valid, and that each useable element/attribute is tested -->
+
+    <!-- General Usage -->
+    <humanitarian-scope type="1" vocabulary="99" vocabulary-uri="http://example.com/vocab.html" code="5"><!-- 0:many -->
+      <narrative xml:lang="en">Nepal Earthquake (April 2015)</narrative>
+    </humanitarian-scope>
+
+    <!-- Minimal -->
+    <humanitarian-scope type="1" vocabulary="99" code="5"/><!-- 0:many -->
+
+    <!-- Multiple Narratives, some without language element -->
+    <humanitarian-scope type="1" vocabulary="99" vocabulary-uri="http://example.com/vocab.html" code="5"><!-- 0:many -->
+      <narrative xml:lang="en">Nepal Earthquake (April 2015)</narrative>
+      <narrative xml:lang="fr">Le Nepal Earthquake (Avril 2015)</narrative>
+      <narrative>Nepal Earthquake (April 2015)</narrative>
+    </humanitarian-scope>
+
+  </iati-activity>
+</iati-activities>
