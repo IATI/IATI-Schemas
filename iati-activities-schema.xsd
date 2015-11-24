@@ -2427,7 +2427,7 @@
             <xsd:attribute name="type" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The type of organisation providing the funds.
+                  The type of organisation receiving the funds.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
