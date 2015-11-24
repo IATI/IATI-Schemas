@@ -2369,6 +2369,13 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
+            <xsd:attribute name="type" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The type of organisation providing the funds.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -2414,6 +2421,13 @@
                   activity that is reported to IATI, this may, if
                   possible, record the unique IATI activity identifier
                   for that activity.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="type" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The type of organisation providing the funds.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
