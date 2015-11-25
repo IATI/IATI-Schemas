@@ -85,8 +85,8 @@
         <xsd:element ref="recipient-org-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-region-budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="recipient-country-budget" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="total-expenditure" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="last-updated-datetime" type="xsd:dateTime" use="optional">
