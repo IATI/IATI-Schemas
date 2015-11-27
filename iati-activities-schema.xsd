@@ -1871,7 +1871,7 @@
                   <xsd:sequence>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
-                  <xsd:attribute name="vocabulary" use="optional" type="xsd:string">
+                  <xsd:attribute name="vocabulary" use="required" type="xsd:string">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         A code for a recognised vocabulary of indicators. The 
@@ -1880,7 +1880,7 @@
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
-                  <xsd:attribute name="code" use="optional" type="xsd:string">
+                  <xsd:attribute name="code" use="required" type="xsd:string">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         A code for an indicator defined in the specified 
