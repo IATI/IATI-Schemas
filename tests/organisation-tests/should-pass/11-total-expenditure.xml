@@ -24,7 +24,7 @@
       <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
     </total-expenditure>
     
-    <!-- with budget-line minimal-->
+    <!-- with expense-line minimal-->
     <total-expenditure>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
@@ -38,7 +38,7 @@
       </expense-line>
     </total-expenditure>
     
-        <!-- with budget-line all values-->
+        <!-- with expense-line all values-->
     <total-expenditure>
       <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
