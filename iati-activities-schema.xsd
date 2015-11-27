@@ -1432,8 +1432,11 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this transaction relates entirely 
-            or partially to humanitarian aid.
+            A process flag to indicate that this transaction relates 
+            entirely or partially to humanitarian aid. If the entire 
+            activity relates to humanitarian aid this should be reported 
+            using iati-activity/@humanitarian, rather than for each 
+            transaction.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
