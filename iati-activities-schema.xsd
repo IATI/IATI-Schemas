@@ -294,7 +294,8 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A valid activity identifier published by the participating 
-            organisation.
+            organisation which points to the activity that it has 
+            published to IATI that describes its role in this activity.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
