@@ -11,14 +11,21 @@
       <narrative>Organisation name</narrative>
     </reporting-org>
 
-    <recipient-region-budget> <!-- optional-->
+
+    <!-- with budget-line minimal-->
+    <recipient-region-budget>
       <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
-      <period-start iso-date="2014-01-11">text</period-start> <!-- must have 1 and only 1 -->
+      <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
       <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
-      <value value-date="2011-01-01">1.1</value> <!-- must have 1 and only 1 -->
+      <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
+      
+      <budget-line> <!--optional-->
+        <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
+        <!-- <narrative>Some text</narrative> --> <!-- must have at least 1 -->
+      </budget-line>
     </recipient-region-budget>
     
-    
+     
     
   </iati-organisation>
 

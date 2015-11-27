@@ -14,42 +14,31 @@
 
     <!-- recipient-region-budget minimal -->
     <recipient-region-budget>
-       <!-- No elements within recipient-region-budget are required -->
+      <recipient-region vocabulary="xxx" code="xxx" /><!-- must have 1 and only 1 -->
+      <period-start iso-date="2014-01-31" /><!-- must have 1 and only 1 -->
+      <period-end iso-date="2014-03-31" /><!-- must have 1 and only 1 -->
+      <value value-date="2011-01-01" currency="GBP">10000.11</value><!-- must have only 1 -->
     </recipient-region-budget>
     
 
     <!-- with all additional attributes -->
     <recipient-region-budget status="1">
-      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
-      <period-start iso-date="2014-01-31" />
-      <period-end iso-date="2014-03-31" />
-      <value value-date="2011-01-01" currency="GBP">10000.11</value>
+      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" /><!-- must have 1 and only 1 -->
+      <period-start iso-date="2014-01-31" /><!-- must have 1 and only 1 -->
+      <period-end iso-date="2014-03-31" /><!-- must have 1 and only 1 -->
+      <value value-date="2011-01-01" currency="GBP">10000.11</value><!-- must have 1 and only 1 -->
     </recipient-region-budget>
-
-    
-    <!-- with budget-line minimal-->
-    <recipient-region-budget>
-      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
-      <period-start iso-date="2014-01-31" />
-      <period-end iso-date="2014-03-31" />
-      <value value-date="2011-01-01" currency="GBP">10000.11</value> 
-      
-      <budget-line> 
-        <!-- No elements within budget-line are required -->
-      </budget-line>
-    </recipient-region-budget>
-
 
     <!-- with budget-line minimal-->
     <recipient-region-budget>
-      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
-      <period-start iso-date="2014-01-31" />
-      <period-end iso-date="2014-03-31" />
-      <value value-date="2011-01-01" currency="GBP">10000.11</value> 
+      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" /><!-- must have 1 and only 1 -->
+      <period-start iso-date="2014-01-31" /><!-- must have 1 and only 1 -->
+      <period-end iso-date="2014-03-31" /><!-- must have 1 and only 1 -->
+      <value value-date="2011-01-01" currency="GBP">10000.11</value><!-- must have 1 and only 1 -->
       
       <budget-line> 
-        <value value-date="2011-01-01" currency="GBP">10000.11</value> 
-        <narrative> 
+        <value value-date="2011-01-01" currency="GBP">10000.11</value><!-- must have 1 and only 1 -->
+        <narrative><!-- must have 1 and only 1 -->
           Some text
         </narrative>
       </budget-line>
@@ -57,27 +46,27 @@
     
     <!-- with budget-line all values-->
     <recipient-region-budget status="1">
-      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
-      <period-start iso-date="2014-01-31" /> <!-- must have 1 and only 1 -->
-      <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
-      <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
+      <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" /><!-- must have 1 and only 1 -->
+      <period-start iso-date="2014-01-31" /><!-- must have 1 and only 1 -->
+      <period-end iso-date="2014-03-31" /><!-- must have 1 and only 1 -->
+      <value value-date="2011-01-01" currency="GBP">10000.11</value><!-- must have 1 and only 1 -->
       
       <budget-line ref="xx"> <!--optional-->
-        <value value-date="2011-01-01" currency="GBP">10000.11</value> <!-- must have 1 and only 1 -->
-        <narrative> <!-- must have at least 1 -->
+        <value value-date="2011-01-01" currency="GBP">10000.11</value><!-- must have 1 and only 1 -->
+        <narrative><!-- must have 1 and only 1 -->
           Some text
         </narrative>
-        <narrative> <!-- must have at least 1 -->
+        <narrative><!-- must have 1 and only 1 -->
           Some text
         </narrative>
       </budget-line>
       
       <budget-line ref="xx"> <!--optional-->
-        <value value-date="2011-01-01">10000.11</value> <!-- must have 1 and only 1 -->
-        <narrative> <!-- must have at least 1 -->
+        <value value-date="2011-01-01">10000.11</value><!-- must have 1 and only 1 -->
+        <narrative><!-- must have at least 1 -->
           Some text
         </narrative>
-        <narrative> <!-- must have at least 1 -->
+        <narrative><!-- must have at least 1 -->
           Some text
         </narrative>
       </budget-line>

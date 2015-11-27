@@ -13,9 +13,9 @@
 
     <recipient-region-budget> <!-- optional-->
       <recipient-region vocabulary="xxx" vocabulary-uri="http://www.example.com" code="xxx" />
-      <period-start iso-date="2014-01-11">text</period-start> <!-- must have 1 and only 1 -->
-      <period-end iso-date="2014-03-31" /> <!-- must have 1 and only 1 -->
-      <value value-date="2011-01-01">1.1</value> <!-- must have 1 and only 1 -->
+      <period-start iso-date="2014-01-31" />  <!-- must have 1 and only 1 -->
+      <period-end iso-date="2014-03-31" /> --> <!-- must have 1 and only 1 -->
+      <!-- <value value-date="2011-01-01">1.1</value> --> <!-- must have 1 and only 1 -->
     </recipient-region-budget>
     
     
