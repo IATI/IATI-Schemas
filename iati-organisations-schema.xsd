@@ -379,12 +379,14 @@
   <xsd:element name="recipient-region-budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The recipient-region-budget element allows for the reporting of forward looking 
-        budgets for each region in which the organisation operates. The recommendation 
-        is that, where and when possible, the organisation’s total annual planned budget 
+        The recipient-region-budget element allows for the reporting of forward 
+        looking budgets where the organisation maintains region-wide, rather than 
+        or in addition to country-specific budgets. The recommendation is that, 
+        where and when possible, the organisation’s total annual planned budget 
         for each of the next three financial years is reported for each recipient 
-        region. We strongly recommend that publishers report to existing defined regions 
-        wherever possible.
+        region. This must NOT include an aggregation of budgets reported in the 
+        recipient-country-budget element. It is strongly recommended that 
+        publishers report to existing defined regions wherever possible.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
