@@ -2662,7 +2662,11 @@
         <xsd:element name="channel-code" type="xsd:string" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The CRS channel code for this activity.
+              The CRS channel code for this activity. This should only 
+              be used for reporting to CRS. The code list contains 
+              both organisation types and names of organisations. For 
+              non-CRS purposes these should be reported using the 
+              participating-org element.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
