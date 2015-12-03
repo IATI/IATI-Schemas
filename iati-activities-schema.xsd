@@ -2212,7 +2212,11 @@
         budget for an activity should be reported as a commitment in
         the transaction element. The purpose of this element is to
         provide predictability for recipient planning on an annual
-        basis.
+        basis. The status explains whether the budget being reported 
+        is indicative or has been formally committed. The value 
+        should appear within the BudgetStatus codelist. If the @status 
+        attribute is not present, the budget is assumed to be 
+        indicative.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>

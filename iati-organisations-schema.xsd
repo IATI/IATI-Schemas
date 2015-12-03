@@ -143,7 +143,10 @@
         The total-budget element allows for the reporting of the organisation's 
         own budget. The recommendation is that, where and when possible, the 
         organisation's total annual planned budget for each of the next three 
-        years is reported.
+        years is reported. The status explains whether the budget being reported 
+        is indicative or has been formally committed. The value should appear 
+        within the BudgetStatus codelist. If the @status attribute is not present, 
+        the budget is assumed to be indicative.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -248,7 +251,11 @@
         next three financial years are reported. This is primarily
         applicable to donors but any provider of core funding is
         expected to use it. Earmarked budgets should be reported at
-        activity-level through the Activity Standard.
+        activity-level through the Activity Standard. The status 
+        explains whether the budget being reported is indicative or 
+        has been formally committed. The value should appear within 
+        the BudgetStatus codelist. If the @status attribute is not 
+        present, the budget is assumed to be indicative.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -386,7 +393,11 @@
         for each of the next three financial years is reported for each recipient 
         region. This must NOT include an aggregation of budgets reported in the 
         recipient-country-budget element. It is strongly recommended that 
-        publishers report to existing defined regions wherever possible.
+        publishers report to existing defined regions wherever possible. The 
+        status explains whether the budget being reported is indicative or has 
+        been formally committed. The value should appear within the BudgetStatus 
+        codelist. If the @status attribute is not present, the budget is assumed 
+        to be indicative.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
