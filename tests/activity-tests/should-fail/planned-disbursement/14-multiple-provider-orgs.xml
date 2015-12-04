@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+
+    <!-- full example -->
+    <planned-disbursement>
+      <period-start iso-date="2011-01-01" />
+      <period-end iso-date="2011-01-01" />
+      <value value-date="2011-01-01" currency="GBP">500000.99</value>
+      <provider-org provider-activity-id="BB-BBB-123456789-1234AA" ref="BB-BBB-123456789" type="10">
+        <narrative xml:lang="en">Agency B</narrative>
+      </provider-org>
+      <receiver-org receiver-activity-id="AA-AAA-123456789-1234" ref="AA-AAA-123456789" type="10">
+        <narrative xml:lang="en">Agency A</narrative>
+      </receiver-org>
+      <receiver-org receiver-activity-id="CC-CCC-123456789-1234" ref="CC-CCC-123456789" type="10">
+        <narrative xml:lang="en">Agency C</narrative>
+      </receiver-org>
+    </planned-disbursement>
+
+    <!-- minus provider & receiver orgs -->
+    <planned-disbursement>
+      <period-start iso-date="2011-01-01" />
+      <period-end iso-date="2011-01-01" />
+      <value value-date="2011-01-01" currency="GBP">500000.99</value>
+    </planned-disbursement>
+    
+    <planned-disbursement>
+      <period-start iso-date="2011-01-01" />
+      <!--<period-end iso-date="2011-01-01" />--><!-- optional -->
+      <value value-date="2011-01-01" currency="GBP">500000</value>
+    </planned-disbursement>
+
+  </iati-activity>
+
+</iati-activities>
