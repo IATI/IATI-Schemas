@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+
+    <!-- minimum -->
+    <result type="output" aggregation-status="false">
+      <title>
+        <narrative>Treatment: timely detection and quality treatment of cases</narrative>
+      </title>
+      <indicator measure="Unit" ascending="true">
+        <title>
+          <narrative>Number of new smear positive cases detected under DOTS. (Case detection rate under DOTS)</narrative>
+        </title>
+      </indicator>
+    </result>
+
+    <!-- Fail: 2 no target value -->
+    <result type="output" aggregation-status="false">
+      <title>
+        <narrative>Treatment: timely detection and quality treatment of cases</narrative>
+      </title>
+      <indicator measure="Unit" ascending="true">
+        <title>
+          <narrative>Number of new smear positive cases detected under DOTS. (Case detection rate under DOTS)</narrative>
+        </title>
+        <reference vocabulary="99" code="B1" indicator-uri="http://example.com/indicators.html" />
+        <period>                                       <!-- optional -->
+          <period-start iso-date="2009-01-01" />       <!-- 1 and only 1-->
+          <period-end iso-date="2009-12-31" />         <!-- 1 and only 1-->
+          <target value="111">              <!-- Optional, but no more than 1-->
+            <location ref="AF-KAN" />              <!-- Optional: many-->
+            <location ref="KH-ABC" />              <!-- Optional, but no more than 1-->
+            <dimension name="xxx" value="yyyy" />              <!-- Optional, but no more than 1-->
+            <comment>
+              <narrative>Text. Text text.</narrative>
+            </comment>
+            <comment>
+              <narrative>Text. Text text.</narrative>
+            </comment>
+          </target>
+          <actual value="111">                    <!-- Optional, but no more than 1-->
+            <location ref="AF-KAN" />              <!-- Optional: many-->
+            <location ref="KH-ABC" />              <!-- Optional, but no more than 1-->
+            <dimension name="xxx" value="yyy" />              <!-- Optional, but no more than 1-->
+            <comment>                                   <!-- Optional, but no more than 1-->
+              <narrative>Actual Comment Period 2009</narrative>
+            </comment>
+          </actual>
+        </period>
+      </indicator>
+    </result>
+
+
+  </iati-activity>
+</iati-activities>

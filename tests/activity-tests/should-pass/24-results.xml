@@ -209,7 +209,7 @@
       </indicator>
     </result>
     
-    <!-- indicator + period -->
+    <!-- indicator + period + reference -->
     <result type="output" aggregation-status="false">
       <title>
         <narrative>Treatment: timely detection and quality treatment of cases</narrative>

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity> <!-- at least 1 -->
+    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
+    <title> <!-- 1 and only 1-->
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+    </description>
+    <participating-org role="xx"></participating-org> <!-- At least 1-->
+    <!--<other-identifier></other-identifier>-->
+    <activity-status code="xx"/> <!-- 1 and only 1-->
+    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
+    
+    <crs-add>
+      <other-flags code="XX" significance="true" />
+      <other-flags code="XX" significance="true" />
+      <loan-terms rate-1="4" rate-2="3">
+        <repayment-type code="1" />
+        <repayment-plan code="4" />
+        <commitment-date iso-date="2013-09-01"/>
+        <repayment-first-date iso-date="2014-01-01"/>
+        <repayment-final-date iso-date="2020-12-31"/>
+      </loan-terms>
+      <loan-status year="2014" currency="GBP" value-date="2013-05-24">
+        <interest-received>200000.99</interest-received>
+        <principal-outstanding>1500000.99</principal-outstanding>
+        <principal-arrears>0.99</principal-arrears>
+        <interest-arrears>0.99</interest-arrears>
+      </loan-status>
+      <channel-code>21039</channel-code> <!-- 2.02 addition-->
+      <channel-code>21040</channel-code> <!-- 2.02 addition-->
+    </crs-add>
+
+
+  </iati-activity>
+</iati-activities>
