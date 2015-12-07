@@ -206,7 +206,7 @@
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the money budgeted to be disbused to
+              The total value of the money budgeted to be disbursed to
               the specified recipient organisation during this time
               period.  This element is required.
             </xsd:documentation>
@@ -255,7 +255,7 @@
         <xsd:element name="value" type="currencyType">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the money budgeted to be disbused to
+              The total value of the money budgeted to be disbursed to
               the specified country during this time period.  This
               element is required.
             </xsd:documentation>
