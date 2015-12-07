@@ -65,7 +65,7 @@
             Linked Data alongside it.
             
             This attribute is a URI path upon which an activity
-            identifier can be appended to get a dereferenceable URI
+            identifier can be appended to get a differentiable URI
             for any activity contained within a file.
             
             Where a publisher declares using one of these properties
@@ -380,7 +380,7 @@
         location element.
 
         Multiple countries and regions can be reported, in which case
-        the percentage attribute MUST be used to specifiy the share of
+        the percentage attribute MUST be used to specify the share of
         total commitments across all reported countries and regions.
         Recipient-region must not be used merely to describe the
         region of a country reported in recipient-region, but ONLY if
@@ -546,7 +546,7 @@
         <xsd:element name="owner-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Where apllicable, the organisation that owns the other
+              Where applicable, the organisation that owns the other
               identifier being reported. When used, then either
               other-identifier/owner-org/@ref or
               other-identifier/owner-org/narrative/text() MUST be
@@ -1504,7 +1504,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   An IATI code for a recognised gazetteer or
-                  administrative boundary respository.
+                  administrative boundary repository.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1998,7 +1998,7 @@
                           <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
                               <xsd:documentation xml:lang="en">
-                                A category used for disaggregating the result by gender, 
+                                A category used for disaggregating the result by gender,
                                 age, etc.
                               </xsd:documentation>
                             </xsd:annotation>
@@ -2195,7 +2195,7 @@
           <xsd:documentation xml:lang="en">
             A yes/no (1/0) value stating whether there are conditions
             attached to the activity. It is strongly recommended that
-            this attribute is reported, even if there are no condtions
+            this attribute is reported, even if there are no conditions
             attached (i.e. attached="0")
           </xsd:documentation>
         </xsd:annotation>
@@ -2368,7 +2368,7 @@
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The identifer for the activity in which the planned 
+                  The identifier for the activity in which the planned
                   disbursement will be reported. If omitted the current 
                   activity is assumed.
                 </xsd:documentation>

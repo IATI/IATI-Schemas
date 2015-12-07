@@ -203,7 +203,7 @@
               <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The budget sub-total. The definiton of the
+                    The budget sub-total. The definition of the
                     sub-division is determined by
                     iati-organisation/total-budget/budget-line/narrative
                   </xsd:documentation>
@@ -346,7 +346,7 @@
               <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The budget sub-total. The definiton of the
+                    The budget sub-total. The definition of the
                     sub-division is determined by
                     iati-organisation/recipient-org-budget/budget-line/narrative
                   </xsd:documentation>
@@ -475,7 +475,7 @@
         <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the money budgeted to be disbused to
+              The total value of the money budgeted to be disbursed to
               the specified region during this time period.  This
               element is required.
             </xsd:documentation>
@@ -496,7 +496,7 @@
               <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The budget sub-total. The definiton of the
+                    The budget sub-total. The definition of the
                     sub-division is determined by
                     iati-organisation/recipient-region-budget/budget-line/narrative
                   </xsd:documentation>
@@ -600,7 +600,7 @@
         <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The total value of the money budgeted to be disbused to
+              The total value of the money budgeted to be disbursed to
               the specified country during this time period.  This
               element is required.
             </xsd:documentation>
@@ -623,7 +623,7 @@
               <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The budget sub-total. The definiton of the
+                    The budget sub-total. The definition of the
                     sub-division is determined by
                     iati-organisation/recipient-country-budget/budget-line/narrative
                   </xsd:documentation>
@@ -725,7 +725,7 @@
               <xsd:element name="value" type="currencyType" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The expenditure sub-total. The definiton of the 
+                    The expenditure sub-total. The definition of the
                     sub-division is determined by 
                     iati-organisation/total-expenditure/expenditure-line/narrative
                   </xsd:documentation>
