@@ -303,7 +303,7 @@
       <xsd:documentation xml:lang="en">
         The type of finance (e.g. debt relief). The types will be
         defined by IATI.  This the default value for all transactions
-        in the activity report; it can be overridded by individual
+        in the activity report; it can be overridden by individual
         transactions.
 
         For the value of the @code attribute, see
