@@ -70,7 +70,7 @@
             choose to publish as Linked Data alongside it.
             
             This attribute is URI path upon which an activity
-            identifier can be appended to get a dereferenceable URI
+            identifier can be appended to get a differentiable URI
             for any activity contained within a file.
             
             Where a publisher declares using one of these properties
@@ -346,7 +346,7 @@
       <xsd:documentation xml:lang="en">
         The type of finance (e.g. debt relief). The types will be
         defined by IATI.  This the default value for all transactions
-        in the activity report; it can be overridded by individual
+        in the activity report; it can be overridden by individual
         transactions.
 
         For the value of the @code attribute, see
@@ -860,7 +860,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   A code for a recognised gazetteer or administrative 
-                  boundary respository.
+                  boundary repository.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
