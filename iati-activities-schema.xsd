@@ -2216,7 +2216,9 @@
         is indicative or has been formally committed. The value 
         should appear within the BudgetStatus codelist. If the @status 
         attribute is not present, the budget is assumed to be 
-        indicative.
+        indicative. While it is useful for the sum of budgets to match 
+        the sum of commitments this is not necessarily the case, 
+        depending on a publisher's business model and legal frameworks. 
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
