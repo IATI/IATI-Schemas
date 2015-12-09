@@ -543,7 +543,11 @@
         three financial years is reported for each recipient country. 
         It is strongly recommended that the start and end of the reported 
         financial years match those of the recipient country's 
-        budgetary/planning cycle.
+        budgetary/planning cycle. The status explains whether the budget 
+        being reported is indicative or has been formally committed. The 
+        value should appear within the BudgetStatus codelist. If the 
+        @status attribute is not present, the budget is assumed to be 
+        indicative.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
