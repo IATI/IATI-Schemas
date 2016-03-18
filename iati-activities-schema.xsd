@@ -175,7 +175,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A Linked Data URI for a given activity (overrides
-            iati-activities/@linked-data-default if set)
+            iati-activities/\@linked-data-default if set)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
