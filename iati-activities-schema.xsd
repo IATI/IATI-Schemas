@@ -209,7 +209,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             A Linked Data URI for a given activity (overrides
-            iati-activities/@linked-data-default if set)
+            iati-activities/\@linked-data-default if set)
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -224,7 +224,7 @@
 
         This MUST be prefixed with EITHER the current IATI
         organisation identifier for the reporting organisation
-        (reporting-org/@ref) OR a previous identifier reported in
+        (reporting-org/\@ref) OR a previous identifier reported in
         other-identifier, and suffixed with the organisation’s own
         activity identifier. The prefix and the suffix should be
         separated by a hyphen "-".
@@ -548,7 +548,7 @@
             <xsd:documentation xml:lang="en">
               Where applicable, the organisation that owns the other
               identifier being reported. When used, then either
-              other-identifier/owner-org/@ref or
+              other-identifier/owner-org/\@ref or
               other-identifier/owner-org/narrative/text() MUST be
               present.
             </xsd:documentation>
@@ -1435,7 +1435,7 @@
             A process flag to indicate that this transaction relates 
             entirely or partially to humanitarian aid. If the entire 
             activity relates to humanitarian aid this should be reported 
-            using iati-activity/@humanitarian, rather than for each 
+            using iati-activity/\@humanitarian, rather than for each 
             transaction.
           </xsd:documentation>
         </xsd:annotation>
@@ -1988,7 +1988,7 @@
                                 <xsd:annotation>
                                   <xsd:documentation xml:lang="en">
                                     A cross-reference to the internal reference assigned 
-                                    to a defined location: iati-activity/location/@ref.
+                                    to a defined location: iati-activity/location/\@ref.
                                   </xsd:documentation>
                                 </xsd:annotation>
                               </xsd:attribute>
@@ -2058,7 +2058,7 @@
                                 <xsd:annotation>
                                   <xsd:documentation xml:lang="en">
                                     A cross-reference to the internal reference assigned 
-                                    to a defined location: iati-activity/location/@ref.
+                                    to a defined location: iati-activity/location/\@ref.
                                   </xsd:documentation>
                                 </xsd:annotation>
                               </xsd:attribute>
@@ -2854,7 +2854,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The ISO 4217 alphabetic currency code of the value reported.
-        This is required unless the iati-activity/@default-currency is
+        This is required unless the iati-activity/\@default-currency is
         present and applies.
       </xsd:documentation>
     </xsd:annotation>
