@@ -383,7 +383,7 @@
         the percentage attribute MUST be used to specify the share of
         total commitments across all reported countries and regions.
         Recipient-region must not be used merely to describe the
-        region of a country reported in recipient-region, but ONLY if
+        region of a country reported in recipient-country, but ONLY if
         the region is a recipient IN ADDITION to the country.
 
         Region can also be reported at transaction rather than
