@@ -357,7 +357,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
+      <xsd:attribute name="percentage" use="optional" type="decimalPercentage">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of total commitments or total activity
@@ -425,7 +425,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
+      <xsd:attribute name="percentage" use="optional" type="decimalPercentage">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of total commitments or total activity
@@ -656,7 +656,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
-      <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
+      <xsd:attribute name="percentage" use="optional" type="decimalPercentage">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of total commitments or total activity budget to this item.
@@ -981,7 +981,7 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute name="percentage" use="required" type="xsd:decimal">
+      <xsd:attribute name="percentage" use="required" type="decimalPercentage">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             The percentage of the total commitment allocated to or
@@ -1738,7 +1738,7 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
-            <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
+            <xsd:attribute name="percentage" use="optional" type="decimalPercentage">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   When multiple budget-item elements are declared
