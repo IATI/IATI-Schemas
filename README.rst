@@ -41,7 +41,7 @@ tests/                          Unit tests for the schemas.
 =============================== ========================================
 
 The tests include a series of short XML documents that should pass or
-file when parsed against the schemas in this distribution.  The shell
+fail when parsed against the schemas in this distribution.  The shell
 scripts for running the tests rely on a Unix environment with the bash
 shell and the xmllint utility, but the test documents will work with
 any schema-aware XML parser. We will add unit tests as schema
