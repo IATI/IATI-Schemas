@@ -1,4 +1,4 @@
-<?xml version="1.0"?>>
+<?xml version="1.0"?>
 
 <iati-activities version="xx">
   <iati-activity> <!-- at least 1 -->
@@ -17,7 +17,7 @@
     <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    
+
     <!-- PASS: This test checks that multiple valid uses of the humanitarian-scope element are are valid, and that each useable element/attribute is tested -->
 
     <!-- General Usage -->
