@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.02">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.03">
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Activity-Information Schema
 
-      Release 2.02, 2015-12-07
+      Release 2.03, Unreleased
 
       NOTE: the xml.xsd and iati-common.xsd schemas must be in the
       same directory as this one.
@@ -63,11 +63,11 @@
             data is published would support discovery of it, and any
             additional information they may choose to publish as
             Linked Data alongside it.
-            
+
             This attribute is a URI path upon which an activity
             identifier can be appended to get a differentiable URI
             for any activity contained within a file.
-            
+
             Where a publisher declares using one of these properties
             that authoritative linked data is accessible for an
             activity then consuming applications that are generating
@@ -187,7 +187,7 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this activity relates entirely 
+            A process flag to indicate that this activity relates entirely
             or partially to humanitarian aid.
           </xsd:documentation>
         </xsd:annotation>
@@ -293,8 +293,8 @@
       <xsd:attribute name="activity-id" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A valid activity identifier published by the participating 
-            organisation which points to the activity that it has 
+            A valid activity identifier published by the participating
+            organisation which points to the activity that it has
             published to IATI that describes its role in this activity.
           </xsd:documentation>
         </xsd:annotation>
@@ -338,10 +338,10 @@
         total commitments across all reported countries and regions.
 
         The country can also be specified at transaction rather than
-        activity level. If recipient-country OR recipient-region are 
-        reported at the transaction level, ALL transactions MUST 
-        contain a recipient-country or recipient-region element and 
-        iati-activity/recipient-country 
+        activity level. If recipient-country OR recipient-region are
+        reported at the transaction level, ALL transactions MUST
+        contain a recipient-country or recipient-region element and
+        iati-activity/recipient-country
         and iati-activity/recipient-region MUST NOT be used.
       </xsd:documentation>
     </xsd:annotation>
@@ -420,7 +420,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 (reporting organisation), the URI 
+            If the vocabulary is 99 (reporting organisation), the URI
             where this internal vocabulary is defined.
           </xsd:documentation>
         </xsd:annotation>
@@ -575,7 +575,7 @@
       <xsd:attribute name="ref" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The identifier you wish to report. 
+            The identifier you wish to report.
             This can be used to report a number of different types
             of identifiers. See the OtherIdentifierType codelist
             for details and options.
@@ -612,31 +612,31 @@
               organisation's own vocabulary is being used).
             </xsd:documentation>
           </xsd:annotation>
-        </xsd:element>  
+        </xsd:element>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An IATI code for the vocabulary (see codelist) used for 
-            sector classifications. If omitted, OECD DAC 5-digit 
-            Purpose Codes are assumed. 
+            An IATI code for the vocabulary (see codelist) used for
+            sector classifications. If omitted, OECD DAC 5-digit
+            Purpose Codes are assumed.
 
-            It is recommended that OECD DAC 5-digit Purpose Codes are 
-            used wherever possible. It is also recommended that if a 
-            publisher has its own classification system or systems 
-            then the vocabularies 99 or 98 (Reporting Organisation's 
+            It is recommended that OECD DAC 5-digit Purpose Codes are
+            used wherever possible. It is also recommended that if a
+            publisher has its own classification system or systems
+            then the vocabularies 99 or 98 (Reporting Organisation's
             own vocabularies) should be used in addition to DAC codes.
 
-            Publishers using 98 or 99 must also include a narrative 
-            in the narrative element. 
+            Publishers using 98 or 99 must also include a narrative
+            in the narrative element.
 
-            Note that if multiple sector codes are used in multiple 
+            Note that if multiple sector codes are used in multiple
             vocabularies, then each vocabulary's percentages should add
             up to 100%.
 
-            Sector can also be reported at the transaction level rather 
-            than the activity level. Sector must only be reported at 
+            Sector can also be reported at the transaction level rather
+            than the activity level. Sector must only be reported at
             EITHER transaction level OR activity level.
           </xsd:documentation>
         </xsd:annotation>
@@ -644,7 +644,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 or 98 (reporting organisation), the URI 
+            If the vocabulary is 99 or 98 (reporting organisation), the URI
             where this internal vocabulary is defined.
           </xsd:documentation>
         </xsd:annotation>
@@ -677,7 +677,7 @@
         activity. Start dates may reflect either the commencement of
         funding, planning or physical activity. End dates should,
         wherever possible, reflect the ending of physical activity.
-        
+
         The narrative content may contain text (e.g. 2011Q1) for
         accurately recording less specific dates such as month,
         quarter, or year.
@@ -699,7 +699,7 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-  
+
   <xsd:element name="activity-status">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -832,7 +832,7 @@
         element specifies a default for all the activity's financial
         transactions; it can be overridden at the individual
         transaction level.
-        
+
         If an activity is partially tied it is recommended that tied
         and untied commitments are reported as separate transactions
         and that transaction/tied-status is used to classify them.
@@ -858,7 +858,7 @@
   <xsd:element name="humanitarian-scope">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Classification of emergencies, appeals and other humanitarian 
+        Classification of emergencies, appeals and other humanitarian
         events and actions.
       </xsd:documentation>
     </xsd:annotation>
@@ -883,7 +883,7 @@
       <xsd:attribute name="vocabulary" use="required" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code for a recognised vocabulary of terms classifying the 
+            A code for a recognised vocabulary of terms classifying the
             event or action.
           </xsd:documentation>
         </xsd:annotation>
@@ -891,7 +891,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A u.r.i. for the vocabulary specified which provides access to 
+            A u.r.i. for the vocabulary specified which provides access to
             the list of codes and descriptions.
           </xsd:documentation>
         </xsd:annotation>
@@ -915,7 +915,7 @@
         (columns 20-23 and 28-31 of the CRS++ reporting format) but
         the vocabulary attribute allows it use by other (including
         local) systems. This element can be repeated for each policy
-        marker. 
+        marker.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -944,7 +944,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 (reporting organisation), the URI 
+            If the vocabulary is 99 (reporting organisation), the URI
             where this internal vocabulary is defined.
           </xsd:documentation>
         </xsd:annotation>
@@ -960,8 +960,8 @@
       <xsd:attribute name="significance" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An OECD DAC CRS code indicating the significance of the policy marker 
-            for this activity. This attribute MUST be used for all OECD DAC CRS 
+            An OECD DAC CRS code indicating the significance of the policy marker
+            for this activity. This attribute MUST be used for all OECD DAC CRS
             vocabularies.
           </xsd:documentation>
         </xsd:annotation>
@@ -987,7 +987,7 @@
             The percentage of the total commitment allocated to or
             planned for capital expenditure. Content must be a
             positive decimal number between 0 and 100, with no
-            percentage sign. 
+            percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1008,7 +1008,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               The type of the transaction (e.g. commitment,
-              disbursement, expenditure, etc.). 
+              disbursement, expenditure, etc.).
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1019,7 +1019,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   An IATI code defining the type of the transaction
-                  (e.g. commitment, disbursement, expenditure, etc.). 
+                  (e.g. commitment, disbursement, expenditure, etc.).
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1191,14 +1191,14 @@
         <xsd:element name="sector" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A recognised code, from a recognised vocabulary, 
-              classifying the purpose of this transaction. 
+              A recognised code, from a recognised vocabulary,
+              classifying the purpose of this transaction.
 
-              If this element is used then ALL transaction elements 
-              should contain a transaction/sector element and 
-              iati-activity/sector should NOT be used. 
+              If this element is used then ALL transaction elements
+              should contain a transaction/sector element and
+              iati-activity/sector should NOT be used.
 
-              This element can be used multiple times, but only one 
+              This element can be used multiple times, but only one
               sector can be reported per vocabulary.
             </xsd:documentation>
           </xsd:annotation>
@@ -1218,19 +1218,19 @@
             <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  An IATI code for the vocabulary (codelist) used for 
-                  sector classifications. If omitted, OECD DAC 5-digit 
-                  Purpose Codes are assumed. 
+                  An IATI code for the vocabulary (codelist) used for
+                  sector classifications. If omitted, OECD DAC 5-digit
+                  Purpose Codes are assumed.
 
-                  It is recommended that OECD DAC 5-digit Purpose 
-                  Codes are used wherever possible. It is also 
-                  recommended that if a publisher has its own 
-                  classification system or systems, then the 
-                  vocabularies 99 or 98 (Reporting Organisation's 
-                  own vocabularies) should be used in addition to 
-                  the DAC codes. 
+                  It is recommended that OECD DAC 5-digit Purpose
+                  Codes are used wherever possible. It is also
+                  recommended that if a publisher has its own
+                  classification system or systems, then the
+                  vocabularies 99 or 98 (Reporting Organisation's
+                  own vocabularies) should be used in addition to
+                  the DAC codes.
 
-                  Note that at transaction level, only one sector per 
+                  Note that at transaction level, only one sector per
                   vocabulary can be reported.
                 </xsd:documentation>
               </xsd:annotation>
@@ -1238,7 +1238,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                If the vocabulary is 99 or 98 (reporting organisation), the URI 
+                If the vocabulary is 99 or 98 (reporting organisation), the URI
                 where this internal vocabulary is defined.
                 </xsd:documentation>
               </xsd:annotation>
@@ -1256,15 +1256,15 @@
         <xsd:element name="recipient-country" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A country that will benefit from this transaction. 
-              If a specific country is not known the recipient-region 
-              element should be used instead. 
+              A country that will benefit from this transaction.
+              If a specific country is not known the recipient-region
+              element should be used instead.
 
-              If transaction/recipient-country AND/OR 
-              transaction/recipient-region are used THEN ALL 
-              transaction elements MUST contain a recipient-country 
-              or recipient-region element AND 
-              (iati-activity/recipient-country AND 
+              If transaction/recipient-country AND/OR
+              transaction/recipient-region are used THEN ALL
+              transaction elements MUST contain a recipient-country
+              or recipient-region element AND
+              (iati-activity/recipient-country AND
               iati-activity/recipient-region MUST NOT be used)
             </xsd:documentation>
           </xsd:annotation>
@@ -1286,15 +1286,15 @@
         <xsd:element name="recipient-region" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A supranational geopolitical region that will benefit 
-              from this transaction. If a specific country is not 
-              known, then this element MUST be used. 
+              A supranational geopolitical region that will benefit
+              from this transaction. If a specific country is not
+              known, then this element MUST be used.
 
-              If transaction/recipient-country AND/OR 
-              transaction/recipient-region are used THEN ALL 
-              transaction elements MUST contain a recipient-country 
-              or recipient-region element AND 
-              (iati-activity/recipient-country AND 
+              If transaction/recipient-country AND/OR
+              transaction/recipient-region are used THEN ALL
+              transaction elements MUST contain a recipient-country
+              or recipient-region element AND
+              (iati-activity/recipient-country AND
               iati-activity/recipient-region MUST NOT be used)
             </xsd:documentation>
           </xsd:annotation>
@@ -1322,7 +1322,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                If the vocabulary is 99 (reporting organisation), the URI 
+                If the vocabulary is 99 (reporting organisation), the URI
                 where this internal vocabulary is defined.
                 </xsd:documentation>
               </xsd:annotation>
@@ -1432,10 +1432,10 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this transaction relates 
-            entirely or partially to humanitarian aid. If the entire 
-            activity relates to humanitarian aid this should be reported 
-            using iati-activity/\@humanitarian, rather than for each 
+            A process flag to indicate that this transaction relates
+            entirely or partially to humanitarian aid. If the entire
+            activity relates to humanitarian aid this should be reported
+            using iati-activity/\@humanitarian, rather than for each
             transaction.
           </xsd:documentation>
         </xsd:annotation>
@@ -1479,13 +1479,13 @@
         <xsd:element name="location-id" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-               A unique code describing the location according to a 
-               recognised gazetteer or administrative boundary 
+               A unique code describing the location according to a
+               recognised gazetteer or administrative boundary
                repository. Administrative areas should only be reported
                here if the location being defined is the administrative
-               area itself. For describing the administrative area/s 
-               within which a more specific location falls the 
-               location/administrative element should be used. 
+               area itself. For describing the administrative area/s
+               within which a more specific location falls the
+               location/administrative element should be used.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1495,7 +1495,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   A code from the gazetteer or administrative boundary 
+                   A code from the gazetteer or administrative boundary
                    repository specified by the vocabulary
                 </xsd:documentation>
               </xsd:annotation>
@@ -1521,7 +1521,7 @@
         <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A description that qualifies the location, not the 
+              A description that qualifies the location, not the
               activity.
             </xsd:documentation>
           </xsd:annotation>
@@ -1529,10 +1529,10 @@
         <xsd:element name="activity-description" type="textRequiredType" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A description that qualifies the activity taking place at 
-              the location. This should not duplicate information 
-              provided in the main activity description, and should 
-              typically be used to distinguish between activities at 
+              A description that qualifies the activity taking place at
+              the location. This should not duplicate information
+              provided in the main activity description, and should
+              typically be used to distinguish between activities at
               multiple locations within a single iati-activity record.
             </xsd:documentation>
           </xsd:annotation>
@@ -1540,8 +1540,8 @@
         <xsd:element name="administrative" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Coded identification of national and sub-national 
-              divisions according to recognised administrative 
+              Coded identification of national and sub-national
+              divisions according to recognised administrative
               boundary repositories. Multiple levels may be reported.
             </xsd:documentation>
           </xsd:annotation>
@@ -1552,7 +1552,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                   The code for the administrative area being reported 
+                   The code for the administrative area being reported
                    from the vocabulary specified.
                 </xsd:documentation>
               </xsd:annotation>
@@ -1568,9 +1568,9 @@
             <xsd:attribute name="level" type="xsd:nonNegativeInteger" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A number defining a subdivision within a hierarchical 
-                  system of administrative areas. The precise system 
-                  for defining the particular meaning of each @level 
+                  A number defining a subdivision within a hierarchical
+                  system of administrative areas. The precise system
+                  for defining the particular meaning of each @level
                   value is determined by the @vocabulary being used.
                 </xsd:documentation>
               </xsd:annotation>
@@ -1578,7 +1578,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        
+
         <xsd:element name="point" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1591,7 +1591,7 @@
               <xsd:element name="pos" type="xsd:string" minOccurs="1" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    The latitude and longitude coordinates in the 
+                    The latitude and longitude coordinates in the
                     format "lat lng"
                   </xsd:documentation>
                 </xsd:annotation>
@@ -1601,8 +1601,8 @@
             <xsd:attribute name="srsName" type="xsd:string" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The name of the spatial reference system used by the 
-                  coordinates. 
+                  The name of the spatial reference system used by the
+                  coordinates.
 
                   Always: http://www.opengis.net/def/crs/EPSG/0/4326
                 </xsd:documentation>
@@ -1611,14 +1611,14 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        
+
         <xsd:element name="exactness" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-               Defines whether the location represents the most 
-               distinct point reasonably possible for this type of 
-               activity or is an approximation due to lack of more 
-               detailed information. 
+               Defines whether the location represents the most
+               distinct point reasonably possible for this type of
+               activity or is an approximation due to lack of more
+               detailed information.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1635,13 +1635,13 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        
+
         <xsd:element name="location-class" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-               Whether the location refers to a structure, a populated 
-               place (e.g. city or village), an administrative 
-               division, or another topological feature 
+               Whether the location refers to a structure, a populated
+               place (e.g. city or village), an administrative
+               division, or another topological feature
                (e.g. river, nature reserve).
             </xsd:documentation>
           </xsd:annotation>
@@ -1659,11 +1659,11 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        
+
         <xsd:element name="feature-designation" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-               A more refined coded classification of the type of 
+               A more refined coded classification of the type of
                feature referred to by this location.
             </xsd:documentation>
           </xsd:annotation>
@@ -1772,7 +1772,7 @@
       <xsd:documentation xml:lang="en">
         Another separately reported IATI activity that is related to
         this one. The 'type' attribute describes the type of
-        relationship: eg. parent, child, multifunded ... 
+        relationship: eg. parent, child, multifunded ...
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -1861,9 +1861,9 @@
               <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    A standardised means of identifying the indicator from a 
-                    code in a recognised vocabulary. Multiple vocabularies may 
-                    be specified, but each vocabulary may be specified only 
+                    A standardised means of identifying the indicator from a
+                    code in a recognised vocabulary. Multiple vocabularies may
+                    be specified, but each vocabulary may be specified only
                     once for each indicator.
                   </xsd:documentation>
                 </xsd:annotation>
@@ -1874,8 +1874,8 @@
                   <xsd:attribute name="vocabulary" use="required" type="xsd:string">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        A code for a recognised vocabulary of indicators. The 
-                        value for this field should appear in the 
+                        A code for a recognised vocabulary of indicators. The
+                        value for this field should appear in the
                         IndicatorVocabulary codelist.
                       </xsd:documentation>
                     </xsd:annotation>
@@ -1883,7 +1883,7 @@
                   <xsd:attribute name="code" use="required" type="xsd:string">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        A code for an indicator defined in the specified 
+                        A code for an indicator defined in the specified
                         vocabulary specified.
                       </xsd:documentation>
                     </xsd:annotation>
@@ -1891,7 +1891,7 @@
                   <xsd:attribute name="indicator-uri" use="optional" type="xsd:anyURI">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        If the vocabulary is 99 (reporting organisation), the 
+                        If the vocabulary is 99 (reporting organisation), the
                         URI where this internal vocabulary is defined.
                       </xsd:documentation>
                     </xsd:annotation>
@@ -1972,11 +1972,11 @@
                         </xsd:documentation>
                       </xsd:annotation>
                       <xsd:complexType>
-                        <xsd:sequence>          
+                        <xsd:sequence>
                           <xsd:element name="location" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
                               <xsd:documentation xml:lang="en">
-                                A location already defined and described in the 
+                                A location already defined and described in the
                                 iati-activity/location element.
                               </xsd:documentation>
                             </xsd:annotation>
@@ -1987,7 +1987,7 @@
                               <xsd:attribute name="ref" use="optional" type="xsd:string">
                                 <xsd:annotation>
                                   <xsd:documentation xml:lang="en">
-                                    A cross-reference to the internal reference assigned 
+                                    A cross-reference to the internal reference assigned
                                     to a defined location: iati-activity/location/\@ref.
                                   </xsd:documentation>
                                 </xsd:annotation>
@@ -2046,7 +2046,7 @@
                           <xsd:element name="location" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
                               <xsd:documentation xml:lang="en">
-                                A location already defined and described in the 
+                                A location already defined and described in the
                                 iati-activity/location element.
                               </xsd:documentation>
                             </xsd:annotation>
@@ -2057,7 +2057,7 @@
                               <xsd:attribute name="ref" use="optional" type="xsd:string">
                                 <xsd:annotation>
                                   <xsd:documentation xml:lang="en">
-                                    A cross-reference to the internal reference assigned 
+                                    A cross-reference to the internal reference assigned
                                     to a defined location: iati-activity/location/\@ref.
                                   </xsd:documentation>
                                 </xsd:annotation>
@@ -2068,7 +2068,7 @@
                           <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
                               <xsd:documentation xml:lang="en">
-                                A category used for disaggregating the result by gender, 
+                                A category used for disaggregating the result by gender,
                                 age, etc.
                               </xsd:documentation>
                             </xsd:annotation>
@@ -2126,7 +2126,7 @@
                   A boolean describing the behaviour of the indicator.
                   It is "true" if the indicator improves from small to
                   large (e.g. clinics built); false if it improves
-                  from large to small (e.g. cases of a disease). 
+                  from large to small (e.g. cases of a disease).
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -2212,13 +2212,13 @@
         budget for an activity should be reported as a commitment in
         the transaction element. The purpose of this element is to
         provide predictability for recipient planning on an annual
-        basis. The status explains whether the budget being reported 
-        is indicative or has been formally committed. The value 
-        should appear within the BudgetStatus codelist. If the @status 
-        attribute is not present, the budget is assumed to be 
-        indicative. While it is useful for the sum of budgets to match 
-        the sum of commitments this is not necessarily the case, 
-        depending on a publisher's business model and legal frameworks. 
+        basis. The status explains whether the budget being reported
+        is indicative or has been formally committed. The value
+        should appear within the BudgetStatus codelist. If the @status
+        attribute is not present, the budget is assumed to be
+        indicative. While it is useful for the sum of budgets to match
+        the sum of commitments this is not necessarily the case,
+        depending on a publisher's business model and legal frameworks.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -2273,9 +2273,9 @@
       <xsd:attribute name="status" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The status explains whether the budget being reported is indicative or has 
-            been formally committed. The value should appear within the BudgetStatus 
-            codelist. If the @status attribute is not present, the budget is assumed 
+            The status explains whether the budget being reported is indicative or has
+            been formally committed. The value should appear within the BudgetStatus
+            codelist. If the @status attribute is not present, the budget is assumed
             to be indicative.
           </xsd:documentation>
         </xsd:annotation>
@@ -2300,7 +2300,7 @@
         <xsd:element name="period-start" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The exact date of the planned disbursement OR the starting date 
+              The exact date of the planned disbursement OR the starting date
               of the period in which this specific disbursement will be made.
             </xsd:documentation>
           </xsd:annotation>
@@ -2315,7 +2315,7 @@
         <xsd:element name="period-end" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The ending date for the period in which this specific disbursement 
+              The ending date for the period in which this specific disbursement
               will be made.
             </xsd:documentation>
           </xsd:annotation>
@@ -2337,7 +2337,7 @@
         <xsd:element name="provider-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation from which the planned disbursement will originate. 
+              The organisation from which the planned disbursement will originate.
               If omitted the reporting-org is assumed.
             </xsd:documentation>
           </xsd:annotation>
@@ -2371,7 +2371,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   The identifier for the activity in which the planned
-                  disbursement will be reported. If omitted the current 
+                  disbursement will be reported. If omitted the current
                   activity is assumed.
                 </xsd:documentation>
               </xsd:annotation>
@@ -2389,7 +2389,7 @@
         <xsd:element name="receiver-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation receiving the money from the planned 
+              The organisation receiving the money from the planned
               disbursement.
             </xsd:documentation>
           </xsd:annotation>
@@ -2466,9 +2466,9 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               This covers the four CRS++ columns titled:
-              "Free standing technical cooperation"; 
-              "Programme-based approach"; 
-              "Investment project"; 
+              "Free standing technical cooperation";
+              "Programme-based approach";
+              "Investment project";
               "Associated financing"
             </xsd:documentation>
           </xsd:annotation>
@@ -2515,7 +2515,7 @@
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         An IATI codelist tabulating CRS-specified
-                        values for the type of Repayment. 
+                        values for the type of Repayment.
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -2525,7 +2525,7 @@
               <xsd:element name="repayment-plan" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    Number of repayments per annum. 
+                    Number of repayments per annum.
                   </xsd:documentation>
                 </xsd:annotation>
                 <xsd:complexType>
@@ -2536,7 +2536,7 @@
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         An IATI codelist tabulating CRS-specified
-                        values for the number of repayments per annum. 
+                        values for the number of repayments per annum.
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -2668,10 +2668,10 @@
         <xsd:element name="channel-code" type="xsd:string" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The CRS channel code for this activity. This should only 
-              be used for reporting to CRS. The code list contains 
-              both organisation types and names of organisations. For 
-              non-CRS purposes these should be reported using the 
+              The CRS channel code for this activity. This should only
+              be used for reporting to CRS. The code list contains
+              both organisation types and names of organisations. For
+              non-CRS purposes these should be reported using the
               participating-org element.
             </xsd:documentation>
           </xsd:annotation>
@@ -2681,7 +2681,7 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-  
+
   <xsd:element name="fss">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -2825,7 +2825,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             An IANA code for the MIME type of the document being
-            referenced, e.g. "application/pdf". 
+            referenced, e.g. "application/pdf".
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>

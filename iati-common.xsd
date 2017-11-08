@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.02">
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" version="2.03">
 
   <xsd:annotation>
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Common Markup Components
 
-      Release 2.02, 2015-12-07
+      Release 2.03, Unreleased
 
       This schema is not meant to be used on its own: it contains
       common shared markup components for the IATI activities and
@@ -84,11 +84,11 @@
         The organisation issuing the report.
         May be a primary source (reporting on its own activity as
         donor, implementing agency, etc) or a secondary source
-        (reporting on the activities of another organisation). 
-        
+        (reporting on the activities of another organisation).
+
         Specifying the @ref attribute is mandatory.
         May contain the organisation name as content.
-        
+
         All activities in an activity xml file must contain the same
         @ref AND this @ref must be the same as the iati-identifier
         recorded in the registry publisher record of the account under
@@ -165,7 +165,7 @@
     </xsd:sequence>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
-  
+
   <xsd:complexType name="textRequiredType">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
