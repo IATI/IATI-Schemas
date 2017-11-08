@@ -40,12 +40,23 @@ iati-registry-record-schema.xsd An application-specific extension
 tests/                          Unit tests for the schemas.
 =============================== ========================================
 
+Dev Installation
+----------------
+
+```
+# Create and start a virtual environment
+virtualenv -p python3 pyenv
+source pyenv/bin/activate
+
+# Install Python package dependencies
+pip install -r requirements-dev.txt
+```
+
 The tests include a series of short XML documents that should pass or
-file when parsed against the schemas in this distribution.  The shell
-scripts for running the tests rely on a Unix environment with the bash
-shell and the xmllint utility, but the test documents will work with
-any schema-aware XML parser. We will add unit tests as schema
-development continues.
+fail when parsed against the schemas in this distribution.  We use pytest
+as a test runner to check the validity of these files against the defined
+schema.
+
 
 Acknowlegements
 David Megginson <david.megginson@megginson.com> for his original work on
