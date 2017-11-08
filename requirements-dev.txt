@@ -1,0 +1,2 @@
+# Testing tools
+pytest==3.2.3 # rq.filter: <4.0
