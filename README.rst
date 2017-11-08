@@ -45,7 +45,7 @@ Dev Installation
 
 .. code-block:: bash
   # Create and start a virtual environment
-  virtualenv -p python3 pyenv
+  python3 -m venv pyenv
   source pyenv/bin/activate
 
   # Install Python package dependencies
