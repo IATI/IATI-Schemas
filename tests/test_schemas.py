@@ -1,18 +1,18 @@
 """Container for tests of 2.03 schema compliance."""
+import glob
 import os
-import pytest
 import iati
+import pytest
 
 def get_filepaths_in_folder():
-    """Return the full filepaths of files within the 'should-pass' folder.
+    """Return the full filepaths of all xml files within the 'should-pass' folder.
 
     Returns:
         list of str: Filepaths within the 'should-pass' folder.
+
     """
-    directory_name = 'tests/activity-tests/should-pass'
-    files = [path for path in os.listdir(directory_name) if path.endswith(".xml")]
-    for filename in files:
-        yield os.path.join(directory_name, filename)
+    directory_name = 'tests/activity-tests/should-pass/**'
+    return [path for path in glob.glob(directory_name, recursive=True) if path.endswith(".xml")]
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder())
 def test_pass_files(filepath):
