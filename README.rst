@@ -43,14 +43,13 @@ tests/                          Unit tests for the schemas.
 Dev Installation
 ----------------
 
-```
-# Create and start a virtual environment
-virtualenv -p python3 pyenv
-source pyenv/bin/activate
+.. code-block:: bash
+  # Create and start a virtual environment
+  virtualenv -p python3 pyenv
+  source pyenv/bin/activate
 
-# Install Python package dependencies
-pip install -r requirements-dev.txt
-```
+  # Install Python package dependencies
+  pip install -r requirements-dev.txt
 
 The tests include a series of short XML documents that should pass or
 fail when parsed against the schemas in this distribution.  We use pytest
