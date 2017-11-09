@@ -7,9 +7,7 @@ International Aid Transparency Initiative (IATI) XML Schemas
 | IATI Support <support@iatistandard.org>
 | Release 2.03, Unreleased
 
-This directory contains version 2.03 of the IATI XML
-schemas, due to be released in early 2018.  More information about these schemas
-is available at http://iatistandard.org
+This directory contains version 2.03 of the IATI XML schemas, due to be released in early 2018.  More information about these schemas is available at http://iatistandard.org
 
 This directory contains the following files:
 
@@ -51,14 +49,10 @@ Dev Installation
   # Install Python package dependencies
   pip install -r requirements-dev.txt
 
-The tests include a series of short XML documents that should pass or
-fail when parsed against the schemas in this distribution.  We use pytest
-as a test runner to check the validity of these files against the defined
-schema.
+The tests include a series of short XML documents that should pass or fail when parsed against the schemas in this distribution.  We use pytest as a test runner to check the validity of these files against the defined schema.
 
 
 Acknowlegements
-David Megginson <david.megginson@megginson.com> for his original work on
-the IATI Schemas and continued support and involvment.
+David Megginson <david.megginson@megginson.com> for his original work on the IATI Schemas and continued support and involvment.
 
 __end__
