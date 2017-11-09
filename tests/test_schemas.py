@@ -16,15 +16,19 @@ def activity_schema():
     return iati.default.activity_schema(version='2.02')
 
 
-def get_filepaths_in_folder(directory_name):
+def get_filepaths_in_folder(directory_path):
     """Return the full filepaths of all xml files within the 'should-pass' folder.
+
+    Args:
+        directory_path (str): A relative path to a directory to recursively find XML files within.
 
     Returns:
         list of str: Filepaths within the 'should-pass' folder.
 
     """
-    directory_name = directory_name + '**'
-    return [path for path in glob.glob(directory_name, recursive=True) if path.endswith(".xml")]
+    directory_glob_path = directory_path + '**'
+    all_files_in_directory = glob.glob(directory_glob_path, recursive=True)
+    return [path for path in all_files_in_directory if path.endswith(".xml")]
 
 
 def load_as_dataset(filepath):
