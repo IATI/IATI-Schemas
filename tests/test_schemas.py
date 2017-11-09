@@ -43,7 +43,7 @@ def load_as_dataset(filepath):
     return iati.Dataset(xml_str)
 
 
-@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-pass/'))
+@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-pass/') + get_filepaths_in_folder('tests/should-pass/'))
 def test_pass_files(activity_schema, filepath):
     """Check that all 'should-pass' test files are XML and pass Schema validation.
 
