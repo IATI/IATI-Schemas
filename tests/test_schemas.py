@@ -2,18 +2,22 @@
 import glob
 import os
 import iati
+import lxml
 import pytest
 
 
 @pytest.fixture(scope='module')
 def activity_schema():
-    """Return the default v2.02 IATI Activity Schema.
+    """Return the v2.03 IATI Activity Schema.
 
     Todo:
-        Return a v2.03 activity Schema.
+        Remove monkeypatch of the v2.02 schema i.e. call with iati.schemas.ActivitySchema('iati-activities-schema.xsd')
+        Requires resolution of issue: https://github.com/IATI/pyIATI/issues/234
 
     """
-    return iati.default.activity_schema(version='2.02')
+    schema = iati.default.activity_schema(version='2.02')
+    schema.loaded_tree = lxml.etree.parse('iati-activities-schema.xsd')
+    return schema
 
 
 def get_filepaths_in_folder(directory_path):
@@ -49,12 +53,7 @@ def load_as_dataset(filepath):
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-pass/') + get_filepaths_in_folder('tests/should-pass/'))
 def test_pass_files(activity_schema, filepath):
-    """Check that all 'should-pass' test files are XML and pass Schema validation.
-
-    Todo:
-        Make this test work with a 2.03 activity Schema. Requires that pyIATI support version 2.03.
-
-    """
+    """Check that all 'should-pass' test files are XML and pass Schema validation."""
     # Load the dataset
     dataset = load_as_dataset(filepath)
 
@@ -64,12 +63,7 @@ def test_pass_files(activity_schema, filepath):
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-fail/'))
 def test_fail_files(activity_schema, filepath):
-    """Check that all 'should-fail' test files are XML but fail Schema validation.
-
-    Todo:
-        Make this test work with a 2.03 activity Schema. Requires that pyIATI support version 2.03.
-
-    """
+    """Check that all 'should-fail' test files are XML but fail Schema validation."""
     # Load the dataset
     dataset = load_as_dataset(filepath)
 
@@ -80,12 +74,7 @@ def test_fail_files(activity_schema, filepath):
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/should-fail/'))
 def test_2_03_fail_files(activity_schema, filepath):
-    """Check that all 'should-fail' test files are XML but fail Schema validation for the expected reason.
-
-    Todo:
-        Make this test work with a 2.03 activity Schema. Requires that pyIATI support version 2.03.
-
-    """
+    """Check that all 'should-fail' test files are XML but fail Schema validation for the expected reason."""
     # Load the dataset
     dataset = load_as_dataset(filepath)
 
