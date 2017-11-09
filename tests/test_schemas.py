@@ -16,7 +16,7 @@ def activity_schema():
 
     """
     schema = iati.default.activity_schema(version='2.02')
-    schema.loaded_tree = lxml.etree.parse('iati-activities-schema.xsd')
+    schema._schema_base_tree = lxml.etree.parse('iati-activities-schema.xsd')
     return schema
 
 
