@@ -72,3 +72,27 @@ def test_fail_files(activity_schema, filepath):
     # Attempt validation and assert valid
     assert iati.validator.is_xml(dataset)
     assert not iati.validator.is_iati_xml(dataset, activity_schema)
+
+
+@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/should-fail/'))
+def test_2_03_fail_files(activity_schema, filepath):
+    """Check that all 'should-fail' test files are XML but fail Schema validation for the expected reason.
+
+    Todo:
+        Make this test work with a 2.03 activity Schema. Requires that pyIATI support version 2.03.
+
+    """
+    # Load the dataset
+    dataset = load_as_dataset(filepath)
+
+    # Get the reason why this test should fail from the filename
+    # All filenames contain the pyIATI error name before the first underscore character
+    filename = os.path.split(filepath)[-1]
+    filename_no_extension = filename.split('.')[0]
+    failure_reason = filename_no_extension.split("_")[0]
+
+    # Attempt validation and assert valid
+    error_log = iati.validator.validate_is_iati_xml(dataset, activity_schema)
+
+    assert iati.validator.is_xml(dataset)
+    assert error_log.contains_error_called(failure_reason)
