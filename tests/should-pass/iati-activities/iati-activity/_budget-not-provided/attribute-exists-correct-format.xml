@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity budget-not-provided="xx"> <!-- at least 1 -->
+  <iati-activity budget-not-provided="xx"> <!-- at least 1, optional budget-not-provided attribute included -->
     <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
     <title> <!-- 1 and only 1-->
