@@ -8,7 +8,5 @@ install:
   - pip install -r requirements-dev.txt
 script:
     - xmllint --schema http://www.w3.org/2001/XMLSchema.xsd --noout *.xsd
-    - cd tests
-    - ./run-tests.sh
-    - cd ..
+    - ./tests/run-tests.sh
     - pytest
