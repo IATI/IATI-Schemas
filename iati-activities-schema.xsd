@@ -134,6 +134,7 @@
         <xsd:element ref="recipient-region" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="location" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="sector" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="tag" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="country-budget-items"  minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="humanitarian-scope" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="policy-marker" minOccurs="0" maxOccurs="unbounded"/>
@@ -1704,6 +1705,17 @@
       </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
+  </xsd:element>
+
+  <xsd:element name="tag">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Categorisations from established taxonomies that enrich the
+        classification of the activity but that, unlike those reported
+        in the sector element, cannot be associated with percentage
+        splits on finances.
+      </xsd:documentation>
+    </xsd:annotation>
   </xsd:element>
 
   <xsd:element name="country-budget-items">
