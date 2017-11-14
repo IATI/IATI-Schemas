@@ -7,7 +7,7 @@ International Aid Transparency Initiative (IATI) XML Schemas
 | IATI Support <support@iatistandard.org>
 | Release 2.03, Unreleased
 
-This directory contains version 2.03 of the IATI XML schemas, due to be released in early 2018.  More information about these schemas is available at http://iatistandard.org
+This directory contains version 2.03 of the IATI XML schemas, due to be released in early 2018. More information about these schemas is available at http://iatistandard.org
 
 This directory contains the following files:
 
