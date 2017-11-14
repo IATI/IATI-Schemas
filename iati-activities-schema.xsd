@@ -1716,6 +1716,34 @@
         splits on finances.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The code for the tag as defined in the specified vocabulary.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code for the vocabulary or taxonomy (see non-embedded codelist) used for tag classifications.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary-uri" use="optional" type="xsd:anyURI">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The URI where this vocabulary is defined.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="country-budget-items">

@@ -74,7 +74,7 @@ def test_fail_files(activity_schema, filepath):
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/should-fail/'))
 def test_2_03_fail_files(activity_schema, filepath):
-    """Check that all 'should-fail' test files are XML but fail Schema validation for the expected reason."""
+    """Check that all 2.03 'should-fail' test files are XML but fail Schema validation for the expected reason."""
     # Load the dataset
     dataset = load_as_dataset(filepath)
 

@@ -17,6 +17,6 @@
     <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <tag></tag> <!-- optional tag element included -->
+    <tag vocabulary="xx" code="xx" vocabulary-uri="xx"></tag> <!-- optional tag element included with required attributes-->
   </iati-activity>
 </iati-activities>
