@@ -20,7 +20,7 @@ def activity_schema():
     return schema
 
 
-def get_filepaths_in_folder(directory_path):
+def list_xml_files_recursively(directory_path):
     """Return the full filepaths of all XML files within the input directory_path folder.
 
     Args:
@@ -51,8 +51,8 @@ def load_as_dataset(filepath):
     return iati.Dataset(xml_str)
 
 
-@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-pass/') +  # Legacy tests
-                         get_filepaths_in_folder('tests/should-pass/'))  # Tests in new format
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-pass/') +  # Legacy tests
+                         list_xml_files_recursively('tests/should-pass/'))  # Tests in new format
 def test_pass_files(activity_schema, filepath):
     """Check that all 'should-pass' test files are XML and pass Schema validation."""
     # Load the dataset
@@ -62,7 +62,7 @@ def test_pass_files(activity_schema, filepath):
     assert iati.validator.is_xml(dataset)
     assert iati.validator.is_iati_xml(dataset, activity_schema)
 
-@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-fail/'))
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-fail/'))
 def test_fail_files(activity_schema, filepath):
     """Check that all legacy 'should-fail' test files are XML but fail Schema validation."""
     # Load the dataset
@@ -73,7 +73,7 @@ def test_fail_files(activity_schema, filepath):
     assert not iati.validator.is_iati_xml(dataset, activity_schema)
 
 
-@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/should-fail/'))
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/should-fail/'))
 def test_2_03_fail_files(activity_schema, filepath):
     """Check that all 'should-fail' test files are XML but fail IATI Schema validation for the expected reason.
 
