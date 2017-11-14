@@ -59,7 +59,7 @@ There are two types of tests:
 Legacy tests
 ~~~~~~~~~~~~
 
-A series of short XML documents are included in the ``tests/../should-pass``  and ``tests/../should-fail`` directories (and sub-directories). These files test elements and attributes added pre-version 2.03 and offer a simple pass/fail check when parsed against the schemas in this distribution.
+A series of short XML documents are included in the ``tests/**/should-pass``  and ``tests/**/should-fail`` directories (and sub-directories). These files test elements and attributes added pre-version 2.03 and offer a simple pass/fail check when parsed against the schemas in this distribution.
 
 These tests can be run using:
 
