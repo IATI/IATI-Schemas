@@ -504,6 +504,16 @@
       <xsd:sequence>
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
+      <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A code for the vocabulary aid-type classifications. If
+            omitted the AidType (OECD DAC) codelist is assumed. The
+            code must be a valid value in the AidTypeVocabulary
+            codelist.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="code" type="xsd:string"  use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -511,6 +521,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
