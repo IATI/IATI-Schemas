@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 
-
 <iati-activities version="xx">
-    <iati-activity> <!-- at least 1 -->
+  <iati-activity budget-not-provided="xx"> <!-- at least 1, optional budget-not-provided attribute included -->
     <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
     <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
     <title> <!-- 1 and only 1-->
@@ -15,18 +14,8 @@
     <!--<other-identifier></other-identifier>-->
     <activity-status code="xx"/> <!-- 1 and only 1-->
     <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
-    <country-budget-items vocabulary="XXX">
-      <budget-item code="XXX" percentage="100">
-        <description>
-          <narrative>xxx</narrative>
-        </description>
-      </budget-item>
-      <budget-item code="XXX" percentage="100">
-        <description>
-          <narrative>xxx</narrative>
-          <narrative>xxx</narrative>
-        </description>
-      </budget-item>
-    </country-budget-items>
+    <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
+      <narrative>Some stuff ere</narrative>
+    </activity-date>
   </iati-activity>
 </iati-activities>
