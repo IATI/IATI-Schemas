@@ -44,11 +44,11 @@ Dev Installation
 .. code-block:: bash
 
   # Create and start a virtual environment
-  python3 -m venv pyenv
-  source pyenv/bin/activate
+  $ python3 -m venv pyenv
+  $ source pyenv/bin/activate
 
   # Install Python package dependencies
-  pip install -r requirements-dev.txt
+  $ pip install -r requirements-dev.txt
 
 
 Tests
