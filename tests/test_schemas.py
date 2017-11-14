@@ -44,6 +44,9 @@ def load_as_dataset(filepath):
     Returns:
         iati.Dataset: Representing the input XML file.
 
+    Todo:
+        Remove this function and replace calls to this with calls to iati.utilities.load_as_dataset once IATI/pyIATI#23 is finalised and released.
+
     """
     with open(filepath, 'r') as data:
         xml_str = data.read()
