@@ -55,20 +55,16 @@ def load_as_dataset(filepath):
                          list_xml_files_recursively('tests/should-pass/'))  # Tests in new format
 def test_pass_files(activity_schema, filepath):
     """Check that all 'should-pass' test files are XML and pass Schema validation."""
-    # Load the dataset
     dataset = load_as_dataset(filepath)
 
-    # Attempt validation and assert valid
     assert iati.validator.is_xml(dataset)
     assert iati.validator.is_iati_xml(dataset, activity_schema)
 
 @pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-fail/'))
 def test_fail_files(activity_schema, filepath):
     """Check that all legacy 'should-fail' test files are XML but fail Schema validation."""
-    # Load the dataset
     dataset = load_as_dataset(filepath)
 
-    # Attempt validation and assert valid
     assert iati.validator.is_xml(dataset)
     assert not iati.validator.is_iati_xml(dataset, activity_schema)
 
@@ -79,18 +75,16 @@ def test_2_03_fail_files(activity_schema, filepath):
 
     The expected reason must be stored in the filename of the test case, according to the pyIATI error name. pyIATI error names can be found at: https://github.com/IATI/pyIATI/blob/master/iati/resources/lib_data/validation_err_codes.yaml
 
-    This error name must be inserted in the filename before the first underscore character. Example filename: err-not-iati-xml-missing-attribute_all-required-attributes-missing.xml"""
-    # Load the dataset
+    This error name must be inserted in the filename before the first underscore character. Example filename: err-not-iati-xml-missing-attribute_all-required-attributes-missing.xml
+
+    """
     dataset = load_as_dataset(filepath)
 
-    # Get the reason why this test should fail from the filename
     filename = os.path.split(filepath)[-1]
     filename_no_extension = filename.split('.')[0]
     failure_reason = filename_no_extension.split("_")[0]
 
-    # Attempt validation as IATI XML and store the resulting error log
     error_log = iati.validator.validate_is_iati_xml(dataset, activity_schema)
 
-    # Attempt validation as valid XML but that the IATI validation has failed for the expected reason.
     assert iati.validator.is_xml(dataset)
     assert error_log.contains_error_called(failure_reason)
