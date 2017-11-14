@@ -71,7 +71,7 @@ These tests can be run using:
 Tests for elements/attributes added in v2.03
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-A new test structure was added at version 2.03, with additional test cases added to ``tests/should-pass`` and ``tests/should-fail`` directories (and sub-directories).
+A new test structure was added at version 2.03, with additional test cases added to ``tests/should-pass`` and ``tests/should-fail`` directories (and sub-directories). Directory structure is based upon the schema. Each element has a folder based on its name and is nested accordingly. Attributes also have folders but their folder names are prepended by an underscore.
 
 All XML test cases in the ``should-fail`` directory are tested to be valid XML but invalid against the distributed IATI schemas.  The expected reason for failure (for example, a missing required attribute) in each test case is asserted.
 
