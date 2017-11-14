@@ -11,7 +11,7 @@ def activity_schema():
     """Return the v2.03 IATI Activity Schema.
 
     Todo:
-        Remove monkeypatch of the v2.02 schema i.e. call with iati.schemas.ActivitySchema('iati-activities-schema.xsd')
+        Replace current monkeypatch of the default v2.02 schema with a call to `iati.schemas.ActivitySchema('iati-activities-schema.xsd')`
         Requires resolution of issue: https://github.com/IATI/pyIATI/issues/234
 
     """
@@ -21,13 +21,13 @@ def activity_schema():
 
 
 def get_filepaths_in_folder(directory_path):
-    """Return the full filepaths of all xml files within the 'should-pass' folder.
+    """Return the full filepaths of all XML files within the input directory_path folder.
 
     Args:
         directory_path (str): A relative path to a directory to recursively find XML files within.
 
     Returns:
-        list of str: Filepaths within the 'should-pass' folder.
+        list of str: Relative paths to all XML files that are contained within the input directory_path folder.
 
     """
     directory_glob_path = directory_path + '**'
@@ -51,7 +51,8 @@ def load_as_dataset(filepath):
     return iati.Dataset(xml_str)
 
 
-@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-pass/') + get_filepaths_in_folder('tests/should-pass/'))
+@pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-pass/') +  # Legacy tests
+                         get_filepaths_in_folder('tests/should-pass/'))  # Tests in new format
 def test_pass_files(activity_schema, filepath):
     """Check that all 'should-pass' test files are XML and pass Schema validation."""
     # Load the dataset
@@ -63,7 +64,7 @@ def test_pass_files(activity_schema, filepath):
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/activity-tests/should-fail/'))
 def test_fail_files(activity_schema, filepath):
-    """Check that all 'should-fail' test files are XML but fail Schema validation."""
+    """Check that all legacy 'should-fail' test files are XML but fail Schema validation."""
     # Load the dataset
     dataset = load_as_dataset(filepath)
 
@@ -74,18 +75,22 @@ def test_fail_files(activity_schema, filepath):
 
 @pytest.mark.parametrize('filepath', get_filepaths_in_folder('tests/should-fail/'))
 def test_2_03_fail_files(activity_schema, filepath):
-    """Check that all 'should-fail' test files are XML but fail Schema validation for the expected reason."""
+    """Check that all 'should-fail' test files are XML but fail IATI Schema validation for the expected reason.
+
+    The expected reason must be stored in the filename of the test case, according to the pyIATI error name. pyIATI error names can be found at: https://github.com/IATI/pyIATI/blob/master/iati/resources/lib_data/validation_err_codes.yaml
+
+    This error name must be inserted in the filename before the first underscore character. Example filename: err-not-iati-xml-missing-attribute_all-required-attributes-missing.xml"""
     # Load the dataset
     dataset = load_as_dataset(filepath)
 
     # Get the reason why this test should fail from the filename
-    # All filenames contain the pyIATI error name before the first underscore character
     filename = os.path.split(filepath)[-1]
     filename_no_extension = filename.split('.')[0]
     failure_reason = filename_no_extension.split("_")[0]
 
-    # Attempt validation and assert valid
+    # Attempt validation as IATI XML and store the resulting error log
     error_log = iati.validator.validate_is_iati_xml(dataset, activity_schema)
 
+    # Attempt validation as valid XML but that the IATI validation has failed for the expected reason.
     assert iati.validator.is_xml(dataset)
     assert error_log.contains_error_called(failure_reason)

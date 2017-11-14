@@ -42,6 +42,7 @@ Dev Installation
 ----------------
 
 .. code-block:: bash
+
   # Create and start a virtual environment
   python3 -m venv pyenv
   source pyenv/bin/activate
@@ -49,10 +50,39 @@ Dev Installation
   # Install Python package dependencies
   pip install -r requirements-dev.txt
 
-The tests include a series of short XML documents that should pass or fail when parsed against the schemas in this distribution.  We use pytest as a test runner to check the validity of these files against the defined schema.
+
+Tests
+-----
+
+There are two types of tests:
+
+Legacy tests
+~~~~~~~~~~~~
+
+A series of short XML documents are included in the ``tests/../should-pass``  and ``tests/../should-fail`` directories (and sub-directories). These files test elements and attributes added pre-version 2.03 and offer a simple pass/fail check when parsed against the schemas in this distribution.
+
+These tests can be run using:
+
+.. code-block:: bash
+
+   $ xmllint --schema http://www.w3.org/2001/XMLSchema.xsd --noout *.xsd
+   $ ./tests/run-tests.sh
+
+Tests for elements/attributes added in v2.03
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+A new test structure was added at version 2.03, with additional test cases added to ``tests/should-pass`` and ``tests/should-fail`` directories (and sub-directories).
+
+All XML test cases in the ``should-fail`` directory are tested to be valid XML but invalid against the distributed IATI schemas.  The expected reason for failure (for example, a missing required attribute) in each test case is asserted.
+
+We use pytest as a test runner to check the validity of these files against the defined schema.
+
+.. code-block:: bash
+
+   $ pytest
 
 
 Acknowlegements
-David Megginson <david.megginson@megginson.com> for his original work on the IATI Schemas and continued support and involvment.
+---------------
 
-__end__
+David Megginson <david.megginson@megginson.com> for his original work on the IATI Schemas and continued support and involvement.
