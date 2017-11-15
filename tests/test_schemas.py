@@ -89,12 +89,21 @@ def test_organisation_pass_files(organisation_schema, filepath):
 
 
 @pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-fail/'))
-def test_fail_files(activity_schema, filepath):
-    """Check that all legacy 'should-fail' test files are XML but fail Schema validation."""
+def test_activity_fail_files(activity_schema, filepath):
+    """Check that all legacy activity 'should-fail' test files are XML but fail Schema validation."""
     dataset = load_as_dataset(filepath)
 
     assert iati.validator.is_xml(dataset)
     assert not iati.validator.is_iati_xml(dataset, activity_schema)
+
+
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/organisation-tests/should-fail/'))
+def test_organisation_fail_files(organisation_schema, filepath):
+    """Check that all legacy organisation 'should-fail' test files are XML but fail Schema validation."""
+    dataset = load_as_dataset(filepath)
+
+    assert iati.validator.is_xml(dataset)
+    assert not iati.validator.is_iati_xml(dataset, organisation_schema)
 
 
 @pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/should-fail/iati-activities/'))
