@@ -55,19 +55,12 @@
     </xsd:annotation>
   </xsd:element>
 
-  <xsd:element name="description">
+  <xsd:element name="description" type="descriptionBase">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         A longer, human-readable description.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="comment" type="textRequiredType">
@@ -151,6 +144,14 @@
   <!--
       Common attribute groups and data types used by the elements above.
   -->
+
+  <xsd:complexType name="descriptionBase">
+    <xsd:sequence>
+      <xsd:element ref="narrative" minOccurs="1" maxOccurs="unbounded" />
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
   <xsd:complexType name="textType">
     <xsd:annotation>
