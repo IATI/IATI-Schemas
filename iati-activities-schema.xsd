@@ -1585,7 +1585,6 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-
         <xsd:element name="point" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1618,7 +1617,6 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-
         <xsd:element name="exactness" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1642,7 +1640,6 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-
         <xsd:element name="location-class" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1666,7 +1663,6 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-
         <xsd:element name="feature-designation" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1980,27 +1976,13 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
-                          <xsd:element name="location" minOccurs="0" maxOccurs="unbounded">
+                          <xsd:element name="location" type="locationBase" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
                               <xsd:documentation xml:lang="en">
                                 A location already defined and described in the
                                 iati-activity/location element.
                               </xsd:documentation>
                             </xsd:annotation>
-                            <xsd:complexType>
-                              <xsd:sequence>
-                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                              </xsd:sequence>
-                              <xsd:attribute name="ref" use="optional" type="xsd:string">
-                                <xsd:annotation>
-                                  <xsd:documentation xml:lang="en">
-                                    A cross-reference to the internal reference assigned
-                                    to a defined location: iati-activity/location/\@ref.
-                                  </xsd:documentation>
-                                </xsd:annotation>
-                              </xsd:attribute>
-                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-                            </xsd:complexType>
                           </xsd:element>
                           <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
@@ -2050,27 +2032,13 @@
                       </xsd:annotation>
                       <xsd:complexType>
                         <xsd:sequence>
-                          <xsd:element name="location" minOccurs="0" maxOccurs="unbounded">
+                          <xsd:element name="location" type="locationBase" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
                               <xsd:documentation xml:lang="en">
                                 A location already defined and described in the
                                 iati-activity/location element.
                               </xsd:documentation>
                             </xsd:annotation>
-                            <xsd:complexType>
-                              <xsd:sequence>
-                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                              </xsd:sequence>
-                              <xsd:attribute name="ref" use="optional" type="xsd:string">
-                                <xsd:annotation>
-                                  <xsd:documentation xml:lang="en">
-                                    A cross-reference to the internal reference assigned
-                                    to a defined location: iati-activity/location/\@ref.
-                                  </xsd:documentation>
-                                </xsd:annotation>
-                              </xsd:attribute>
-                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-                            </xsd:complexType>
                           </xsd:element>
                           <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
                             <xsd:annotation>
@@ -2866,6 +2834,21 @@
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
+
+  <xsd:complexType name="locationBase">
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="ref" use="optional" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A cross-reference to the internal reference assigned
+          to a defined location: iati-activity/location/\@ref.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
 
 </xsd:schema>
