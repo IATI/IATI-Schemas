@@ -26,7 +26,7 @@
           <narrative>Sample text</narrative>
         </title>
         <baseline year="2017" value= "xx">
-          <location></location>
+          <location></location><!-- optional location element included -->
           <comment>
             <narrative>Sample text</narrative>
           </comment>
