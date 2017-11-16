@@ -765,6 +765,13 @@
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="description" minOccurs="0" maxOccurs="1" type="descriptionBase">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A description of the document contents, or guidance on where to access the relevant information in the document.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
         <xsd:element name="category" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
