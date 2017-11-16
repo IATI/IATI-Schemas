@@ -11,7 +11,7 @@ def activity_schema():
     """Return the v2.03 IATI Activity Schema.
 
     Todo:
-        Replace current monkeypatch of the default v2.02 schema with a call to `iati.schemas.ActivitySchema('iati-activities-schema.xsd')`
+        Replace current monkeypatch of the default v2.02 schema with a call to `iati.ActivitySchema('../iati-activities-schema.xsd')`
         Requires resolution of issue: https://github.com/IATI/pyIATI/issues/234
 
     """
@@ -25,7 +25,7 @@ def organisation_schema():
     """Return the v2.03 IATI Organisation Schema.
 
     Todo:
-        Replace current monkeypatch of the default v2.02 schema with a call to `iati.schemas.ActivitySchema('iati-activities-schema.xsd')`
+        Replace current monkeypatch of the default v2.02 schema with a call to `iati.OrganisationSchema('../iati-organisations-schema.xsd')`
         Requires resolution of issue: https://github.com/IATI/pyIATI/issues/234
 
     """
