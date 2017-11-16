@@ -11,12 +11,26 @@ def activity_schema():
     """Return the v2.03 IATI Activity Schema.
 
     Todo:
-        Replace current monkeypatch of the default v2.02 schema with a call to `iati.schemas.ActivitySchema('iati-activities-schema.xsd')`
+        Replace current monkeypatch of the default v2.02 schema with a call to `iati.ActivitySchema('../iati-activities-schema.xsd')`
         Requires resolution of issue: https://github.com/IATI/pyIATI/issues/234
 
     """
     schema = iati.default.activity_schema(version='2.02')
     schema._schema_base_tree = lxml.etree.parse('iati-activities-schema.xsd')
+    return schema
+
+
+@pytest.fixture(scope='module')
+def organisation_schema():
+    """Return the v2.03 IATI Organisation Schema.
+
+    Todo:
+        Replace current monkeypatch of the default v2.02 schema with a call to `iati.OrganisationSchema('../iati-organisations-schema.xsd')`
+        Requires resolution of issue: https://github.com/IATI/pyIATI/issues/234
+
+    """
+    schema = iati.default.organisation_schema(version='2.02')
+    schema._schema_base_tree = lxml.etree.parse('iati-organisations-schema.xsd')
     return schema
 
 
@@ -54,27 +68,42 @@ def load_as_dataset(filepath):
     return iati.Dataset(xml_str)
 
 
-@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-pass/') +  # Legacy tests
-                         list_xml_files_recursively('tests/should-pass/'))  # Tests in new format
-def test_pass_files(activity_schema, filepath):
-    """Check that all 'should-pass' test files are XML and pass Schema validation."""
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-pass/') +  # Legacy activity test cases
+                         list_xml_files_recursively('tests/should-pass/iati-activities/') +  # Legacy activity test cases
+                         list_xml_files_recursively('tests/organisation-tests/should-pass/') +  # Legacy organisaion test cases
+                         list_xml_files_recursively('tests/should-pass/iati-organisations/'))  # Organisation test cases in new format
+def test_pass_files(activity_schema, organisation_schema, filepath):
+    """Check that all activity and organisation schema 'should-pass' test files are XML and pass Schema validation."""
     dataset = load_as_dataset(filepath)
 
-    assert iati.validator.is_xml(dataset)
-    assert iati.validator.is_iati_xml(dataset, activity_schema)
+    if 'activity-tests' in filepath or 'iati-activities' in filepath:
+        schema = activity_schema
+    else:
+        schema = organisation_schema
 
-@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-fail/'))
-def test_fail_files(activity_schema, filepath):
-    """Check that all legacy 'should-fail' test files are XML but fail Schema validation."""
+    assert iati.validator.is_xml(dataset)
+    assert iati.validator.is_iati_xml(dataset, schema)
+
+
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-fail/') +
+                         list_xml_files_recursively('tests/organisation-tests/should-fail/'))
+def test_fail_files(activity_schema, organisation_schema, filepath):
+    """Check that all legacy activity and organisation 'should-fail' test files are XML but fail Schema validation."""
     dataset = load_as_dataset(filepath)
 
+    if 'activity-tests' in filepath:
+        schema = activity_schema
+    else:
+        schema = organisation_schema
+
     assert iati.validator.is_xml(dataset)
-    assert not iati.validator.is_iati_xml(dataset, activity_schema)
+    assert not iati.validator.is_iati_xml(dataset, schema)
 
 
-@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/should-fail/'))
-def test_2_03_fail_files(activity_schema, filepath):
-    """Check that all 'should-fail' test files are XML but fail IATI Schema validation for the expected reason.
+@pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/should-fail/iati-activities/') +
+                         list_xml_files_recursively('tests/should-fail/iati-organisations/'))
+def test_2_03_fail_files(activity_schema, organisation_schema, filepath):
+    """Check that all activity and organisation 'should-fail' test files are XML but fail IATI Schema validation for the expected reason.
 
     The expected reason must be stored in the filename of the test case, according to the pyIATI error name. pyIATI error names can be found at: https://github.com/IATI/pyIATI/blob/master/iati/resources/lib_data/validation_err_codes.yaml
 
@@ -87,7 +116,12 @@ def test_2_03_fail_files(activity_schema, filepath):
     filename_no_extension = filename.split('.')[0]
     failure_reason = filename_no_extension.split("_")[0]
 
-    error_log = iati.validator.validate_is_iati_xml(dataset, activity_schema)
+    if 'iati-activities' in filepath:
+        schema = activity_schema
+    else:
+        schema = organisation_schema
+
+    error_log = iati.validator.validate_is_iati_xml(dataset, schema)
 
     assert iati.validator.is_xml(dataset)
     assert error_log.contains_error_called(failure_reason)

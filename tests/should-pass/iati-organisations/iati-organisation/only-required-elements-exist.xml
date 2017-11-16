@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation>
+    <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+  </iati-organisation>
+
+</iati-organisations>
