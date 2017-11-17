@@ -1845,9 +1845,7 @@
   <xsd:element name="result">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A container for reporting outputs, outcomes, impacts and other
-        results that stem directly from the activity. This may be
-        repeated for each type of result reported.
+        A container for reporting outputs, outcomes, impacts and other results that stem directly from the activity. This may be repeated for each type of result reported.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -1857,8 +1855,7 @@
         <xsd:element name="indicator" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The indicator(s) that meet the results. There can be
-              multiple indicators for each result.
+              The indicator(s) that meet the results. There can be multiple indicators for each result.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -2131,9 +2128,14 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   A boolean describing the behaviour of the indicator.
-                  It is "true" if the indicator improves from small to
-                  large (e.g. clinics built); false if it improves
-                  from large to small (e.g. cases of a disease).
+                  It is "true" if the indicator improves from small to large (e.g. clinics built); false if it improves from large to small (e.g. cases of a disease).
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Boolean flag indicating whether the data in the result set are suitable for aggregation.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -2152,8 +2154,7 @@
       <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Boolean flag indicating whether the data in the result set
-            are suitable for aggregation.
+            Boolean flag indicating whether the data in the result set are suitable for aggregation.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
