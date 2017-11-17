@@ -2808,8 +2808,7 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The ISO 4217 alphabetic currency code of the value reported.
-        This is required unless the iati-activity/\@default-currency is
-        present and applies.
+        This is required unless the iati-activity/\@default-currency is present and applies.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
@@ -2817,8 +2816,7 @@
   <xsd:element name="dimension">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        A category used for disaggregating the result by gender,
-        age, etc.
+        A category used for disaggregating the result by gender, age, etc.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
