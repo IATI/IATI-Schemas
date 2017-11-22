@@ -1854,6 +1854,40 @@
       <xsd:sequence>
         <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A reference element to allow for the coded identification of a results framework.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" use="required" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code from the codelist identified in vocabulary that identifies a results framework.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary" use="required" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A code for the results framework vocabulary. The code must be a valid value in the ResultVocabulary codelist.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary-uri" use="optional" type="xsd:anyURI">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
         <xsd:element name="indicator" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
