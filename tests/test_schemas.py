@@ -78,7 +78,7 @@ def test_pass_files(activity_schema, organisation_schema, filepath):
 
     if 'activity-tests' in filepath or 'iati-activities' in filepath:
         schema = activity_schema
-    else:
+    elif 'organisation-tests' in filepath or 'iati-organisations' in filepath:
         schema = organisation_schema
 
     assert iati.validator.is_xml(dataset)
@@ -93,7 +93,7 @@ def test_fail_files(activity_schema, organisation_schema, filepath):
 
     if 'activity-tests' in filepath:
         schema = activity_schema
-    else:
+    elif 'organisation-tests' in filepath or 'iati-organisations' in filepath:
         schema = organisation_schema
 
     assert iati.validator.is_xml(dataset)
@@ -118,7 +118,7 @@ def test_2_03_fail_files(activity_schema, organisation_schema, filepath):
 
     if 'iati-activities' in filepath:
         schema = activity_schema
-    else:
+    elif 'organisation-tests' in filepath or 'iati-organisations' in filepath:
         schema = organisation_schema
 
     error_log = iati.validator.validate_is_iati_xml(dataset, schema)
