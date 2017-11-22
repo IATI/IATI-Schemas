@@ -1972,7 +1972,7 @@
                         <xsd:anyAttribute processContents="lax" namespace="##other"/>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="target" minOccurs="0" maxOccurs="1">
+                    <xsd:element name="target" minOccurs="0" maxOccurs="unbounded">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           The target milestone for this period
