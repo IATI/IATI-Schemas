@@ -2042,7 +2042,7 @@
                         </xsd:attribute>
                       </xsd:complexType>
                     </xsd:element>
-                    <xsd:element name="actual" minOccurs="0" maxOccurs="1">
+                    <xsd:element name="actual" minOccurs="0" maxOccurs="unbounded">
                       <xsd:annotation>
                         <xsd:documentation xml:lang="en">
                           A record of the achieved result for this period.
