@@ -1,20 +1,19 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity> <!-- at least 1 -->
-    <iati-identifier></iati-identifier>  <!-- 1 and only 1-->
-    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org> <!-- 1 and only 1-->
-    <title> <!-- 1 and only 1-->
-      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+  <iati-activity>
+    <iati-identifier></iati-identifier>
+    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org>
+    <title>
+      <narrative>Xxxxxxx</narrative>
     </title>
     <description>
-      <narrative>Xxxxxxx</narrative> <!-- At least 1-->
+      <narrative>Xxxxxxx</narrative>
     </description>
-    <participating-org role="xx"></participating-org> <!-- At least 1-->
-    <!--<other-identifier></other-identifier>-->
-    <activity-status code="xx"/> <!-- 1 and only 1-->
-    <activity-date type="xx" iso-date="2013-11-27"/><!-- At least 1 --> <!--Narative allowed-->
-    <activity-date type="xx" iso-date="2013-11-27"><!-- At least 1 --> <!--Narative allowed-->
+    <participating-org role="xx"></participating-org>
+    <activity-status code="xx"/>
+    <activity-date type="xx" iso-date="2013-11-27"/>
+    <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
     <result type="xx">
@@ -25,12 +24,12 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <baseline year="2017" value= "xx"><!-- element occurs more than once-->
+        <baseline year="2017" value= "xx"><!-- PASS: Element occurs more than once-->
           <comment>
             <narrative>Sample text</narrative>
           </comment>
         </baseline>
-        <baseline year="2017" value= "xx"><!-- element occurs more than once-->
+        <baseline year="2017" value= "xx"><!-- PASS: Element occurs more than once-->
           <comment>
             <narrative>Sample text</narrative>
           </comment>
