@@ -3,7 +3,7 @@
 <iati-organisations version="xx">
 
   <iati-organisation>
-    <!-- No required elements exist as children of iati-organisation-->
+    <!-- FAIL: No required elements exist as children of iati-organisation-->
   </iati-organisation>
 
 </iati-organisations>
