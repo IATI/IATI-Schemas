@@ -1906,7 +1906,7 @@
                   <xsd:anyAttribute processContents="lax" namespace="##other"/>
                 </xsd:complexType>
               </xsd:element>
-              <xsd:element name="baseline" minOccurs="0" maxOccurs="1">
+              <xsd:element name="baseline" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
                     The baseline value for the indicator
