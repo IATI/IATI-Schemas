@@ -1454,10 +1454,7 @@
   <xsd:element name="location" type="locationFull">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The sub-national geographical identification of the target
-        locations of an activity. These can be described by gazetteer
-        reference, coordinates, administrative areas or a textual
-        description. Any number of locations may be reported.
+        The sub-national geographical identification of the target locations of an activity. These can be described by gazetteer reference, coordinates, administrative areas or a textual description. Any number of locations may be reported.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:element>
@@ -2590,8 +2587,7 @@
     <xsd:attribute name="ref" use="optional" type="xsd:string">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
-          A cross-reference to the internal reference assigned
-          to a defined location: iati-activity/location/\@ref.
+          A cross-reference to the internal reference assigned to a defined location: iati-activity/location/\@ref.
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
