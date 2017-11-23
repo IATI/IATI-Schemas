@@ -88,9 +88,9 @@ def load_as_dataset(filepath):
 
 
 @pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-pass/') +  # Legacy activity test cases
-                         list_xml_files_recursively('tests/should-pass/iati-activities/') +  # Activity test cases in new format
+                         list_xml_files_recursively('tests/should-pass/iati-activities/') +  # Activity test cases in 2.03+ format
                          list_xml_files_recursively('tests/organisation-tests/should-pass/') +  # Legacy organisaion test cases
-                         list_xml_files_recursively('tests/should-pass/iati-organisations/'))  # Organisation test cases in new format
+                         list_xml_files_recursively('tests/should-pass/iati-organisations/'))  # Organisation test cases in 2.03+ format
 def test_pass_files(schema_factory, filepath):
     """Check that all activity and organisation schema 'should-pass' test files are XML and pass Schema validation."""
     dataset = load_as_dataset(filepath)
