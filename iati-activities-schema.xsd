@@ -1380,7 +1380,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" minOccurs="0" maxOccurs="1">
+        <xsd:element name="aid-type" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
