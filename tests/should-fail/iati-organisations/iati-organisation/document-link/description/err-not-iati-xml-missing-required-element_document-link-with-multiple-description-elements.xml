@@ -10,15 +10,15 @@
     <reporting-org type="xx" ref="xx">
       <narrative>Organisation name</narrative>
     </reporting-org>
-    <document-link url="xx" format="xx"><!-- Optional document-link element added with required attributes and elements-->
+    <document-link url="xx" format="xx">
       <title>
         <narrative>Sample text</narrative>
       </title>
-      <description><!-- Optional description element added with required element-->
-        <narrative>Sample text</narrative><!-- Must occur at least once -->
+      <description>
+        <narrative>Sample text</narrative>
       </description>
-      <description><!-- Additional, non-permitted occurance of the description element, with required element-->
-        <narrative>Sample text</narrative><!-- Must occur at least once -->
+      <description><!-- FAIL: Additional, non-permitted occurance of the description element. -->
+        <narrative>Sample text</narrative>
       </description>
       <category code="xx" />
     </document-link>
