@@ -22,8 +22,8 @@
       <title>
         <narrative>Sample text</narrative>
       </title>
-      <reference vocabulary="xx" code="xx"><!-- PASS: Optional `reference` element present, with two mandatory attributes. -->
-        <example-namespace:namespace-element></example-namespace:namespace-element><!-- Optional namespace element included. -->
+      <reference vocabulary="xx" code="xx">
+        <example-namespace:namespace-element></example-namespace:namespace-element><!-- PASS: Optional namespace element included. -->
       </reference>
       <indicator measure="xx" ascending="0">
         <title>
