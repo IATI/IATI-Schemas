@@ -1914,6 +1914,7 @@
                 </xsd:annotation>
                 <xsd:complexType>
                   <xsd:sequence>
+                    <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
                     <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
@@ -2002,34 +2003,7 @@
                               <xsd:anyAttribute processContents="lax" namespace="##other"/>
                             </xsd:complexType>
                           </xsd:element>
-                          <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
-                            <xsd:annotation>
-                              <xsd:documentation xml:lang="en">
-                                A category used for disaggregating the result by gender,
-                                age, etc.
-                              </xsd:documentation>
-                            </xsd:annotation>
-                            <xsd:complexType>
-                              <xsd:sequence>
-                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                              </xsd:sequence>
-                              <xsd:attribute name="name" use="optional" type="xsd:string">
-                                <xsd:annotation>
-                                  <xsd:documentation xml:lang="en">
-                                    Freetext description of a category being disaggregated.
-                                  </xsd:documentation>
-                                </xsd:annotation>
-                              </xsd:attribute>
-                              <xsd:attribute name="value" use="optional" type="xsd:string">
-                                <xsd:annotation>
-                                  <xsd:documentation xml:lang="en">
-                                    Description of the value being disaggregated.
-                                  </xsd:documentation>
-                                </xsd:annotation>
-                              </xsd:attribute>
-                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-                            </xsd:complexType>
-                          </xsd:element>
+                          <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
@@ -2072,34 +2046,7 @@
                               <xsd:anyAttribute processContents="lax" namespace="##other"/>
                             </xsd:complexType>
                           </xsd:element>
-                          <xsd:element name="dimension" minOccurs="0" maxOccurs="unbounded">
-                            <xsd:annotation>
-                              <xsd:documentation xml:lang="en">
-                                A category used for disaggregating the result by gender,
-                                age, etc.
-                              </xsd:documentation>
-                            </xsd:annotation>
-                            <xsd:complexType>
-                              <xsd:sequence>
-                                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                              </xsd:sequence>
-                              <xsd:attribute name="name" use="optional" type="xsd:string">
-                                <xsd:annotation>
-                                  <xsd:documentation xml:lang="en">
-                                    Freetext description of a category being disaggregated.
-                                  </xsd:documentation>
-                                </xsd:annotation>
-                              </xsd:attribute>
-                              <xsd:attribute name="value" use="optional" type="xsd:string">
-                                <xsd:annotation>
-                                  <xsd:documentation xml:lang="en">
-                                    Description of the value being disaggregated.
-                                  </xsd:documentation>
-                                </xsd:annotation>
-                              </xsd:attribute>
-                              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-                            </xsd:complexType>
-                          </xsd:element>
+                          <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
@@ -2861,11 +2808,37 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The ISO 4217 alphabetic currency code of the value reported.
-        This is required unless the iati-activity/\@default-currency is
-        present and applies.
+        This is required unless the iati-activity/\@default-currency is present and applies.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
 
+  <xsd:element name="dimension">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A category used for disaggregating the result by gender, age, etc.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="name" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Freetext description of a category being disaggregated.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="value" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Description of the value being disaggregated.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
 
 </xsd:schema>
