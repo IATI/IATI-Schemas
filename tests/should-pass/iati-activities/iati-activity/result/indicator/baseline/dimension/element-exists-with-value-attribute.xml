@@ -25,7 +25,7 @@
           <narrative>Sample text</narrative>
         </title>
         <baseline year="2017" value= "xx">
-          <dimension value="xx">
+          <dimension value="xx"><!-- PASS: dimension element exists with optional value attribute -->
           </dimension>
           <comment>
             <narrative>Sample text</narrative>
