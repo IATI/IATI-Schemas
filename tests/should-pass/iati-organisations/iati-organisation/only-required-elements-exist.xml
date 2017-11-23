@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation>
+    <organisation-identifier>12345</organisation-identifier><!-- PASS: organisation-identifier is a required element. -->
+    <name><!-- PASS: name is a required element. -->
+      <narrative>Name here</narrative><!-- PASS: narrative is a required child element of name. -->
+    </name>
+    <reporting-org type="xx" ref="xx"><!-- PASS: reporting-org is a required element. -->
+      <narrative>Organisation name</narrative><!-- PASS: narrative is a required child element of reporting-org. -->
+    </reporting-org>
+  </iati-organisation>
+
+</iati-organisations>
