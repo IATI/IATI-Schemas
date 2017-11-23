@@ -18,11 +18,10 @@
     <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <result type="xx" aggregation-status="0">
+    <result type="xx" aggregation-status="0"><!-- PASS: Optional `result` element present, with required child elements only. -->
       <title>
         <narrative>Sample text</narrative>
       </title>
-      <!-- PASS: Optional `reference` element not present. -->
       <indicator measure="xx" ascending="0">
         <title>
           <narrative>Sample text</narrative>
