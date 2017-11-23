@@ -1918,6 +1918,7 @@
                     <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
+                  <xsd:attribute name="iso-date" type="xsd:date" use="optional"/>
                   <xsd:attribute name="year" type="xsd:positiveInteger" use="required">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
