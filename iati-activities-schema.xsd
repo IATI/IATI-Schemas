@@ -1708,10 +1708,7 @@
   <xsd:element name="tag">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Categorisations from established taxonomies that enrich the
-        classification of the activity but that, unlike those reported
-        in the sector element, cannot be associated with percentage
-        splits on finances.
+        Categorisations from established taxonomies that enrich the classification of the activity but that, unlike those reported in the sector element, cannot be associated with percentage splits on finances.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
