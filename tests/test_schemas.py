@@ -63,6 +63,7 @@ def test_pass_files(activity_schema, filepath):
     assert iati.validator.is_xml(dataset)
     assert iati.validator.is_iati_xml(dataset, activity_schema)
 
+
 @pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-fail/'))
 def test_fail_files(activity_schema, filepath):
     """Check that all legacy 'should-fail' test files are XML but fail Schema validation."""
