@@ -16,7 +16,7 @@
     <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <default-aid-type code="xx"/>
+    <default-aid-type code="xx"/><!-- PASS: optional element exists multiple times with required attributes -->
     <default-aid-type code="xx"/>
   </iati-activity>
 </iati-activities>
