@@ -991,10 +991,7 @@
       <xsd:attribute name="percentage" use="required" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of the total commitment allocated to or
-            planned for capital expenditure. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign.
+            The percentage of the total commitment allocated to or planned for capital expenditure. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
