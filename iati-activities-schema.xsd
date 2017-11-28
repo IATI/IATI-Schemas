@@ -1523,6 +1523,7 @@
     <xsd:complexType>
       <xsd:sequence>
         <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
+        <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkBase"/>
         <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
         <xsd:element name="indicator" minOccurs="1" maxOccurs="unbounded">
           <xsd:annotation>
