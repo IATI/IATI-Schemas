@@ -16,6 +16,7 @@
     <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <tag></tag> <!-- optional tag element included without required attributes-->
+    <tag vocabulary="xx" code="xx"></tag> <!-- PASS: optional tag element included with required attributes exists more than once in context -->
+    <tag vocabulary="xx" code="xx"></tag> <!-- PASS: optional tag element included with required attributes exists more than once in context -->
   </iati-activity>
 </iati-activities>

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity>
+  <iati-activity xmlns:example-namespace="http://example.org/example-namespace/ns#">
     <iati-identifier></iati-identifier>
     <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org>
     <title>
@@ -16,6 +16,6 @@
     <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <tag></tag> <!-- optional tag element included without required attributes-->
+    <tag vocabulary="xx" code="xx" example-namespace:namespace-attribute="xx"></tag> <!-- PASS: optional tag element included with required attributes and a namespace attribute -->
   </iati-activity>
 </iati-activities>

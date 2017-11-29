@@ -147,7 +147,7 @@
         <xsd:element ref="planned-disbursement" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="capital-spend" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="transaction" minOccurs="0" maxOccurs="unbounded"/>
-        <xsd:element ref="document-link" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkBase"/>
         <xsd:element ref="related-activity" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="legacy-data" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="conditions" minOccurs="0" maxOccurs="1"/>
@@ -992,10 +992,7 @@
       <xsd:attribute name="percentage" use="required" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of the total commitment allocated to or
-            planned for capital expenditure. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign.
+            The percentage of the total commitment allocated to or planned for capital expenditure. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1381,7 +1378,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" minOccurs="0" maxOccurs="1">
+        <xsd:element name="aid-type" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -1708,10 +1705,7 @@
   <xsd:element name="tag">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Categorisations from established taxonomies that enrich the
-        classification of the activity but that, unlike those reported
-        in the sector element, cannot be associated with percentage
-        splits on finances.
+        Categorisations from established taxonomies that enrich the classification of the activity but that, unlike those reported in the sector element, cannot be associated with percentage splits on finances.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -1769,9 +1763,7 @@
               <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
-                    A longer, human-readable description of the
-                    budget-item. May be repeated for different
-                    languages.
+                    A longer, human-readable description of the budget-item. May be repeated for different languages.
                   </xsd:documentation>
                 </xsd:annotation>
               </xsd:element>
@@ -1780,18 +1772,14 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A code for the budget-item from the vocabulary
-                  specified.
+                  A code for the budget-item from the vocabulary specified.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  When multiple budget-item elements are declared
-                  within a single country-budget-items element, then,
-                  for each vocabulary used, the percentage values
-                  should sum 100%.
+                  When multiple budget-item elements are declared within a single country-budget-items element, then, for each vocabulary used, the percentage values should sum 100%.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1817,9 +1805,7 @@
   <xsd:element name="related-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Another separately reported IATI activity that is related to
-        this one. The 'type' attribute describes the type of
-        relationship: eg. parent, child, multifunded ...
+        Another separately reported IATI activity that is related to this one. The ‘type’ attribute describes the type of relationship: (eg. parent, child, multifunded). It is strongly recommended that linkage between activities in a hierarchical group should always be managed by use of this element with @type of 1 (parent) or 2 (child).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -2792,95 +2778,6 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-
-  <xsd:element name="document-link">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A  link to an online, publicly accessible web page or
-        document.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
-        <xsd:element name="category" minOccurs="1" maxOccurs="unbounded">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              IATI Document Category Code
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attribute name="code" use="required" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  An IATI code defining the category of the document.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="language" minOccurs="0" maxOccurs="unbounded">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The ISO 639-1 language code in which target document is
-              written, e.g. "en". Can be repeated to describe
-              multi-lingual documents.
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attribute name="code" use="required" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  ISO 639-1 language code
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:element name="document-date" minOccurs="0" maxOccurs="1">
-          <xsd:annotation>
-            <xsd:documentation xml:lang="en">
-              The date of publication of the document that is being linked to.
-            </xsd:documentation>
-          </xsd:annotation>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attribute name="iso-date" use="required" type="xsd:date"/>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
-        </xsd:element>
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attribute name="url" type="xsd:anyURI" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            The target URL of the external document, e.g. "http://www.example.org/doc.odt".
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:attribute name="format" type="xsd:string" use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            An IANA code for the MIME type of the document being
-            referenced, e.g. "application/pdf".
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
-  </xsd:element>
-
-
 
   <xsd:complexType name="currencyType">
     <xsd:annotation>
