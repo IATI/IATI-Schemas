@@ -1623,7 +1623,7 @@
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
-                  <xsd:attribute name="value" type="xsd:string" use="required">
+                  <xsd:attribute name="value" type="xsd:string" use="optional">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         The baseline value.
