@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation>
+    <!-- FAIL: No required elements exist as children of iati-organisation-->
+  </iati-organisation>
+
+</iati-organisations>
