@@ -1774,9 +1774,7 @@
   <xsd:element name="related-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Another separately reported IATI activity that is related to
-        this one. The 'type' attribute describes the type of
-        relationship: eg. parent, child, multifunded ...
+        Another separately reported IATI activity that is related to this one. The ‘type’ attribute describes the type of relationship: (eg. parent, child, multifunded). It is strongly recommended that linkage between activities in a hierarchical group should always be managed by use of this element with @type of 1 (parent) or 2 (child).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
