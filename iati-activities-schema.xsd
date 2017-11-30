@@ -1579,6 +1579,7 @@
                 <xsd:complexType>
                   <xsd:sequence>
                     <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
                     <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
