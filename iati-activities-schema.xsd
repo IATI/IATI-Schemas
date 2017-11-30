@@ -432,11 +432,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity
-            budget allocated to this region. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign. Percentages for all reported countries
-            and regions MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
