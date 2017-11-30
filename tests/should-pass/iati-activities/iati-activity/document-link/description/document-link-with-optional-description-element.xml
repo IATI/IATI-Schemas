@@ -25,7 +25,7 @@
       <description><!-- PASS: Optional description element added with required element. -->
         <narrative>Sample text</narrative>
       </description>
-      <category code="xx" />
+      <category code="xx"/>
     </document-link>
   </iati-activity>
 </iati-activities>

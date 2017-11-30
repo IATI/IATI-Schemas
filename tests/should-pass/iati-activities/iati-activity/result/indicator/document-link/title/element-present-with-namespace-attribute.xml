@@ -30,7 +30,7 @@
           <title example-namespace:namespace-attribute="xx"><!-- PASS: Optional element added with required child element and namespace attribute. -->
             <narrative>Sample text</narrative>
           </title>
-          <category code="xx" />
+          <category code="xx"/>
         </document-link>
       </indicator>
     </result>

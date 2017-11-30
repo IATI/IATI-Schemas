@@ -31,7 +31,7 @@
             <narrative>Sample text</narrative>
             <example-namespace:namespace-element></example-namespace:namespace-element> <!-- PASS: Optional namespace element included. -->
           </title>
-          <category code="xx" />
+          <category code="xx"/>
         </document-link>
       </indicator>
     </result>

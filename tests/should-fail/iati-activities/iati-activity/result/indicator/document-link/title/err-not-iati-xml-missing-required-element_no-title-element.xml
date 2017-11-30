@@ -28,7 +28,7 @@
         </title>
         <document-link url="xx" format="xx">
           <!-- FAIL: Optional `document-link` element added, but without the required 'title' child element. -->
-          <category code="xx" />
+          <category code="xx"/>
         </document-link>
       </indicator>
     </result>

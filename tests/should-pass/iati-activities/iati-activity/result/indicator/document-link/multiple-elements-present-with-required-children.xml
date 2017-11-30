@@ -30,13 +30,13 @@
           <title>
             <narrative>Sample text</narrative>
           </title>
-          <category code="xx" />
+          <category code="xx"/>
         </document-link>
         <document-link url="xx" format="xx"><!-- PASS: Multiple document-link elements added with required child attributes and elements-->
           <title>
             <narrative>Sample text</narrative>
           </title>
-          <category code="xx" />
+          <category code="xx"/>
         </document-link>
       </indicator>
     </result>
