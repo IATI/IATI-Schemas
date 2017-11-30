@@ -23,10 +23,8 @@
         <narrative>Sample text</narrative>
       </title>
       <document-link url="xx" format="xx">
-        <title>
-          <!-- FAIL: Required `title` element added, but without the required 'narrative' child element. -->
-        </title>
-        <category code="xx" />
+        <title/><!-- FAIL: Required `title` element added, but without the required 'narrative' child element. -->
+        <category code="xx"/>
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

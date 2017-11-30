@@ -26,9 +26,7 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <description>
-          <!-- FAIL: Optional `description` element added, but without the required 'narrative' child element. -->
-        </description>
+        <description/><!-- FAIL: Optional `description` element added, but without the required 'narrative' child element. -->
         <category code="xx"/>
       </document-link>
       <indicator measure="xx" ascending="0">
