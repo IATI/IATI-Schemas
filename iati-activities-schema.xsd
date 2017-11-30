@@ -134,6 +134,7 @@
         <xsd:element ref="recipient-region" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="location" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="sector" minOccurs="0" maxOccurs="unbounded"/>
+        <xsd:element ref="tag" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="country-budget-items"  minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="humanitarian-scope" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="policy-marker" minOccurs="0" maxOccurs="unbounded"/>
@@ -991,10 +992,7 @@
       <xsd:attribute name="percentage" use="required" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of the total commitment allocated to or
-            planned for capital expenditure. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign.
+            The percentage of the total commitment allocated to or planned for capital expenditure. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1398,6 +1396,42 @@
     </xsd:annotation>
   </xsd:element>
 
+  <xsd:element name="tag">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Categorisations from established taxonomies that enrich the classification of the activity but that, unlike those reported in the sector element, cannot be associated with percentage splits on finances.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="code" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The code for the tag as defined in the specified vocabulary.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary" use="required" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An IATI code for the vocabulary or taxonomy (see non-embedded codelist) used for tag classifications.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:attribute name="vocabulary-uri" use="optional" type="xsd:anyURI">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            The URI where this vocabulary is defined.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
+  </xsd:element>
+
   <xsd:element name="country-budget-items">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
@@ -1456,7 +1490,7 @@
   <xsd:element name="related-activity">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        Another separately reported IATI activity that is related to this one. The 'type' attribute describes the type of relationship: eg. parent, child, multifunded ...
+        Another separately reported IATI activity that is related to this one. The ‘type’ attribute describes the type of relationship: (eg. parent, child, multifunded). It is strongly recommended that linkage between activities in a hierarchical group should always be managed by use of this element with @type of 1 (parent) or 2 (child).
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
