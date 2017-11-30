@@ -117,10 +117,7 @@
       <xsd:attribute name="secondary-reporter" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A flag indicating that the reporting organisation is a
-            secondary publisher: publishing data for which it is not
-            directly responsible. This flag must not be reported by
-            primary source publishers
+            A flag indicating that the reporting organisation of this activity is acting as a secondary reporter. A secondary reporter is one that reproduces data on the activities of an organisation for which it is not directly responsible. This does not include a publisher officially assigned as a proxy to report on behalf of another.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
