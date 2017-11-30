@@ -1735,6 +1735,13 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
+            <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Boolean flag indicating whether the data in the result set are suitable for aggregation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
