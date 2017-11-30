@@ -26,7 +26,7 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <category code="xx" additional-attribute="xx" /><!-- FAIL: An addiitonal attribute added. -->
+        <category code="xx" additional-attribute="xx" /><!-- FAIL: Non-permitted additional attribute present. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

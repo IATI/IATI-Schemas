@@ -29,7 +29,7 @@
         <description>
           <narrative>Sample text</narrative>
         </description>
-        <description><!-- FAIL: Optional element more than the allowed number of times. -->
+        <description><!-- FAIL: Optional element present more than the permitted number of times. -->
           <narrative>Sample text</narrative>
         </description>
         <category code="xx"/>

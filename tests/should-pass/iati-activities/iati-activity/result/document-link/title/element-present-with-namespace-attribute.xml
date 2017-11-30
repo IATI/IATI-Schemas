@@ -23,7 +23,7 @@
         <narrative>Sample text</narrative>
       </title>
       <document-link url="xx" format="xx">
-        <title example-namespace:namespace-attribute="xx"><!-- PASS: Optional element added with required child element, and namespace attribute. -->
+        <title example-namespace:namespace-attribute="xx"><!-- PASS: Optional element added with required child element and namespace attribute. -->
           <narrative>Sample text</narrative>
         </title>
         <category code="xx" />

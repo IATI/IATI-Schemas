@@ -22,7 +22,7 @@
       <title>
         <narrative>Sample text</narrative>
       </title>
-      <document-link url="xx" format="xx" additional-attribute="xx"><!-- FAIL: Optional document-link element added with required child attributes/elements but an addiitonal attribute added. -->
+      <document-link url="xx" format="xx" additional-attribute="xx"><!-- FAIL: Optional document-link element added with required child attributes/elements but an additional, non-permitted attribute added. -->
         <title>
           <narrative>Sample text</narrative>
         </title>

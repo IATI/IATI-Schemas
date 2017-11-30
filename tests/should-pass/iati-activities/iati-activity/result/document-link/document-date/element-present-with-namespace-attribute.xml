@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <category code="xx"/>
-        <document-date iso-date="2000-01-01" example-namespace:namespace-attribute="xx"/><!-- PASS: Optional element added with required child element, and namespace attribute. -->
+        <document-date iso-date="2000-01-01" example-namespace:namespace-attribute="xx"/><!-- PASS: Optional element added with required child element and namespace attribute. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

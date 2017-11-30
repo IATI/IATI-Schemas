@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <category code="xx"/>
-        <document-date iso-date="xx"/><!-- FAIL: Not an XML date type. -->
+        <document-date iso-date="xx"/><!-- FAIL: Not a valid xsd:date. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

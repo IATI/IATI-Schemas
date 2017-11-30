@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <category code="xx"/>
-        <document-date iso-date="xx" additional-attribute="xx"/><!-- FAIL: An additional attribute added. -->
+        <document-date iso-date="xx" additional-attribute="xx"/><!-- FAIL: Non-permitted additional attribute present. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

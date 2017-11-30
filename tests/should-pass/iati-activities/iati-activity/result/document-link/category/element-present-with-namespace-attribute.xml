@@ -26,7 +26,7 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <category code="xx" example-namespace:namespace-attribute="xx"/><!-- PASS: Element added with required child element, and namespace attribute. -->
+        <category code="xx" example-namespace:namespace-attribute="xx"/><!-- PASS: Element added with required child element and namespace attribute. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

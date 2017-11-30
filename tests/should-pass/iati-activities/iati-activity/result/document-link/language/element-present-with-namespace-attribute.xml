@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <category code="xx"/>
-        <language code="xx" example-namespace:namespace-attribute="xx"/><!-- PASS: Optional element added with required child element, and namespace attribute. --> 
+        <language code="xx" example-namespace:namespace-attribute="xx"/><!-- PASS: Optional element added with required child element and namespace attribute. --> 
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>

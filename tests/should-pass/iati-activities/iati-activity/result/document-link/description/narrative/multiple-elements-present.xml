@@ -28,7 +28,7 @@
         </title>
         <description>
           <narrative>Sample text</narrative>
-          <narrative>Sample text</narrative><!-- PASS: Multiple elements present. -->
+          <narrative>Sample text</narrative><!-- PASS: Element present multiple times within context. -->
         </description>
         <category code="xx"/>
       </document-link>

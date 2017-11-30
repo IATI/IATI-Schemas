@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <category code="xx"/>
-        <language additional-attribute="xx"/><!-- FAIL: An addiitonal attribute added. -->
+        <language additional-attribute="xx"/><!-- FAIL: Non-permitted additional attribute present. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>
