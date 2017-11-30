@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <description>
-          <narrative example-namespace:namespace-attribute="xx">Sample text</narrative><!-- PASS: Required element added, and namespace attribute. -->
+          <narrative example-namespace:namespace-attribute="xx">Sample text</narrative><!-- PASS: Required element added and namespace attribute. -->
         </description>
         <category code="xx"/>
       </document-link>

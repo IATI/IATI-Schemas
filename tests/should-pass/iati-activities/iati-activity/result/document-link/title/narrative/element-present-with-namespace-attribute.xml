@@ -24,7 +24,7 @@
       </title>
       <document-link url="xx" format="xx">
         <title>
-          <narrative example-namespace:namespace-attribute="xx">Sample text</narrative><!-- PASS: Required element added, and namespace attribute. -->
+          <narrative example-namespace:namespace-attribute="xx">Sample text</narrative><!-- PASS: Required element added and namespace attribute. -->
         </title>
         <description>
           <narrative>Sample text</narrative>
