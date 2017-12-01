@@ -512,6 +512,7 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:attribute ref="vocabulary" use="optional"/>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
