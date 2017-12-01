@@ -17,7 +17,7 @@
       <transaction-type code="xx"/>
       <transaction-date iso-date="2010-07-07"/>
       <value value-date="2010-07-07">100</value>
-      <aid-type code="xx"/><!--PASS: Optional element present once with only required attributes -->
+      <aid-type code="xx" vocabulary="xx"/><!--PASS: Optional attribute present -->
     </transaction>
   </iati-activity>
 </iati-activities>
