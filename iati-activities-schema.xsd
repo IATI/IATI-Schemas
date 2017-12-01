@@ -1397,6 +1397,7 @@
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
+            <xsd:attribute ref="vocabulary" use="optional"/>
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
@@ -2800,6 +2801,14 @@
         The ISO 4217 alphabetic currency code of the value reported.
         This is required unless the iati-activity/\@default-currency is
         present and applies.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
+  <xsd:attribute name="vocabulary" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
       </xsd:documentation>
     </xsd:annotation>
   </xsd:attribute>
