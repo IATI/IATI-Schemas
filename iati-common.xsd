@@ -37,7 +37,7 @@
           <xsd:attribute ref="xml:lang" use="optional">
             <xsd:annotation>
               <xsd:documentation xml:lang="en">
-                ISO 639-1 code specifying the language of text in this element. If a default language is specified in the iati-activity element it does not have to be repeated here.
+                A code specifying the language of text in this element. It is recommended that wherever possible only codes from ISO 639-1 are used. If not present, the default language is assumed.
               </xsd:documentation>
             </xsd:annotation>
           </xsd:attribute>
