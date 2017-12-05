@@ -508,7 +508,7 @@
       <xsd:attribute name="code" type="xsd:string"  use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code from the OECD DAC CRS "Type of aid" codelist
+            A code from the specified vocabulary.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1023,8 +1023,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  An IATI code defining the type of the transaction
-                  (e.g. commitment, disbursement, expenditure, etc.).
+                  A code from the specified vocabulary.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
