@@ -1648,6 +1648,7 @@
                           <xsd:element name="location" type="resultLocationBase" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
+                          <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="required">
