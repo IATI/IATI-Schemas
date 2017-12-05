@@ -626,26 +626,15 @@
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An IATI code for the vocabulary (see codelist) used for
-            sector classifications. If omitted, OECD DAC 5-digit
-            Purpose Codes are assumed.
+            An IATI code for the vocabulary (see codelist) used for sector classifications. If omitted, OECD DAC 5-digit Purpose Codes are assumed.
 
-            It is recommended that OECD DAC 5-digit Purpose Codes are
-            used wherever possible. It is also recommended that if a
-            publisher has its own classification system or systems
-            then the vocabularies 99 or 98 (Reporting Organisation's
-            own vocabularies) should be used in addition to DAC codes.
+            It is recommended that OECD DAC 5-digit Purpose Codes are used wherever possible. It is also recommended that if a publisher has its own classification system or systems then the vocabularies 99 or 98 (Reporting Organisation's own vocabularies) should be used in addition to DAC codes.
 
-            Publishers using 98 or 99 must also include a narrative
-            in the narrative element.
+            Publishers using 98 or 99 must also include a narrative in the narrative element.
 
-            Note that if multiple sector codes are used in multiple
-            vocabularies, then each vocabulary's percentages should add
-            up to 100%.
+            Note that if multiple sector codes are used in multiple vocabularies, then each vocabulary’s percentages should add up to 100.
 
-            Sector can also be reported at the transaction level rather
-            than the activity level. Sector must only be reported at
-            EITHER transaction level OR activity level.
+            Sector can also be reported at the transaction level rather than the activity level. Sector must only be reported at EITHER transaction level OR activity level.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
