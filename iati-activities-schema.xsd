@@ -488,7 +488,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-aid-type" type="aid-type-base">
+  <xsd:element name="default-aid-type" type="aidTypeBase">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The type of aid being supplied (project-type intervention,
@@ -1348,7 +1348,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" type="aid-type-base" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="aid-type" type="aidTypeBase" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -2761,7 +2761,7 @@
     </xsd:annotation>
   </xsd:attribute>
 
-  <xsd:complexType name="aid-type-base">
+  <xsd:complexType name="aidTypeBase">
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
