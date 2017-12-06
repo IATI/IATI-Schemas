@@ -168,10 +168,7 @@
       <xsd:attribute ref="xml:lang">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            ISO 639-1 code specifying the default language used in
-            narrative elements throughout the activity. If this is not
-            declared then the xml:lang attribute MUST be specified for
-            each narrative element.
+            A code specifying the default language of text in this activity. It is recommended that wherever possible only codes from ISO 639-1 are used.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -428,8 +425,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 (reporting organisation), the URI
-            where this internal vocabulary is defined.
+            The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -613,34 +609,22 @@
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An IATI code for the vocabulary (see codelist) used for
-            sector classifications. If omitted, OECD DAC 5-digit
-            Purpose Codes are assumed.
+            An IATI code for the vocabulary (see codelist) used for sector classifications. If omitted, OECD DAC 5-digit Purpose Codes are assumed.
 
-            It is recommended that OECD DAC 5-digit Purpose Codes are
-            used wherever possible. It is also recommended that if a
-            publisher has its own classification system or systems
-            then the vocabularies 99 or 98 (Reporting Organisation's
-            own vocabularies) should be used in addition to DAC codes.
+            It is recommended that OECD DAC 5-digit Purpose Codes are used wherever possible. It is also recommended that if a publisher has its own classification system or systems then the vocabularies 99 or 98 (Reporting Organisation's own vocabularies) should be used in addition to DAC codes.
 
-            Publishers using 98 or 99 must also include a narrative
-            in the narrative element.
+            Publishers using 98 or 99 must also include a narrative in the narrative element.
 
-            Note that if multiple sector codes are used in multiple
-            vocabularies, then each vocabulary's percentages should add
-            up to 100%.
+            Note that if multiple sector codes are used in multiple vocabularies, then each vocabulary’s percentages should add up to 100.
 
-            Sector can also be reported at the transaction level rather
-            than the activity level. Sector must only be reported at
-            EITHER transaction level OR activity level.
+            Sector can also be reported at the transaction level rather than the activity level. Sector must only be reported at EITHER transaction level OR activity level.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 or 98 (reporting organisation), the URI
-            where this internal vocabulary is defined.
+            The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1010,8 +994,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  An IATI code defining the type of the transaction
-                  (e.g. commitment, disbursement, expenditure, etc.).
+                  A code from the specified vocabulary.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
