@@ -27,7 +27,7 @@
         <period>
           <period-start iso-date="2017-11-22"/>
           <period-end iso-date="2017-11-23"/>
-          <target value="xx"/><!-- PASS: Optional element is present -->
+          <target/><!-- PASS: Optional element is present -->
         </period>
       </indicator>
     </result>

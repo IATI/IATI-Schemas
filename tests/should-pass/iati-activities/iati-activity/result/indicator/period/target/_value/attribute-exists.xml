@@ -27,8 +27,7 @@
         <period>
           <period-start iso-date="2017-11-22"/>
           <period-end iso-date="2017-11-23"/>
-          <target/><!-- PASS: Optional element is present more than once -->
-          <target/><!-- PASS: Optional element is present more than once -->
+          <target value="xx"/><!-- PASS: Optional attribute is present -->
         </period>
       </indicator>
     </result>
