@@ -24,7 +24,7 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <baseline year="2017" value= "xx" iso-date="2017-11-16"><!-- PASS: optional iso-date attribute included using correct datetime format -->
+        <baseline year="2017" value="xx" iso-date="2017-11-16"><!-- PASS: optional iso-date attribute included using correct datetime format -->
           <comment>
             <narrative>Sample text</narrative>
           </comment>

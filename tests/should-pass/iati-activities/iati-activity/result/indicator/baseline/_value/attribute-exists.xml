@@ -26,7 +26,7 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <baseline year="2017" value= "xx"><!-- PASS: optional attribute included once -->
+        <baseline year="2017" value="xx"><!-- PASS: optional attribute included once -->
           <comment>
             <narrative>Sample text</narrative>
           </comment>
