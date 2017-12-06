@@ -266,19 +266,7 @@
         <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute name="ref" use="optional" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Machine-readable identification string for the
-            organisation. Must be in the format {Registration Agency}
-            - (Registration Number} where {Registration Agency} is a
-            valid code in the Registration Agency code list and
-            {Registration Number } is a valid identifier issued by the
-            {Registration Agency}. If this is not present then the
-            narrative MUST contain the name of the organisation.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="ref" use="optional"/>
       <xsd:attribute name="type" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -365,11 +353,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity
-            budget allocated to this country. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign. Percentages for all reported countries
-            and regions MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -432,11 +416,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity
-            budget allocated to this region. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign. Percentages for all reported countries
-            and regions MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -638,10 +618,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity budget to this item.
-            Content must be a positive decimal number between 0 and
-            100, with no percentage sign. All reported sectors from
-            the same vocabulary MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. All reported sectors from the same vocabulary MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1052,20 +1029,7 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="ref" use="optional" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the
-                  organisation. Must be in the format {Registration
-                  Agency} - (Registration Number} where {Registration
-                  Agency} is a valid code in the Registration Agency
-                  code list and {Registration Number } is a valid
-                  identifier issued by the {Registration Agency}. If
-                  this is not present then the narrative MUST contain
-                  the name of the organisation.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -1090,10 +1054,7 @@
         <xsd:element name="receiver-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation receiving the money from the
-              transaction (if omitted on incoming funds then the
-              receiver organisation is assumed to be the reporting
-              organisation).
+              Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1108,20 +1069,7 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="ref" use="optional" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the
-                  organisation. Must be in the format {Registration
-                  Agency} - (Registration Number} where {Registration
-                  Agency} is a valid code in the Registration Agency
-                  code list and {Registration Number } is a valid
-                  identifier issued by the {Registration Agency}. If
-                  this is not present then the narrative MUST contain
-                  the name of the organisation.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -2343,20 +2291,7 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="ref" use="optional" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the
-                  organisation. Must be in the format {Registration
-                  Agency} - (Registration Number} where {Registration
-                  Agency} is a valid code in the Registration Agency
-                  code list and {Registration Number } is a valid
-                  identifier issued by the {Registration Agency}. If
-                  this is not present then the narrative MUST contain
-                  the name of the organisation.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -2395,20 +2330,7 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="ref" use="optional" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the
-                  organisation. Must be in the format {Registration
-                  Agency} - (Registration Number} where {Registration
-                  Agency} is a valid code in the Registration Agency
-                  code list and {Registration Number } is a valid
-                  identifier issued by the {Registration Agency}. If
-                  this is not present then the narrative MUST contain
-                  the name of the organisation.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="receiver-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -2735,6 +2657,27 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
+  
+    <xsd:complexType name="aidTypeBase">
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="code" type="xsd:string"  use="required">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code from the specified vocabulary.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="vocabulary" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
   <xsd:complexType name="currencyType">
     <xsd:annotation>
@@ -2761,25 +2704,12 @@
     </xsd:annotation>
   </xsd:attribute>
 
-  <xsd:complexType name="aidTypeBase">
-    <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute name="code" type="xsd:string"  use="required">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          A code from the specified vocabulary.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:attribute name="vocabulary" type="xsd:string">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
+  <xsd:attribute name="ref" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
 
 </xsd:schema>
