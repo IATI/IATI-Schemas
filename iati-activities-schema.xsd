@@ -492,7 +492,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-aid-type">
+  <xsd:element name="default-aid-type" type="aid-type-base">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The type of aid being supplied (project-type intervention,
@@ -501,20 +501,6 @@
         be overridden at the individual transaction level.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attribute name="code" type="xsd:string"  use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            A code from the OECD DAC CRS "Type of aid" codelist
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:attribute ref="vocabulary" use="optional"/>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="default-finance-type">
@@ -1379,7 +1365,7 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="aid-type" type="aid-type-base" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level
@@ -1387,20 +1373,6 @@
               transaction-by-transaction basis if needed.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attribute name="code" type="xsd:string"  use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  A code from the OECD DAC CRS "Type of aid" codelist
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:attribute ref="vocabulary" use="optional"/>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
         </xsd:element>
         <xsd:element name="tied-status" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
@@ -2806,13 +2778,25 @@
     </xsd:annotation>
   </xsd:attribute>
 
-  <xsd:attribute name="vocabulary" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
-
+  <xsd:complexType name="aid-type-base">
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="code" type="xsd:string"  use="required">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code from the OECD DAC CRS "Type of aid" codelist
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="vocabulary" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
 </xsd:schema>
