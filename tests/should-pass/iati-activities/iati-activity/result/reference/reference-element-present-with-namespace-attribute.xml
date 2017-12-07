@@ -1,9 +1,11 @@
 <?xml version="1.0"?>
 
-<iati-activities version="xx">
+<iati-activities version="xx" xmlns:example-namespace="http://example.org/example-namespace/ns#"><!-- Include namespace declaration. -->
   <iati-activity>
     <iati-identifier></iati-identifier>
-    <reporting-org type="xx" ref="xx"><narrative>Organisation name</narrative></reporting-org>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
     <title>
       <narrative>Xxxxxxx</narrative>
     </title>
@@ -16,20 +18,15 @@
     <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <result type="xx">
+    <result type="xx" aggregation-status="0">
       <title>
         <narrative>Sample text</narrative>
       </title>
-      <indicator measure="xx">
+      <reference vocabulary="xx" code="xx" example-namespace:namespace-attribute="xx"/><!-- PASS: Optional `reference` element present, with two mandatory attributes. Also includes a namespace attribute. -->
+      <indicator measure="xx" ascending="0">
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <period>
-          <period-start iso-date="2017-11-22"/>
-          <period-end iso-date="2017-11-23"/>
-          <target/><!-- PASS: Optional element is present more than once -->
-          <target/><!-- PASS: Optional element is present more than once -->
-        </period>
       </indicator>
     </result>
   </iati-activity>

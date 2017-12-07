@@ -24,12 +24,12 @@
         <title>
           <narrative>Sample text</narrative>
         </title>
-        <period>
-          <period-start iso-date="2017-11-22"/>
-          <period-end iso-date="2017-11-23"/>
-          <target/><!-- PASS: Optional element is present more than once -->
-          <target/><!-- PASS: Optional element is present more than once -->
-        </period>
+        <baseline year="2017" value= "xx">
+          <location></location><!-- PASS: optional location element included without optional attributes -->
+          <comment>
+            <narrative>Sample text</narrative>
+          </comment>
+        </baseline>
       </indicator>
     </result>
   </iati-activity>

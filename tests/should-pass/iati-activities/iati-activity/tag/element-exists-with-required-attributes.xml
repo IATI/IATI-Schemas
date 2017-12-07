@@ -16,21 +16,6 @@
     <activity-date type="xx" iso-date="2013-11-27">
       <narrative>Some stuff ere</narrative>
     </activity-date>
-    <result type="xx">
-      <title>
-        <narrative>Sample text</narrative>
-      </title>
-      <indicator measure="xx">
-        <title>
-          <narrative>Sample text</narrative>
-        </title>
-        <period>
-          <period-start iso-date="2017-11-22"/>
-          <period-end iso-date="2017-11-23"/>
-          <target/><!-- PASS: Optional element is present more than once -->
-          <target/><!-- PASS: Optional element is present more than once -->
-        </period>
-      </indicator>
-    </result>
+    <tag vocabulary="xx" code="xx"></tag> <!-- PASS: optional tag element included with required attributes-->
   </iati-activity>
 </iati-activities>

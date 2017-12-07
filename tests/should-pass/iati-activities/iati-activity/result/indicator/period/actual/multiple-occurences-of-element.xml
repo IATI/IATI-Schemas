@@ -27,9 +27,9 @@
         <period>
           <period-start iso-date="2017-11-22"/>
           <period-end iso-date="2017-11-23"/>
-          <actual value="xx"/><!-- PASS: Element exists multiple times in context -->
-          <actual value="xx"/><!-- PASS: Element exists multiple times in context -->
-          <actual value="xx"/><!-- PASS: Element exists multiple times in context -->
+          <actual/><!-- PASS: Element exists multiple times in context -->
+          <actual/><!-- PASS: Element exists multiple times in context -->
+          <actual/><!-- PASS: Element exists multiple times in context -->
         </period>
       </indicator>
     </result>
