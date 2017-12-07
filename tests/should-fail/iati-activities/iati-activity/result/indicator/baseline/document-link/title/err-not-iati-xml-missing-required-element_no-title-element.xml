@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+
+<iati-activities version="xx">
+  <iati-activity>
+    <iati-identifier></iati-identifier>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+    <title>
+      <narrative>Xxxxxxx</narrative>
+    </title>
+    <description>
+      <narrative>Xxxxxxx</narrative>
+    </description>
+    <participating-org role="xx"></participating-org>
+    <activity-status code="xx"/>
+    <activity-date type="xx" iso-date="2013-11-27"/>
+    <activity-date type="xx" iso-date="2013-11-27">
+      <narrative>Some stuff ere</narrative>
+    </activity-date>
+    <result type="xx">
+      <title>
+        <narrative>Sample text</narrative>
+      </title>
+      <indicator measure="xx" ascending="0">
+        <title>
+          <narrative>Sample text</narrative>
+        </title>
+        <baseline year="2017" value="xx">
+          <document-link url="xx" format="xx">
+            <!-- FAIL: Optional `document-link` element added, but without the required 'title' child element. -->
+            <category code="xx"/>
+          </document-link>
+        </baseline>
+      </indicator>
+    </result>
+  </iati-activity>
+</iati-activities>

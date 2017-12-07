@@ -28,7 +28,7 @@
       <description><!-- FAIL: Additional, non-permitted occurance of the description element. -->
         <narrative>Sample text</narrative>
       </description>
-      <category code="xx" />
+      <category code="xx"/>
     </document-link>
   </iati-activity>
 </iati-activities>

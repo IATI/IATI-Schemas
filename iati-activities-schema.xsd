@@ -1558,6 +1558,7 @@
       <xsd:sequence>
         <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
         <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+        <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
         <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
@@ -1602,6 +1603,7 @@
             <xsd:sequence>
               <xsd:element ref="title" minOccurs="1" maxOccurs="1"/>
               <xsd:element ref="description" minOccurs="0" maxOccurs="1"/>
+              <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
               <xsd:element name="reference" minOccurs="0" maxOccurs="unbounded">
                 <xsd:annotation>
                   <xsd:documentation xml:lang="en">
@@ -1646,6 +1648,7 @@
                   <xsd:sequence>
                     <xsd:element name="location" type="resultLocationBase" minOccurs="0" maxOccurs="unbounded"/>
                     <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
                     <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
                     <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                   </xsd:sequence>
@@ -1714,6 +1717,7 @@
                           <xsd:element name="location" type="resultLocationBase" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
+                          <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="optional">
@@ -1736,6 +1740,7 @@
                           <xsd:element name="location" type="resultLocationBase" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="dimension" minOccurs="0" maxOccurs="unbounded"/>
                           <xsd:element ref="comment" minOccurs="0" maxOccurs="1"/>
+                          <xsd:element name="document-link" minOccurs="0" maxOccurs="unbounded" type="documentLinkResultBase"/>
                           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
                         </xsd:sequence>
                         <xsd:attribute name="value" type="xsd:string" use="optional">
@@ -2552,6 +2557,19 @@
           </xsd:element>
           <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
         </xsd:sequence>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+
+<!-- documentLinkResultBase extends documentLinkBase to include the specific definition for the element where it appears as a child of the iati-activity/result element. -->
+  <xsd:complexType name="documentLinkResultBase">
+    <xsd:complexContent>
+      <xsd:extension base="documentLinkBase">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            A link to an online, publicly accessible web page or document expanding on the result.
+          </xsd:documentation>
+        </xsd:annotation>
       </xsd:extension>
     </xsd:complexContent>
   </xsd:complexType>
