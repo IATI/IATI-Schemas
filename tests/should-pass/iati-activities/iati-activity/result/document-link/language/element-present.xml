@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <iati-activities version="xx">
-  <iati-activity xmlns:example-namespace="http://example.org/example-namespace/ns#"><!-- Include namespace declaration. -->
+  <iati-activity>
     <iati-identifier></iati-identifier>
     <reporting-org type="xx" ref="xx">
       <narrative>Organisation name</narrative>
@@ -27,7 +27,7 @@
           <narrative>Sample text</narrative>
         </title>
         <category code="xx"/>
-        <language code="xx"/><!-- PASS: Optional element added with required attribute. --> 
+        <language code="xx"/><!-- PASS: Optional element added with required attribute. -->
       </document-link>
       <indicator measure="xx" ascending="0">
         <title>
