@@ -168,10 +168,7 @@
       <xsd:attribute ref="xml:lang">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            ISO 639-1 code specifying the default language used in
-            narrative elements throughout the activity. If this is not
-            declared then the xml:lang attribute MUST be specified for
-            each narrative element.
+            A code specifying the default language of text in this activity. It is recommended that wherever possible only codes from ISO 639-1 are used.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -269,19 +266,7 @@
         <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute name="ref" use="optional" type="xsd:string">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            Machine-readable identification string for the
-            organisation. Must be in the format {Registration Agency}
-            - (Registration Number} where {Registration Agency} is a
-            valid code in the Registration Agency code list and
-            {Registration Number } is a valid identifier issued by the
-            {Registration Agency}. If this is not present then the
-            narrative MUST contain the name of the organisation.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
+      <xsd:attribute ref="ref" use="optional"/>
       <xsd:attribute name="type" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -368,11 +353,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity
-            budget allocated to this country. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign. Percentages for all reported countries
-            and regions MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -428,19 +409,14 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 (reporting organisation), the URI
-            where this internal vocabulary is defined.
+            The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity
-            budget allocated to this region. Content must be a
-            positive decimal number between 0 and 100, with no
-            percentage sign. Percentages for all reported countries
-            and regions MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -492,7 +468,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="default-aid-type">
+  <xsd:element name="default-aid-type" type="aidTypeBase">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The type of aid being supplied (project-type intervention,
@@ -501,19 +477,6 @@
         be overridden at the individual transaction level.
       </xsd:documentation>
     </xsd:annotation>
-    <xsd:complexType>
-      <xsd:sequence>
-        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-      </xsd:sequence>
-      <xsd:attribute name="code" type="xsd:string"  use="required">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            A code from the OECD DAC CRS "Type of aid" codelist
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:attribute>
-      <xsd:anyAttribute processContents="lax" namespace="##other"/>
-    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="default-finance-type">
@@ -626,34 +589,22 @@
       <xsd:attribute name="vocabulary" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An IATI code for the vocabulary (see codelist) used for
-            sector classifications. If omitted, OECD DAC 5-digit
-            Purpose Codes are assumed.
+            An IATI code for the vocabulary (see codelist) used for sector classifications. If omitted, OECD DAC 5-digit Purpose Codes are assumed.
 
-            It is recommended that OECD DAC 5-digit Purpose Codes are
-            used wherever possible. It is also recommended that if a
-            publisher has its own classification system or systems
-            then the vocabularies 99 or 98 (Reporting Organisation's
-            own vocabularies) should be used in addition to DAC codes.
+            It is recommended that OECD DAC 5-digit Purpose Codes are used wherever possible. It is also recommended that if a publisher has its own classification system or systems then the vocabularies 99 or 98 (Reporting Organisation's own vocabularies) should be used in addition to DAC codes.
 
-            Publishers using 98 or 99 must also include a narrative
-            in the narrative element.
+            Publishers using 98 or 99 must also include a narrative in the narrative element.
 
-            Note that if multiple sector codes are used in multiple
-            vocabularies, then each vocabulary's percentages should add
-            up to 100%.
+            Note that if multiple sector codes are used in multiple vocabularies, then each vocabulary’s percentages should add up to 100.
 
-            Sector can also be reported at the transaction level rather
-            than the activity level. Sector must only be reported at
-            EITHER transaction level OR activity level.
+            Sector can also be reported at the transaction level rather than the activity level. Sector must only be reported at EITHER transaction level OR activity level.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            If the vocabulary is 99 or 98 (reporting organisation), the URI
-            where this internal vocabulary is defined.
+            The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -667,10 +618,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity budget to this item.
-            Content must be a positive decimal number between 0 and
-            100, with no percentage sign. All reported sectors from
-            the same vocabulary MUST add up to 100%
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. All reported sectors from the same vocabulary MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1023,8 +971,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  An IATI code defining the type of the transaction
-                  (e.g. commitment, disbursement, expenditure, etc.).
+                  A code from the specified vocabulary.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1082,20 +1029,7 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute name="ref" use="optional" type="xsd:string">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the
-                  organisation. Must be in the format {Registration
-                  Agency} - (Registration Number} where {Registration
-                  Agency} is a valid code in the Registration Agency
-                  code list and {Registration Number } is a valid
-                  identifier issued by the {Registration Agency}. If
-                  this is not present then the narrative MUST contain
-                  the name of the organisation.
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
+            <xsd:attribute ref="ref" use="optional"/>
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -1120,7 +1054,7 @@
         <xsd:element name="receiver-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              The organisation receiving the money from the transaction (if omitted on incoming funds then the receiver organisation is assumed to be the reporting organisation).
+              Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1328,25 +1262,12 @@
             <xsd:anyAttribute processContents="lax" namespace="##other"/>
           </xsd:complexType>
         </xsd:element>
-        <xsd:element name="aid-type" minOccurs="0" maxOccurs="unbounded">
+        <xsd:element name="aid-type" type="aidTypeBase" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Optional element to override the top-level default-aid-type element (debt relief, etc.) on a transaction-by-transaction basis if needed.
             </xsd:documentation>
           </xsd:annotation>
-          <xsd:complexType>
-            <xsd:sequence>
-              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-            </xsd:sequence>
-            <xsd:attribute name="code" type="xsd:string"  use="required">
-              <xsd:annotation>
-                <xsd:documentation xml:lang="en">
-                  A code from the OECD DAC CRS "Type of aid" codelist
-                </xsd:documentation>
-              </xsd:annotation>
-            </xsd:attribute>
-            <xsd:anyAttribute processContents="lax" namespace="##other"/>
-          </xsd:complexType>
         </xsd:element>
         <xsd:element name="tied-status" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
@@ -2319,6 +2240,27 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
+  
+    <xsd:complexType name="aidTypeBase">
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="code" type="xsd:string"  use="required">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code from the specified vocabulary.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:attribute name="vocabulary" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
+  </xsd:complexType>
 
   <xsd:complexType name="currencyType">
     <xsd:annotation>
@@ -2614,5 +2556,13 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
+
+  <xsd:attribute name="ref" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
 
 </xsd:schema>
