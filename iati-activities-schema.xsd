@@ -141,7 +141,7 @@
         <xsd:element ref="collaboration-type" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="default-flow-type" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="default-finance-type" minOccurs="0" maxOccurs="1"/>
-        <xsd:element ref="default-aid-type" minOccurs="0" maxOccurs="1"/>
+        <xsd:element ref="default-aid-type" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="default-tied-status" minOccurs="0" maxOccurs="1"/>
         <xsd:element ref="budget" minOccurs="0" maxOccurs="unbounded"/>
         <xsd:element ref="planned-disbursement" minOccurs="0" maxOccurs="unbounded"/>
