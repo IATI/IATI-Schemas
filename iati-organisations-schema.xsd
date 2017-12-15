@@ -70,12 +70,7 @@
         <xsd:element name="organisation-identifier" minOccurs="1" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Machine-readable identification string for the
-              organisation issuing the report. Must be in the format
-              {RegistrationAgency}-{RegistrationNumber} where
-              {RegistrationAgency} is a valid code in the
-              RegistrationAgency code list and {RegistrationNumber }
-              is a valid identifier issued by the {RegistrationAgency}
+              Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
             </xsd:documentation>
           </xsd:annotation>
         </xsd:element>
