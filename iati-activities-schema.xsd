@@ -1585,6 +1585,8 @@
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
                         The baseline value.
+
+                        This should be a numeric value if the measure is quantitative.
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -1645,6 +1647,8 @@
                           <xsd:annotation>
                             <xsd:documentation xml:lang="en">
                               The target value.
+
+                              This should be a numeric value if the measure is quantitative.
                             </xsd:documentation>
                           </xsd:annotation>
                         </xsd:attribute>
@@ -1668,6 +1672,8 @@
                           <xsd:annotation>
                             <xsd:documentation xml:lang="en">
                               The actual measure.
+
+                              This should be a numeric value if the measure is quantitative.
                             </xsd:documentation>
                           </xsd:annotation>
                         </xsd:attribute>
@@ -2240,7 +2246,7 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-  
+
     <xsd:complexType name="aidTypeBase">
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
