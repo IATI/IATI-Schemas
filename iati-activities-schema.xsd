@@ -2655,7 +2655,7 @@
     </xsd:complexType>
   </xsd:element>
 
-    <xsd:complexType name="aidTypeBase">
+  <xsd:complexType name="aidTypeBase">
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
