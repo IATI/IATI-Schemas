@@ -250,15 +250,9 @@
   <xsd:element name="participating-org">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        An organisation involved with the activity. May be a donor,
-        fund, agency, etc. Specifying the @ref identifier is strongly
-        recommended. May contain the organisation name as narrative.
+        An organisation involved with the activity. May be a donor, fund, agency, etc. Specifying the @ref identifier is strongly recommended. May contain the organisation name as narrative.
 
-        If the reporting organisation plays a role in the activity it
-        should be repeated here. One organisation may play more than
-        one role (eg, funding and implementing): in such a case each
-        role should be reported and the name of the organisation
-        repeated.
+        If the reporting organisation plays a role in the activity it should be repeated here. One organisation may play more than one role (eg, funding and implementing): in such a case each role should be reported and the name of the organisation repeated.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -270,25 +264,21 @@
       <xsd:attribute name="type" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The type of organisation issuing the report. See IATI
-            codelist for values.
+            The type of organisation issuing the report. See IATI codelist for values.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="role" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            An IATI code describing the organisation's role in the
-            activity (donor, agency, etc.).
+            An IATI code describing the organisation's role in the activity (donor, agency, etc.).
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="activity-id" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A valid activity identifier published by the participating
-            organisation which points to the activity that it has
-            published to IATI that describes its role in this activity.
+            A valid activity identifier published by the participating organisation which points to the activity that it has published to IATI that describes its role in this activity.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
