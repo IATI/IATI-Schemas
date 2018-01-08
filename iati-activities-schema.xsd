@@ -285,7 +285,7 @@
       <xsd:attribute name="crs-channel-code" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Under CRS++ Reporting Directives this code identifies the implementing agency. Codes ending in ‘00’ are generic and are similar to the OrganisationType code.
+            Under CRS++ Reporting Directives this code identifies the implementing agency. Codes ending in '00' are generic and are similar to the OrganisationType code.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
