@@ -2,6 +2,7 @@
 ### Project-specific ignored files
 ###
 
+
 # pyenv folder specified in README
 pyenv/
 pyenv2/
@@ -103,3 +104,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+###
+### Include these things that are otherwise ignored:
+###
+!tests/should-pass/iati-activities/iati-activity/result/indicator/period/target/
+!tests/should-fail/iati-activities/iati-activity/result/indicator/period/target/

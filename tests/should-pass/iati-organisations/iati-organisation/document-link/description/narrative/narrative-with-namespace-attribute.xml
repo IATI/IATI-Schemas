@@ -17,7 +17,7 @@
       <description>
         <narrative example-namespace:namespace-attribute="xx">Sample text</narrative><!--PASS: Must occur at least once within a `description` element. Includes namespace attribute. -->
       </description>
-      <category code="xx" />
+      <category code="xx"/>
     </document-link>
   </iati-organisation>
 

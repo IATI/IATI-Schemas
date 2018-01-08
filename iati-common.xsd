@@ -178,7 +178,7 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
- <!-- documentLinkBase provides the common elements and attributes for iati-activities/iati-activity/document-link and iati-organisations/iati-organisation/document-link -->
+ <!-- documentLinkBase provides the common elements and attributes for the document-link elements in iati-activities and iati-organisations. -->
  <xsd:complexType name="documentLinkBase">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">

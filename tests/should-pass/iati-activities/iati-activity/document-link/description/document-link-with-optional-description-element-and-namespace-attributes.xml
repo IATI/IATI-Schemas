@@ -22,10 +22,10 @@
       <title>
         <narrative>Sample text</narrative>
       </title>
-      <description example-namespace:namespace-attribute="xx"><!-- PASS: Optional description element added with required element, and namespace attribute. -->
+      <description example-namespace:namespace-attribute="xx"><!-- PASS: Optional description element added with required element and namespace attribute. -->
         <narrative>Sample text</narrative>
       </description>
-      <category code="xx" />
+      <category code="xx"/>
     </document-link>
   </iati-activity>
 </iati-activities>

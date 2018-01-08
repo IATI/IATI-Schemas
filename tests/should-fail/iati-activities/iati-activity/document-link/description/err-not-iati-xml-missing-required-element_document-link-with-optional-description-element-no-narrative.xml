@@ -24,7 +24,7 @@
       </title>
       <description><!-- FAIL: Optional description element added, but without the required 'narrative' child element. -->
       </description>
-      <category code="xx" />
+      <category code="xx"/>
     </document-link>
   </iati-activity>
 </iati-activities>

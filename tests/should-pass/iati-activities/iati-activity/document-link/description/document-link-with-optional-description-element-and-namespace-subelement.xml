@@ -26,7 +26,7 @@
         <narrative>Sample text</narrative>
         <example-namespace:namespace-element></example-namespace:namespace-element> <!-- PASS: Optional namespace element included. -->
       </description>
-      <category code="xx" />
+      <category code="xx"/>
     </document-link>
   </iati-activity>
 </iati-activities>
