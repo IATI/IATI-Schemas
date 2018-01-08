@@ -292,6 +292,13 @@
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
+      <xsd:attribute name="crs-channel-code" type="xsd:string" use="optional">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Under CRS++ Reporting Directives this code identifies the implementing agency. Codes ending in ‘00’ are generic and are similar to the OrganisationType code.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
@@ -2657,7 +2664,7 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-  
+
     <xsd:complexType name="aidTypeBase">
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
