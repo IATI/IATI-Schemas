@@ -1306,12 +1306,216 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="location" type="locationFull">
+  <xsd:element name="location">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The sub-national geographical identification of the target locations of an activity. These can be described by gazetteer reference, coordinates, administrative areas or a textual description. Any number of locations may be reported.
       </xsd:documentation>
     </xsd:annotation>
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="location-reach" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Does this location describe where the activity takes place or where the intended beneficiaries reside?
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for the geographic scope of the activity.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="location-id" minOccurs="0" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A unique code describing the location according to a recognised gazetteer or administrative boundary repository. Administrative areas should only be reported here if the location being defined is the administrative area itself. For describing the administrative area/s within which a more specific location falls the location/administrative element should be used.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A code from the gazetteer or administrative boundary repository specified by the vocabulary
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for a recognised gazetteer or administrative boundary repository.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="name" type="textRequiredType" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The human-readable name for the location.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A description that qualifies the location, not the activity.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="activity-description" type="textRequiredType" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              A description that qualifies the activity taking place at the location. This should not duplicate information provided in the main activity description, and should typically be used to distinguish between activities at multiple locations within a single iati-activity record.
+            </xsd:documentation>
+          </xsd:annotation>
+        </xsd:element>
+        <xsd:element name="administrative" minOccurs="0" maxOccurs="unbounded">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              Coded identification of national and sub-national divisions according to recognised administrative boundary repositories. Multiple levels may be reported.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   The code for the administrative area being reported from the vocabulary specified.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="vocabulary" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  An IATI code for a recognised administrative boundary repository.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:attribute name="level" type="xsd:nonNegativeInteger" use="optional">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  A number defining a subdivision within a hierarchical system of administrative areas. The precise system for defining the particular meaning of each @level value is determined by the @vocabulary being used.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="point" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+              The point element is based on a subset of the GML 3.3 Point element.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="pos" type="xsd:string" minOccurs="1" maxOccurs="1">
+                <xsd:annotation>
+                  <xsd:documentation xml:lang="en">
+                    The latitude and longitude coordinates in the format "lat lng"
+                  </xsd:documentation>
+                </xsd:annotation>
+              </xsd:element>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="srsName" type="xsd:string" use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  The name of the spatial reference system used by the coordinates.
+
+                  Always: http://www.opengis.net/def/crs/EPSG/0/4326
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="exactness" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Defines whether the location represents the most distinct point reasonably possible for this type of activity or is an approximation due to lack of more detailed information.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A code from the Geographic Exactness Codelist.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="location-class" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               Whether the location refers to a structure, a populated place (e.g. city or village), an administrative division, or another topological feature (e.g. river, nature reserve).
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A code from the Location Class codelist
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:element name="feature-designation" minOccurs="0" maxOccurs="1">
+          <xsd:annotation>
+            <xsd:documentation xml:lang="en">
+               A more refined coded classification of the type of feature referred to by this location.
+            </xsd:documentation>
+          </xsd:annotation>
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+            </xsd:sequence>
+            <xsd:attribute name="code" type="xsd:string"  use="required">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                   A feature designation code form the authorised list (maintained by the US National Geospatial-Intelligence Agency)
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
+            <xsd:anyAttribute processContents="lax" namespace="##other"/>
+          </xsd:complexType>
+        </xsd:element>
+        <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </xsd:sequence>
+      <xsd:attribute name="ref" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            An internal reference that describes the location in the reporting organisation’s own system.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
+      <xsd:anyAttribute processContents="lax" namespace="##other"/>
+    </xsd:complexType>
   </xsd:element>
 
   <xsd:element name="tag">
@@ -2289,223 +2493,6 @@
     </xsd:annotation>
   </xsd:attribute>
 
-<!-- locationBase provides only the ref attribute for location -->
-  <xsd:complexType name="locationBase">
-    <xsd:sequence>
-      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-    </xsd:sequence>
-    <xsd:attribute name="ref" use="optional" type="xsd:string">
-      <xsd:annotation>
-        <xsd:documentation xml:lang="en">
-          A cross-reference to the internal reference assigned to a defined location: iati-activity/location/\@ref.
-        </xsd:documentation>
-      </xsd:annotation>
-    </xsd:attribute>
-    <xsd:anyAttribute processContents="lax" namespace="##other"/>
-  </xsd:complexType>
-
-<!-- locationFull extends locationBase to include all sub-elements for location at the iati-activity level -->
-  <xsd:complexType name="locationFull">
-    <xsd:complexContent>
-      <xsd:extension base="locationBase">
-        <xsd:sequence>
-          <xsd:element name="location-reach" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                 Does this location describe where the activity takes place or where the intended beneficiaries reside?
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="code" type="xsd:string"  use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    An IATI code for the geographic scope of the activity.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="location-id" minOccurs="0" maxOccurs="unbounded">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                 A unique code describing the location according to a recognised gazetteer or administrative boundary repository. Administrative areas should only be reported here if the location being defined is the administrative area itself. For describing the administrative area/s within which a more specific location falls the location/administrative element should be used.
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="code" type="xsd:string"  use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                     A code from the gazetteer or administrative boundary repository specified by the vocabulary
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:attribute name="vocabulary" type="xsd:string" use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    An IATI code for a recognised gazetteer or administrative boundary repository.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="name" type="textRequiredType" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The human-readable name for the location.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="description" type="textRequiredType" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                A description that qualifies the location, not the activity.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="activity-description" type="textRequiredType" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                A description that qualifies the activity taking place at the location. This should not duplicate information provided in the main activity description, and should typically be used to distinguish between activities at multiple locations within a single iati-activity record.
-              </xsd:documentation>
-            </xsd:annotation>
-          </xsd:element>
-          <xsd:element name="administrative" minOccurs="0" maxOccurs="unbounded">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                Coded identification of national and sub-national divisions according to recognised administrative boundary repositories. Multiple levels may be reported.
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="code" type="xsd:string"  use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                     The code for the administrative area being reported from the vocabulary specified.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:attribute name="vocabulary" type="xsd:string" use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    An IATI code for a recognised administrative boundary repository.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:attribute name="level" type="xsd:nonNegativeInteger" use="optional">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    A number defining a subdivision within a hierarchical system of administrative areas. The precise system for defining the particular meaning of each @level value is determined by the @vocabulary being used.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="point" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                The point element is based on a subset of the GML 3.3 Point element.
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:element name="pos" type="xsd:string" minOccurs="1" maxOccurs="1">
-                  <xsd:annotation>
-                    <xsd:documentation xml:lang="en">
-                      The latitude and longitude coordinates in the format "lat lng"
-                    </xsd:documentation>
-                  </xsd:annotation>
-                </xsd:element>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="srsName" type="xsd:string" use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                    The name of the spatial reference system used by the coordinates.
-
-                    Always: http://www.opengis.net/def/crs/EPSG/0/4326
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="exactness" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                 Defines whether the location represents the most distinct point reasonably possible for this type of activity or is an approximation due to lack of more detailed information.
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="code" type="xsd:string"  use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                     A code from the Geographic Exactness Codelist.
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="location-class" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                 Whether the location refers to a structure, a populated place (e.g. city or village), an administrative division, or another topological feature (e.g. river, nature reserve).
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="code" type="xsd:string"  use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                     A code from the Location Class codelist
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:element name="feature-designation" minOccurs="0" maxOccurs="1">
-            <xsd:annotation>
-              <xsd:documentation xml:lang="en">
-                 A more refined coded classification of the type of feature referred to by this location.
-              </xsd:documentation>
-            </xsd:annotation>
-            <xsd:complexType>
-              <xsd:sequence>
-                <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-              </xsd:sequence>
-              <xsd:attribute name="code" type="xsd:string"  use="required">
-                <xsd:annotation>
-                  <xsd:documentation xml:lang="en">
-                     A feature designation code form the authorised list (maintained by the US National Geospatial-Intelligence Agency)
-                  </xsd:documentation>
-                </xsd:annotation>
-              </xsd:attribute>
-              <xsd:anyAttribute processContents="lax" namespace="##other"/>
-            </xsd:complexType>
-          </xsd:element>
-          <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-        </xsd:sequence>
-      </xsd:extension>
-    </xsd:complexContent>
-  </xsd:complexType>
-
 <!-- documentLinkResultBase extends documentLinkBase to include the specific definition for the element where it appears as a child of the iati-activity/result element. -->
   <xsd:complexType name="documentLinkResultBase">
     <xsd:complexContent>
@@ -2519,17 +2506,24 @@
     </xsd:complexContent>
   </xsd:complexType>
 
-<!-- resultLocationBase extends locationBase to include the common documentation for location as a sub-element of the iati-activity level result element -->
+<!-- resultLocationBase provides the common definition and ref attribute for all location elements in the iati-activity/results element. -->
   <xsd:complexType name="resultLocationBase">
-    <xsd:complexContent>
-      <xsd:extension base="locationBase">
-        <xsd:annotation>
-          <xsd:documentation xml:lang="en">
-            A location already defined and described in the iati-activity/location element.
-          </xsd:documentation>
-        </xsd:annotation>
-      </xsd:extension>
-    </xsd:complexContent>
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A location already defined and described in the iati-activity/location element.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </xsd:sequence>
+    <xsd:attribute name="ref" use="optional" type="xsd:string">
+      <xsd:annotation>
+        <xsd:documentation xml:lang="en">
+          A cross-reference to the internal reference assigned to a defined location: iati-activity/location/\@ref.
+        </xsd:documentation>
+      </xsd:annotation>
+    </xsd:attribute>
+    <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
   <xsd:element name="dimension">
