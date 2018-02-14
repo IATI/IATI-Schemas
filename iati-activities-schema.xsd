@@ -2506,15 +2506,20 @@
     </xsd:complexContent>
   </xsd:complexType>
 
-<!-- resultLocationBase provides the common ref attribute for all location elements in the iati-activity/results element. -->
+<!-- resultLocationBase provides the common definition and ref attribute for all location elements in the iati-activity/results element. -->
   <xsd:complexType name="resultLocationBase">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A location already defined and described in the iati-activity/location element.
+      </xsd:documentation>
+    </xsd:annotation>
     <xsd:sequence>
       <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
     </xsd:sequence>
     <xsd:attribute name="ref" use="optional" type="xsd:string">
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
-          A cross-reference to the internal reference assigned to a defined location: iati-activity/location/@ref.
+          A cross-reference to the internal reference assigned to a defined location: iati-activity/location/\@ref.
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
