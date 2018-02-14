@@ -6,7 +6,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Activity-Information Schema
 
-      Release 2.03, Unreleased
+      Release 2.03, 2018-02-19
 
       NOTE: the xml.xsd and iati-common.xsd schemas must be in the
       same directory as this one.
