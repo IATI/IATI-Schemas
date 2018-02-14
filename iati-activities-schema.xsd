@@ -1306,7 +1306,7 @@
     </xsd:complexType>
   </xsd:element>
 
-  <xsd:element name="location" type="locationFull">
+  <xsd:element name="location">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The sub-national geographical identification of the target locations of an activity. These can be described by gazetteer reference, coordinates, administrative areas or a textual description. Any number of locations may be reported.
