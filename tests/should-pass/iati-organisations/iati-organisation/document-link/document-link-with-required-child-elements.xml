@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation>
+    <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+    <document-link url="xx" format="xx"><!-- PASS: Optional document-link element added with required attributes and elements. -->
+      <title>
+        <narrative>Sample text</narrative>
+      </title>
+      <category code="xx"/>
+    </document-link>
+  </iati-organisation>
+
+</iati-organisations>

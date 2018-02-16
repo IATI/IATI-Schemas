@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+
+<iati-organisations version="xx">
+
+  <iati-organisation xmlns:example-namespace="http://example.org/example-namespace/ns#"><!-- Include namespace declaration. -->
+    <organisation-identifier>12345</organisation-identifier>
+    <name>
+      <narrative>Name here</narrative>
+    </name>
+    <reporting-org type="xx" ref="xx">
+      <narrative>Organisation name</narrative>
+    </reporting-org>
+    <document-link url="xx" format="xx">
+      <title>
+        <narrative>Sample text</narrative>
+      </title>
+      <description>
+        <narrative example-namespace:namespace-attribute="xx">Sample text</narrative><!--PASS: Must occur at least once within a `description` element. Includes namespace attribute. -->
+      </description>
+      <category code="xx"/>
+    </document-link>
+  </iati-organisation>
+
+</iati-organisations>
