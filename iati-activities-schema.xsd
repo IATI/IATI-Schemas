@@ -260,7 +260,13 @@
         <xsd:element ref="narrative" minOccurs="0" maxOccurs="unbounded" />
         <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
       </xsd:sequence>
-      <xsd:attribute ref="ref" use="optional"/>
+      <xsd:attribute name="ref" use="optional" type="xsd:string">
+        <xsd:annotation>
+          <xsd:documentation xml:lang="en">
+            Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
+          </xsd:documentation>
+        </xsd:annotation>
+      </xsd:attribute>
       <xsd:attribute name="type" use="optional" type="xsd:string">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
@@ -1026,7 +1032,13 @@
               </xsd:element>
               <xsd:any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
             </xsd:sequence>
-            <xsd:attribute ref="ref" use="optional"/>
+            <xsd:attribute name="ref" use="optional" type="xsd:string">
+              <xsd:annotation>
+                <xsd:documentation xml:lang="en">
+                  Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
+                </xsd:documentation>
+              </xsd:annotation>
+            </xsd:attribute>
             <xsd:attribute name="provider-activity-id" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
@@ -1051,7 +1063,7 @@
         <xsd:element name="receiver-org" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
+              The organisation receiving the money from the transaction (if omitted on incoming funds then the receiver organisation is assumed to be the reporting organisation).
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1068,7 +1080,7 @@
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the organisation. Must be in the format {Registration Agency} - (Registration Number} where {Registration Agency} is a valid code in the Registration Agency code list and {Registration Number } is a valid identifier issued by the {Registration Agency}. If this is not present then the narrative MUST contain the name of the organisation.
+                  Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -2100,7 +2112,7 @@
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the organisation. Must be in the format {Registration Agency} - (Registration Number} where {Registration Agency} is a valid code in the Registration Agency code list and {Registration Number } is a valid identifier issued by the {Registration Agency}. If this is not present then the narrative MUST contain the name of the organisation.
+                  Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -2141,7 +2153,7 @@
             <xsd:attribute name="ref" use="optional" type="xsd:string">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Machine-readable identification string for the organisation. Must be in the format {Registration Agency} - (Registration Number} where {Registration Agency} is a valid code in the Registration Agency code list and {Registration Number } is a valid identifier issued by the {Registration Agency}. If this is not present then the narrative MUST contain the name of the organisation.
+                  Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -2553,13 +2565,5 @@
       <xsd:anyAttribute processContents="lax" namespace="##other"/>
     </xsd:complexType>
   </xsd:element>
-
-  <xsd:attribute name="ref" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
 
 </xsd:schema>
