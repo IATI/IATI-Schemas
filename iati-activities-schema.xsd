@@ -264,7 +264,6 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Machine-readable identification string for the organisation issuing the report. Must be in the format {RegistrationAgency}-{RegistrationNumber} where {RegistrationAgency} is a valid code in the Organisation Registration Agency code list and {RegistrationNumber} is a valid identifier issued by the {RegistrationAgency}. If this is not present then the narrative MUST contain the name of the organisation.
-            If this is not present then the narrative MUST contain the name of the organisation (read: there is content). - REGEX
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1800,7 +1799,9 @@
                       <xsd:documentation xml:lang="en">
                         The baseline value.
 
-                        This should be a numeric value if the measure is quantitative.
+                        The @value must be omitted for qualitative measures
+                        The @value must be included for non-qualitative measures
+                        The @value should be a valid number for all non-qualitative measures
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -1862,7 +1863,9 @@
                             <xsd:documentation xml:lang="en">
                               The target value.
 
-                              This should be a numeric value if the measure is quantitative.
+                              The @value must be omitted for qualitative measures
+                              The @value must be included for non-qualitative measures
+                              The @value should be a valid number for all non-qualitative measures
                             </xsd:documentation>
                           </xsd:annotation>
                         </xsd:attribute>
@@ -1887,7 +1890,9 @@
                             <xsd:documentation xml:lang="en">
                               The actual measure.
 
-                              This should be a numeric value if the measure is quantitative.
+                              The @value must be omitted for qualitative measures
+                              The @value must be included for non-qualitative measures
+                              The @value should be a valid number for all non-qualitative measures
                             </xsd:documentation>
                           </xsd:annotation>
                         </xsd:attribute>
@@ -2476,6 +2481,8 @@
       <xsd:annotation>
         <xsd:documentation xml:lang="en">
           A code for the vocabulary aid-type classifications. If omitted the AidType (OECD DAC) codelist is assumed. The code must be a valid value in the AidTypeVocabulary codelist.
+
+          Each selected vocabulary should only be used once for each activity (iati-activity/default-aid-type) or transaction (iati-activity/transaction/aid-type). All activities and/or transactions should contain a code from the DAC Type of Aid Vocabulary. The above guidelines should be converted to rules at the next integer upgrade.
         </xsd:documentation>
       </xsd:annotation>
     </xsd:attribute>
