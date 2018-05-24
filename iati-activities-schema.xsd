@@ -1932,12 +1932,7 @@
   <xsd:element name="budget">
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
-        The value of the aid activity's budget for each financial
-        quarter or year over the lifetime of the activity. The total
-        budget for an activity should be reported as a commitment in
-        the transaction element. The purpose of this element is to
-        provide predictability for recipient planning on an annual
-        basis.
+        The value of the activity's budget for each financial quarter or year over the lifetime of the activity. The purpose of this element is to provide predictability for recipient planning on an annual basis. The status explains whether the budget being reported is indicative or has been formally committed. The value should appear within the BudgetStatus codelist. If the @status attribute is not present, the budget is assumed to be indicative. The sum of budgets may or may not match the sum of commitments, depending on a publisher’s business model and legal frameworks.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
