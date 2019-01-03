@@ -9,7 +9,7 @@
     <xsd:documentation xml:lang="en">
       International Aid Transparency Initiative: Registry Record Extension Schema
 
-      Release 2.03, Unreleased
+      Release 2.03, 2018-02-19
 
       This W3C XML schema is an extension to the IATI standards to add
       information specific to the IATI registry. Like all IATI
