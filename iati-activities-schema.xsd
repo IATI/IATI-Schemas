@@ -1800,9 +1800,9 @@
                         The baseline value.
 
                         The @value must be omitted for qualitative measures.
-                        
+
                         The @value must be included for non-qualitative measures.
-                        
+
                         The @value should be a valid number for all non-qualitative measures.
                       </xsd:documentation>
                     </xsd:annotation>
@@ -1866,9 +1866,9 @@
                               The target value.
 
                               The @value must be omitted for qualitative measures.
-                              
+
                               The @value must be included for non-qualitative measures.
-                              
+
                               The @value should be a valid number for all non-qualitative measures.
                             </xsd:documentation>
                           </xsd:annotation>
@@ -1895,9 +1895,9 @@
                               The actual measure.
 
                               The @value must be omitted for qualitative measures.
-                              
+
                               The @value must be included for non-qualitative measures.
-                              
+
                               The @value should be a valid number for all non-qualitative measures.
                             </xsd:documentation>
                           </xsd:annotation>
@@ -2494,30 +2494,6 @@
     </xsd:attribute>
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
-
-  <xsd:complexType name="currencyType">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        Data type for an element containing a currency value.
-      </xsd:documentation>
-    </xsd:annotation>
-    <xsd:simpleContent>
-      <xsd:extension base="xsd:decimal">
-        <xsd:attribute ref="currency" use="optional"/>
-        <xsd:attribute ref="value-date" use="required"/>
-        <xsd:anyAttribute processContents="lax" namespace="##other"/>
-      </xsd:extension>
-    </xsd:simpleContent>
-  </xsd:complexType>
-
-  <xsd:attribute name="currency" type="xsd:string">
-    <xsd:annotation>
-      <xsd:documentation xml:lang="en">
-        The ISO 4217 alphabetic currency code of the value reported.
-        This is required unless the iati-activity/\@default-currency is present and applies.
-      </xsd:documentation>
-    </xsd:annotation>
-  </xsd:attribute>
 
 <!-- documentLinkResultBase extends documentLinkBase to include the specific definition for the element where it appears as a child of the iati-activity/result element. -->
   <xsd:complexType name="documentLinkResultBase">
