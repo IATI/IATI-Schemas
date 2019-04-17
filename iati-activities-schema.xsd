@@ -168,7 +168,7 @@
       <xsd:attribute ref="xml:lang">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code specifying the default language of text in this activity. It is recommended that wherever possible only codes from ISO 639-1 are used.
+            A code specifying the default language of text in this activity. It is recommended that wherever possible only codes from ISO 639-1 are used. If this is not declared then the xml:lang attribute MUST be specified for each narrative element.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
