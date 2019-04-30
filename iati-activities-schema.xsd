@@ -1799,9 +1799,9 @@
                       <xsd:documentation xml:lang="en">
                         The baseline value.
 
-                        The @value must be omitted for qualitative measures.
+                        The @value should be omitted for qualitative measures.
                         
-                        The @value must be included for non-qualitative measures.
+                        The @value should be included for non-qualitative measures.
                         
                         The @value should be a valid number for all non-qualitative measures.
                       </xsd:documentation>
@@ -1865,9 +1865,9 @@
                             <xsd:documentation xml:lang="en">
                               The target value.
 
-                              The @value must be omitted for qualitative measures.
+                              The @value should be omitted for qualitative measures.
                               
-                              The @value must be included for non-qualitative measures.
+                              The @value should be included for non-qualitative measures.
                               
                               The @value should be a valid number for all non-qualitative measures.
                             </xsd:documentation>
@@ -1894,9 +1894,9 @@
                             <xsd:documentation xml:lang="en">
                               The actual measure.
 
-                              The @value must be omitted for qualitative measures.
+                              The @value should be omitted for qualitative measures.
                               
-                              The @value must be included for non-qualitative measures.
+                              The @value should be included for non-qualitative measures.
                               
                               The @value should be a valid number for all non-qualitative measures.
                             </xsd:documentation>
