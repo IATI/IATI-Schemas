@@ -1799,7 +1799,7 @@
                       <xsd:documentation xml:lang="en">
                         The baseline value.
 
-                        The @value should be omitted for qualitative measures.
+                        The @value must be omitted for qualitative measures.
                         
                         The @value must be included for non-qualitative measures.
                         
@@ -1865,7 +1865,7 @@
                             <xsd:documentation xml:lang="en">
                               The target value.
 
-                              The @value should be omitted for qualitative measures.
+                              The @value must be omitted for qualitative measures.
                               
                               The @value must be included for non-qualitative measures.
                               
@@ -1894,7 +1894,7 @@
                             <xsd:documentation xml:lang="en">
                               The actual measure.
 
-                              The @value should be omitted for qualitative measures.
+                              The @value must be omitted for qualitative measures.
                               
                               The @value must be included for non-qualitative measures.
                               
