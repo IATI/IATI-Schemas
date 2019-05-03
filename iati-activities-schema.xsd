@@ -924,7 +924,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description of the policy marker. This MUST ONLY be
-              used where vocabulary = "99 - RO" (the reporting
+              used if vocabulary is 99 (the reporting
               organisation's own marker vocabulary). May be repeated
               for multiple languages.
             </xsd:documentation>
