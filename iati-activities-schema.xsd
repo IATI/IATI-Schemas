@@ -883,7 +883,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description of the policy marker. This MUST ONLY be
-              used where vocabulary = "99 - RO" (the reporting
+              used if vocabulary is 99 (the reporting
               organisation's own marker vocabulary). May be repeated
               for multiple languages.
             </xsd:documentation>
@@ -1210,7 +1210,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Either an OECD DAC or UN region code. Codelist i determined by vocabulary attribute.
+                  Either an OECD DAC or UN region code. Codelist is determined by vocabulary attribute.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
