@@ -168,7 +168,7 @@
       <xsd:attribute ref="xml:lang">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code specifying the default language of text in this activity. It is recommended that wherever possible only codes from ISO 639-1 are used.
+            A code specifying the default language of text in this activity. It is recommended that wherever possible only codes from ISO 639-1 are used. If this is not declared then the xml:lang attribute MUST be specified for each narrative element.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -356,7 +356,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions within a vocabulary MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -419,7 +419,7 @@
       <xsd:attribute name="percentage" use="optional" type="xsd:decimal">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions MUST add up to 100.
+            The percentage of total commitments or total activity budget to this item. Content must be a decimal number between 0 and 100 inclusive, with no percentage sign. Percentages for all reported countries and regions within a vocabulary MUST add up to 100.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -883,7 +883,7 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               A description of the policy marker. This MUST ONLY be
-              used where vocabulary = "99 - RO" (the reporting
+              used if vocabulary is 99 (the reporting
               organisation's own marker vocabulary). May be repeated
               for multiple languages.
             </xsd:documentation>
@@ -1210,7 +1210,7 @@
             <xsd:attribute name="code" type="xsd:string"  use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Either an OECD DAC or UN region code. Codelist i determined by vocabulary attribute.
+                  Either an OECD DAC or UN region code. Codelist is determined by vocabulary attribute.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1765,7 +1765,7 @@
                   <xsd:attribute name="indicator-uri" use="optional" type="xsd:anyURI">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                        The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -1799,7 +1799,7 @@
                       <xsd:documentation xml:lang="en">
                         The baseline value.
 
-                        The @value must be omitted for qualitative measures.
+                        The @value should be omitted for qualitative measures.
 
                         The @value must be included for non-qualitative measures.
 
@@ -1865,7 +1865,7 @@
                             <xsd:documentation xml:lang="en">
                               The target value.
 
-                              The @value must be omitted for qualitative measures.
+                              The @value should be omitted for qualitative measures.
 
                               The @value must be included for non-qualitative measures.
 
@@ -1894,8 +1894,8 @@
                             <xsd:documentation xml:lang="en">
                               The actual measure.
 
-                              The @value must be omitted for qualitative measures.
-
+                              The @value should be omitted for qualitative measures.
+                              
                               The @value must be included for non-qualitative measures.
 
                               The @value should be a valid number for all non-qualitative measures.
