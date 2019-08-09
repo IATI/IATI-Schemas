@@ -267,4 +267,30 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
+  <xsd:complexType name="currencyType">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        Data type for an element containing a currency value.
+      </xsd:documentation>
+    </xsd:annotation>
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:decimal">
+        <xsd:attribute ref="currency" use="optional"/>
+        <xsd:attribute ref="value-date" use="required"/>
+        <xsd:anyAttribute processContents="lax" namespace="##other"/>
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <xsd:attribute name="currency" type="xsd:string">
+    <xsd:annotation>
+      <xsd:documentation xml:lang="en">
+        A three letter ISO 4217 code for the original currency of the
+        amount. This is required for all currency amounts unless
+        the iati-organisation/\@default-currency attribute is
+        specified.
+      </xsd:documentation>
+    </xsd:annotation>
+  </xsd:attribute>
+
 </xsd:schema>
