@@ -214,7 +214,7 @@
       <xsd:attribute name="budget-not-provided" type="xsd:string" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A code indicating the reason why this activity does not contain any iati-activity/budget elements. The value must exist in the BudgetNotProvided codelist.
+            A code indicating the reason why this activity does not contain any iati-activity/budget elements. The code MUST only be used when no budget elements are present.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
