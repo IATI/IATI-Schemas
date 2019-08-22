@@ -770,6 +770,11 @@
   <xsd:complexType name="documentLinkWithReceipientCountry">
     <xsd:complexContent>
       <xsd:extension base="documentLinkBase">
+        <xsd:anotation>
+          <xsd:documentation xml:lang="en">
+            A link to an online, publicly accessible web page or document expanding on the result
+          </xsd:documentation>
+        </xsd:anotation>
         <xsd:sequence>
           <xsd:element name="recipient-country" minOccurs="0" maxOccurs="unbounded">
             <xsd:annotation>
