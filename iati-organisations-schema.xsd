@@ -746,7 +746,7 @@
       <xsd:extension base="documentLinkBase">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A link to an online, publicly accessible web page or document expanding on the result
+            A link to an online, publicly accessible web page or document.
           </xsd:documentation>
         </xsd:annotation>
         <xsd:sequence>
