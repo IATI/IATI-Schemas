@@ -4,6 +4,9 @@ International Aid Transparency Initiative (IATI) XML Schemas
 .. image:: https://travis-ci.org/IATI/IATI-Schemas.svg?branch=version-2.03
     :target: https://travis-ci.org/IATI/IATI-Schemas
 
+.. image:: https://github.com/IATI/IATI-Schemas/workflows/CI_Tests/badge.svg
+   :target: https://github.com/IATI/IATI-Standard-Website/actions
+
 | IATI Support <support@iatistandard.org>
 | Release 2.03, Unreleased
 
