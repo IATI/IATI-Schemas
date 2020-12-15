@@ -27,5 +27,7 @@ jobs:
 
       - name: Run complete schema test suite
         run: |
+          - ls -lh
           - cd tests
-          - ./run-tests.sh
+          - ls -lh
+          - run-tests.sh
