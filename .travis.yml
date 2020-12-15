@@ -1,8 +1,0 @@
-before_install:
-    - sudo apt-get update -qq
-    - sudo apt-get install -qq libxml2-utils
-script:
-    - xmllint --schema http://www.w3.org/2001/XMLSchema.xsd --noout *.xsd
-    - cd tests
-    - ./run-tests.sh
-

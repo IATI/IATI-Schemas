@@ -1,0 +1,31 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+
+name: CI_Tests
+
+on:
+  push:
+    branches: [version-2.01]
+  pull_request:
+    branches: [version-2.01]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.6"]
+
+    steps:
+      - name: Install xmllint
+        run: sudo apt-get install libxml2-utils
+
+      - uses: actions/checkout@v2
+
+      - name: xmllint the schema
+        run: xmllint --schema http://www.w3.org/2001/XMLSchema.xsd --noout *.xsd
+
+      - name: Run complete schema test suite
+        run: |
+          cd tests
+          ./run-tests.sh
