@@ -5,9 +5,9 @@ name: CI_Tests
 
 on:
   push:
-    branches: [version-2.02, version-2.01]
+    branches: [version-2.02]
   pull_request:
-    branches: [version-2.02, version-2.01]
+    branches: [version-2.02]
 
 jobs:
   build:
