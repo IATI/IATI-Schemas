@@ -26,4 +26,6 @@ jobs:
         run: xmllint --schema http://www.w3.org/2001/XMLSchema.xsd --noout *.xsd
 
       - name: Run complete schema test suite
-        run: ./tests/run-tests.sh
+        run: |
+          - cd tests  
+          - ./run-tests.sh
