@@ -180,4 +180,11 @@
     <xsd:anyAttribute processContents="lax" namespace="##other"/>
   </xsd:complexType>
 
+  <xsd:simpleType name="decimalPercentage">
+    <xsd:restriction base="xsd:decimal">
+       <xsd:minInclusive value="0"/>
+       <xsd:maxInclusive value="100"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+
 </xsd:schema>
