@@ -6,13 +6,13 @@ name: CI_Tests
 on:
   push:
     paths-ignore:
-        - "README.rst"
-        - "**/dependabot.yml"
+      - "README.rst"
+      - "**/dependabot.yml"
     branches: [version-2.03]
   pull_request:
-      paths-ignore:
-        - "README.rst"
-        - "**/dependabot.yml"
+    paths-ignore:
+      - "README.rst"
+      - "**/dependabot.yml"
     branches: [version-2.03]
 
 jobs:
