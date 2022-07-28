@@ -5,25 +5,30 @@ name: CI_Tests
 
 on:
   push:
+    paths-ignore:
+      - "README.rst"
+      - "**/dependabot.yml"
     branches: [version-2.03]
   pull_request:
+    paths-ignore:
+      - "README.rst"
+      - "**/dependabot.yml"
     branches: [version-2.03]
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        python-version: ["3.6"]
 
     steps:
       - name: Install xmllint
         run: sudo apt-get install libxml2-utils
-      - uses: actions/checkout@v2
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: '3.6'
+          cache: 'pip'
+          cache-dependency-path: '**/requirements-dev.txt'
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
@@ -34,3 +39,14 @@ jobs:
         run: ./tests/run-tests.sh
       - name: Pytest
         run: pytest
+
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: fastify/github-action-merge-dependabot@v3.2
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
