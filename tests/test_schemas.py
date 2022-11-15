@@ -150,5 +150,4 @@ def test_2_03_fail_files(schema_factory, filepath):
     except etree.XMLSyntaxError as error_log:
         expected_error_text = failure_reason_mapping[failure_reason]
         if re.search(expected_error_text, str(error_log)) is None:
-            import pdb; pdb.set_trace()
             assert False
