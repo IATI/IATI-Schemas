@@ -130,10 +130,10 @@ def test_2_03_fail_files(schema_factory, filepath):
     """
 
     failure_reason_mapping = {
-        'err-not-iati-xml-missing-required-element': "Element '[a-z-]*?': ((Missing child element\(s\)\.)|(This element is not expected\.)) Expected is( one of)? \( [#\*a-z-\s,]*? \)\.",
-        'err-not-iati-xml-missing-attribute': "Element '[a-z-]*?': The attribute '[a-z-]*?' is required but missing\.",
-        'err-not-iati-xml-forbidden-attribute': "Element '[a-z-]*?', attribute '[a-z-]*': The attribute '[a-z-]*?' is not allowed\.",
-        'err-not-iati-xml-incorrect-datatype': "Element '[a-z-]*?', attribute '[a-z-]*?': '.*?' is not a valid value of the atomic type '[a-z-:]*?'\."
+        'err-not-iati-xml-missing-required-element': r"Element '[a-z-]*?': ((Missing child element\(s\)\.)|(This element is not expected\.)) Expected is( one of)? \( [#\*a-z-\s,]*? \)\.",
+        'err-not-iati-xml-missing-attribute': r"Element '[a-z-]*?': The attribute '[a-z-]*?' is required but missing\.",
+        'err-not-iati-xml-forbidden-attribute': r"Element '[a-z-]*?', attribute '[a-z-]*': The attribute '[a-z-]*?' is not allowed\.",
+        'err-not-iati-xml-incorrect-datatype': r"Element '[a-z-]*?', attribute '[a-z-]*?': '.*?' is not a valid value of the atomic type '[a-z-:]*?'\."
     }
 
     data_str = load_as_str(filepath)
