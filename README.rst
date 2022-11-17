@@ -7,7 +7,7 @@ International Aid Transparency Initiative (IATI) XML Schemas
 | IATI Support <support@iatistandard.org>
 | Release 2.03, Unreleased
 
-This directory contains version 2.03 of the IATI XML schemas, due to be released in early 2018. More information about these schemas is available at http://iatistandard.org
+This directory contains version 2.03 of the IATI XML schemas. More information about these schemas is available at http://iatistandard.org
 
 This directory contains the following files:
 
@@ -80,6 +80,26 @@ We use pytest as a test runner to check the validity of these files against the 
 .. code-block:: bash
 
    $ pytest
+
+
+Test file naming syntax
+~~~~~~~~~~~~~~~~~~~~~~~
+
+``should-fail`` test file names should begin with one of the following strings, depending on the expected failure type:
+
+- ``err-not-iati-xml-missing-required-element``
+- ``err-not-iati-xml-missing-attribute``
+- ``err-not-iati-xml-forbidden-attribute``
+- ``err-not-iati-xml-incorrect-datatype``
+
+Additional test descriptions may be added to the file name following an underscore, like so:
+
+``err-not-iati-xml-missing-required-element_document-link-with-multiple-description-elements.xml``
+
+The files are now parsed with ``etree.fromstring``. If an XMLSchemaError is raised during the parsing, the beginning of the file name is compared against Regex for the four possible error types above.
+For example, the error raised from ``err-not-iati-xml-missing-required-element_document-link-with-multiple-description-elements.xml`` is expected to match the Regex:
+
+``Element '[a-z-]*?': ((Missing child element\(s\)\.)|(This element is not expected\.)) Expected is( one of)? \( [#\*a-z-\s,]*? \)\.``
 
 
 Acknowlegements

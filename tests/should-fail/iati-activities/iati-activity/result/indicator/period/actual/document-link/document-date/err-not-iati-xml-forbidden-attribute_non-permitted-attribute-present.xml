@@ -35,7 +35,7 @@
                 <narrative>Sample text</narrative>
               </title>
               <category code="xx"/>
-              <document-date iso-date="xx" additional-attribute="xx"/><!-- FAIL: Non-permitted additional attribute present. -->
+              <document-date iso-date="2017-11-22" additional-attribute="xx"/><!-- FAIL: Non-permitted additional attribute present. -->
             </document-link>
           </actual>
         </period>
