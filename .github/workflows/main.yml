@@ -20,7 +20,7 @@ jobs:
       - name: Install xmllint
         run: sudo apt-get install libxml2-utils
 
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: xmllint the schema
         run: xmllint --schema http://www.w3.org/2001/XMLSchema.xsd --noout *.xsd
