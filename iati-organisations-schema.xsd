@@ -49,7 +49,7 @@
           <xsd:documentation xml:lang="en">
             A date/time stamp for when this file was generated. This
             is not necessarily the last-updated date for the
-            individual activity records in it. Use of this attribute
+            individual organisation records in it. Use of this attribute
             is highly recommended, to allow recipients to know when a
             file has been updated.
           </xsd:documentation>
@@ -104,7 +104,7 @@
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
             Default ISO 4217 currency code for all financial values in
-            this activity report. If this is not declared then the
+            this organisation report. If this is not declared then the
             currency attribute MUST be specified for all monetary
             values.
           </xsd:documentation>
@@ -375,7 +375,7 @@
         The recipient-region-budget element allows for the reporting of forward
         looking budgets where the organisation maintains region-wide, rather than
         or in addition to country-specific budgets. The recommendation is that,
-        where and when possible, the organisation’s total annual planned budget
+        where and when possible, the organisation's total annual planned budget
         for each of the next three financial years is reported for each recipient
         region. This must NOT include an aggregation of budgets reported in the
         recipient-country-budget element. It is strongly recommended that
@@ -417,7 +417,7 @@
             <xsd:attribute name="code" type="xsd:string" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Either an OECD DAC, UN region code or (if code ‘99’ Reporting
+                  Either an OECD DAC, UN region code or (if code '99' Reporting
                   organisation is selected for recipient-region/\@vocabulary) a
                   code from your internal vocabulary. The codelist is determined
                   by vocabulary attribute. The value in recipient-region/\@code
@@ -469,7 +469,7 @@
         <xsd:element name="budget-line" minOccurs="0" maxOccurs="unbounded">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A breakdown of the recipient region’s budget into sub-totals. The
+              A breakdown of the recipient region's budget into sub-totals. The
               breakdown is determined by the reporting organisation and described
               in the narrative. The period covered is the same as that covered by
               the parent recipient-region-budget element. The sum of budget-line
@@ -653,8 +653,8 @@
     <xsd:annotation>
       <xsd:documentation xml:lang="en">
         The total-expenditure element allows for the reporting of the
-        organisation’s international development expenditure. The
-        recommendation is that, where and when possible, the organisation’s
+        organisation's international development expenditure. The
+        recommendation is that, where and when possible, the organisation's
         total expenditure for each of the past three years is reported.
         The expense line allows publishers to record further breakdown.
       </xsd:documentation>
@@ -727,7 +727,7 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   An internal reference for this expenditure line taken
-                  from the reporting organisation’s own system. Optional.
+                  from the reporting organisation's own system. Optional.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
