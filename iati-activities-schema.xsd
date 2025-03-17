@@ -39,7 +39,7 @@
       <xsd:attribute name="version" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A number indicating the IATI specification version in use.
+            A number indicating the IATI Standard version in use.
             This is mandatory and must be a valid version.
           </xsd:documentation>
         </xsd:annotation>
