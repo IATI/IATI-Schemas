@@ -411,7 +411,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+            The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -607,7 +607,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+            The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1156,7 +1156,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1228,7 +1228,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1724,7 +1724,7 @@
             <xsd:attribute name="vocabulary-uri" use="optional" type="xsd:anyURI">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1769,7 +1769,7 @@
                   <xsd:attribute name="indicator-uri" use="optional" type="xsd:anyURI">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                        The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
