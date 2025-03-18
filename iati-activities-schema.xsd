@@ -227,15 +227,13 @@
       <xsd:documentation xml:lang="en">
         A globally unique identifier for the activity.
 
-        This MUST be prefixed with EITHER the current IATI
-        organisation identifier for the reporting organisation
-        (reporting-org/\@ref) OR a previous identifier reported in
-        other-identifier, and suffixed with the organisation’s own
-        activity identifier. The prefix and the suffix should be
-        separated by a hyphen "-".
+        This MUST be prefixed with EITHER the current IATI organisation identifier for the reporting organisation (reporting-org/\@ref) 
+        OR 
+        a previous identifier reported in other-identifier, and suffixed with the organisation’s own activity identifier. 
+        
+        The prefix and the suffix should be separated by a hyphen "-".
 
-        Once an activity has been reported to IATI its identifier MUST
-        NOT be changed in subsequent updates.
+        Once an activity has been reported to IATI its identifier MUST NOT be changed in subsequent updates.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
