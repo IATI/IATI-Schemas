@@ -410,7 +410,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -419,8 +419,11 @@
                 <xsd:documentation xml:lang="en">
                   Either an OECD DAC, UN region code or (if code ‘99’ Reporting
                   organisation is selected for recipient-region/\@vocabulary) a
-                  code from your internal vocabulary. The codelist is determined
-                  by vocabulary attribute. The value in recipient-region/\@code
+                  code from your internal vocabulary. 
+                  
+                  The codelist is determined by the vocabulary attribute. 
+                  
+                  The value in recipient-region/\@code
                   should appear within the Region codelist, if the vocabulary
                   code 1 ('OECD DAC') is used.
                 </xsd:documentation>
