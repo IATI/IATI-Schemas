@@ -184,7 +184,7 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this activity relates entirely
+            A flag to indicate that this activity relates entirely
             or partially to humanitarian aid.
           </xsd:documentation>
         </xsd:annotation>
@@ -1313,7 +1313,7 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this transaction relates entirely or partially to humanitarian aid. If the entire activity relates to humanitarian aid this should be reported using iati-activity/\@humanitarian, rather than for each transaction.
+            A flag to indicate that this transaction relates entirely or partially to humanitarian aid. If the entire activity relates to humanitarian aid this should be reported using iati-activity/\@humanitarian, rather than for each transaction.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1924,15 +1924,14 @@
             <xsd:attribute name="ascending" type="xsd:boolean" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A boolean describing the behaviour of the indicator.
-                  It is "true" if the indicator improves from small to large (e.g. clinics built); false if it improves from large to small (e.g. cases of a disease).
+                  The behaviour of the indicator: "true" if the indicator improves from small to large (e.g. clinics built); false if it improves from large to small (e.g. cases of a disease).
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Boolean flag indicating whether the data in the result set are suitable for aggregation.
+                  Flag indicating whether the data in the result set are suitable for aggregation.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1951,7 +1950,7 @@
       <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Boolean flag indicating whether the data in the result set are suitable for aggregation.
+            Flag indicating whether the data in the result set are suitable for aggregation.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1992,7 +1991,7 @@
       <xsd:attribute name="attached" type="xsd:boolean" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A yes/no (1/0) value stating whether there are conditions attached to the activity. It is strongly recommended that this attribute is reported, even if there are no conditions attached (i.e. attached="0")
+            Whether there are conditions attached to the activity. It is strongly recommended that this attribute is reported, even if there are no conditions attached (i.e. attached="0")
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -2234,7 +2233,7 @@
             <xsd:attribute name="significance" type="xsd:boolean" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A boolean indicating whether the flag applies. If 'false' do not report the flag
+                  Whether the flag applies. If 'false' do not report the flag
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
