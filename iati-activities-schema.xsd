@@ -39,15 +39,14 @@
       <xsd:attribute name="version" type="xsd:string" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A number indicating the IATI specification version in use.
-            This is mandatory and must be a valid version.
+            The version number of the IATI Standard used in this file. This is required and MUST contain a valid IATI Standard version number (e.g., "2.03").
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
       <xsd:attribute name="generated-datetime" type="xsd:dateTime" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A date/time stamp for when this file was generated. This
+            The date/time when this file was generated. This
             is not necessarily the last-updated date for the
             individual activity records in it. Use of this attribute
             is highly recommended, to allow recipients to know when a
@@ -185,7 +184,7 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this activity relates entirely
+            A flag to indicate that this activity relates entirely
             or partially to humanitarian aid.
           </xsd:documentation>
         </xsd:annotation>
@@ -227,15 +226,13 @@
       <xsd:documentation xml:lang="en">
         A globally unique identifier for the activity.
 
-        This MUST be prefixed with EITHER the current IATI
-        organisation identifier for the reporting organisation
-        (reporting-org/\@ref) OR a previous identifier reported in
-        other-identifier, and suffixed with the organisation’s own
-        activity identifier. The prefix and the suffix should be
-        separated by a hyphen "-".
+        This MUST be prefixed with EITHER the current IATI organisation identifier for the reporting organisation (reporting-org/\@ref) 
+        OR 
+        a previous identifier reported in other-identifier, and suffixed with the organisation’s own activity identifier. 
+        
+        The prefix and the suffix should be separated by a hyphen "-".
 
-        Once an activity has been reported to IATI its identifier MUST
-        NOT be changed in subsequent updates.
+        Once an activity has been reported to IATI its identifier MUST NOT be changed in subsequent updates.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -374,18 +371,19 @@
         Multiple countries and regions can be reported, in which case
         the percentage attribute MUST be used to specify the share of
         total commitments across all reported countries and regions.
+        
         Recipient-region must not be used merely to describe the
-        region of a country reported in recipient-country, but ONLY if
-        the region is a recipient IN ADDITION to the country.
+        region of a country reported in recipient-country. It must be used
+        only if the region is a recipient in addition to the country.
 
         Region can also be reported at transaction rather than
-        activity level. If transaction/recipient-country AND/OR
-        transaction/recipient-region are used THEN ALL transaction
-        elements MUST contain a recipient-country and/or
-        recipient-region element AND iati-activity/recipient-region
-        and iati-activity/recipient-region MUST NOT be used AND each
-        transaction MUST only contain one recipient-country or
-        recipient-region.
+        activity level. 
+        
+        IF transaction/recipient-country AND/OR transaction/recipient-region are used
+        THEN 
+        ALL transaction elements MUST contain a recipient-country and/or recipient-region element 
+        AND iati-activity/recipient-region and iati-activity/recipient-region MUST NOT be used 
+        AND each transaction MUST only contain one recipient-country or recipient-region.
       </xsd:documentation>
     </xsd:annotation>
     <xsd:complexType>
@@ -412,7 +410,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+            The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -521,8 +519,9 @@
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
               Where applicable, the organisation that owns the other
-              identifier being reported. When used, then either
-              other-identifier/owner-org/\@ref or
+              identifier being reported. 
+              
+              When used, either other-identifier/owner-org/\@ref or
               other-identifier/owner-org/narrative/text() MUST be
               present.
             </xsd:documentation>
@@ -607,7 +606,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+            The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -850,7 +849,7 @@
       <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A u.r.i. for the vocabulary specified which provides access to
+            A URI for the vocabulary specified which provides access to
             the list of codes and descriptions.
           </xsd:documentation>
         </xsd:annotation>
@@ -1043,8 +1042,8 @@
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
                   If incoming funds are being provided from the budget
-                  of another activity that is reported to IATI, it if
-                  STRONGLY RECOMMENDED that this should record the
+                  of another activity that is reported to IATI, it is
+                  strongly recommended that this should record the
                   provider's unique IATI activity identifier for that
                   activity.
                 </xsd:documentation>
@@ -1156,7 +1155,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                The URI where this vocabulary is defined. If the vocabulary is 99 or 98 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1173,10 +1172,12 @@
         <xsd:element name="recipient-country" minOccurs="0" maxOccurs="1">
           <xsd:annotation>
             <xsd:documentation xml:lang="en">
-              A country that will benefit from this transaction.
-              If a specific country is not known the recipient-region element should be used instead.
+              A country that will benefit from this transaction. If a specific country is not known the recipient-region element should be used instead.
 
-              If transaction/recipient-country AND/OR transaction/recipient-region are used THEN ALL transaction elements MUST contain a recipient-country or recipient-region element AND (iati-activity/recipient-country AND iati-activity/recipient-region MUST NOT be used)
+              IF transaction/recipient-country AND/OR transaction/recipient-region are used 
+              THEN 
+              ALL transaction elements MUST contain a recipient-country or recipient-region element 
+              AND (iati-activity/recipient-country AND iati-activity/recipient-region MUST NOT be used)
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1199,7 +1200,9 @@
             <xsd:documentation xml:lang="en">
               A supranational geopolitical region that will benefit from this transaction. If a specific country is not known, then this element MUST be used.
 
-              If transaction/recipient-country AND/OR transaction/recipient-region are used THEN ALL transaction elements MUST contain a recipient-country or recipient-region element AND (iati-activity/recipient-country AND iati-activity/recipient-region MUST NOT be used)
+              If transaction/recipient-country AND/OR transaction/recipient-region are used 
+              THEN ALL transaction elements MUST contain a recipient-country or recipient-region element 
+              AND (iati-activity/recipient-country AND iati-activity/recipient-region MUST NOT be used)
             </xsd:documentation>
           </xsd:annotation>
           <xsd:complexType>
@@ -1224,7 +1227,7 @@
             <xsd:attribute name="vocabulary-uri" type="xsd:anyURI" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1310,7 +1313,7 @@
       <xsd:attribute name="humanitarian" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A process flag to indicate that this transaction relates entirely or partially to humanitarian aid. If the entire activity relates to humanitarian aid this should be reported using iati-activity/\@humanitarian, rather than for each transaction.
+            A flag to indicate that this transaction relates entirely or partially to humanitarian aid. If the entire activity relates to humanitarian aid this should be reported using iati-activity/\@humanitarian, rather than for each transaction.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1720,7 +1723,7 @@
             <xsd:attribute name="vocabulary-uri" use="optional" type="xsd:anyURI">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                  The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1765,7 +1768,7 @@
                   <xsd:attribute name="indicator-uri" use="optional" type="xsd:anyURI">
                     <xsd:annotation>
                       <xsd:documentation xml:lang="en">
-                        The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. While this is an optional field it is STRONGLY RECOMMENDED that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
+                        The URI where this vocabulary is defined. If the vocabulary is 99 (reporting organisation), the URI where this internal vocabulary is defined. This is an optional field, but it is strongly recommended that all publishers use it to ensure that the meaning of their codes are fully understood by data users.
                       </xsd:documentation>
                     </xsd:annotation>
                   </xsd:attribute>
@@ -1921,15 +1924,14 @@
             <xsd:attribute name="ascending" type="xsd:boolean" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A boolean describing the behaviour of the indicator.
-                  It is "true" if the indicator improves from small to large (e.g. clinics built); false if it improves from large to small (e.g. cases of a disease).
+                  The behaviour of the indicator: "true" if the indicator improves from small to large (e.g. clinics built); false if it improves from large to small (e.g. cases of a disease).
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
             <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  Boolean flag indicating whether the data in the result set are suitable for aggregation.
+                  Flag indicating whether the data in the result set are suitable for aggregation.
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
@@ -1948,7 +1950,7 @@
       <xsd:attribute name="aggregation-status" type="xsd:boolean" use="optional">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            Boolean flag indicating whether the data in the result set are suitable for aggregation.
+            Flag indicating whether the data in the result set are suitable for aggregation.
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -1989,7 +1991,7 @@
       <xsd:attribute name="attached" type="xsd:boolean" use="required">
         <xsd:annotation>
           <xsd:documentation xml:lang="en">
-            A yes/no (1/0) value stating whether there are conditions attached to the activity. It is strongly recommended that this attribute is reported, even if there are no conditions attached (i.e. attached="0")
+            Whether there are conditions attached to the activity. It is strongly recommended that this attribute is reported, even if there are no conditions attached (i.e. attached="0")
           </xsd:documentation>
         </xsd:annotation>
       </xsd:attribute>
@@ -2231,7 +2233,7 @@
             <xsd:attribute name="significance" type="xsd:boolean" use="required">
               <xsd:annotation>
                 <xsd:documentation xml:lang="en">
-                  A boolean indicating whether the flag applies. If 'false' do not report the flag
+                  Whether the flag applies. If 'false' do not report the flag
                 </xsd:documentation>
               </xsd:annotation>
             </xsd:attribute>
