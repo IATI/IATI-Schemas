@@ -21,7 +21,7 @@ class SchemaFactory(object):
 
             self.organisation_schema - v2.03 IATI Organisation schema.
         """
-        self.activity_schema  = etree.XMLSchema(etree.parse('iati-activities-schema.xsd'))
+        self.activity_schema = etree.XMLSchema(etree.parse('iati-activities-schema.xsd'))
 
         self.organisation_schema = etree.XMLSchema(etree.parse('iati-organisations-schema.xsd'))
 
@@ -85,13 +85,12 @@ def is_xml(xml_string):
 
 
 def is_iati_xml(xml_string, schema):
-    parser = etree.XMLParser(schema = schema)
+    parser = etree.XMLParser(schema=schema)
     try:
-        dataset = etree.fromstring(xml_string, parser)
+        etree.fromstring(xml_string, parser)
         return True
     except etree.XMLSyntaxError:
         return False
-
 
 
 @pytest.mark.parametrize('filepath', list_xml_files_recursively('tests/activity-tests/should-pass/') +  # Legacy activity test cases
@@ -144,9 +143,9 @@ def test_2_03_fail_files(schema_factory, filepath):
 
     assert is_xml(data_str)
 
-    parser = etree.XMLParser(schema = schema)
+    parser = etree.XMLParser(schema=schema)
     try:
-        dataset = etree.fromstring(data_str, parser)
+        etree.fromstring(data_str, parser)
     except etree.XMLSyntaxError as error_log:
         expected_error_text = failure_reason_mapping[failure_reason]
         if re.search(expected_error_text, str(error_log)) is None:
