@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: Install xmllint
         run: sudo apt-get install libxml2-utils
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
